@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Civic Admin - Projects &amp; Content</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e0e3e5",
+                    "on-primary-fixed": "#001b3c",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#d6e3ff",
+                    "surface-tint": "#455f88",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "tertiary-fixed": "#d4e4fc",
+                    "on-secondary-fixed": "#001d37",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#181c1e",
+                    "surface-container-low": "#f1f4f6",
+                    "on-secondary-fixed-variant": "#00497e",
+                    "surface-container": "#ebeef0",
+                    "primary": "#002045",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1a365d",
+                    "on-tertiary-fixed": "#0d1c2e",
+                    "on-tertiary-fixed-variant": "#39485c",
+                    "tertiary": "#122234",
+                    "secondary": "#0061a5",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#66affe",
+                    "inverse-on-surface": "#eef1f3",
+                    "surface-dim": "#d7dadc",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-surface-variant": "#43474e",
+                    "outline-variant": "#c4c6cf",
+                    "surface-container-high": "#e5e9eb",
+                    "background": "#f7fafc",
+                    "tertiary-fixed-dim": "#b8c8e0",
+                    "secondary-fixed-dim": "#9fcaff",
+                    "on-tertiary-container": "#91a0b7",
+                    "outline": "#74777f",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#004172",
+                    "on-primary-container": "#86a0cd",
+                    "primary-fixed-dim": "#adc7f7",
+                    "on-background": "#181c1e",
+                    "surface": "#f7fafc",
+                    "tertiary-container": "#28374a",
+                    "surface-bright": "#f7fafc",
+                    "inverse-primary": "#adc7f7",
+                    "secondary-fixed": "#d2e4ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sidebar-collapsed": "64px",
+                    "stack-compact": "0.5rem",
+                    "stack-default": "1rem",
+                    "stack-loose": "1.5rem",
+                    "gutter": "1rem",
+                    "sidebar-width": "260px",
+                    "container-padding": "2rem"
+            },
+            "fontFamily": {
+                    "label-md": ["JetBrains Mono"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-sm": ["Montserrat"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Montserrat"],
+                    "label-sm": ["JetBrains Mono"],
+                    "display-sm": ["Montserrat"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-sm": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 10px; }
+        .editor-preview blockquote { border-left: 4px solid #002045; padding-left: 1rem; font-style: italic; color: #43474e; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-sidebar-width bg-primary dark:bg-primary-container flex flex-col py-stack-loose z-50">
+<div class="px-gutter mb-10">
+<h1 class="font-headline-sm text-headline-sm text-on-primary font-bold">Civic Admin</h1>
+<p class="text-on-primary-container font-label-md text-label-sm opacity-80 uppercase tracking-widest mt-1">Management Portal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<!-- Dashboard -->
+<a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</a>
+<!-- Donations -->
+<a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">payments</span>
+<span class="font-body-md">Donations</span>
+</a>
+<!-- Feedback -->
+<a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">forum</span>
+<span class="font-body-md">Citizen Feedback</span>
+</a>
+<!-- Projects (ACTIVE) -->
+<a class="flex items-center px-gutter py-3 border-l-4 border-secondary-container text-secondary-container bg-on-primary-fixed-variant/10 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span class="font-body-md">Projects</span>
+</a>
+<!-- Content (ACTIVE ALTERNATE) -->
+<a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">newspaper</span>
+<span class="font-body-md">Content</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-on-primary-fixed-variant/20 pt-stack-loose">
+<a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+<a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="#">
+<span class="material-symbols-outlined mr-3 text-error">logout</span>
+<span class="font-body-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-260px)] h-16 bg-surface dark:bg-surface-dim border-b border-outline-variant flex justify-between items-center px-gutter z-40 ml-sidebar-width">
+<div class="flex items-center bg-surface-container rounded px-3 py-1.5 w-96">
+<span class="material-symbols-outlined text-on-surface-variant text-body-lg">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-full ml-2 placeholder:text-outline" placeholder="Search initiatives or articles..." type="text"/>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high p-2 transition-colors cursor-pointer active:opacity-80">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high p-2 transition-colors cursor-pointer active:opacity-80">help</button>
+<div class="flex items-center space-x-3 cursor-pointer hover:bg-surface-container-high px-3 py-1.5 transition-colors">
+<div class="text-right">
+<p class="font-label-md text-label-md text-primary font-bold leading-none">Admin Profile</p>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-tighter">System Manager</p>
+</div>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a senior government administrator with silver hair and a sharp navy blue business suit. The background is a clean, modern administrative office with soft natural lighting and a hint of a digital dashboard on a screen. High-end professional corporate photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG1aZ4FuX-lOSCO5_RlhX1Pg2fVBj5plUEqt6dWq7F4lptjeW5-fE-VIzF6Oj9Pm3AP6lRdFDTXFH16KOs5CA2j1LfxFP8UI5rYa5QmZ4IJOhPZY0OyCRVJHOZMdq899WoV4DyopN7e0Zj-mOdnVqgqIotORl429abvR2DnhUaajlb5DM3tioRb0xRKZ4eNTKRjXmElBT31A3ZIL85ztD7cyjsNvfXShB51AQfZTNKKKDHP86NngQILti1w2FUTFyv1mdRzzEHbiQ"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-sidebar-width pt-16 p-stack-loose max-w-[1600px]">
+<!-- Welcome & Breadcrumbs -->
+<div class="mb-stack-loose">
+<nav class="flex items-center text-label-sm text-on-surface-variant mb-2">
+<span>Management</span>
+<span class="material-symbols-outlined text-sm mx-1">chevron_right</span>
+<span class="text-primary font-bold">Projects &amp; Content</span>
+</nav>
+<h2 class="font-headline-md text-headline-md text-primary">Strategic Initiative Oversight</h2>
+</div>
+<!-- Layout Grid: Bento Style -->
+<div class="grid grid-cols-12 gap-stack-default">
+<!-- Project Manager Section (Left/Top) -->
+<section class="col-span-12 lg:col-span-7 space-y-stack-default">
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-loose flex flex-col h-full">
+<div class="flex justify-between items-center mb-stack-loose">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined p-2 bg-primary-fixed text-primary rounded">account_tree</span>
+<h3 class="font-headline-sm text-headline-sm">Project Manager</h3>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 font-label-md text-label-md flex items-center hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined mr-2">add</span> NEW INITIATIVE
+                        </button>
+</div>
+<!-- Current Projects Table -->
+<div class="overflow-hidden">
+<table class="w-full border-collapse">
+<thead class="bg-surface-container-low text-label-md text-on-surface-variant uppercase text-left border-b border-outline-variant">
+<tr>
+<th class="px-4 py-3 font-medium">Initiative</th>
+<th class="px-4 py-3 font-medium">Goal Status</th>
+<th class="px-4 py-3 font-medium">Progress</th>
+<th class="px-4 py-3 font-medium text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-4 py-4">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 bg-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Aerial view of a vibrant community garden in the heart of a modern city, featuring neatly organized wooden planting beds and diverse greenery. The lighting is golden hour sun, casting soft shadows across paths. The style is crisp urban planning photography with high contrast and natural saturation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1jlKQwrFigQOKw5aMlt4Re6YY3BPnOaV9ms60mEf7hPYhz9JwHPifqR79gb2h1wZN3XmwBSr3wBxVkwZ9NG-3_jwVbvTXlGcD3BfPceOFuf2XZtI-mZLcbtda0f0CBbR4gwo6tYSZQgaJSxbwOcjDgaSxTo6CNfGrA4F8jeah7ZTdYfAoHQmcsBLQLpUUmubVSS4OG4vcMya1IAwYZHmRcBeJJa7WbBrLq5NhoUjaLbGGpzkr3QItNA-PoOO0GJ5YU3vtlz3wzVQ"/>
+</div>
+<div>
+<p class="font-body-md font-bold text-primary">Urban Green Hub</p>
+<p class="text-label-sm text-on-surface-variant">Infrastructure • Q3 2024</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-4">
+<span class="inline-block px-2 py-1 bg-green-100 text-green-800 font-label-sm text-[10px] uppercase">On Track</span>
+</td>
+<td class="px-4 py-4 min-w-[150px]">
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 65%;"></div>
+</div>
+<p class="text-label-sm mt-1 text-on-surface-variant">65% Reached</p>
+</td>
+<td class="px-4 py-4 text-right">
+<div class="flex justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="material-symbols-outlined text-primary hover:text-secondary">edit</button>
+<button class="material-symbols-outlined text-primary hover:text-secondary">visibility</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-high transition-colors group">
+<td class="px-4 py-4">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 bg-outline-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Modern digital education platform interface displayed on multiple sleek tablets in a brightly lit, minimalist classroom setting. The screen shows colorful, interactive learning modules. Professional photography with soft focus background and clean, sharp foreground elements, emphasizing accessibility and technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj1s85gl5gXydlylgKVWpk7UTQixRHWAc1Kr22muVT4_rwc8hGnj4JddFR8pgygK3m24Z0lSnbVtWzQDnFYsLDHgHe9jXqCabofOMa4nqFPP6W54J3jibI7sZPvDnpgRjFwTztxbNauAYAZwk5C_hrfkEB-gBQSSpZzwJzW6JSx_o3Tl_gjF_C7zTtEVXGETkq6gM3tzgAx534f5NGVDeHY0c30D2ZqP9PJ_RGSTfAcCImPAkghG3Slu22GuhnT_OEpq8x25moIC4"/>
+</div>
+<div>
+<p class="font-body-md font-bold text-primary">Digital Literacy Program</p>
+<p class="text-label-sm text-on-surface-variant">Education • Q4 2024</p>
+</div>
+</div>
+</td>
+<td class="px-4 py-4">
+<span class="inline-block px-2 py-1 bg-amber-100 text-amber-800 font-label-sm text-[10px] uppercase">At Risk</span>
+</td>
+<td class="px-4 py-4 min-w-[150px]">
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full" style="width: 22%;"></div>
+</div>
+<p class="text-label-sm mt-1 text-on-surface-variant">22% Reached</p>
+</td>
+<td class="px-4 py-4 text-right">
+<div class="flex justify-end space-x-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="material-symbols-outlined text-primary hover:text-secondary">edit</button>
+<button class="material-symbols-outlined text-primary hover:text-secondary">visibility</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Quick Add Goal Initiative Form Mockup -->
+<div class="mt-auto pt-stack-loose border-t border-outline-variant/50">
+<h4 class="text-label-md font-bold mb-3 text-primary">DRAFT NEW INITIATIVE</h4>
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 md:col-span-1">
+<label class="text-label-sm block mb-1">Title</label>
+<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" placeholder="Project Name" type="text"/>
+</div>
+<div class="col-span-2 md:col-span-1">
+<label class="text-label-sm block mb-1">Category</label>
+<select class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none">
+<option>Infrastructure</option>
+<option>Education</option>
+<option>Healthcare</option>
+</select>
+</div>
+<div class="col-span-2">
+<label class="text-label-sm block mb-1">Upload Hero Image</label>
+<div class="border-2 border-dashed border-outline-variant p-4 text-center cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-outline text-3xl mb-1">cloud_upload</span>
+<p class="text-label-sm text-on-surface-variant">Drop image here or click to browse (Max 5MB)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Content Creator Section (Right/Bottom) -->
+<section class="col-span-12 lg:col-span-5 space-y-stack-default">
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-loose h-full flex flex-col">
+<div class="flex items-center space-x-3 mb-stack-loose">
+<span class="material-symbols-outlined p-2 bg-tertiary-fixed text-tertiary rounded">newspaper</span>
+<h3 class="font-headline-sm text-headline-sm">Content Creator</h3>
+</div>
+<div class="space-y-4 flex-1">
+<div>
+<label class="text-label-sm block mb-1 text-on-surface-variant">Article Headline</label>
+<input class="w-full border border-outline-variant p-2 font-headline-sm text-primary focus:ring-0 focus:border-primary outline-none" type="text" value="New Community Wellness Center Opens Next Month"/>
+</div>
+<!-- Rich Text Editor Placeholder -->
+<div class="border border-outline-variant flex flex-col flex-1 min-h-[300px]">
+<div class="bg-surface-container-high border-b border-outline-variant p-2 flex flex-wrap gap-2">
+<button class="material-symbols-outlined p-1 hover:bg-surface-container-highest rounded text-body-lg">format_bold</button>
+<button class="material-symbols-outlined p-1 hover:bg-surface-container-highest rounded text-body-lg">format_italic</button>
+<button class="material-symbols-outlined p-1 hover:bg-surface-container-highest rounded text-body-lg">format_underlined</button>
+<div class="w-px h-6 bg-outline-variant mx-1"></div>
+<button class="material-symbols-outlined p-1 hover:bg-surface-container-highest rounded text-body-lg">format_list_bulleted</button>
+<button class="material-symbols-outlined p-1 hover:bg-surface-container-highest rounded text-body-lg">format_quote</button>
+<button class="material-symbols-outlined p-1 hover:bg-surface-container-highest rounded text-body-lg">link</button>
+<button class="material-symbols-outlined p-1 hover:bg-surface-container-highest rounded text-body-lg ml-auto">image</button>
+</div>
+<div class="p-4 editor-preview text-body-md overflow-y-auto max-h-64 flex-1">
+<p class="mb-4">Today, the Civic Administration is proud to announce the finalized timeline for the <strong>Metropolitan Wellness Center</strong>. Located at the intersection of 5th and Main, this facility represents a $12M investment in local health infrastructure.</p>
+<blockquote class="mb-4">"This isn't just a building; it's the heart of our community's future health strategy." — Director Jane Doe</blockquote>
+<p>Scheduled to open on October 15th, the center will offer:</p>
+<ul class="list-disc ml-6 mb-4">
+<li>Free preventive screening clinics</li>
+<li>Modern hydrotherapy pool</li>
+<li>Childcare services for visiting families</li>
+</ul>
+<p class="text-outline italic">Type more content here...</p>
+</div>
+</div>
+<div class="flex items-center justify-between pt-4">
+<div class="flex space-x-2">
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant font-label-sm text-[10px] rounded-full">#Health</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant font-label-sm text-[10px] rounded-full">#Community</span>
+</div>
+<div class="flex space-x-3">
+<button class="text-primary font-label-md hover:underline">SAVE DRAFT</button>
+<button class="bg-primary text-on-primary px-6 py-2 font-label-md text-label-md hover:opacity-90 transition-opacity">PUBLISH NOW</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Bar / Lower Bento -->
+<div class="col-span-12 grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">TOTAL INITIATIVES</p>
+<h4 class="font-display-sm text-display-sm text-primary">24</h4>
+</div>
+<span class="material-symbols-outlined text-secondary text-4xl opacity-20">inventory</span>
+</div>
+<div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">ACTIVE READERS</p>
+<h4 class="font-display-sm text-display-sm text-primary">12.8k</h4>
+</div>
+<span class="material-symbols-outlined text-secondary text-4xl opacity-20">group</span>
+</div>
+<div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">CONTENT REACH</p>
+<h4 class="font-display-sm text-display-sm text-primary">+18%</h4>
+</div>
+<span class="material-symbols-outlined text-secondary text-4xl opacity-20">trending_up</span>
+</div>
+<div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">PENDING REVIEWS</p>
+<h4 class="font-display-sm text-display-sm text-error">3</h4>
+</div>
+<span class="material-symbols-outlined text-error text-4xl opacity-20">pending_actions</span>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Micro-interaction for Table Rows
+        document.querySelectorAll('tr').forEach(row => {
+            row.addEventListener('mouseenter', () => {
+                row.style.cursor = 'pointer';
+            });
+        });
+
+        // Simple Tab behavior simulation (can be expanded)
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'scale(0.98)';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

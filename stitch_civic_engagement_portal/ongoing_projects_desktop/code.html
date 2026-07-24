@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects | Vanguard Party</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#d3e4ff",
+                    "inverse-primary": "#adc7f7",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-fixed-variant": "#004881",
+                    "background": "#f7fafc",
+                    "surface": "#f7fafc",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#86a0cd",
+                    "surface-tint": "#455f88",
+                    "primary": "#002045",
+                    "surface-container": "#ebeef0",
+                    "surface-container-highest": "#e0e3e5",
+                    "outline-variant": "#c4c6cf",
+                    "primary-fixed-dim": "#adc7f7",
+                    "tertiary-fixed-dim": "#a2c9ff",
+                    "on-secondary-container": "#600008",
+                    "on-secondary-fixed": "#410003",
+                    "on-primary-fixed": "#001b3c",
+                    "tertiary": "#002141",
+                    "inverse-on-surface": "#eef1f3",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#ff5a55",
+                    "on-surface-variant": "#43474e",
+                    "inverse-surface": "#2d3133",
+                    "surface-dim": "#d7dadc",
+                    "primary-fixed": "#d6e3ff",
+                    "on-tertiary-fixed": "#001c38",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#920212",
+                    "on-surface": "#181c1e",
+                    "on-tertiary-container": "#68a2e9",
+                    "surface-container-high": "#e5e9eb",
+                    "tertiary-container": "#003765",
+                    "surface-bright": "#f7fafc",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#ffb3ad",
+                    "on-background": "#181c1e",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#ffdad6",
+                    "primary-container": "#1a365d",
+                    "secondary": "#b52426",
+                    "outline": "#74777f",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f1f4f6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "stack-md": "16px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "stack-sm": "8px",
+                    "stack-lg": "32px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 shadow-sm bg-surface">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="font-display-lg text-display-lg font-bold text-primary">Vanguard Party</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Causes</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-bold font-label-md text-label-md" href="#">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">News</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">About Us</a>
+<button class="bg-secondary text-on-primary px-6 py-2 rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all">Donate Now</button>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-32 pb-stack-lg">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<!-- Hero Header for Projects -->
+<section class="mb-stack-lg">
+<h1 class="font-display-lg text-display-lg text-primary mb-4">Civic Unity Projects</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Our commitment to progress is built on transparency and measurable results. Explore our active initiatives designed to build a stronger, more unified future.
+                </p>
+</section>
+<!-- Projects Grid (Asymmetric Layout/Bento Inspired) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main Featured Project: Clean Water Initiative -->
+<div class="md:col-span-8 group cursor-pointer">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full border border-outline-variant/30">
+<div class="relative h-96 w-full">
+<div class="bg-cover bg-center w-full h-full transform group-hover:scale-105 transition-transform duration-500" data-alt="A cinematic, high-resolution shot of a modern, solar-powered water filtration system in a sun-drenched rural landscape. The image is captured with professional clarity, featuring a clean and corporate aesthetic with deep blues and crisp whites. Soft morning light creates a hopeful atmosphere, emphasizing civic progress and technological reliability." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLgpwmeB6wI9hWcV6RPAA2BIzG5z86h-CSnaurWQ1IVCDtIFkkw6T48X7Sb1WstoT8SK5K_IIDbn6SlMIsZKrJgNMdH_dmP86lugPADiKPKqSlViQ5fRRHOlWl5e6js_DYe0iTlmDUYhUdOd6OCaLcUK-SiFET2Nz0RlxcCAV0XmFLOFhhOpx-AQxUggKegcrhYlB08JEktz250fwMulr6ZhfohYqQibWOmAevkNS3CN3q1g09kd93')"></div>
+<div class="absolute top-4 left-4">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-label-md font-label-md uppercase">Critical Priority</span>
+</div>
+</div>
+<div class="p-stack-lg flex-grow">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Clean Water Initiative</h2>
+<p class="text-on-surface-variant mb-6 font-body-md line-clamp-2">Providing sustainable, long-term access to clean drinking water for underserved rural communities through advanced filtration technology and localized infrastructure development.</p>
+<div class="space-y-2 mb-8">
+<div class="flex justify-between text-label-md font-label-md text-on-surface">
+<span>Fundraising Progress</span>
+<span>75% Complete</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2.5 overflow-hidden">
+<div class="bg-secondary h-full transition-all duration-1000 ease-out" style="width: 75%"></div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-primary text-white flex items-center justify-center text-xs font-bold">V</div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-secondary text-white flex items-center justify-center text-xs font-bold">P</div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-surface-container-highest text-on-surface-variant flex items-center justify-center text-xs font-bold">+12</div>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
+                                    View Details <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Project 1: Youth Education Program -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full border border-outline-variant/30">
+<div class="relative h-64 w-full">
+<div class="bg-cover bg-center w-full h-full transform group-hover:scale-105 transition-transform duration-500" data-alt="A modern classroom environment showing young, diverse students engaged with high-tech learning tablets and collaborative workstations. The lighting is bright and natural, coming from large windows. The interior design is minimalist and professional, featuring the primary party colors of red and deep blue as subtle accents in the decor." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCBdKN3-STI6YULPDHn1apnK0rDiMZYeUBF_1CZGYqPaClLxQhuVU3jiW3pJgIMaTix7IvlshQGAe7lnMpBiNgWXyrRHmJ3ExYpXr8N3Wn8-A0fDV41mJ6Q1JST5wWQ16PY2nlZRAAFXNFemfd3lVGyMiB8INsuKnbIv2urea_Bx50jZjjrWwlAn-zYdlcYAEmwz7x3tu4-K9KPFtwkh2V8poQInpFbgOt7_YMUnQbyMcKEPe01X-Uj')"></div>
+</div>
+<div class="p-stack-md flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Youth Education Program</h3>
+<p class="text-on-surface-variant mb-6 text-sm line-clamp-2">Equipping the next generation with digital literacy and vocational skills essential for the modern global economy.</p>
+<div class="space-y-2 mb-6 mt-auto">
+<div class="flex justify-between text-xs font-label-md text-on-surface">
+<span>Implementation</span>
+<span>45% Complete</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full transition-all duration-1000 ease-out" style="width: 45%"></div>
+</div>
+</div>
+<button class="w-full border-2 border-primary text-primary px-4 py-2 rounded-lg font-bold hover:bg-primary hover:text-on-primary transition-colors text-sm">
+                                View Details
+                            </button>
+</div>
+</div>
+</div>
+<!-- Side Project 2: Rural Infrastructure -->
+<div class="md:col-span-4 group cursor-pointer">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full border border-outline-variant/30">
+<div class="relative h-64 w-full">
+<div class="bg-cover bg-center w-full h-full transform group-hover:scale-105 transition-transform duration-500" data-alt="A wide-angle landscape shot of a newly constructed modern bridge connecting two rural towns. The bridge design is sleek and contemporary, made of steel and concrete, set against a backdrop of rolling green hills. The image uses a cool color palette of deep blues and grays, with a bright clear sky, conveying stability and civic duty." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC-YXCTWuz9B32mZcYDHe4aeoT6v5UoP-dk2_CrSXIhY1k6st1DlhVfJU4zTF1HQnwNE2XO8gXWMf4kC4ogKXptKm-jgW6pBihFX-aOTQ2yGHsuaykHcnLrkYKzQ8EnltAKcTW9I0k9IxVCBlMvqsBiU-8MUsaqLVXhvTZLVcwDZOLipp3dcixyTbRDs-9k4LJEiHOJ9O8TDCAtGG_12hDXaPEC58HruOHXcKZw4iIAuDxmGnTtZrbO')"></div>
+</div>
+<div class="p-stack-md flex-grow flex flex-col">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Rural Infrastructure</h3>
+<p class="text-on-surface-variant mb-6 text-sm line-clamp-2">Expanding transport links and digital connectivity to bridge the gap between rural production and urban markets.</p>
+<div class="space-y-2 mb-6 mt-auto">
+<div class="flex justify-between text-xs font-label-md text-on-surface">
+<span>Development</span>
+<span>90% Complete</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-secondary h-full transition-all duration-1000 ease-out" style="width: 90%"></div>
+</div>
+</div>
+<button class="w-full border-2 border-primary text-primary px-4 py-2 rounded-lg font-bold hover:bg-primary hover:text-on-primary transition-colors text-sm">
+                                View Details
+                            </button>
+</div>
+</div>
+</div>
+<!-- Info Card (Bento Style) -->
+<div class="md:col-span-8 glass-card rounded-xl p-stack-lg border border-primary/10 flex flex-col justify-center relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[240px]">shield</span>
+</div>
+<div class="relative z-10">
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Transparency &amp; Accountability</h4>
+<p class="text-on-surface-variant font-body-md max-w-xl mb-6">
+                            Every project is audited by third-party observers. We believe in showing our supporters exactly how their contributions are being used to transform our nation's landscape.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full text-sm font-label-md text-primary">
+<span class="material-symbols-outlined text-sm">verified</span> Verified Audit 2024
+                            </div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full text-sm font-label-md text-primary">
+<span class="material-symbols-outlined text-sm">group</span> 4,500+ Local Partners
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary w-full mt-stack-lg border-t border-outline-variant">
+<div class="w-full px-margin-desktop py-stack-lg max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="md:col-span-2">
+<div class="font-headline-md text-headline-md text-on-primary mb-4">Vanguard Party</div>
+<p class="text-on-primary/80 font-body-md max-w-sm mb-6">
+                    A unified vision for a stronger nation. Leading with transparency, integrity, and a commitment to every citizen.
+                </p>
+<p class="font-label-md text-label-md text-on-primary/60">
+                    © 2024 Vanguard Party. Authorized by the Electoral Commission.
+                </p>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-on-primary uppercase mb-4 tracking-wider">Navigation</h5>
+<ul class="space-y-2">
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors hover:underline decoration-secondary-container" href="#">Causes</a></li>
+<li><a class="text-secondary-fixed font-bold underline" href="#">Projects</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors hover:underline decoration-secondary-container" href="#">News</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors hover:underline decoration-secondary-container" href="#">About Us</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-on-primary uppercase mb-4 tracking-wider">Resources</h5>
+<ul class="space-y-2">
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors hover:underline decoration-secondary-container" href="#">Privacy Policy</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors hover:underline decoration-secondary-container" href="#">Terms of Service</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors hover:underline decoration-secondary-container" href="#">Contact Support</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors hover:underline decoration-secondary-container" href="#">Volunteer Portal</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script>
+        // Simple intersection observer for progress bar animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target;
+                    const width = progressBar.getAttribute('style').match(/width: (\d+)%/)[1];
+                    progressBar.style.width = '0%';
+                    setTimeout(() => {
+                        progressBar.style.width = width + '%';
+                    }, 100);
+                    observer.unobserve(progressBar);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.bg-secondary, .bg-primary').forEach(bar => {
+            if(bar.classList.contains('h-full')) {
+                observer.observe(bar);
+            }
+        });
+    </script>
+</body></html>

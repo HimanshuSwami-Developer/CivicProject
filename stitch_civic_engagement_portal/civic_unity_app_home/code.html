@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Civic Unity | CivicAction</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#d3e4ff",
+                    "inverse-primary": "#adc7f7",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-fixed-variant": "#004881",
+                    "background": "#f7fafc",
+                    "surface": "#f7fafc",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#86a0cd",
+                    "surface-tint": "#455f88",
+                    "primary": "#002045",
+                    "surface-container": "#ebeef0",
+                    "surface-container-highest": "#e0e3e5",
+                    "outline-variant": "#c4c6cf",
+                    "primary-fixed-dim": "#adc7f7",
+                    "tertiary-fixed-dim": "#a2c9ff",
+                    "on-secondary-container": "#600008",
+                    "on-secondary-fixed": "#410003",
+                    "on-primary-fixed": "#001b3c",
+                    "tertiary": "#002141",
+                    "inverse-on-surface": "#eef1f3",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#ff5a55",
+                    "on-surface-variant": "#43474e",
+                    "inverse-surface": "#2d3133",
+                    "surface-dim": "#d7dadc",
+                    "primary-fixed": "#d6e3ff",
+                    "on-tertiary-fixed": "#001c38",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#920212",
+                    "on-surface": "#181c1e",
+                    "on-tertiary-container": "#68a2e9",
+                    "surface-container-high": "#e5e9eb",
+                    "tertiary-container": "#003765",
+                    "surface-bright": "#f7fafc",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#ffb3ad",
+                    "on-background": "#181c1e",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#ffdad6",
+                    "primary-container": "#1a365d",
+                    "secondary": "#b52426",
+                    "outline": "#74777f",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f1f4f6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "stack-md": "16px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "stack-sm": "8px",
+                    "stack-lg": "32px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+        }
+        .sticky-action {
+            animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface dark:bg-on-background shadow-sm dark:shadow-none flex justify-between items-center h-16 px-margin-mobile w-full">
+<button class="w-10 h-10 flex items-center justify-center rounded-full transition-colors duration-200 hover:bg-surface-container-high dark:hover:bg-surface-variant">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary dark:text-primary-fixed-dim">CivicAction</h1>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a friendly diverse community leader, looking directly at the camera with a warm, confident expression. The lighting is soft and natural, emphasizing a light-mode corporate aesthetic. The background is a clean, out-of-focus office space with hints of primary blue and white, maintaining a modern and trustworthy visual tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQrcAKhvmdOE0fQvhQkKgamyZDaPeiEhhRT6mizRLCol1mTRYfbKsseesiY_-VMb6GbHfnnOmbcFsBntVHpDdJXQ4zuFGwwahZV02l0lpDnOlFhx15F75JQRL3W3FDqTiXsq622BnUOrpp7NnmqcrD8IS2SYt9evH4ysrKeopYi8xOdiBHVicsT0U49s0J33hBlCyh_PoxuHr3L2gLpjR_5579sHtJ5NC8vPMaQCCL3APBrQlyhopM"/>
+</div>
+</header>
+<main class="pt-16 pb-32">
+<!-- Hero Section -->
+<section class="relative h-[751px] w-full flex items-end overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="A cinematic wide shot of a diverse crowd of people standing together in a sun-drenched town square, looking towards a bright future. The scene is bathed in golden hour lighting, creating long shadows and a warm, patriotic atmosphere. The color palette is dominated by deep blues and clean whites, with subtle red accents in the clothing, embodying strength, unity, and forward-thinking leadership in a contemporary style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjcMywu4PbE5r-S77daWkjm1nkmhD6yMbYuELWTT_gmeDzOau0zcq0OV5Sx1oARUpaOOcrux2crfKudPDHHc_aTEzQEHBqAVLs20r18ibxh1a8jJlZDrCo16_5_UjVfrASVoC3mlWR6GNoayjVDi9rK87Jz2KJwObySmly1_tguNXu6Z5oD-5fOqbL-Vv3UJL8wBRuJhI_CH1-L9gU7hKUxU9qBOHY5faRSwzwf301zxnFzFn2M7p6"/>
+</div>
+<div class="relative z-20 px-margin-mobile pb-12 w-full">
+<span class="inline-block px-3 py-1 bg-secondary text-on-secondary rounded-full font-label-md text-label-md mb-4 uppercase tracking-widest">Leadership in Action</span>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-white mb-4">Together, We Shape Tomorrow.</h2>
+<p class="text-white/90 font-body-lg text-body-lg mb-8 max-w-sm">Join a movement dedicated to transparency, civic duty, and a modern vision for our community.</p>
+<div class="flex flex-col gap-3">
+<button class="bg-secondary text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-opacity-90 active:scale-95 transition-all text-center">
+                        Read Our Manifesto
+                    </button>
+</div>
+</div>
+</section>
+<!-- Our Mission Section -->
+<section class="py-12 px-margin-mobile">
+<div class="mb-8">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2">Our Mission</h3>
+<div class="h-1 w-16 bg-secondary rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<!-- Bento Style Mission Card 1 -->
+<div class="bg-white p-6 rounded-xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow">
+<div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-white">account_balance</span>
+</div>
+<h4 class="font-headline-md text-headline-md-mobile text-primary mb-2">Integrity First</h4>
+<p class="text-on-surface-variant font-body-md text-body-md">Restoring trust through absolute transparency in every legislative action and community project.</p>
+</div>
+<!-- Bento Style Mission Card 2 -->
+<div class="bg-primary text-white p-6 rounded-xl shadow-lg">
+<div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-white">groups</span>
+</div>
+<h4 class="font-headline-md text-headline-md-mobile mb-2">United Communities</h4>
+<p class="text-white/80 font-body-md text-body-md">Bridging divides to create a cohesive social fabric where every voice finds resonance in the halls of power.</p>
+</div>
+</div>
+</section>
+<!-- Featured Projects Section (Asymmetric Layout) -->
+<section class="py-12 bg-surface-container-low">
+<div class="px-margin-mobile mb-8">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2">Featured Projects</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">Tangible impact in our neighborhoods.</p>
+</div>
+<div class="flex flex-col gap-8 px-margin-mobile">
+<!-- Project Card 1 -->
+<div class="flex flex-col rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all group">
+<div class="h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, high-resolution photo of a new solar-powered community center under construction. The architecture is modern and sustainable, with glass and steel elements. Bright morning light illuminates the site, highlighting the clean lines and professional craftsmanship. The image follows a state-modern aesthetic with deep blue shadows and a professional, trustworthy mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSQ_b6K5J1qYu1ErKMoV1AOWy2Bxkhz5kPUeD91MW-o_S99p2DAiaEcdvefxNZQx9Z1VqzxEDy69crl3rKfOPFrsT4I7dIfyDx2GOXu3KagMf_9u5wTTJnNQO0PJwfz3gYOiqozuIZY1Aw8fufx8FjYHbvl3TajgvScsELHogNRwUnBtmoYRa1I1XwWUEW8dEAbtfTdz83j7W7jb-x1RsuSFQ14ZdZQNGFrL1ZSzzS1GDkU-fcomMH"/>
+</div>
+<div class="p-6">
+<div class="flex gap-2 mb-3">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold px-2 py-0.5 rounded uppercase">Energy</span>
+<span class="bg-surface-variant text-on-surface-variant text-[10px] font-bold px-2 py-0.5 rounded uppercase">Active</span>
+</div>
+<h4 class="font-headline-md text-headline-md-mobile text-primary mb-2">The Solar Hub Initiative</h4>
+<p class="text-on-surface-variant font-body-md text-body-md mb-4">Implementing clean energy grids across 50 regional schools by the end of 2024.</p>
+<a class="text-secondary font-bold flex items-center gap-1 group/link" href="#">
+                            Learn more 
+                            <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="flex flex-col rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all group">
+<div class="h-48 w-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An overhead drone shot of a newly revitalized public park featuring vibrant green spaces, clean walking paths, and children playing in a safe, modern playground. The lighting is bright and cheerful, emphasizing community well-being and civic pride. The color palette is clean and natural, with professional-grade saturation that conveys a sense of stability and progress." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0ZzE-LBbsRT9AbgV0H2924jpLNUTa7js2paCj9V5eHXJDCu2wWCQutO86qoQ0EdPv3YjcXY_XosR0W2wDvD61Eqeho21O7bYjbos-7zMoIeZVCSmhYR3r8uV210bIBlofBr8xCbP_aK1f649pT7s1uFnc8-1sAvECbepE9mpAXUPkE1E7AIqv-fSWLnJ-X9jGEgB70XAyGuR9SZVRSQ0NRqNdDSc_dVSX4v2UQIvAasfq-2DFZEZM"/>
+</div>
+<div class="p-6">
+<div class="flex gap-2 mb-3">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold px-2 py-0.5 rounded uppercase">Public Spaces</span>
+<span class="bg-surface-variant text-on-surface-variant text-[10px] font-bold px-2 py-0.5 rounded uppercase">Completed</span>
+</div>
+<h4 class="font-headline-md text-headline-md-mobile text-primary mb-2">Unity Park Revitalization</h4>
+<p class="text-on-surface-variant font-body-md text-body-md mb-4">Transforming abandoned industrial lots into lush, safe urban green zones for families.</p>
+<a class="text-secondary font-bold flex items-center gap-1 group/link" href="#">
+                            Learn more 
+                            <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="py-12 px-margin-mobile">
+<div class="bg-primary text-white rounded-2xl p-8 flex flex-col items-center text-center">
+<div class="grid grid-cols-2 gap-8 w-full">
+<div>
+<div class="text-4xl font-bold mb-1">12K+</div>
+<div class="text-white/60 font-label-md text-label-md uppercase tracking-tighter">Volunteers</div>
+</div>
+<div>
+<div class="text-4xl font-bold mb-1">85%</div>
+<div class="text-white/60 font-label-md text-label-md uppercase tracking-tighter">Impact Rate</div>
+</div>
+<div>
+<div class="text-4xl font-bold mb-1">$4.2M</div>
+<div class="text-white/60 font-label-md text-label-md uppercase tracking-tighter">Raised</div>
+</div>
+<div>
+<div class="text-4xl font-bold mb-1">200+</div>
+<div class="text-white/60 font-label-md text-label-md uppercase tracking-tighter">Town Halls</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Sticky Donate Button -->
+<div class="fixed bottom-24 right-margin-mobile z-40 sticky-action">
+<button class="bg-secondary text-white px-6 py-4 rounded-full shadow-2xl flex items-center gap-3 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<span class="font-bold">Donate Now</span>
+</button>
+</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full h-20 flex justify-around items-center px-4 pb-safe bg-surface-container-lowest dark:bg-inverse-surface shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-50">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-4 py-1 scale-95 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<!-- Donate -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 scale-95 active:scale-90 transition-transform hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl" href="#">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-label-md text-label-md">Donate</span>
+</a>
+<!-- Projects -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 scale-95 active:scale-90 transition-transform hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl" href="#">
+<span class="material-symbols-outlined">account_tree</span>
+<span class="font-label-md text-label-md">Projects</span>
+</a>
+<!-- Action -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 scale-95 active:scale-90 transition-transform hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-label-md text-label-md">Action</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction: Header scroll shadow
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.add('shadow-sm');
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Micro-interaction: Active state simulation for nav
+        const navItems = document.querySelectorAll('nav a');
+        navItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                navItems.forEach(nav => {
+                    nav.className = "flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 scale-95 active:scale-90 transition-transform hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl";
+                    const icon = nav.querySelector('.material-symbols-outlined');
+                    if (icon) icon.style.fontVariationSettings = "'FILL' 0";
+                });
+                item.className = "flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-4 py-1 scale-95 active:scale-90 transition-transform";
+                const activeIcon = item.querySelector('.material-symbols-outlined');
+                if (activeIcon) activeIcon.style.fontVariationSettings = "'FILL' 1";
+            });
+        });
+    </script>
+</body></html>

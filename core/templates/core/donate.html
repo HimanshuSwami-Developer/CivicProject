@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Donation Portal | Vanguard Party</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .donation-card-active {
+            border-color: #002045;
+            background-color: #d6e3ff;
+            transform: translateY(-4px);
+        }
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        .modal-animate {
+            animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-lowest": "#ffffff",
+                      "tertiary-fixed": "#d3e4ff",
+                      "inverse-primary": "#adc7f7",
+                      "surface-variant": "#e0e3e5",
+                      "on-tertiary-fixed-variant": "#004881",
+                      "background": "#f7fafc",
+                      "surface": "#f7fafc",
+                      "error": "#ba1a1a",
+                      "on-primary-container": "#86a0cd",
+                      "surface-tint": "#455f88",
+                      "primary": "#002045",
+                      "surface-container": "#ebeef0",
+                      "surface-container-highest": "#e0e3e5",
+                      "outline-variant": "#c4c6cf",
+                      "primary-fixed-dim": "#adc7f7",
+                      "tertiary-fixed-dim": "#a2c9ff",
+                      "on-secondary-container": "#600008",
+                      "on-secondary-fixed": "#410003",
+                      "on-primary-fixed": "#001b3c",
+                      "tertiary": "#002141",
+                      "inverse-on-surface": "#eef1f3",
+                      "on-primary-fixed-variant": "#2d476f",
+                      "on-primary": "#ffffff",
+                      "secondary-container": "#ff5a55",
+                      "on-surface-variant": "#43474e",
+                      "inverse-surface": "#2d3133",
+                      "surface-dim": "#d7dadc",
+                      "primary-fixed": "#d6e3ff",
+                      "on-tertiary-fixed": "#001c38",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed-variant": "#920212",
+                      "on-surface": "#181c1e",
+                      "on-tertiary-container": "#68a2e9",
+                      "surface-container-high": "#e5e9eb",
+                      "tertiary-container": "#003765",
+                      "surface-bright": "#f7fafc",
+                      "on-tertiary": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "secondary-fixed-dim": "#ffb3ad",
+                      "on-background": "#181c1e",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed": "#ffdad6",
+                      "primary-container": "#1a365d",
+                      "secondary": "#b52426",
+                      "outline": "#74777f",
+                      "on-error-container": "#93000a",
+                      "surface-container-low": "#f1f4f6"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-mobile": "16px",
+                      "stack-md": "16px",
+                      "container-max": "1280px",
+                      "base": "8px",
+                      "stack-sm": "8px",
+                      "stack-lg": "32px",
+                      "margin-desktop": "40px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "display-lg": ["Montserrat"],
+                      "body-md": ["Inter"],
+                      "headline-lg-mobile": ["Montserrat"],
+                      "display-lg-mobile": ["Montserrat"],
+                      "headline-md": ["Montserrat"],
+                      "headline-lg": ["Montserrat"],
+                      "label-md": ["Inter"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface shadow-sm h-20">
+<nav class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+<a class="font-display-lg text-display-lg font-bold text-primary" href="/">Vanguard Party</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="/">Causes</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="/projects/">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="/#news">News</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="/feedback/">Voice &amp; Feedback</a>
+<a class="bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-label-md text-label-md hover:opacity-90 active:scale-95 transition-all" href="/donate/">Donate Now</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main class="pt-32 pb-stack-lg min-h-screen">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<!-- Hero Section -->
+<section class="mb-stack-lg text-center max-w-3xl mx-auto">
+<h1 class="font-display-lg text-display-lg text-primary mb-4">Empowering Change Through Unity</h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">Your contributions drive our local initiatives. Select a cause that resonates with you and help us build a better future together.</p>
+</section>
+<!-- Causes Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-stack-lg" id="causes-grid">
+<!-- Cause cards rendered by jQuery from /api/causes/ -->
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary mt-stack-lg border-t border-outline-variant">
+<div class="w-full px-margin-desktop py-stack-lg max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md text-on-primary mb-4">Vanguard Party</div>
+<p class="text-on-primary/80 font-body-md text-body-md">Building a stable, forward-thinking future for every citizen.</p>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-secondary-fixed">Quick Links</h4>
+<ul class="space-y-2">
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Contact Support</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Volunteer Portal</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4 text-secondary-fixed">Connect</h4>
+<div class="flex gap-4">
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed">share</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed">public</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-secondary-fixed">mail</span>
+</div>
+</div>
+<div>
+<p class="text-body-md text-on-primary/60">© 2024 Vanguard Party. Authorized by the Electoral Commission.</p>
+</div>
+</div>
+</footer>
+<!-- Donation Modal (Razorpay Style) -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4" id="donationModal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-black/50 backdrop-blur-sm" onclick="closeDonationModal()"></div>
+<!-- Modal Content -->
+<div class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden modal-animate flex flex-col">
+<!-- Modal Header -->
+<div class="bg-primary p-6 text-white">
+<div class="flex justify-between items-start mb-4">
+<div class="font-bold text-lg tracking-tight">Vanguard Party</div>
+<button class="text-white/60 hover:text-white" onclick="closeDonationModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" id="modalIcon">volunteer_activism</span>
+</div>
+<div>
+<h4 class="font-bold text-xl" id="modalCauseTitle">Cause Name</h4>
+<p class="text-sm text-white/70">Proceed to secure payment</p>
+</div>
+</div>
+</div>
+<!-- Modal Body -->
+<div class="p-6 space-y-6 bg-surface-container-lowest">
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-3">Select Amount</label>
+<div class="grid grid-cols-3 gap-3">
+<button class="amount-btn border-2 border-outline-variant p-3 rounded-lg font-bold text-on-surface-variant hover:border-primary transition-all" onclick="selectAmount(10, this)" type="button">$10</button>
+<button class="amount-btn border-2 border-outline-variant p-3 rounded-lg font-bold text-on-surface-variant hover:border-primary transition-all" onclick="selectAmount(50, this)" type="button">$50</button>
+<button class="amount-btn border-2 border-outline-variant p-3 rounded-lg font-bold text-on-surface-variant hover:border-primary transition-all" onclick="selectAmount(100, this)" type="button">$100</button>
+</div>
+</div>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold">$</span>
+<input class="w-full pl-8 pr-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="customAmount" placeholder="Custom Amount" type="number"/>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant bg-white cursor-pointer hover:border-primary transition-all payment-method-option" data-method="card">
+<span class="material-symbols-outlined text-primary">credit_card</span>
+<div class="flex-1">
+<p class="text-sm font-bold">Cards (Credit/Debit)</p>
+<p class="text-xs text-on-surface-variant">Visa, Mastercard, RuPay</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+<div class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant bg-white cursor-pointer hover:border-primary transition-all payment-method-option" data-method="upi">
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
+<div class="flex-1">
+<p class="text-sm font-bold">UPI / Net Banking</p>
+<p class="text-xs text-on-surface-variant">Google Pay, PhonePe, Banks</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-6 border-t border-outline-variant bg-white">
+<button class="w-full bg-secondary text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-lg" id="payBtn">
+                    Pay <span id="displayAmount">$0</span> Securely
+                    <span class="material-symbols-outlined">lock</span>
+</button>
+<p class="text-center text-[10px] text-on-surface-variant mt-4 uppercase tracking-widest font-bold">
+                    Powered by Vanguard Secure Payments
+                </p>
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/static/core/js/csrf.js"></script>
+<script>
+        let causesById = {};
+        let selectedCauseId = null;
+        let selectedAmount = 0;
+        let selectedMethod = 'card';
+
+        function largeCauseCard(c) {
+            return `
+                <div class="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm border border-outline-variant hover:shadow-md transition-all cursor-pointer" onclick="openDonationModal(${c.id})">
+                    <div class="h-80 w-full relative overflow-hidden">
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('${c.image_url}')"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <span class="bg-secondary px-3 py-1 rounded-full text-xs font-bold mb-2 inline-block">Active Mission</span>
+                            <h3 class="text-headline-lg font-headline-lg">${c.name}</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-on-surface-variant mb-4">${c.description}</p>
+                        <div class="flex items-center justify-between">
+                            <div class="w-2/3 bg-surface-container rounded-full h-2">
+                                <div class="bg-secondary h-2 rounded-full" style="width: ${c.percent_funded}%"></div>
+                            </div>
+                            <span class="text-label-md font-label-md text-primary">${c.percent_funded}% of $${Math.round(c.goal_amount / 1000)}k Goal</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function smallCauseCard(c) {
+            return `
+                <div class="md:col-span-4 group relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm border border-outline-variant hover:shadow-md transition-all cursor-pointer" onclick="openDonationModal(${c.id})">
+                    <div class="h-80 w-full relative">
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('${c.image_url}')"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <h3 class="text-headline-md font-headline-md">${c.name}</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-on-surface-variant mb-6">${c.description}</p>
+                        <button class="w-full border-2 border-primary text-primary font-bold py-3 rounded-lg hover:bg-primary hover:text-white transition-colors" onclick="event.stopPropagation(); openDonationModal(${c.id})" type="button">Support Now</button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function generalFundCard(c) {
+            return `
+                <div class="md:col-span-12 group relative rounded-xl bg-primary p-8 text-on-primary flex flex-col md:flex-row items-center justify-between gap-8 cursor-pointer" onclick="openDonationModal(${c.id})">
+                    <div class="max-w-2xl">
+                        <h3 class="text-headline-lg font-headline-lg mb-2">${c.name}</h3>
+                        <p class="text-white/80 text-body-lg">${c.description}</p>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <div class="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/20">
+                            <div class="flex items-center gap-4 mb-4">
+                                <span class="material-symbols-outlined text-4xl text-secondary-container">account_balance</span>
+                                <div>
+                                    <p class="text-xs uppercase tracking-widest text-white/60">Transparency Rating</p>
+                                    <p class="text-xl font-bold">100% Verified</p>
+                                </div>
+                            </div>
+                            <button class="bg-secondary-container text-on-secondary-container w-full py-4 px-8 rounded-lg font-bold hover:scale-105 transition-transform" onclick="event.stopPropagation(); openDonationModal(${c.id})" type="button">Contribute Globally</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function openDonationModal(causeId) {
+            const c = causesById[causeId];
+            selectedCauseId = causeId;
+            $('#modalCauseTitle').text(c.name);
+            $('#modalIcon').text(c.icon || 'volunteer_activism');
+            $('#donationModal').removeClass('hidden').addClass('flex');
+            $('body').css('overflow', 'hidden');
+        }
+
+        function closeDonationModal() {
+            $('#donationModal').addClass('hidden').removeClass('flex');
+            $('body').css('overflow', 'auto');
+        }
+
+        function selectAmount(value, el) {
+            $('.amount-btn').removeClass('border-primary bg-primary-fixed text-primary').addClass('border-outline-variant text-on-surface-variant');
+            $(el).addClass('border-primary bg-primary-fixed text-primary').removeClass('border-outline-variant text-on-surface-variant');
+            selectedAmount = value;
+            $('#customAmount').val(value);
+            $('#displayAmount').text('$' + value);
+        }
+
+        $(function () {
+            $.get('/api/causes/', function (data) {
+                const grid = $('#causes-grid');
+                grid.empty();
+                data.results.forEach((c, i) => {
+                    causesById[c.id] = c;
+                    if (c.name === 'General Fund') {
+                        grid.append(generalFundCard(c));
+                    } else if (i === 0) {
+                        grid.append(largeCauseCard(c));
+                    } else {
+                        grid.append(smallCauseCard(c));
+                    }
+                });
+            });
+
+            $('#customAmount').on('input', function () {
+                const val = $(this).val() || 0;
+                selectedAmount = val;
+                $('#displayAmount').text('$' + val);
+                $('.amount-btn').removeClass('border-primary bg-primary-fixed text-primary').addClass('border-outline-variant text-on-surface-variant');
+            });
+
+            $('.payment-method-option').on('click', function () {
+                $('.payment-method-option').removeClass('border-primary').addClass('border-outline-variant');
+                $(this).addClass('border-primary').removeClass('border-outline-variant');
+                selectedMethod = $(this).data('method');
+            });
+
+            $('#payBtn').on('click', function () {
+                if (!selectedAmount || selectedAmount <= 0) {
+                    alert('Please select or enter a donation amount.');
+                    return;
+                }
+                const btn = $(this);
+                const originalHtml = btn.html();
+                btn.prop('disabled', true).html('Processing...');
+                $.ajax({
+                    url: '/api/donations/',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        amount: selectedAmount,
+                        cause_id: selectedCauseId,
+                        payment_method: selectedMethod
+                    }),
+                    success: function () {
+                        btn.html('Thank You! <span class="material-symbols-outlined">check_circle</span>');
+                        setTimeout(() => {
+                            closeDonationModal();
+                            btn.prop('disabled', false).html(originalHtml);
+                        }, 1500);
+                    },
+                    error: function () {
+                        btn.prop('disabled', false).html(originalHtml);
+                        alert('Something went wrong processing your donation. Please try again.');
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>

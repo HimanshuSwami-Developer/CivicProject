@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects | Vanguard Party</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#d3e4ff",
+                    "inverse-primary": "#adc7f7",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-fixed-variant": "#004881",
+                    "background": "#f7fafc",
+                    "surface": "#f7fafc",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#86a0cd",
+                    "surface-tint": "#455f88",
+                    "primary": "#002045",
+                    "surface-container": "#ebeef0",
+                    "surface-container-highest": "#e0e3e5",
+                    "outline-variant": "#c4c6cf",
+                    "primary-fixed-dim": "#adc7f7",
+                    "tertiary-fixed-dim": "#a2c9ff",
+                    "on-secondary-container": "#600008",
+                    "on-secondary-fixed": "#410003",
+                    "on-primary-fixed": "#001b3c",
+                    "tertiary": "#002141",
+                    "inverse-on-surface": "#eef1f3",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#ff5a55",
+                    "on-surface-variant": "#43474e",
+                    "inverse-surface": "#2d3133",
+                    "surface-dim": "#d7dadc",
+                    "primary-fixed": "#d6e3ff",
+                    "on-tertiary-fixed": "#001c38",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#920212",
+                    "on-surface": "#181c1e",
+                    "on-tertiary-container": "#68a2e9",
+                    "surface-container-high": "#e5e9eb",
+                    "tertiary-container": "#003765",
+                    "surface-bright": "#f7fafc",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#ffb3ad",
+                    "on-background": "#181c1e",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#ffdad6",
+                    "primary-container": "#1a365d",
+                    "secondary": "#b52426",
+                    "outline": "#74777f",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f1f4f6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "stack-md": "16px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "stack-sm": "8px",
+                    "stack-lg": "32px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 shadow-sm bg-surface">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<a class="font-display-lg text-display-lg font-bold text-primary" href="/">Vanguard Party</a>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="/">Causes</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-bold font-label-md text-label-md" href="/projects/">Projects</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="/#news">News</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="/feedback/">Voice &amp; Feedback</a>
+<a class="bg-secondary text-on-primary px-6 py-2 rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all" href="/donate/">Donate Now</a>
+</nav>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-32 pb-stack-lg">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<!-- Hero Header for Projects -->
+<section class="mb-stack-lg">
+<h1 class="font-display-lg text-display-lg text-primary mb-4">Civic Unity Projects</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Our commitment to progress is built on transparency and measurable results. Explore our active initiatives designed to build a stronger, more unified future.
+                </p>
+</section>
+<!-- Projects Grid (Asymmetric Layout/Bento Inspired) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter" id="projects-grid">
+<!-- Project cards rendered by jQuery from /api/projects/ -->
+</div>
+<!-- Info Card (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mt-gutter">
+<div class="md:col-span-8 glass-card rounded-xl p-stack-lg border border-primary/10 flex flex-col justify-center relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 opacity-5 pointer-events-none">
+<span class="material-symbols-outlined text-[240px]">shield</span>
+</div>
+<div class="relative z-10">
+<h4 class="font-headline-md text-headline-md text-primary mb-2">Transparency &amp; Accountability</h4>
+<p class="text-on-surface-variant font-body-md max-w-xl mb-6">
+                            Every project is audited by third-party observers. We believe in showing our supporters exactly how their contributions are being used to transform our nation's landscape.
+                        </p>
+<div class="flex flex-wrap gap-4">
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full text-sm font-label-md text-primary">
+<span class="material-symbols-outlined text-sm">verified</span> Verified Audit 2024
+                            </div>
+<div class="flex items-center gap-2 px-4 py-2 bg-surface-container-high rounded-full text-sm font-label-md text-primary">
+<span class="material-symbols-outlined text-sm">group</span> 4,500+ Local Partners
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-on-primary w-full mt-stack-lg border-t border-outline-variant">
+<div class="w-full px-margin-desktop py-stack-lg max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="md:col-span-2">
+<div class="font-headline-md text-headline-md text-on-primary mb-4">Vanguard Party</div>
+<p class="text-on-primary/80 font-body-md max-w-sm mb-6">
+                    A unified vision for a stronger nation. Leading with transparency, integrity, and a commitment to every citizen.
+                </p>
+<p class="font-label-md text-label-md text-on-primary/60">
+                    © 2024 Vanguard Party. Authorized by the Electoral Commission.
+                </p>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-on-primary uppercase mb-4 tracking-wider">Navigation</h5>
+<ul class="space-y-2">
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors hover:underline decoration-secondary-container" href="/">Causes</a></li>
+<li><a class="text-secondary-fixed font-bold underline" href="/projects/">Projects</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors hover:underline decoration-secondary-container" href="/#news">News</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors hover:underline decoration-secondary-container" href="/feedback/">Voice &amp; Feedback</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-md text-label-md text-on-primary uppercase mb-4 tracking-wider">Resources</h5>
+<ul class="space-y-2">
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors hover:underline decoration-secondary-container" href="#">Privacy Policy</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors hover:underline decoration-secondary-container" href="#">Terms of Service</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors hover:underline decoration-secondary-container" href="/feedback/">Contact Support</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors hover:underline decoration-secondary-container" href="/feedback/">Volunteer Portal</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/static/core/js/csrf.js"></script>
+<script>
+        function progressBarColor(status) {
+            return status === 'at_risk' ? 'bg-amber-500' : 'bg-secondary';
+        }
+
+        function largeCard(p) {
+            return `
+                <div class="md:col-span-8 group cursor-pointer">
+                    <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full border border-outline-variant/30">
+                        <div class="relative h-96 w-full">
+                            <div class="bg-cover bg-center w-full h-full transform group-hover:scale-105 transition-transform duration-500" style="background-image: url('${p.image_url}')"></div>
+                            ${p.priority ? `<div class="absolute top-4 left-4"><span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-label-md font-label-md uppercase">${p.priority}</span></div>` : ''}
+                        </div>
+                        <div class="p-stack-lg flex-grow">
+                            <h2 class="font-headline-lg text-headline-lg text-primary mb-4">${p.title}</h2>
+                            <p class="text-on-surface-variant mb-6 font-body-md line-clamp-2">${p.description}</p>
+                            <div class="space-y-2 mb-8">
+                                <div class="flex justify-between text-label-md font-label-md text-on-surface">
+                                    <span>Fundraising Progress</span>
+                                    <span>${p.progress_percent}% Complete</span>
+                                </div>
+                                <div class="w-full bg-surface-container-highest rounded-full h-2.5 overflow-hidden">
+                                    <div class="${progressBarColor(p.status)} h-full transition-all duration-1000 ease-out" style="width: ${p.progress_percent}%"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between mt-auto">
+                                <span class="text-label-md font-label-md text-on-surface-variant uppercase">${p.category}</span>
+                                <a class="flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all" href="/donate/">
+                                    View Details <span class="material-symbols-outlined">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function smallCard(p) {
+            return `
+                <div class="md:col-span-4 group cursor-pointer">
+                    <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full border border-outline-variant/30">
+                        <div class="relative h-64 w-full">
+                            <div class="bg-cover bg-center w-full h-full transform group-hover:scale-105 transition-transform duration-500" style="background-image: url('${p.image_url}')"></div>
+                        </div>
+                        <div class="p-stack-md flex-grow flex flex-col">
+                            <h3 class="font-headline-md text-headline-md text-primary mb-2">${p.title}</h3>
+                            <p class="text-on-surface-variant mb-6 text-sm line-clamp-2">${p.description}</p>
+                            <div class="space-y-2 mb-6 mt-auto">
+                                <div class="flex justify-between text-xs font-label-md text-on-surface">
+                                    <span>${p.status_label}</span>
+                                    <span>${p.progress_percent}% Complete</span>
+                                </div>
+                                <div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+                                    <div class="${progressBarColor(p.status)} h-full transition-all duration-1000 ease-out" style="width: ${p.progress_percent}%"></div>
+                                </div>
+                            </div>
+                            <a class="w-full border-2 border-primary text-primary px-4 py-2 rounded-lg font-bold hover:bg-primary hover:text-on-primary transition-colors text-sm text-center" href="/donate/">
+                                View Details
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        $(function () {
+            $.get('/api/projects/', function (data) {
+                const grid = $('#projects-grid');
+                grid.empty();
+                data.results.forEach((p, i) => {
+                    grid.append(i === 0 ? largeCard(p) : smallCard(p));
+                });
+            });
+        });
+    </script>
+</body></html>

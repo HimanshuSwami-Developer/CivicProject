@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vanguard Party | A Future Built on Unity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#d3e4ff",
+                    "inverse-primary": "#adc7f7",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-fixed-variant": "#004881",
+                    "background": "#f7fafc",
+                    "surface": "#f7fafc",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#86a0cd",
+                    "surface-tint": "#455f88",
+                    "primary": "#002045",
+                    "surface-container": "#ebeef0",
+                    "surface-container-highest": "#e0e3e5",
+                    "outline-variant": "#c4c6cf",
+                    "primary-fixed-dim": "#adc7f7",
+                    "tertiary-fixed-dim": "#a2c9ff",
+                    "on-secondary-container": "#600008",
+                    "on-secondary-fixed": "#410003",
+                    "on-primary-fixed": "#001b3c",
+                    "tertiary": "#002141",
+                    "inverse-on-surface": "#eef1f3",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#ff5a55",
+                    "on-surface-variant": "#43474e",
+                    "inverse-surface": "#2d3133",
+                    "surface-dim": "#d7dadc",
+                    "primary-fixed": "#d6e3ff",
+                    "on-tertiary-fixed": "#001c38",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#920212",
+                    "on-surface": "#181c1e",
+                    "on-tertiary-container": "#68a2e9",
+                    "surface-container-high": "#e5e9eb",
+                    "tertiary-container": "#003765",
+                    "surface-bright": "#f7fafc",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#ffb3ad",
+                    "on-background": "#181c1e",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#ffdad6",
+                    "primary-container": "#1a365d",
+                    "secondary": "#b52426",
+                    "outline": "#74777f",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f1f4f6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "stack-md": "16px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "stack-sm": "8px",
+                    "stack-lg": "32px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f7fafc;
+            color: #181c1e;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="font-body-md overflow-x-hidden">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed docked full-width top-0 z-50 bg-surface shadow-sm h-20 w-full">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+<a class="font-display-lg text-display-lg font-bold text-primary" href="/">
+                Vanguard Party
+            </a>
+<div class="hidden md:flex items-center space-gap-lg gap-8">
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1 font-bold" href="/">Causes</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="/projects/">Projects</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#news">News</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="/feedback/">Voice &amp; Feedback</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-surface-container rounded-full px-4 py-2">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-32" placeholder="Search..." type="text"/>
+</div>
+<a class="bg-secondary text-on-primary font-label-md text-label-md px-6 py-2.5 rounded-lg active:scale-95 transition-transform hover:shadow-lg" href="/donate/">
+                    Donate Now
+                </a>
+<button class="md:hidden">
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-20 overflow-hidden bg-primary min-h-[921px] flex items-center">
+<!-- Animated Background Integration -->
+
+<div class="relative w-full max-w-container-max mx-auto px-margin-desktop grid grid-cols-1 lg:grid-cols-2 items-center gap-12 z-10 py-20">
+<div class="text-on-primary order-2 lg:order-1">
+<div class="inline-flex items-center bg-secondary-container/20 border border-secondary-container/30 px-3 py-1 rounded-full mb-6">
+<span class="w-2 h-2 bg-secondary rounded-full mr-2 animate-pulse"></span>
+<span class="text-label-md font-label-md text-secondary-container uppercase tracking-widest">Building Tomorrow</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight">
+                    A Future Built on <span class="text-secondary-container">Unity</span>
+</h1>
+<p class="font-body-lg text-body-lg text-white/80 mb-8 max-w-lg">
+                    We stand for a nation where every voice is heard, every community thrives, and our shared values define our path forward. Join the movement for a stronger, united future.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="bg-secondary text-white font-bold text-label-md py-4 px-10 rounded-lg hover:shadow-[0_0_20px_rgba(181,36,38,0.4)] transition-all text-center" href="/feedback/">
+                        Join Us
+                    </a>
+<a class="border-2 border-white/30 hover:border-white text-white font-bold text-label-md py-4 px-10 rounded-lg transition-all text-center" href="/projects/">
+                        Our Vision
+                    </a>
+</div>
+</div>
+<div class="order-1 lg:order-2 flex justify-center lg:justify-end relative">
+<div class="relative w-full max-w-md aspect-square lg:aspect-auto lg:h-[600px] overflow-hidden rounded-2xl shadow-2xl border-4 border-white/10 group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional portrait of a charismatic and visionary political leader standing before a subtle national flag." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAxvVRhR7cvz6W2DSsEttHVFPfgoY9qp4KJVM7sSw3TIwiaEaLIwE7YgbnooK1es-7AcuXvxLXg7DsTWZHQU_qoaWHQAoxGWih0vlvrHRT0KGhwAxpgPajjeZOw9kISVGjUJN3O1c6vLaa9RAtEmoqgcKNv8WLmWk_ODBrhh0F8fi4viSxk4Hiabnwob6KpBWEk9UpHT14G-KoAQeNUUmAv0T6yZkWSt0b-FhvY8k-Fv18AirLEW2P"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<p class="text-white font-bold text-headline-md">Chairman James Sterling</p>
+<p class="text-white/70 text-label-md">Leading with Integrity and Purpose</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Current Priorities (Bento Grid) -->
+<section class="py-stack-lg bg-surface relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Current Priorities</h2>
+<div class="w-20 h-1 bg-secondary rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Priority 1: Large Card -->
+<div class="md:col-span-8 bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="grid grid-cols-1 lg:grid-cols-2">
+<div class="h-64 lg:h-auto overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A futuristic green city skyline with sustainable infrastructure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB47p896xfxgfW_QxA097ajIkExme6NtaoJqnPHSGQOYjO0SigerkOq9KWjX6QXtAvviwNcZtizrDE_9NgfJjNGHAzGpoFKpw_XK1uHbCXpnNQ3xhA3zgczEvEv6VU3MVAbva-QBimwDoi9rf1zc0JwcOhCngBF1pBfYbzpP4GwlVh8zjYv7wdPVXS7VdScGQkctiMKYTbsMvqe-OOYrUrk7piplmvrj2P-0Ykgvb6le4rqkpRd0qW2"/>
+</div>
+<div class="p-8 flex flex-col justify-center">
+<span class="material-symbols-outlined text-secondary-container text-4xl mb-4">eco</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-4">Sustainable Future Initiative</h3>
+<p class="text-on-surface-variant mb-6">Implementing cutting-edge renewable energy solutions to protect our landscapes while creating thousands of new industrial jobs.</p>
+<a class="text-primary font-bold inline-flex items-center gap-2 hover:translate-x-2 transition-transform" href="/projects/">
+                                Learn More <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Priority 2: Small Card -->
+<div class="md:col-span-4 bg-primary-container text-white p-8 rounded-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div>
+<span class="material-symbols-outlined text-secondary-fixed-dim text-4xl mb-4">payments</span>
+<h3 class="font-headline-md text-headline-md mb-4">Economic Resilience</h3>
+<p class="text-white/80">Revitalizing our domestic markets through strategic tax reforms and small business grants.</p>
+</div>
+<a class="mt-8 self-start bg-white/10 hover:bg-white/20 px-4 py-2 rounded text-label-md transition-colors" href="/projects/">Details</a>
+</div>
+<!-- Priority 3: Middle Column -->
+<div class="md:col-span-4 bg-white p-8 rounded-xl border border-outline-variant hover:border-primary transition-all group">
+<span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform">school</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Education First</h3>
+<p class="text-on-surface-variant">Modernizing school infrastructure and empowering teachers with the resources they need to lead.</p>
+</div>
+<!-- Priority 4: Large Column -->
+<div class="md:col-span-8 bg-surface-container-low rounded-xl p-8 flex items-center justify-between group hover:bg-surface-container transition-colors">
+<div class="max-w-md">
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Healthcare Accessibility</h3>
+<p class="text-on-surface-variant">A comprehensive plan to reduce premiums and expand medical services to rural areas across the nation.</p>
+</div>
+<div class="hidden sm:block">
+<div class="w-24 h-24 rounded-full border-4 border-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-container text-4xl">medical_services</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest News -->
+<section class="py-stack-lg bg-surface-container-lowest" id="news">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Latest News</h2>
+<p class="text-on-surface-variant">Stay updated with our progress and press releases.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter" id="news-grid">
+<!-- News cards rendered by jQuery from /api/news/ -->
+</div>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-stack-lg bg-primary overflow-hidden relative">
+<div class="absolute inset-0 opacity-10 pointer-events-none">
+
+</div>
+<div class="max-w-3xl mx-auto px-margin-desktop relative z-10 text-center">
+<h2 class="font-headline-lg text-headline-lg text-white mb-6">Stay Informed</h2>
+<p class="text-white/80 font-body-lg mb-8">Get direct updates from the frontlines of our campaign. No fluff, just progress and policy updates.</p>
+<form class="flex flex-col sm:flex-row gap-4 p-2 bg-white/5 rounded-2xl backdrop-blur-md border border-white/10 shadow-2xl" id="newsletter-form">
+<input class="flex-grow bg-white px-6 py-4 rounded-xl border-none focus:ring-2 focus:ring-secondary text-primary font-body-md outline-none" placeholder="Enter your email address" required="" type="email"/>
+<button class="bg-secondary hover:bg-secondary/90 text-white font-bold px-8 py-4 rounded-xl transition-all active:scale-95 whitespace-nowrap" type="submit">
+                    Join the Movement
+                </button>
+</form>
+<p class="mt-6 text-white/40 text-[12px]">By signing up, you agree to receive communications from the Vanguard Party. You can unsubscribe at any time.</p>
+</div>
+</section>
+<!-- Footer (Shared Component) -->
+<footer class="bg-primary text-on-primary full-width border-t border-outline-variant">
+<div class="w-full px-margin-desktop py-stack-lg max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-md text-headline-md text-on-primary mb-6">Vanguard Party</div>
+<p class="text-on-primary/60 font-body-md pr-4">Leading with vision, uniting with purpose. Together, we build a future that works for everyone.</p>
+</div>
+<div class="col-span-1">
+<h5 class="font-label-md text-label-md uppercase tracking-wider mb-6 text-secondary-fixed">Navigation</h5>
+<ul class="space-y-4">
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/">Causes</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/projects/">Projects</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="#news">News</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Voice &amp; Feedback</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h5 class="font-label-md text-label-md uppercase tracking-wider mb-6 text-secondary-fixed">Resources</h5>
+<ul class="space-y-4">
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Volunteer Portal</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Contact Support</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h5 class="font-label-md text-label-md uppercase tracking-wider mb-6 text-secondary-fixed">Follow Us</h5>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
+<span class="material-symbols-outlined">face_nod</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
+<span class="material-symbols-outlined">video_library</span>
+</a>
+</div>
+<div class="mt-8 text-on-primary/40 text-[12px] leading-relaxed">
+                    © 2024 Vanguard Party. Authorized by the Electoral Commission.
+                </div>
+</div>
+</div>
+</footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/static/core/js/csrf.js"></script>
+<script>
+        // Smooth scroll for in-page anchors
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        const categoryStyles = {
+            Community: 'bg-primary/10 text-primary',
+            Policy: 'bg-primary/10 text-primary',
+            Economy: 'bg-primary/10 text-primary'
+        };
+
+        function renderNews(articles) {
+            const grid = $('#news-grid');
+            grid.empty();
+            articles.forEach(article => {
+                const badgeClass = categoryStyles[article.category] || 'bg-primary/10 text-primary';
+                grid.append(`
+                    <article class="flex flex-col h-full bg-white rounded-lg overflow-hidden border border-outline-variant shadow-sm hover:shadow-md transition-all">
+                        <div class="h-52 overflow-hidden">
+                            <img class="w-full h-full object-cover" src="${article.image_url}"/>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="${badgeClass} px-3 py-1 rounded-full text-[12px] font-bold uppercase tracking-wider">${article.category}</span>
+                                <span class="text-outline text-[12px]">${article.published_at}</span>
+                            </div>
+                            <h4 class="font-headline-md text-headline-md text-primary mb-3 leading-tight">${article.title}</h4>
+                            <p class="text-on-surface-variant text-body-md line-clamp-3 mb-6">${article.content}</p>
+                            <div class="mt-auto">
+                                <button class="text-secondary font-bold hover:gap-3 transition-all flex items-center gap-2">Read Article <span class="material-symbols-outlined">chevron_right</span></button>
+                            </div>
+                        </div>
+                    </article>
+                `);
+            });
+        }
+
+        $(function () {
+            $.get('/api/news/', function (data) {
+                renderNews(data.results);
+            });
+
+            $('#newsletter-form').on('submit', function (e) {
+                e.preventDefault();
+                const btn = $(this).find('button');
+                const originalText = btn.text();
+                btn.text('Subscribing...').prop('disabled', true);
+                setTimeout(() => {
+                    btn.text('Welcome Aboard!').removeClass('bg-secondary').addClass('bg-green-600');
+                    $(this)[0].reset();
+                    setTimeout(() => {
+                        btn.text(originalText).removeClass('bg-green-600').addClass('bg-secondary').prop('disabled', false);
+                    }, 3000);
+                }, 1500);
+            });
+        });
+    </script>
+</body></html>

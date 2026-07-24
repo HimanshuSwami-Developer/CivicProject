@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<title>CivicAction | Active Projects</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config Verbatim -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed": "#d3e4ff",
+                    "inverse-primary": "#adc7f7",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary-fixed-variant": "#004881",
+                    "background": "#f7fafc",
+                    "surface": "#f7fafc",
+                    "error": "#ba1a1a",
+                    "on-primary-container": "#86a0cd",
+                    "surface-tint": "#455f88",
+                    "primary": "#002045",
+                    "surface-container": "#ebeef0",
+                    "surface-container-highest": "#e0e3e5",
+                    "outline-variant": "#c4c6cf",
+                    "primary-fixed-dim": "#adc7f7",
+                    "tertiary-fixed-dim": "#a2c9ff",
+                    "on-secondary-container": "#600008",
+                    "on-secondary-fixed": "#410003",
+                    "on-primary-fixed": "#001b3c",
+                    "tertiary": "#002141",
+                    "inverse-on-surface": "#eef1f3",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#ff5a55",
+                    "on-surface-variant": "#43474e",
+                    "inverse-surface": "#2d3133",
+                    "surface-dim": "#d7dadc",
+                    "primary-fixed": "#d6e3ff",
+                    "on-tertiary-fixed": "#001c38",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#920212",
+                    "on-surface": "#181c1e",
+                    "on-tertiary-container": "#68a2e9",
+                    "surface-container-high": "#e5e9eb",
+                    "tertiary-container": "#003765",
+                    "surface-bright": "#f7fafc",
+                    "on-tertiary": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#ffb3ad",
+                    "on-background": "#181c1e",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed": "#ffdad6",
+                    "primary-container": "#1a365d",
+                    "secondary": "#b52426",
+                    "outline": "#74777f",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f1f4f6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "stack-md": "16px",
+                    "container-max": "1280px",
+                    "base": "8px",
+                    "stack-sm": "8px",
+                    "stack-lg": "32px",
+                    "margin-desktop": "40px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "label-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+            scroll-behavior: smooth;
+        }
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .active-glow {
+            box-shadow: 0 0 15px rgba(26, 54, 93, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface shadow-sm flex justify-between items-center h-16 px-margin-mobile">
+<button aria-label="Menu" class="p-2 transition-colors duration-200 hover:bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile font-bold text-primary">CivicAction</h1>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional close-up portrait of a diverse community leader with a warm smile, set against a blurred background of a modern civic center. The lighting is soft and natural, reflecting a bright, authoritative yet accessible light-mode aesthetic consistent with professional corporate photography. The style is clean, sharp, and emphasizes trust and forward-thinking leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAa6urBGUPSxbOLtUFYTUkPb1uGyuPIENley4UcX01KfkxrMeWVxB-auoB-GhSm_U4q3Vu27ZPKVy67-3tXvEzsC1Bxk0QCnUtTu7kyrCDqcqxi6mBZ8D6DYKYQ7RwvxU4tolgk9CMosbXOxEYjsKWWt2R5rj7cXEWyly-DblRjWZYKDVNtYlRYvnCiyg7G7Wik5hS9hGKpqI37OZAN67B-S-6LHis88RMiymmp1tqZVVUQX_jYm_um"/>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-20 px-margin-mobile max-w-md mx-auto">
+<!-- Header Section -->
+<section class="mb-stack-lg">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2">Our Missions</h2>
+<p class="text-on-surface-variant font-body-md">Support the initiatives that are shaping our community's future.</p>
+</section>
+<!-- Project List (Bento-lite Single Column Feed) -->
+<div class="flex flex-col space-y-stack-md">
+<!-- Project Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl card-shadow border border-outline-variant overflow-hidden flex flex-col transition-all duration-300 hover:shadow-md">
+<div class="relative h-48 w-full">
+<img class="w-full h-full object-cover" data-alt="A wide-angle landscape shot of a newly developed urban green space with vibrant local flora and modern walking paths. In the background, modern architectural structures blend with natural elements under a clear, bright blue sky. The lighting is crisp and optimistic, utilizing a professional corporate color palette of deep blues and natural greens to convey growth and civic duty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhXvxX36oNCGuU9E80PMRh3boaY6vCiQ-h032T0RHFYaEawDVzyMjkNILvf5dQFXUa8Z4GTM1pax9Rq1xtRIa984eY2jgd2GchMg6LrnI_JfZ1a8jMt9E39ITv10xUrhOwcxN1rpbrPrKKJrLhFxH57gK4atyceoSE1mm1fe2EMHT5kqTRtC96Vjy9sYYoLxKOYH9Lf3b9ra9sCvDicM57CAkbKGNjv74tBGNhV9ZqSLfs7nA7BSN_"/>
+<div class="absolute top-3 left-3 bg-primary text-on-primary px-3 py-1 rounded-full text-[12px] font-bold uppercase tracking-wider">
+                        Active
+                    </div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-md text-primary mb-1">Urban Renewal Initiative</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Revitalizing downtown corridors with sustainable infrastructure and community-focused public spaces.</p>
+</div>
+<!-- Impact Stats Grid -->
+<div class="grid grid-cols-2 gap-3 py-2 border-y border-surface-container">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-outline tracking-widest">Goal</span>
+<span class="text-primary font-bold">$125,000</span>
+</div>
+<div class="flex flex-col border-l border-surface-container pl-3">
+<span class="text-[10px] uppercase font-bold text-outline tracking-widest">Raised</span>
+<span class="text-secondary font-bold">$84,200</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 67%;"></div>
+</div>
+<button class="w-full bg-secondary text-on-secondary font-bold py-3 rounded-lg shadow-sm transition-transform active:scale-95 flex items-center justify-center gap-2">
+                        Contribute Now
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Project Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl card-shadow border border-outline-variant overflow-hidden flex flex-col transition-all duration-300 hover:shadow-md">
+<div class="relative h-48 w-full">
+<img class="w-full h-full object-cover" data-alt="A clean, futuristic classroom setting where diverse students are engaged with modern digital tablets and interactive learning tools. The room is flooded with bright, natural light through large windows, creating a hopeful and high-end educational environment. The aesthetic is modern and professional, with subtle primary blue accents reinforcing a sense of stability and forward-thinking leadership." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz0evH8IVD35UDIkcEvlLvac-WW82ksVPa6G0ZA0y1uv8m9f-TlOE2-rGTSahrRuxYHlIeiWQMeSABX3YVjHK7YdVQ1FJ-bTzvscrEvO_0PMEOcdYWs5EjbRnaOKBHaPQDsN0asry3jlW9gCIC1BpfNQNCD7zQDgiHd255Fob94bXvOAniAEG60D8fq_kjFkSBT2DRM13EVBEEkIDFPk2DSk3tdWyJn9VQgmQvZs3VJ6zm4JG2P793"/>
+<div class="absolute top-3 left-3 bg-tertiary-container text-on-tertiary-container px-3 py-1 rounded-full text-[12px] font-bold uppercase tracking-wider">
+                        High Priority
+                    </div>
+</div>
+<div class="p-5 flex flex-col gap-4">
+<div>
+<h3 class="font-headline-md text-primary mb-1">NextGen Education Fund</h3>
+<p class="text-on-surface-variant text-sm line-clamp-2">Providing advanced STEM equipment and resources to underfunded local school districts.</p>
+</div>
+<div class="grid grid-cols-2 gap-3 py-2 border-y border-surface-container">
+<div class="flex flex-col">
+<span class="text-[10px] uppercase font-bold text-outline tracking-widest">Goal</span>
+<span class="text-primary font-bold">$50,000</span>
+</div>
+<div class="flex flex-col border-l border-surface-container pl-3">
+<span class="text-[10px] uppercase font-bold text-outline tracking-widest">Raised</span>
+<span class="text-secondary font-bold">$12,900</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 25.8%;"></div>
+</div>
+<button class="w-full bg-secondary text-on-secondary font-bold py-3 rounded-lg shadow-sm transition-transform active:scale-95 flex items-center justify-center gap-2">
+                        Contribute Now
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Project Card 3 (Task-Focused/Smaller Impact) -->
+<article class="bg-surface-container-lowest rounded-xl card-shadow border border-outline-variant p-5 flex flex-col gap-4 transition-all duration-300 hover:shadow-md border-l-4 border-l-primary">
+<div class="flex justify-between items-start">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="material-symbols-outlined text-primary text-base">verified</span>
+<span class="text-[10px] uppercase font-bold text-primary tracking-widest">Verified Mission</span>
+</div>
+<h3 class="font-headline-md text-primary">Clean Water Initiative</h3>
+</div>
+<span class="bg-surface-container-high text-on-surface-variant text-[10px] px-2 py-1 rounded-full font-bold">90% Funded</span>
+</div>
+<p class="text-on-surface-variant text-sm">Finalizing the filtration plant for the Northeast region. Every dollar now goes directly to maintenance training.</p>
+<div class="flex items-center gap-4">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-variant overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up profile of a young professional woman smiling warmly, representing community donors. Professional lighting, clean background, corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDADL8LlnV30BEccKORRVcXf9_tT1FgP-8lkw0Hhiu611xMfjv7SWnPdq4Jx8A6CQ7Y6rfKXNl2SkglWVONI8C9dmrC0DzzmD32p42yexACnhCuaT0nKAKMNE-zFYsFdK9Uqvh1jLh7BOAAvU7LszSh7Jj510r5FJaYFb1B0pCoZMPHzeZhjthNOOEeipy1fMUrB5M13E-bk0rNp3_ItomGX_cWTPnoGm6UH9IXI1CTTU5g4MLdw3OM"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-variant overflow-hidden text-[10px] flex items-center justify-center font-bold text-on-surface-variant">
+                            +2k
+                        </div>
+</div>
+<span class="text-xs text-outline font-medium">Supported by over 2,400 citizens</span>
+</div>
+<button class="w-full bg-secondary text-on-secondary font-bold py-3 rounded-lg shadow-sm transition-transform active:scale-95 flex items-center justify-center gap-2">
+                    Contribute Now
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full h-20 flex justify-around items-center px-4 pb-safe bg-surface-container-lowest shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-50">
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-label-md text-label-md">Donate</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span class="font-label-md text-label-md">Projects</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container transition-transform scale-95 active:scale-90" href="#">
+<span class="material-symbols-outlined">campaign</span>
+<span class="font-label-md text-label-md">Action</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction for card hover lift effect
+        const cards = document.querySelectorAll('article');
+        cards.forEach(card => {
+            card.addEventListener('touchstart', () => {
+                card.style.transform = 'translateY(-2px)';
+            });
+            card.addEventListener('touchend', () => {
+                card.style.transform = 'translateY(0px)';
+            });
+        });
+    </script>
+</body></html>

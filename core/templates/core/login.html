@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Civic Admin | Sign In</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: "#002045",
+                    "primary-container": "#1a365d",
+                    secondary: "#0061a5",
+                    background: "#f7fafc",
+                    "on-surface-variant": "#43474e",
+                    "outline-variant": "#c4c6cf",
+                },
+                fontFamily: {
+                    headline: ["Montserrat"],
+                    body: ["Plus Jakarta Sans"],
+                },
+            },
+        },
+    }
+</script>
+<style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+</style>
+</head>
+<body class="bg-background font-body min-h-screen flex items-center justify-center px-4">
+<div class="w-full max-w-sm">
+<div class="text-center mb-8">
+<h1 class="font-headline text-2xl text-primary font-bold">Civic Admin</h1>
+<p class="text-on-surface-variant text-sm mt-1">Management Portal Sign In</p>
+</div>
+<div class="bg-white border border-outline-variant rounded-xl p-8 shadow-sm">
+{% if form.errors %}
+<div class="mb-4 p-3 rounded-lg bg-red-50 text-red-700 text-sm">Invalid username or password.</div>
+{% endif %}
+<form method="post">
+{% csrf_token %}
+<div class="mb-4">
+<label class="block text-sm font-medium text-primary mb-1" for="id_username">Username</label>
+<input class="w-full p-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none" id="id_username" name="username" required="" type="text"/>
+</div>
+<div class="mb-6">
+<label class="block text-sm font-medium text-primary mb-1" for="id_password">Password</label>
+<input class="w-full p-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary outline-none" id="id_password" name="password" required="" type="password"/>
+</div>
+<button class="w-full py-3 bg-primary text-white font-bold rounded-lg hover:opacity-90 active:scale-95 transition-all" type="submit">Sign In</button>
+</form>
+</div>
+</div>
+</body></html>

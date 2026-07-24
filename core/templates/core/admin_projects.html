@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Civic Admin - Projects &amp; Content</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#e0e3e5",
+                    "on-primary-fixed": "#001b3c",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#d6e3ff",
+                    "surface-tint": "#455f88",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "tertiary-fixed": "#d4e4fc",
+                    "on-secondary-fixed": "#001d37",
+                    "on-primary-fixed-variant": "#2d476f",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#181c1e",
+                    "surface-container-low": "#f1f4f6",
+                    "on-secondary-fixed-variant": "#00497e",
+                    "surface-container": "#ebeef0",
+                    "primary": "#002045",
+                    "on-secondary": "#ffffff",
+                    "primary-container": "#1a365d",
+                    "on-tertiary-fixed": "#0d1c2e",
+                    "on-tertiary-fixed-variant": "#39485c",
+                    "tertiary": "#122234",
+                    "secondary": "#0061a5",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#66affe",
+                    "inverse-on-surface": "#eef1f3",
+                    "surface-dim": "#d7dadc",
+                    "on-error-container": "#93000a",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-surface-variant": "#43474e",
+                    "outline-variant": "#c4c6cf",
+                    "surface-container-high": "#e5e9eb",
+                    "background": "#f7fafc",
+                    "tertiary-fixed-dim": "#b8c8e0",
+                    "secondary-fixed-dim": "#9fcaff",
+                    "on-tertiary-container": "#91a0b7",
+                    "outline": "#74777f",
+                    "error": "#ba1a1a",
+                    "on-secondary-container": "#004172",
+                    "on-primary-container": "#86a0cd",
+                    "primary-fixed-dim": "#adc7f7",
+                    "on-background": "#181c1e",
+                    "surface": "#f7fafc",
+                    "tertiary-container": "#28374a",
+                    "surface-bright": "#f7fafc",
+                    "inverse-primary": "#adc7f7",
+                    "secondary-fixed": "#d2e4ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "sidebar-collapsed": "64px",
+                    "stack-compact": "0.5rem",
+                    "stack-default": "1rem",
+                    "stack-loose": "1.5rem",
+                    "gutter": "1rem",
+                    "sidebar-width": "260px",
+                    "container-padding": "2rem"
+            },
+            "fontFamily": {
+                    "label-md": ["JetBrains Mono"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-sm": ["Montserrat"],
+                    "body-sm": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Montserrat"],
+                    "label-sm": ["JetBrains Mono"],
+                    "display-sm": ["Montserrat"]
+            },
+            "fontSize": {
+                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "display-sm": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 10px; }
+        .editor-preview blockquote { border-left: 4px solid #002045; padding-left: 1rem; font-style: italic; color: #43474e; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-sidebar-width bg-primary dark:bg-primary-container flex flex-col py-stack-loose z-50">
+<div class="px-gutter mb-10">
+<h1 class="font-headline-sm text-headline-sm text-on-primary font-bold">Civic Admin</h1>
+<p class="text-on-primary-container font-label-md text-label-sm opacity-80 uppercase tracking-widest mt-1">Management Portal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin-panel/">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</a>
+<a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin-panel/donations/">
+<span class="material-symbols-outlined mr-3">payments</span>
+<span class="font-body-md">Donations</span>
+</a>
+<a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin-panel/feedback/">
+<span class="material-symbols-outlined mr-3">forum</span>
+<span class="font-body-md">Citizen Feedback</span>
+</a>
+<a class="flex items-center px-gutter py-3 border-l-4 border-secondary-container text-secondary-container bg-on-primary-fixed-variant/10 transition-colors duration-200" href="/admin-panel/projects/">
+<span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<span class="font-body-md">Projects</span>
+</a>
+<a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin-panel/projects/">
+<span class="material-symbols-outlined mr-3">newspaper</span>
+<span class="font-body-md">Content</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-on-primary-fixed-variant/20 pt-stack-loose">
+<a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin/">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+<a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin-panel/logout/">
+<span class="material-symbols-outlined mr-3 text-error">logout</span>
+<span class="font-body-md">Logout</span>
+</a>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-260px)] h-16 bg-surface dark:bg-surface-dim border-b border-outline-variant flex justify-between items-center px-gutter z-40 ml-sidebar-width">
+<div class="flex items-center bg-surface-container rounded px-3 py-1.5 w-96">
+<span class="material-symbols-outlined text-on-surface-variant text-body-lg">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-full ml-2 placeholder:text-outline" placeholder="Search initiatives or articles..." type="text"/>
+</div>
+<div class="flex items-center space-x-6">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high p-2 transition-colors cursor-pointer active:opacity-80">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high p-2 transition-colors cursor-pointer active:opacity-80">help</button>
+<div class="flex items-center space-x-3 cursor-pointer hover:bg-surface-container-high px-3 py-1.5 transition-colors">
+<div class="text-right">
+<p class="font-label-md text-label-md text-primary font-bold leading-none">Admin Profile</p>
+<p class="text-on-surface-variant text-[10px] uppercase tracking-tighter">System Manager</p>
+</div>
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-xs">AP</div>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-sidebar-width pt-16 p-stack-loose max-w-[1600px]">
+<!-- Welcome & Breadcrumbs -->
+<div class="mb-stack-loose">
+<nav class="flex items-center text-label-sm text-on-surface-variant mb-2">
+<span>Management</span>
+<span class="material-symbols-outlined text-sm mx-1">chevron_right</span>
+<span class="text-primary font-bold">Projects &amp; Content</span>
+</nav>
+<h2 class="font-headline-md text-headline-md text-primary">Strategic Initiative Oversight</h2>
+</div>
+<!-- Layout Grid: Bento Style -->
+<div class="grid grid-cols-12 gap-stack-default">
+<!-- Project Manager Section (Left/Top) -->
+<section class="col-span-12 lg:col-span-7 space-y-stack-default">
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-loose flex flex-col h-full">
+<div class="flex justify-between items-center mb-stack-loose">
+<div class="flex items-center space-x-3">
+<span class="material-symbols-outlined p-2 bg-primary-fixed text-primary rounded">account_tree</span>
+<h3 class="font-headline-sm text-headline-sm">Project Manager</h3>
+</div>
+</div>
+<!-- Current Projects Table -->
+<div class="overflow-hidden">
+<table class="w-full border-collapse">
+<thead class="bg-surface-container-low text-label-md text-on-surface-variant uppercase text-left border-b border-outline-variant">
+<tr>
+<th class="px-4 py-3 font-medium">Initiative</th>
+<th class="px-4 py-3 font-medium">Goal Status</th>
+<th class="px-4 py-3 font-medium">Progress</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant" id="projects-body">
+</tbody>
+</table>
+</div>
+<!-- Quick Add Initiative Form -->
+<div class="mt-auto pt-stack-loose border-t border-outline-variant/50">
+<h4 class="text-label-md font-bold mb-3 text-primary">DRAFT NEW INITIATIVE</h4>
+<form class="grid grid-cols-2 gap-4" id="new-project-form">
+<div class="col-span-2 md:col-span-1">
+<label class="text-label-sm block mb-1">Title</label>
+<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="np-title" placeholder="Project Name" required="" type="text"/>
+</div>
+<div class="col-span-2 md:col-span-1">
+<label class="text-label-sm block mb-1">Category</label>
+<select class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="np-category">
+<option>Infrastructure</option>
+<option>Education</option>
+<option>Healthcare</option>
+</select>
+</div>
+<div class="col-span-2 md:col-span-1">
+<label class="text-label-sm block mb-1">Goal Amount ($)</label>
+<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="np-goal" placeholder="100000" type="number"/>
+</div>
+<div class="col-span-2 md:col-span-1">
+<label class="text-label-sm block mb-1">Image URL</label>
+<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="np-image" placeholder="https://..." type="text"/>
+</div>
+<div class="col-span-2">
+<button class="bg-primary text-on-primary px-4 py-2 font-label-md text-label-md flex items-center hover:opacity-90 transition-opacity" type="submit">
+<span class="material-symbols-outlined mr-2">add</span> ADD INITIATIVE
+                            </button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Content Creator Section (Right/Bottom) -->
+<section class="col-span-12 lg:col-span-5 space-y-stack-default">
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-loose h-full flex flex-col">
+<div class="flex items-center space-x-3 mb-stack-loose">
+<span class="material-symbols-outlined p-2 bg-tertiary-fixed text-tertiary rounded">newspaper</span>
+<h3 class="font-headline-sm text-headline-sm">Content Creator</h3>
+</div>
+<form class="space-y-4 flex-1 flex flex-col" id="new-article-form">
+<div>
+<label class="text-label-sm block mb-1 text-on-surface-variant">Article Headline</label>
+<input class="w-full border border-outline-variant p-2 font-headline-sm text-primary focus:ring-0 focus:border-primary outline-none" id="art-title" placeholder="Headline" required="" type="text"/>
+</div>
+<div class="border border-outline-variant flex flex-col flex-1 min-h-[220px]">
+<textarea class="p-4 text-body-md flex-1 outline-none resize-none" id="art-content" placeholder="Write the article content here..."></textarea>
+</div>
+<div class="flex items-center justify-between pt-4">
+<div>
+<label class="text-label-sm block mb-1 text-on-surface-variant">Category / Tags</label>
+<input class="border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="art-tags" placeholder="Community, Policy..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 font-label-md text-label-md hover:opacity-90 transition-opacity self-end" type="submit">PUBLISH NOW</button>
+</div>
+</form>
+</div>
+</section>
+<!-- Stats Bar / Lower Bento -->
+<div class="col-span-12 grid grid-cols-1 md:grid-cols-4 gap-4">
+<div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">TOTAL INITIATIVES</p>
+<h4 class="font-display-sm text-display-sm text-primary" id="stat-total-projects">0</h4>
+</div>
+<span class="material-symbols-outlined text-secondary text-4xl opacity-20">inventory</span>
+</div>
+<div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">TOTAL ARTICLES</p>
+<h4 class="font-display-sm text-display-sm text-primary" id="stat-total-articles">0</h4>
+</div>
+<span class="material-symbols-outlined text-secondary text-4xl opacity-20">group</span>
+</div>
+<div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">AT RISK</p>
+<h4 class="font-display-sm text-display-sm text-error" id="stat-at-risk">0</h4>
+</div>
+<span class="material-symbols-outlined text-error text-4xl opacity-20">pending_actions</span>
+</div>
+<div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">COMPLETED</p>
+<h4 class="font-display-sm text-display-sm text-primary" id="stat-completed">0</h4>
+</div>
+<span class="material-symbols-outlined text-secondary text-4xl opacity-20">trending_up</span>
+</div>
+</div>
+</div>
+</main>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/static/core/js/csrf.js"></script>
+<script>
+        function projectRow(p) {
+            const statusMap = {
+                on_track: ['bg-green-100 text-green-800', 'On Track'],
+                at_risk: ['bg-amber-100 text-amber-800', 'At Risk'],
+                completed: ['bg-blue-100 text-blue-800', 'Completed']
+            };
+            const [cls, label] = statusMap[p.status] || statusMap.on_track;
+            const barColor = p.status === 'at_risk' ? 'bg-amber-500' : 'bg-secondary';
+            return `
+                <tr class="hover:bg-surface-container-high transition-colors group">
+                    <td class="px-4 py-4">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-12 h-12 bg-outline-variant overflow-hidden rounded">
+                                ${p.image_url ? `<img class="w-full h-full object-cover" src="${p.image_url}"/>` : ''}
+                            </div>
+                            <div>
+                                <p class="font-body-md font-bold text-primary">${p.title}</p>
+                                <p class="text-label-sm text-on-surface-variant">${p.category || 'General'}</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-4 py-4">
+                        <span class="inline-block px-2 py-1 ${cls} font-label-sm text-[10px] uppercase">${label}</span>
+                    </td>
+                    <td class="px-4 py-4 min-w-[150px]">
+                        <div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+                            <div class="${barColor} h-full" style="width: ${p.progress_percent}%;"></div>
+                        </div>
+                        <p class="text-label-sm mt-1 text-on-surface-variant">${p.progress_percent}% Reached</p>
+                    </td>
+                </tr>
+            `;
+        }
+
+        function loadProjects() {
+            $.get('/api/projects/', function (data) {
+                const body = $('#projects-body');
+                body.empty();
+                data.results.forEach(p => body.append(projectRow(p)));
+                $('#stat-total-projects').text(data.results.length);
+                $('#stat-at-risk').text(data.results.filter(p => p.status === 'at_risk').length);
+                $('#stat-completed').text(data.results.filter(p => p.status === 'completed').length);
+            });
+        }
+
+        function loadArticleStats() {
+            $.get('/api/news/', function (data) {
+                $('#stat-total-articles').text(data.results.length);
+            });
+        }
+
+        $('#new-project-form').on('submit', function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/api/projects/',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    title: $('#np-title').val(),
+                    category: $('#np-category').val(),
+                    goal_amount: $('#np-goal').val() || 0,
+                    image_url: $('#np-image').val(),
+                    status: 'on_track',
+                    progress_percent: 0
+                }),
+                success: function () {
+                    this_form = $('#new-project-form')[0];
+                    this_form.reset();
+                    loadProjects();
+                }
+            });
+        });
+
+        $('#new-article-form').on('submit', function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/api/news/',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    title: $('#art-title').val(),
+                    content: $('#art-content').val(),
+                    tags: $('#art-tags').val(),
+                    category: $('#art-tags').val().split(',')[0] || 'General'
+                }),
+                success: function () {
+                    $('#new-article-form')[0].reset();
+                    loadArticleStats();
+                    alert('Article published.');
+                }
+            });
+        });
+
+        $(function () {
+            loadProjects();
+            loadArticleStats();
+        });
+    </script>
+</body></html>
