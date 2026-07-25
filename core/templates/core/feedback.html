@@ -3,7 +3,7 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Citizen Engagement | Vanguard Party</title>
+<title>Citizen Engagement | Sankalp Adhikar Vishwas Ekta Party</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -116,25 +116,25 @@
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md">
-<!-- TopNavBar -->
-<header class="bg-surface dark:bg-inverse-surface shadow-sm docked full-width top-0 sticky z-50">
-<nav class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
-<div class="flex items-center gap-8">
-<a class="font-display-lg text-display-lg font-bold text-primary dark:text-primary-fixed-dim" href="/">Vanguard Party</a>
-<div class="hidden md:flex gap-6 items-center">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 left-0 w-full z-50 bg-surface dark:bg-inverse-surface shadow-sm h-20">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
+<a class="font-display-lg text-sm md:text-lg lg:text-xl font-bold text-primary dark:text-primary-fixed-dim leading-tight max-w-[220px] md:max-w-none" href="/">Sankalp Adhikar Vishwas Ekta Party</a>
+<nav class="hidden md:flex items-center gap-8">
 <a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="/">Causes</a>
 <a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="/projects/">Projects</a>
 <a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="/#news">News</a>
-<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="/feedback/">Voice &amp; Feedback</a>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<a class="hidden md:block bg-secondary text-on-primary px-6 py-2 rounded-lg font-label-md hover:opacity-90 active:scale-95 transition-all" href="/donate/">Donate Now</a>
-<span class="material-symbols-outlined md:hidden text-primary cursor-pointer">menu</span>
-</div>
+<a class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-bold" href="/feedback/">Voice &amp; Feedback</a>
 </nav>
+<div class="flex items-center gap-4">
+<a class="bg-secondary text-on-secondary font-label-md text-label-md px-6 py-2.5 rounded-lg hover:opacity-90 active:scale-95 transition-all" href="/donate/">Donate Now</a>
+<button aria-label="Menu" class="md:hidden w-10 h-10 flex items-center justify-center text-primary dark:text-primary-fixed-dim">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
 </header>
-<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg">
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-24 pb-stack-lg">
 <!-- Hero Section -->
 <section class="mb-stack-lg text-center max-w-3xl mx-auto">
 <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">Your Voice Matters</h1>
@@ -239,30 +239,47 @@
 </div>
 </section>
 </main>
-<!-- Footer -->
-<footer class="bg-primary dark:bg-primary-container full-width mt-stack-lg border-t border-outline-variant">
+<!-- Footer (Shared Component) -->
+<footer class="bg-primary text-on-primary mt-stack-lg border-t border-outline-variant">
 <div class="w-full px-margin-desktop py-stack-lg max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
 <div class="col-span-1 md:col-span-1">
-<span class="font-headline-md text-headline-md text-on-primary dark:text-on-primary-container block mb-4">Vanguard Party</span>
-<p class="text-on-primary/70 font-body-md">Dedicated to progress, service, and the future of our nation.</p>
+<div class="font-headline-md text-lg leading-snug text-on-primary mb-4">Sankalp Adhikar Vishwas Ekta Party</div>
+<p class="text-on-primary/60 font-body-md pr-4">Leading with vision, uniting with purpose. Together, we build a future that works for everyone.</p>
 </div>
-<div class="flex flex-col gap-3">
-<h4 class="text-on-primary font-bold">Quick Links</h4>
-<a class="text-on-primary/80 hover:text-on-primary transition-all font-label-md" href="#">Privacy Policy</a>
-<a class="text-on-primary/80 hover:text-on-primary transition-all font-label-md" href="#">Terms of Service</a>
+<div class="col-span-1">
+<h5 class="font-label-md text-label-md uppercase tracking-wider mb-6 text-secondary-fixed">Navigation</h5>
+<ul class="space-y-4">
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/">Causes</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/projects/">Projects</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/#news">News</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Voice &amp; Feedback</a></li>
+</ul>
 </div>
-<div class="flex flex-col gap-3">
-<h4 class="text-on-primary font-bold">Engage</h4>
-<a class="text-on-primary/80 hover:text-on-primary transition-all font-label-md" href="/feedback/">Contact Support</a>
-<a class="text-on-primary/80 hover:text-on-primary transition-all font-label-md" href="/feedback/">Volunteer Portal</a>
+<div class="col-span-1">
+<h5 class="font-label-md text-label-md uppercase tracking-wider mb-6 text-secondary-fixed">Resources</h5>
+<ul class="space-y-4">
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Volunteer Portal</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Contact Support</a></li>
+</ul>
 </div>
-<div class="flex flex-col gap-3">
-<h4 class="text-on-primary font-bold">Follow Us</h4>
+<div class="col-span-1">
+<h5 class="font-label-md text-label-md uppercase tracking-wider mb-6 text-secondary-fixed">Follow Us</h5>
 <div class="flex gap-4">
-<span class="material-symbols-outlined text-on-primary cursor-pointer hover:scale-110 transition-transform">share</span>
-<span class="material-symbols-outlined text-on-primary cursor-pointer hover:scale-110 transition-transform">public</span>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
+<span class="material-symbols-outlined">face_nod</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
+<span class="material-symbols-outlined">video_library</span>
+</a>
 </div>
-<p class="text-xs text-on-primary/60 mt-4 font-label-md">© 2024 Vanguard Party. Authorized by the Electoral Commission.</p>
+<div class="mt-8 text-on-primary/40 text-[12px] leading-relaxed">
+                    © 2024 Sankalp Adhikar Vishwas Ekta Party. Authorized by the Electoral Commission.
+                </div>
 </div>
 </div>
 </footer>

@@ -4,7 +4,7 @@ from core.models import Cause, Donation, Feedback, NewsArticle, Project
 
 
 class Command(BaseCommand):
-    help = "Seed the database with demo data matching the Civic Unity design mockups."
+    help = "Seed the database with demo data matching the Sankalp Adhikar Vishwas Ekta Party design mockups."
 
     def handle(self, *args, **options):
         if Cause.objects.exists():
