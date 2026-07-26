@@ -1,23 +1,12 @@
 from django.contrib import admin
 
-from .models import Cause, Donation, Feedback, NewsArticle, Project
-
-
-@admin.register(Cause)
-class CauseAdmin(admin.ModelAdmin):
-    list_display = ("name", "goal_amount", "raised_amount", "is_active")
-
-
-@admin.register(Project)
-class ProjectAdmin(admin.ModelAdmin):
-    list_display = ("title", "category", "status", "progress_percent")
-    list_filter = ("status", "category")
+from .models import Donation, Feedback, GalleryImage, NewsArticle, YoutubeVideo
 
 
 @admin.register(Donation)
 class DonationAdmin(admin.ModelAdmin):
-    list_display = ("donor_name", "amount", "cause", "status", "created_at")
-    list_filter = ("status", "cause")
+    list_display = ("donor_name", "amount", "status", "created_at")
+    list_filter = ("status",)
 
 
 @admin.register(Feedback)
@@ -29,3 +18,15 @@ class FeedbackAdmin(admin.ModelAdmin):
 @admin.register(NewsArticle)
 class NewsArticleAdmin(admin.ModelAdmin):
     list_display = ("title", "category", "views", "likes", "published_at")
+
+
+@admin.register(YoutubeVideo)
+class YoutubeVideoAdmin(admin.ModelAdmin):
+    list_display = ("title", "video_id", "year", "is_featured", "published_at")
+    list_filter = ("year", "is_featured")
+
+
+@admin.register(GalleryImage)
+class GalleryImageAdmin(admin.ModelAdmin):
+    list_display = ("caption", "year", "uploaded_at")
+    list_filter = ("year",)

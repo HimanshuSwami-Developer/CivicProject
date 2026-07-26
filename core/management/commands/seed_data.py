@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 
-from core.models import Cause, Donation, Feedback, NewsArticle, Project
+from core.models import Cause, Donation, Feedback, GalleryImage, NewsArticle, Project, YoutubeVideo
 
 
 class Command(BaseCommand):
@@ -191,5 +191,21 @@ class Command(BaseCommand):
             views=670,
             likes=98,
         )
+
+        YoutubeVideo.objects.create(title="2026 Vision: Building Together", video_id="dQw4w9WgXcQ")
+        YoutubeVideo.objects.create(title="Town Hall Highlights", video_id="dQw4w9WgXcQ")
+        YoutubeVideo.objects.create(title="Volunteers in Action", video_id="dQw4w9WgXcQ")
+
+        gallery_images = [
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuB3Ltx88C5zfwFeXag5TWDlBYufwmRupLlpEshytRfFOo1p9jRMC_O5kH21fGOCbzy2v-LtDu-pOpWLl96GsMiLW5VUHQGrG4i6ik9UHxXd0O6YD52WMJ4zw_Q7oOTiDX26uLlNWMFLQokqPdsf8xbS0kWKKTLKsw92qd5PDaAwPFPiS4zsZ69G_Mqmksvm44bU9SzXMURcIlNhF3AikYs_ZQmZWH3n1jiq2gEBax1XRgUK9FRIkrJn",
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuAr3OSVOWXCeIRQ5PrxLbDVl7Vhou758ovM7gGCdqyT0M7hVUWgX8X05kPlTua8cz7DUAq1rnhZxHLxk4KhNCgc5mTUKds7ekxjXim9loeYTnJ7qcTM3llAkfu-K3jBwC9IEA-SFzuY6LpPmdHJqw8Tbio_nwvX9HVAf2aevFskZsEgrIoVfu1rDSYI3UAs-N3RNqynf1rTkSi0xJAq7pOseXMw7tB3nXttBsZovLlcpRJAYCMhaJHs",
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuBLgpwmeB6wI9hWcV6RPAA2BIzG5z86h-CSnaurWQ1IVCDtIFkkw6T48X7Sb1WstoT8SK5K_IIDbn6SlMIsZKrJgNMdH_dmP86lugPADiKPKqSlViQ5fRRHOlWl5e6js_DYe0iTlmDUYhUdOd6OCaLcUK-SiFET2Nz0RlxcCAV0XmFLOFhhOpx-AQxUggKegcrhYlB08JEktz250fwMulr6ZhfohYqQibWOmAevkNS3CN3q1g09kd93",
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuCBdKN3-STI6YULPDHn1apnK0rDiMZYeUBF_1CZGYqPaClLxQhuVU3jiW3pJgIMaTix7IvlshQGAe7lnMpBiNgWXyrRHmJ3ExYpXr8N3Wn8-A0fDV41mJ6Q1JST5wWQ16PY2nlZRAAFXNFemfd3lVGyMiB8INsuKnbIv2urea_Bx50jZjjrWwlAn-zYdlcYAEmwz7x3tu4-K9KPFtwkh2V8poQInpFbgOt7_YMUnQbyMcKEPe01X-Uj",
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuC-YXCTWuz9B32mZcYDHe4aeoT6v5UoP-dk2_CrSXIhY1k6st1DlhVfJU4zTF1HQnwNE2XO8gXWMf4kC4ogKXptKm-jgW6pBihFX-aOTQ2yGHsuaykHcnLrkYKzQ8EnltAKcTW9I0k9IxVCBlMvqsBiU-8MUsaqLVXhvTZLVcwDZOLipp3dcixyTbRDs-9k4LJEiHOJ9O8TDCAtGG_12hDXaPEC58HruOHXcKZw4iIAuDxmGnTtZrbO",
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuAhXvxX36oNCGuU9E80PMRh3boaY6vCiQ-h032T0RHFYaEawDVzyMjkNILvf5dQFXUa8Z4GTM1pax9Rq1xtRIa984eY2jgd2GchMg6LrnI_JfZ1a8jMt9E39ITv10xUrhOwcxN1rpbrPrKKJrLhFxH57gK4atyceoSE1mm1fe2EMHT5kqTRtC96Vjy9sYYoLxKOYH9Lf3b9ra9sCvDicM57CAkbKGNjv74tBGNhV9ZqSLfs7nA7BSN_",
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuCz0evH8IVD35UDIkcEvlLvac-WW82ksVPa6G0ZA0y1uv8m9f-TlOE2-rGTSahrRuxYHlIeiWQMeSABX3YVjHK7YdVQ1FJ-bTzvscrEvO_0PMEOcdYWs5EjbRnaOKBHaPQDsN0asry3jlW9gCIC1BpfNQNCD7zQDgiHd255Fob94bXvOAniAEG60D8fq_kjFkSBT2DRM13EVBEEkIDFPk2DSk3tdWyJn9VQgmQvZs3VJ6zm4JG2P793",
+        ]
+        for url in gallery_images:
+            GalleryImage.objects.create(image_url=url, caption="2026 Campaign Moments")
 
         self.stdout.write(self.style.SUCCESS("Seed data created."))

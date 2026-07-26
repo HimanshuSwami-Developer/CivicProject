@@ -1,4 +1,5 @@
 import json
+import re
 
 import razorpay
 from django.conf import settings
@@ -8,7 +9,10 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.decorators.http import require_http_methods
 
-from .models import Cause, Donation, Feedback, NewsArticle, Project
+from .models import Donation, Feedback, GalleryImage, NewsArticle, YoutubeVideo, current_year
+
+PAN_RE = re.compile(r"^[A-Z]{5}[0-9]{4}[A-Z]$")
+PAN_REQUIRED_ABOVE = 25000
 
 
 def _body(request):
@@ -20,61 +24,14 @@ def _body(request):
         return {}
 
 
-# ---------------------------------------------------------------- causes ---
-
-@require_http_methods(["GET"])
-def causes_list(request):
-    causes = Cause.objects.filter(is_active=True)
-    return JsonResponse({"results": [c.to_dict() for c in causes]})
-
-
-# -------------------------------------------------------------- projects ---
-
-@require_http_methods(["GET", "POST"])
-def projects_list(request):
-    if request.method == "POST":
-        if not request.user.is_authenticated:
-            return JsonResponse({"error": "Authentication required"}, status=401)
-        data = _body(request)
-        project = Project.objects.create(
-            title=data.get("title", "Untitled Initiative"),
-            category=data.get("category", ""),
-            description=data.get("description", ""),
-            image_url=data.get("image_url", ""),
-            goal_amount=data.get("goal_amount") or 0,
-            raised_amount=data.get("raised_amount") or 0,
-            progress_percent=data.get("progress_percent") or 0,
-            status=data.get("status", "on_track"),
-            priority=data.get("priority", ""),
-        )
-        return JsonResponse(project.to_dict(), status=201)
-
-    projects = Project.objects.all()
-    featured = request.GET.get("featured")
-    if featured:
-        projects = projects.filter(is_featured=True)
-    return JsonResponse({"results": [p.to_dict() for p in projects]})
-
-
-@require_http_methods(["GET", "PATCH"])
-@login_required
-def project_detail(request, pk):
+def _parse_year(request):
+    raw = request.GET.get("year")
+    if not raw:
+        return None
     try:
-        project = Project.objects.get(pk=pk)
-    except Project.DoesNotExist:
-        return JsonResponse({"error": "Not found"}, status=404)
-
-    if request.method == "PATCH":
-        data = _body(request)
-        for field in ("title", "category", "description", "image_url", "status", "priority"):
-            if field in data:
-                setattr(project, field, data[field])
-        for field in ("goal_amount", "raised_amount", "progress_percent"):
-            if field in data:
-                setattr(project, field, data[field])
-        project.save()
-
-    return JsonResponse(project.to_dict())
+        return int(raw)
+    except ValueError:
+        return None
 
 
 # ------------------------------------------------------------- donations ---
@@ -84,7 +41,7 @@ def donations_list(request):
     if not request.user.is_authenticated:
         return JsonResponse({"error": "Authentication required"}, status=401)
 
-    donations = Donation.objects.select_related("cause").all()[:200]
+    donations = Donation.objects.all()[:200]
     return JsonResponse({"results": [d.to_dict() for d in donations]})
 
 
@@ -111,14 +68,16 @@ def create_donation_order(request):
     if not donor_name or not email or not phone:
         return JsonResponse({"error": "Full name, email and phone number are required"}, status=400)
 
+    pan = (data.get("pan") or "").strip().upper()
+    if amount > PAN_REQUIRED_ABOVE:
+        if not pan:
+            return JsonResponse({"error": "PAN is required for donations above ₹25,000"}, status=400)
+        if not PAN_RE.match(pan):
+            return JsonResponse({"error": "Invalid PAN format. Expected format: ABCDE1234F"}, status=400)
+
     client = _razorpay_client()
     if client is None:
         return JsonResponse({"error": "Online payments are not configured yet. Please try again later."}, status=503)
-
-    cause = None
-    cause_id = data.get("cause_id")
-    if cause_id:
-        cause = Cause.objects.filter(pk=cause_id).first()
 
     amount_paise = int(round(amount * 100))
     try:
@@ -134,10 +93,11 @@ def create_donation_order(request):
         donor_name=donor_name,
         email=email,
         phone=phone,
+        pincode=(data.get("pincode") or "").strip(),
         state=(data.get("state") or "").strip(),
         city=(data.get("city") or "").strip(),
+        pan=pan,
         amount=amount,
-        cause=cause,
         payment_method="razorpay",
         status="pending",
         razorpay_order_id=order["id"],
@@ -190,10 +150,6 @@ def verify_donation_payment(request):
     donation.razorpay_payment_id = payment_id
     donation.save(update_fields=["status", "razorpay_payment_id"])
 
-    if donation.cause:
-        donation.cause.raised_amount = float(donation.cause.raised_amount) + float(donation.amount)
-        donation.cause.save(update_fields=["raised_amount"])
-
     return JsonResponse(donation.to_dict(), status=200)
 
 
@@ -204,7 +160,6 @@ def donations_stats(request):
     return JsonResponse({
         "total_collected": float(agg["total"] or 0),
         "active_donors": agg["donors"] or 0,
-        "causes": [c.to_dict() for c in Cause.objects.filter(is_active=True)],
     })
 
 
@@ -276,8 +231,94 @@ def news_list(request):
         )
         return JsonResponse(article.to_dict(), status=201)
 
-    articles = NewsArticle.objects.all()[:20]
-    return JsonResponse({"results": [a.to_dict() for a in articles]})
+    articles = NewsArticle.objects.all()
+    year = _parse_year(request)
+    if year:
+        articles = articles.filter(published_at__year=year)
+    return JsonResponse({"results": [a.to_dict() for a in articles[:20]]})
+
+
+# -------------------------------------------------------------- videos -----
+
+@require_http_methods(["GET", "POST"])
+def videos_list(request):
+    if request.method == "POST":
+        if not request.user.is_authenticated:
+            return JsonResponse({"error": "Authentication required"}, status=401)
+        data = _body(request)
+        video_id = (data.get("video_id") or "").strip()
+        if not video_id:
+            return JsonResponse({"error": "YouTube video ID is required"}, status=400)
+        video = YoutubeVideo.objects.create(
+            title=data.get("title") or "Untitled Video",
+            video_id=video_id,
+            thumbnail_url=data.get("thumbnail_url", ""),
+            is_featured=data.get("is_featured", True),
+            year=data.get("year") or current_year(),
+        )
+        return JsonResponse(video.to_dict(), status=201)
+
+    videos = YoutubeVideo.objects.all()
+    year = _parse_year(request)
+    if year:
+        videos = videos.filter(year=year)
+    return JsonResponse({"results": [v.to_dict() for v in videos[:20]]})
+
+
+@login_required
+@require_http_methods(["DELETE"])
+def video_detail(request, pk):
+    try:
+        video = YoutubeVideo.objects.get(pk=pk)
+    except YoutubeVideo.DoesNotExist:
+        return JsonResponse({"error": "Not found"}, status=404)
+    video.delete()
+    return JsonResponse({"deleted": True})
+
+
+# -------------------------------------------------------------- gallery ----
+
+@require_http_methods(["GET", "POST"])
+def gallery_list(request):
+    if request.method == "POST":
+        if not request.user.is_authenticated:
+            return JsonResponse({"error": "Authentication required"}, status=401)
+        data = _body(request)
+        image_url = (data.get("image_url") or "").strip()
+        if not image_url:
+            return JsonResponse({"error": "Image URL is required"}, status=400)
+        image = GalleryImage.objects.create(
+            image_url=image_url,
+            caption=data.get("caption", ""),
+            year=data.get("year") or current_year(),
+        )
+        return JsonResponse(image.to_dict(), status=201)
+
+    images = GalleryImage.objects.all()
+    year = _parse_year(request)
+    if year:
+        images = images.filter(year=year)
+    return JsonResponse({"results": [i.to_dict() for i in images[:30]]})
+
+
+@login_required
+@require_http_methods(["DELETE"])
+def gallery_detail(request, pk):
+    try:
+        image = GalleryImage.objects.get(pk=pk)
+    except GalleryImage.DoesNotExist:
+        return JsonResponse({"error": "Not found"}, status=404)
+    image.delete()
+    return JsonResponse({"deleted": True})
+
+
+@require_http_methods(["GET"])
+def highlights_years(request):
+    years = {current_year()}
+    years.update(YoutubeVideo.objects.values_list("year", flat=True))
+    years.update(GalleryImage.objects.values_list("year", flat=True))
+    years.update(a.published_at.year for a in NewsArticle.objects.only("published_at"))
+    return JsonResponse({"years": sorted(years, reverse=True)})
 
 
 # ------------------------------------------------------------ dashboard ----
@@ -293,7 +334,6 @@ def dashboard_stats(request):
 
     return JsonResponse({
         "total_donations": float(donation_agg["total"] or 0),
-        "active_projects": Project.objects.exclude(status="completed").count(),
         "suggestions_count": suggestions_count,
         "complaints_count": complaints_count,
         "total_feedback": total_feedback,

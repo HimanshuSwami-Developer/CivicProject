@@ -11,13 +11,8 @@ def landing(request):
 
 
 @ensure_csrf_cookie
-def projects_page(request):
-    return render(request, "core/projects.html")
-
-
-@ensure_csrf_cookie
-def donate_page(request):
-    return render(request, "core/donate.html")
+def about_page(request):
+    return render(request, "core/about.html")
 
 
 @ensure_csrf_cookie
@@ -33,13 +28,8 @@ def app_home(request):
 
 
 @ensure_csrf_cookie
-def app_projects(request):
-    return render(request, "core/app_projects.html")
-
-
-@ensure_csrf_cookie
-def app_donate(request):
-    return render(request, "core/app_donate.html")
+def app_about(request):
+    return render(request, "core/app_about.html")
 
 
 @ensure_csrf_cookie
@@ -69,5 +59,5 @@ def admin_feedback(request):
 
 @ensure_csrf_cookie
 @login_required
-def admin_projects(request):
-    return render(request, "core/admin_projects.html")
+def admin_media(request):
+    return render(request, "core/admin_media.html")

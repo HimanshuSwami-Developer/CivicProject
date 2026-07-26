@@ -141,81 +141,90 @@
 </div>
 </header>
 <main class="pt-20 pb-32">
-<!-- Hero Section -->
-<section class="relative h-[88dvh] min-h-[560px] max-h-[820px] w-full flex items-end overflow-hidden">
+<!-- Hero Carousel -->
+<section class="relative h-[88dvh] min-h-[560px] max-h-[820px] w-full overflow-hidden" id="heroCarousel">
+<!-- Slide 1 -->
+<div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-700 flex items-end" data-index="0">
 <div class="absolute inset-0 z-0">
 <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent z-10"></div>
 <img class="w-full h-full object-cover" data-alt="A cinematic wide shot of a diverse crowd of people standing together in a sun-drenched town square." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjcMywu4PbE5r-S77daWkjm1nkmhD6yMbYuELWTT_gmeDzOau0zcq0OV5Sx1oARUpaOOcrux2crfKudPDHHc_aTEzQEHBqAVLs20r18ibxh1a8jJlZDrCo16_5_UjVfrASVoC3mlWR6GNoayjVDi9rK87Jz2KJwObySmly1_tguNXu6Z5oD-5fOqbL-Vv3UJL8wBRuJhI_CH1-L9gU7hKUxU9qBOHY5faRSwzwf301zxnFzFn2M7p6"/>
 </div>
-<div class="relative z-20 px-margin-mobile pb-12 w-full">
+<div class="relative z-20 px-margin-mobile pb-16 w-full">
 <span class="inline-block px-3 py-1 bg-secondary text-on-secondary rounded-full font-label-md text-label-md mb-4 uppercase tracking-widest">Leadership in Action</span>
 <h2 class="font-display-lg-mobile text-display-lg-mobile text-white mb-4">Together, We Shape Tomorrow.</h2>
 <p class="text-white/90 font-body-lg text-body-lg mb-8 max-w-sm">Join a movement dedicated to transparency, civic duty, and a modern vision for our community.</p>
-<div class="flex flex-col gap-3">
-<a class="bg-secondary text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-opacity-90 active:scale-95 transition-all text-center" href="/app/feedback/">
-                        Read Our Manifesto
-                    </a>
+<a class="bg-secondary text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-opacity-90 active:scale-95 transition-all text-center inline-block" href="/app/feedback/">Read Our Manifesto</a>
 </div>
 </div>
+<!-- Slide 2 -->
+<div class="hero-slide absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700 flex items-end" data-index="1">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="A futuristic green city skyline with sustainable infrastructure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB47p896xfxgfW_QxA097ajIkExme6NtaoJqnPHSGQOYjO0SigerkOq9KWjX6QXtAvviwNcZtizrDE_9NgfJjNGHAzGpoFKpw_XK1uHbCXpnNQ3xhA3zgczEvEv6VU3MVAbva-QBimwDoi9rf1zc0JwcOhCngBF1pBfYbzpP4GwlVh8zjYv7wdPVXS7VdScGQkctiMKYTbsMvqe-OOYrUrk7piplmvrj2P-0Ykgvb6le4rqkpRd0qW2"/>
+</div>
+<div class="relative z-20 px-margin-mobile pb-16 w-full">
+<span class="inline-block px-3 py-1 bg-secondary text-on-secondary rounded-full font-label-md text-label-md mb-4 uppercase tracking-widest">Sustainable Future</span>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-white mb-4">Cleaner Cities, Stronger Jobs.</h2>
+<p class="text-white/90 font-body-lg text-body-lg mb-8 max-w-sm">Cutting-edge renewable energy solutions that protect our landscapes while creating thousands of jobs.</p>
+<a class="bg-secondary text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-opacity-90 active:scale-95 transition-all text-center inline-block" href="/app/about/">Our Vision</a>
+</div>
+</div>
+<!-- Slide 3 -->
+<div class="hero-slide absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700 flex items-end" data-index="2">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent z-10"></div>
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a charismatic and visionary political leader standing before a subtle national flag." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAxvVRhR7cvz6W2DSsEttHVFPfgoY9qp4KJVM7sSw3TIwiaEaLIwE7YgbnooK1es-7AcuXvxLXg7DsTWZHQU_qoaWHQAoxGWih0vlvrHRT0KGhwAxpgPajjeZOw9kISVGjUJN3O1c6vLaa9RAtEmoqgcKNv8WLmWk_ODBrhh0F8fi4viSxk4Hiabnwob6KpBWEk9UpHT14G-KoAQeNUUmAv0T6yZkWSt0b-FhvY8k-Fv18AirLEW2P"/>
+</div>
+<div class="relative z-20 px-margin-mobile pb-16 w-full">
+<span class="inline-block px-3 py-1 bg-secondary text-on-secondary rounded-full font-label-md text-label-md mb-4 uppercase tracking-widest">Building Tomorrow</span>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-white mb-4">A Future Built on Unity.</h2>
+<p class="text-white/90 font-body-lg text-body-lg mb-8 max-w-sm">We stand for a nation where every voice is heard and every community thrives.</p>
+<a class="bg-secondary text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-opacity-90 active:scale-95 transition-all text-center inline-block" href="/app/feedback/">Join Us</a>
+</div>
+</div>
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-30 flex gap-2" id="heroDots"></div>
 </section>
-<!-- Our Mission Section -->
+<!-- Yearly Highlights Section -->
 <section class="py-12 px-margin-mobile">
 <div class="mb-8">
-<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2">Our Mission</h3>
-<div class="h-1 w-16 bg-secondary rounded-full"></div>
+<div class="flex items-center gap-3 mb-2">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary" id="highlightsYearHeading">Highlights</h3>
+<select class="border border-outline-variant rounded-lg px-3 py-1.5 font-label-md text-label-md text-primary bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none" id="highlightsYearSelect"></select>
 </div>
-<div class="grid grid-cols-1 gap-6">
-<!-- Bento Style Mission Card 1 -->
-<div class="bg-white p-6 rounded-xl shadow-sm border border-outline-variant hover:shadow-md transition-shadow">
-<div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-4">
-<span class="material-symbols-outlined text-white">account_balance</span>
+<p class="text-on-surface-variant font-body-md text-body-md">Watch, read, and browse moments from the field.</p>
 </div>
-<h4 class="font-headline-md text-headline-md-mobile text-primary mb-2">Integrity First</h4>
-<p class="text-on-surface-variant font-body-md text-body-md">Restoring trust through absolute transparency in every legislative action and community project.</p>
+<div class="mb-8">
+<h4 class="font-headline-md text-headline-md-mobile text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">smart_display</span>
+Top Videos
+</h4>
+<div class="space-y-4" id="highlight-videos">
+<!-- Video cards rendered by jQuery from /api/videos/ -->
 </div>
-<!-- Bento Style Mission Card 2 -->
-<div class="bg-primary text-white p-6 rounded-xl shadow-lg">
-<div class="w-12 h-12 bg-secondary-container rounded-lg flex items-center justify-center mb-4">
-<span class="material-symbols-outlined text-white">groups</span>
 </div>
-<h4 class="font-headline-md text-headline-md-mobile mb-2">United Communities</h4>
-<p class="text-white/80 font-body-md text-body-md">Bridging divides to create a cohesive social fabric where every voice finds resonance in the halls of power.</p>
+<div class="mb-8">
+<h4 class="font-headline-md text-headline-md-mobile text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">article</span>
+Latest News
+</h4>
+<div class="space-y-4" id="highlight-news">
+<!-- News cards rendered by jQuery from /api/news/ -->
+</div>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md-mobile text-primary mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">photo_library</span>
+Media Gallery
+</h4>
+<div class="grid grid-cols-3 gap-2" id="highlight-gallery">
+<!-- Gallery thumbnails rendered by jQuery from /api/gallery/ -->
 </div>
 </div>
 </section>
-<!-- Featured Projects Section -->
-<section class="py-12 bg-surface-container-low">
-<div class="px-margin-mobile mb-8">
-<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-2">Featured Projects</h3>
-<p class="text-on-surface-variant font-body-md text-body-md">Tangible impact in our neighborhoods.</p>
+<!-- Gallery Lightbox -->
+<div class="fixed inset-0 z-[110] hidden items-center justify-center p-4 bg-black/80" id="galleryLightbox" onclick="closeGalleryLightbox()">
+<img class="max-w-full max-h-full rounded-lg" id="galleryLightboxImg" src=""/>
 </div>
-<div class="flex flex-col gap-8 px-margin-mobile" id="featured-projects">
-<!-- Rendered by jQuery from /api/projects/?featured=1 -->
-</div>
-</section>
-<!-- Stats Section -->
-<section class="py-12 px-margin-mobile">
-<div class="bg-primary text-white rounded-2xl p-8 flex flex-col items-center text-center">
-<div class="grid grid-cols-2 gap-8 w-full">
-<div>
-<div class="text-4xl font-bold mb-1">12K+</div>
-<div class="text-white/60 font-label-md text-label-md uppercase tracking-tighter">Volunteers</div>
-</div>
-<div>
-<div class="text-4xl font-bold mb-1">85%</div>
-<div class="text-white/60 font-label-md text-label-md uppercase tracking-tighter">Impact Rate</div>
-</div>
-<div>
-<div class="text-4xl font-bold mb-1">₹4.2Cr</div>
-<div class="text-white/60 font-label-md text-label-md uppercase tracking-tighter">Raised</div>
-</div>
-<div>
-<div class="text-4xl font-bold mb-1">200+</div>
-<div class="text-white/60 font-label-md text-label-md uppercase tracking-tighter">Town Halls</div>
-</div>
-</div>
-</div>
-</section>
 <!-- Footer -->
 <footer class="mt-4 px-margin-mobile pt-8 pb-6 border-t border-outline-variant text-center">
 <p class="font-headline-md text-sm font-bold text-primary dark:text-primary-fixed-dim mb-1">Sankalp Adhikar Vishwas Ekta Party</p>
@@ -223,30 +232,30 @@
 </footer>
 </main>
 <!-- Sticky Donate Button -->
-<a class="fixed bottom-24 right-margin-mobile z-40 sticky-action" href="/app/donate/">
-<button class="bg-secondary text-white px-6 py-4 rounded-full shadow-2xl flex items-center gap-3 active:scale-90 transition-transform">
+<div class="fixed bottom-24 right-margin-mobile z-40 sticky-action">
+<button class="bg-secondary text-white px-6 py-4 rounded-full shadow-2xl flex items-center gap-3 active:scale-90 transition-transform" onclick="openDonationSheet()" type="button">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
 <span class="font-bold">Donate Now</span>
 </button>
-</a>
+</div>
 <!-- BottomNavBar -->
 <nav class="fixed bottom-0 w-full h-20 flex justify-around items-center px-4 pb-[env(safe-area-inset-bottom)] bg-surface-container-lowest dark:bg-inverse-surface shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-50">
 <a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-4 py-1 scale-95 active:scale-90 transition-transform" href="/app/">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
 <span class="font-label-md text-label-md">Home</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 scale-95 active:scale-90 transition-transform hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl" href="/app/donate/">
-<span class="material-symbols-outlined">volunteer_activism</span>
-<span class="font-label-md text-label-md">Donate</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 scale-95 active:scale-90 transition-transform hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl" href="/app/projects/">
-<span class="material-symbols-outlined">account_tree</span>
-<span class="font-label-md text-label-md">Projects</span>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 scale-95 active:scale-90 transition-transform hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl" href="/app/about/">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-md text-label-md">About</span>
 </a>
 <a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 scale-95 active:scale-90 transition-transform hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl" href="/app/feedback/">
 <span class="material-symbols-outlined">campaign</span>
 <span class="font-label-md text-label-md">Action</span>
 </a>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 scale-95 active:scale-90 transition-transform hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl" onclick="openDonationSheet()" type="button">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-label-md text-label-md">Donate</span>
+</button>
 </nav>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="/static/core/js/csrf.js"></script>
@@ -261,37 +270,153 @@
             }
         });
 
-        function projectCard(p, tagLabel, tagClass) {
+        let heroIndex = 0;
+        let heroTimer = null;
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const heroDotsWrap = document.getElementById('heroDots');
+
+        heroSlides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+            dot.addEventListener('click', () => goToHeroSlide(i));
+            heroDotsWrap.appendChild(dot);
+        });
+
+        function updateHeroUI() {
+            heroSlides.forEach((s, i) => {
+                s.classList.toggle('opacity-100', i === heroIndex);
+                s.classList.toggle('opacity-0', i !== heroIndex);
+                s.classList.toggle('pointer-events-none', i !== heroIndex);
+            });
+            heroDotsWrap.querySelectorAll('button').forEach((d, i) => {
+                d.className = i === heroIndex
+                    ? 'h-2 w-6 rounded-full bg-white transition-all'
+                    : 'h-2 w-2 rounded-full bg-white/40 transition-all';
+            });
+        }
+
+        function heroNext() {
+            heroIndex = (heroIndex + 1) % heroSlides.length;
+            updateHeroUI();
+        }
+
+        function heroPrev() {
+            heroIndex = (heroIndex - 1 + heroSlides.length) % heroSlides.length;
+            updateHeroUI();
+        }
+
+        function goToHeroSlide(i) {
+            heroIndex = i;
+            updateHeroUI();
+            resetHeroTimer();
+        }
+
+        function resetHeroTimer() {
+            if (heroTimer) clearInterval(heroTimer);
+            heroTimer = setInterval(heroNext, 6000);
+        }
+
+        updateHeroUI();
+        resetHeroTimer();
+
+        let heroTouchStartX = null;
+        const heroCarouselEl = document.getElementById('heroCarousel');
+        heroCarouselEl.addEventListener('touchstart', function (e) {
+            heroTouchStartX = e.changedTouches[0].clientX;
+        });
+        heroCarouselEl.addEventListener('touchend', function (e) {
+            if (heroTouchStartX === null) return;
+            const delta = e.changedTouches[0].clientX - heroTouchStartX;
+            if (Math.abs(delta) > 50) {
+                delta < 0 ? heroNext() : heroPrev();
+                resetHeroTimer();
+            }
+            heroTouchStartX = null;
+        });
+
+        function highlightVideoCard(v) {
             return `
-                <div class="flex flex-col rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-all group">
-                    <div class="h-48 w-full overflow-hidden">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${p.image_url}"/>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex gap-2 mb-3">
-                            <span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold px-2 py-0.5 rounded uppercase">${p.category}</span>
-                            <span class="${tagClass} text-[10px] font-bold px-2 py-0.5 rounded uppercase">${tagLabel}</span>
+                <a class="flex gap-3 items-center group" href="${v.url}" rel="noopener" target="_blank">
+                    <div class="relative w-28 h-16 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container">
+                        <img class="w-full h-full object-cover" src="${v.thumbnail_url}"/>
+                        <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">play_circle</span>
                         </div>
-                        <h4 class="font-headline-md text-headline-md-mobile text-primary mb-2">${p.title}</h4>
-                        <p class="text-on-surface-variant font-body-md text-body-md mb-4">${p.description}</p>
-                        <a class="text-secondary font-bold flex items-center gap-1 group/link" href="/app/projects/">
-                            Learn more
-                            <span class="material-symbols-outlined text-sm group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
-                        </a>
                     </div>
+                    <p class="font-body-md text-body-md text-on-surface font-medium line-clamp-2">${v.title}</p>
+                </a>
+            `;
+        }
+
+        function highlightNewsCard(article) {
+            return `
+                <article class="flex gap-3 bg-white rounded-xl overflow-hidden border border-outline-variant shadow-sm p-3">
+                    <div class="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container">
+                        <img class="w-full h-full object-cover" src="${article.image_url}"/>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-outline text-[11px] mb-1">${article.published_at}</p>
+                        <h4 class="font-body-md text-body-md text-primary font-bold leading-tight line-clamp-2">${article.title}</h4>
+                    </div>
+                </article>
+            `;
+        }
+
+        function highlightGalleryTile(img) {
+            return `
+                <div class="aspect-square rounded-lg overflow-hidden bg-surface-container" onclick="openGalleryLightbox('${img.image_url}')">
+                    <img class="w-full h-full object-cover" src="${img.image_url}"/>
                 </div>
             `;
         }
 
+        function openGalleryLightbox(url) {
+            $('#galleryLightboxImg').attr('src', url);
+            $('#galleryLightbox').removeClass('hidden').addClass('flex');
+        }
+
+        function closeGalleryLightbox() {
+            $('#galleryLightbox').addClass('hidden').removeClass('flex');
+        }
+
+        function loadHighlights(year) {
+            $('#highlightsYearHeading').text(year + ' Highlights');
+
+            $.get('/api/videos/', { year: year }, function (data) {
+                const list = $('#highlight-videos');
+                list.empty();
+                data.results.slice(0, 3).forEach(v => list.append(highlightVideoCard(v)));
+            });
+
+            $.get('/api/news/', { year: year }, function (data) {
+                const list = $('#highlight-news');
+                list.empty();
+                data.results.slice(0, 3).forEach(a => list.append(highlightNewsCard(a)));
+            });
+
+            $.get('/api/gallery/', { year: year }, function (data) {
+                const grid = $('#highlight-gallery');
+                grid.empty();
+                data.results.slice(0, 6).forEach(img => grid.append(highlightGalleryTile(img)));
+            });
+        }
+
         $(function () {
-            $.get('/api/projects/', function (data) {
-                const container = $('#featured-projects');
-                container.empty();
-                data.results.slice(0, 2).forEach(p => {
-                    const isCompleted = p.status === 'completed';
-                    container.append(projectCard(p, isCompleted ? 'Completed' : 'Active', isCompleted ? 'bg-surface-variant text-on-surface-variant' : 'bg-surface-variant text-on-surface-variant'));
-                });
+            $.get('/api/highlights/years/', function (data) {
+                const select = $('#highlightsYearSelect');
+                select.empty();
+                const currentYear = new Date().getFullYear();
+                let years = data.years && data.years.length ? data.years : [currentYear];
+                years.forEach(y => select.append(`<option value="${y}">${y}</option>`));
+                const defaultYear = years.includes(currentYear) ? currentYear : years[0];
+                select.val(defaultYear);
+                loadHighlights(defaultYear);
+            });
+
+            $('#highlightsYearSelect').on('change', function () {
+                loadHighlights($(this).val());
             });
         });
     </script>
+{% include "core/_donate_sheet.html" %}
 </body></html>

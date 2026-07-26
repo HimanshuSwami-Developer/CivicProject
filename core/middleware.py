@@ -10,8 +10,7 @@ MOBILE_UA_RE = re.compile(
 # desktop path -> matching mobile app path
 DESKTOP_TO_APP = {
     "/": "/app/",
-    "/projects/": "/app/projects/",
-    "/donate/": "/app/donate/",
+    "/about/": "/app/about/",
     "/feedback/": "/app/feedback/",
 }
 

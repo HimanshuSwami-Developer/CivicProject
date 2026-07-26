@@ -3,7 +3,7 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SAVE Admin - Projects &amp; Content</title>
+<title>SAVE Admin - Media</title>
 <!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
 <!-- Icons -->
@@ -112,7 +112,6 @@
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 10px; }
-        .editor-preview blockquote { border-left: 4px solid #002045; padding-left: 1rem; font-style: italic; color: #43474e; }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen">
@@ -135,13 +134,17 @@
 <span class="material-symbols-outlined mr-3">forum</span>
 <span class="font-body-md">Citizen Feedback</span>
 </a>
-<a class="flex items-center px-gutter py-3 border-l-4 border-secondary-container text-secondary-container bg-on-primary-fixed-variant/10 transition-colors duration-200" href="/admin-panel/projects/">
-<span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">account_tree</span>
+<a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin-panel/projects/">
+<span class="material-symbols-outlined mr-3">account_tree</span>
 <span class="font-body-md">Projects</span>
 </a>
 <a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin-panel/projects/">
 <span class="material-symbols-outlined mr-3">newspaper</span>
 <span class="font-body-md">Content</span>
+</a>
+<a class="flex items-center px-gutter py-3 border-l-4 border-secondary-container text-secondary-container bg-on-primary-fixed-variant/10 transition-colors duration-200" href="/admin-panel/media/">
+<span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">perm_media</span>
+<span class="font-body-md">Media</span>
 </a>
 </nav>
 <div class="mt-auto border-t border-on-primary-fixed-variant/20 pt-stack-loose">
@@ -159,7 +162,7 @@
 <header class="fixed top-0 right-0 w-[calc(100%-260px)] h-16 bg-surface dark:bg-surface-dim border-b border-outline-variant flex justify-between items-center px-gutter z-40 ml-sidebar-width">
 <div class="flex items-center bg-surface-container rounded px-3 py-1.5 w-96">
 <span class="material-symbols-outlined text-on-surface-variant text-body-lg">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-body-md w-full ml-2 placeholder:text-outline" placeholder="Search initiatives or articles..." type="text"/>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-full ml-2 placeholder:text-outline" placeholder="Search videos or gallery items..." type="text"/>
 </div>
 <div class="flex items-center space-x-6">
 <button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high p-2 transition-colors cursor-pointer active:opacity-80">notifications</button>
@@ -180,122 +183,144 @@
 <nav class="flex items-center text-label-sm text-on-surface-variant mb-2">
 <span>Management</span>
 <span class="material-symbols-outlined text-sm mx-1">chevron_right</span>
-<span class="text-primary font-bold">Projects &amp; Content</span>
+<span class="text-primary font-bold">Media</span>
 </nav>
-<h2 class="font-headline-md text-headline-md text-primary">Strategic Initiative Oversight</h2>
+<h2 class="font-headline-md text-headline-md text-primary">Highlights Media &amp; Content Manager</h2>
 </div>
 <!-- Layout Grid: Bento Style -->
 <div class="grid grid-cols-12 gap-stack-default">
-<!-- Project Manager Section (Left/Top) -->
-<section class="col-span-12 lg:col-span-7 space-y-stack-default">
+<!-- Video Manager Section -->
+<section class="col-span-12 lg:col-span-4 space-y-stack-default">
 <div class="bg-surface-container-lowest border border-outline-variant p-stack-loose flex flex-col h-full">
-<div class="flex justify-between items-center mb-stack-loose">
-<div class="flex items-center space-x-3">
-<span class="material-symbols-outlined p-2 bg-primary-fixed text-primary rounded">account_tree</span>
-<h3 class="font-headline-sm text-headline-sm">Project Manager</h3>
+<div class="flex items-center space-x-3 mb-stack-loose">
+<span class="material-symbols-outlined p-2 bg-primary-fixed text-primary rounded">smart_display</span>
+<h3 class="font-headline-sm text-headline-sm">Video Manager</h3>
 </div>
-</div>
-<!-- Current Projects Table -->
-<div class="overflow-hidden">
+<!-- Current Videos List -->
+<div class="overflow-hidden mb-stack-loose">
 <table class="w-full border-collapse">
 <thead class="bg-surface-container-low text-label-md text-on-surface-variant uppercase text-left border-b border-outline-variant">
 <tr>
-<th class="px-4 py-3 font-medium">Initiative</th>
-<th class="px-4 py-3 font-medium">Goal Status</th>
-<th class="px-4 py-3 font-medium">Progress</th>
+<th class="px-4 py-3 font-medium">Video</th>
+<th class="px-4 py-3 font-medium"></th>
 </tr>
 </thead>
-<tbody class="divide-y divide-outline-variant" id="projects-body">
-</tbody>
+<tbody class="divide-y divide-outline-variant" id="videos-body"></tbody>
 </table>
 </div>
-<!-- Quick Add Initiative Form -->
-<div class="mt-auto pt-stack-loose border-t border-outline-variant/50">
-<h4 class="text-label-md font-bold mb-3 text-primary">DRAFT NEW INITIATIVE</h4>
-<form class="grid grid-cols-2 gap-4" id="new-project-form">
+<!-- Add Video Form -->
+<form class="mt-auto pt-stack-loose border-t border-outline-variant/50 grid grid-cols-2 gap-4" id="new-video-form">
 <div class="col-span-2 md:col-span-1">
 <label class="text-label-sm block mb-1">Title</label>
-<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="np-title" placeholder="Project Name" required="" type="text"/>
+<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="nv-title" placeholder="Video title" required="" type="text"/>
 </div>
 <div class="col-span-2 md:col-span-1">
-<label class="text-label-sm block mb-1">Category</label>
-<select class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="np-category">
-<option>Infrastructure</option>
-<option>Education</option>
-<option>Healthcare</option>
-</select>
+<label class="text-label-sm block mb-1">YouTube Video ID</label>
+<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="nv-video-id" placeholder="e.g. dQw4w9WgXcQ" required="" type="text"/>
 </div>
 <div class="col-span-2 md:col-span-1">
-<label class="text-label-sm block mb-1">Goal Amount (₹)</label>
-<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="np-goal" placeholder="100000" type="number"/>
-</div>
-<div class="col-span-2 md:col-span-1">
-<label class="text-label-sm block mb-1">Image URL</label>
-<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="np-image" placeholder="https://..." type="text"/>
+<label class="text-label-sm block mb-1">Highlights Year</label>
+<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="nv-year" required="" type="number"/>
 </div>
 <div class="col-span-2">
 <button class="bg-primary text-on-primary px-4 py-2 font-label-md text-label-md flex items-center hover:opacity-90 transition-opacity" type="submit">
-<span class="material-symbols-outlined mr-2">add</span> ADD INITIATIVE
+<span class="material-symbols-outlined mr-2">add</span> ADD VIDEO
                             </button>
 </div>
 </form>
 </div>
-</div>
 </section>
-<!-- Content Creator Section (Right/Bottom) -->
-<section class="col-span-12 lg:col-span-5 space-y-stack-default">
-<div class="bg-surface-container-lowest border border-outline-variant p-stack-loose h-full flex flex-col">
+<!-- Gallery Manager Section -->
+<section class="col-span-12 lg:col-span-4 space-y-stack-default">
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-loose flex flex-col h-full">
 <div class="flex items-center space-x-3 mb-stack-loose">
-<span class="material-symbols-outlined p-2 bg-tertiary-fixed text-tertiary rounded">newspaper</span>
-<h3 class="font-headline-sm text-headline-sm">Content Creator</h3>
+<span class="material-symbols-outlined p-2 bg-tertiary-fixed text-tertiary rounded">photo_library</span>
+<h3 class="font-headline-sm text-headline-sm">Gallery Manager</h3>
 </div>
-<form class="space-y-4 flex-1 flex flex-col" id="new-article-form">
-<div>
-<label class="text-label-sm block mb-1 text-on-surface-variant">Article Headline</label>
-<input class="w-full border border-outline-variant p-2 font-headline-sm text-primary focus:ring-0 focus:border-primary outline-none" id="art-title" placeholder="Headline" required="" type="text"/>
+<!-- Current Gallery Grid -->
+<div class="grid grid-cols-4 gap-2 mb-stack-loose" id="gallery-grid"></div>
+<!-- Add Image Form -->
+<form class="mt-auto pt-stack-loose border-t border-outline-variant/50 grid grid-cols-2 gap-4" id="new-gallery-form">
+<div class="col-span-2 md:col-span-1">
+<label class="text-label-sm block mb-1">Image URL</label>
+<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="ng-image" placeholder="https://..." required="" type="text"/>
 </div>
-<div class="border border-outline-variant flex flex-col flex-1 min-h-[220px]">
-<textarea class="p-4 text-body-md flex-1 outline-none resize-none" id="art-content" placeholder="Write the article content here..."></textarea>
+<div class="col-span-2 md:col-span-1">
+<label class="text-label-sm block mb-1">Caption (optional)</label>
+<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="ng-caption" placeholder="Short caption" type="text"/>
 </div>
-<div class="flex items-center justify-between pt-4">
-<div>
-<label class="text-label-sm block mb-1 text-on-surface-variant">Category / Tags</label>
-<input class="border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="art-tags" placeholder="Community, Policy..." type="text"/>
+<div class="col-span-2 md:col-span-1">
+<label class="text-label-sm block mb-1">Highlights Year</label>
+<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="ng-year" required="" type="number"/>
 </div>
-<button class="bg-primary text-on-primary px-6 py-2 font-label-md text-label-md hover:opacity-90 transition-opacity self-end" type="submit">PUBLISH NOW</button>
+<div class="col-span-2">
+<button class="bg-primary text-on-primary px-4 py-2 font-label-md text-label-md flex items-center hover:opacity-90 transition-opacity" type="submit">
+<span class="material-symbols-outlined mr-2">add</span> ADD IMAGE
+                            </button>
 </div>
 </form>
 </div>
 </section>
-<!-- Stats Bar / Lower Bento -->
-<div class="col-span-12 grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- News Manager Section -->
+<section class="col-span-12 lg:col-span-4 space-y-stack-default">
+<div class="bg-surface-container-lowest border border-outline-variant p-stack-loose flex flex-col h-full">
+<div class="flex items-center space-x-3 mb-stack-loose">
+<span class="material-symbols-outlined p-2 bg-secondary-fixed text-secondary rounded">newspaper</span>
+<h3 class="font-headline-sm text-headline-sm">News Manager</h3>
+</div>
+<!-- Current Articles List -->
+<div class="overflow-hidden mb-stack-loose">
+<table class="w-full border-collapse">
+<thead class="bg-surface-container-low text-label-md text-on-surface-variant uppercase text-left border-b border-outline-variant">
+<tr>
+<th class="px-4 py-3 font-medium">Article</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant" id="news-body"></tbody>
+</table>
+</div>
+<!-- Add Article Form -->
+<form class="mt-auto pt-stack-loose border-t border-outline-variant/50 space-y-4" id="new-article-form">
+<div>
+<label class="text-label-sm block mb-1">Headline</label>
+<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="art-title" placeholder="Headline" required="" type="text"/>
+</div>
+<div>
+<label class="text-label-sm block mb-1">Content</label>
+<textarea class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none resize-none" id="art-content" placeholder="Write the article content here..." rows="3"></textarea>
+</div>
+<div>
+<label class="text-label-sm block mb-1">Category / Tags</label>
+<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="art-tags" placeholder="Community, Policy..." type="text"/>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 font-label-md text-label-md flex items-center hover:opacity-90 transition-opacity" type="submit">
+<span class="material-symbols-outlined mr-2">add</span> PUBLISH ARTICLE
+                            </button>
+</form>
+</div>
+</section>
+<!-- Stats Bar -->
+<div class="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-4">
 <div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
 <div>
-<p class="text-label-sm text-on-surface-variant mb-1">TOTAL INITIATIVES</p>
-<h4 class="font-display-sm text-display-sm text-primary" id="stat-total-projects">0</h4>
+<p class="text-label-sm text-on-surface-variant mb-1">TOTAL VIDEOS</p>
+<h4 class="font-display-sm text-display-sm text-primary" id="stat-total-videos">0</h4>
 </div>
-<span class="material-symbols-outlined text-secondary text-4xl opacity-20">inventory</span>
+<span class="material-symbols-outlined text-secondary text-4xl opacity-20">smart_display</span>
+</div>
+<div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
+<div>
+<p class="text-label-sm text-on-surface-variant mb-1">TOTAL GALLERY IMAGES</p>
+<h4 class="font-display-sm text-display-sm text-primary" id="stat-total-gallery">0</h4>
+</div>
+<span class="material-symbols-outlined text-secondary text-4xl opacity-20">photo_library</span>
 </div>
 <div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
 <div>
 <p class="text-label-sm text-on-surface-variant mb-1">TOTAL ARTICLES</p>
 <h4 class="font-display-sm text-display-sm text-primary" id="stat-total-articles">0</h4>
 </div>
-<span class="material-symbols-outlined text-secondary text-4xl opacity-20">group</span>
-</div>
-<div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
-<div>
-<p class="text-label-sm text-on-surface-variant mb-1">AT RISK</p>
-<h4 class="font-display-sm text-display-sm text-error" id="stat-at-risk">0</h4>
-</div>
-<span class="material-symbols-outlined text-error text-4xl opacity-20">pending_actions</span>
-</div>
-<div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
-<div>
-<p class="text-label-sm text-on-surface-variant mb-1">COMPLETED</p>
-<h4 class="font-display-sm text-display-sm text-primary" id="stat-completed">0</h4>
-</div>
-<span class="material-symbols-outlined text-secondary text-4xl opacity-20">trending_up</span>
+<span class="material-symbols-outlined text-secondary text-4xl opacity-20">newspaper</span>
 </div>
 </div>
 </div>
@@ -303,75 +328,115 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="/static/core/js/csrf.js"></script>
 <script>
-        function projectRow(p) {
-            const statusMap = {
-                on_track: ['bg-green-100 text-green-800', 'On Track'],
-                at_risk: ['bg-amber-100 text-amber-800', 'At Risk'],
-                completed: ['bg-blue-100 text-blue-800', 'Completed']
-            };
-            const [cls, label] = statusMap[p.status] || statusMap.on_track;
-            const barColor = p.status === 'at_risk' ? 'bg-amber-500' : 'bg-secondary';
+        function videoRow(v) {
             return `
-                <tr class="hover:bg-surface-container-high transition-colors group">
+                <tr class="hover:bg-surface-container-high transition-colors group" data-id="${v.id}">
                     <td class="px-4 py-4">
                         <div class="flex items-center space-x-3">
-                            <div class="w-12 h-12 bg-outline-variant overflow-hidden rounded">
-                                ${p.image_url ? `<img class="w-full h-full object-cover" src="${p.image_url}"/>` : ''}
+                            <div class="w-16 h-10 bg-outline-variant overflow-hidden rounded flex-shrink-0">
+                                <img class="w-full h-full object-cover" src="${v.thumbnail_url}"/>
                             </div>
                             <div>
-                                <p class="font-body-md font-bold text-primary">${p.title}</p>
-                                <p class="text-label-sm text-on-surface-variant">${p.category || 'General'}</p>
+                                <p class="font-body-md font-bold text-primary line-clamp-1">${v.title}</p>
+                                <span class="inline-block mt-1 px-2 py-0.5 bg-primary-fixed text-primary font-label-sm text-[10px] rounded">${v.year}</span>
                             </div>
                         </div>
                     </td>
-                    <td class="px-4 py-4">
-                        <span class="inline-block px-2 py-1 ${cls} font-label-sm text-[10px] uppercase">${label}</span>
-                    </td>
-                    <td class="px-4 py-4 min-w-[150px]">
-                        <div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
-                            <div class="${barColor} h-full" style="width: ${p.progress_percent}%;"></div>
-                        </div>
-                        <p class="text-label-sm mt-1 text-on-surface-variant">${p.progress_percent}% Reached</p>
+                    <td class="px-4 py-4 text-right">
+                        <button class="material-symbols-outlined text-error hover:bg-error-container p-1 rounded transition-colors delete-video-btn" data-id="${v.id}" type="button">delete</button>
                     </td>
                 </tr>
             `;
         }
 
-        function loadProjects() {
-            $.get('/api/projects/', function (data) {
-                const body = $('#projects-body');
+        function galleryTile(img) {
+            return `
+                <div class="relative group aspect-square rounded overflow-hidden bg-outline-variant" data-id="${img.id}">
+                    <img class="w-full h-full object-cover" src="${img.image_url}"/>
+                    <span class="absolute bottom-1 left-1 px-1.5 py-0.5 bg-black/60 text-white font-label-sm text-[9px] rounded">${img.year}</span>
+                    <button class="absolute top-1 right-1 material-symbols-outlined text-white bg-black/50 hover:bg-error rounded-full text-[16px] p-1 transition-colors delete-gallery-btn" data-id="${img.id}" type="button">delete</button>
+                </div>
+            `;
+        }
+
+        function loadVideos() {
+            $.get('/api/videos/', function (data) {
+                const body = $('#videos-body');
                 body.empty();
-                data.results.forEach(p => body.append(projectRow(p)));
-                $('#stat-total-projects').text(data.results.length);
-                $('#stat-at-risk').text(data.results.filter(p => p.status === 'at_risk').length);
-                $('#stat-completed').text(data.results.filter(p => p.status === 'completed').length);
+                data.results.forEach(v => body.append(videoRow(v)));
+                $('#stat-total-videos').text(data.results.length);
             });
         }
 
-        function loadArticleStats() {
+        function loadGallery() {
+            $.get('/api/gallery/', function (data) {
+                const grid = $('#gallery-grid');
+                grid.empty();
+                data.results.forEach(img => grid.append(galleryTile(img)));
+                $('#stat-total-gallery').text(data.results.length);
+            });
+        }
+
+        function newsRow(a) {
+            return `
+                <tr class="hover:bg-surface-container-high transition-colors">
+                    <td class="px-4 py-4">
+                        <p class="font-body-md font-bold text-primary line-clamp-1">${a.title}</p>
+                        <p class="text-label-sm text-on-surface-variant">${a.category || 'General'} &middot; ${a.published_at}</p>
+                    </td>
+                </tr>
+            `;
+        }
+
+        function loadNews() {
             $.get('/api/news/', function (data) {
+                const body = $('#news-body');
+                body.empty();
+                data.results.forEach(a => body.append(newsRow(a)));
                 $('#stat-total-articles').text(data.results.length);
             });
         }
 
-        $('#new-project-form').on('submit', function (e) {
+        $('#new-video-form').on('submit', function (e) {
             e.preventDefault();
             $.ajax({
-                url: '/api/projects/',
+                url: '/api/videos/',
                 method: 'POST',
                 contentType: 'application/json',
                 data: JSON.stringify({
-                    title: $('#np-title').val(),
-                    category: $('#np-category').val(),
-                    goal_amount: $('#np-goal').val() || 0,
-                    image_url: $('#np-image').val(),
-                    status: 'on_track',
-                    progress_percent: 0
+                    title: $('#nv-title').val(),
+                    video_id: $('#nv-video-id').val(),
+                    year: $('#nv-year').val()
                 }),
                 success: function () {
-                    this_form = $('#new-project-form')[0];
-                    this_form.reset();
-                    loadProjects();
+                    $('#new-video-form')[0].reset();
+                    $('#nv-year').val(new Date().getFullYear());
+                    loadVideos();
+                },
+                error: function (xhr) {
+                    alert((xhr.responseJSON && xhr.responseJSON.error) || 'Could not add video.');
+                }
+            });
+        });
+
+        $('#new-gallery-form').on('submit', function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/api/gallery/',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    image_url: $('#ng-image').val(),
+                    caption: $('#ng-caption').val(),
+                    year: $('#ng-year').val()
+                }),
+                success: function () {
+                    $('#new-gallery-form')[0].reset();
+                    $('#ng-year').val(new Date().getFullYear());
+                    loadGallery();
+                },
+                error: function (xhr) {
+                    alert((xhr.responseJSON && xhr.responseJSON.error) || 'Could not add image.');
                 }
             });
         });
@@ -390,15 +455,30 @@
                 }),
                 success: function () {
                     $('#new-article-form')[0].reset();
-                    loadArticleStats();
-                    alert('Article published.');
+                    loadNews();
+                },
+                error: function (xhr) {
+                    alert((xhr.responseJSON && xhr.responseJSON.error) || 'Could not publish article.');
                 }
             });
         });
 
+        $('#videos-body').on('click', '.delete-video-btn', function () {
+            if (!confirm('Remove this video?')) return;
+            $.ajax({ url: `/api/videos/${$(this).data('id')}/`, method: 'DELETE', success: loadVideos });
+        });
+
+        $('#gallery-grid').on('click', '.delete-gallery-btn', function () {
+            if (!confirm('Remove this image?')) return;
+            $.ajax({ url: `/api/gallery/${$(this).data('id')}/`, method: 'DELETE', success: loadGallery });
+        });
+
         $(function () {
-            loadProjects();
-            loadArticleStats();
+            $('#nv-year').val(new Date().getFullYear());
+            $('#ng-year').val(new Date().getFullYear());
+            loadVideos();
+            loadGallery();
+            loadNews();
         });
     </script>
 </body></html>

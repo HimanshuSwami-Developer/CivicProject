@@ -230,18 +230,18 @@
 <span class="material-symbols-outlined">home</span>
 <span class="font-label-md text-label-md">Home</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 scale-95 active:scale-90 transition-transform hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl" href="/app/donate/">
-<span class="material-symbols-outlined">volunteer_activism</span>
-<span class="font-label-md text-label-md">Donate</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 scale-95 active:scale-90 transition-transform hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl" href="/app/projects/">
-<span class="material-symbols-outlined">account_tree</span>
-<span class="font-label-md text-label-md">Projects</span>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 scale-95 active:scale-90 transition-transform hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl" href="/app/about/">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-md text-label-md">About</span>
 </a>
 <a class="flex flex-col items-center justify-center bg-primary-container dark:bg-primary text-on-primary-container dark:text-on-primary rounded-xl px-4 py-1 scale-95 active:scale-90 transition-transform" href="/app/feedback/">
 <span class="material-symbols-outlined">campaign</span>
 <span class="font-label-md text-label-md">Action</span>
 </a>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline-variant px-4 py-1 scale-95 active:scale-90 transition-transform hover:bg-surface-container dark:hover:bg-surface-container-highest rounded-xl" onclick="openDonationSheet()" type="button">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-label-md text-label-md">Donate</span>
+</button>
 </nav>
 <!-- Success Confirmation Modal -->
 <div class="fixed inset-0 z-[100] hidden" id="success-modal">
@@ -313,4 +313,5 @@
             $('#engagement-form')[0].reset();
         }
     </script>
+{% include "core/_donate_sheet.html" %}
 </body></html>
