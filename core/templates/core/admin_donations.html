@@ -197,7 +197,7 @@
 <p class="text-label-md font-label-md text-on-surface-variant">TOTAL COLLECTED</p>
 <span class="material-symbols-outlined text-secondary">payments</span>
 </div>
-<p class="font-display-sm text-display-sm text-primary" id="summary-total">$0.00</p>
+<p class="font-display-sm text-display-sm text-primary" id="summary-total">₹0.00</p>
 </div>
 <div class="bg-surface-container-lowest border border-outline-variant p-5 rounded-xl">
 <div class="flex justify-between items-start mb-2">
@@ -269,7 +269,7 @@
                             </div>
                         </div>
                     </td>
-                    <td class="p-4 font-label-md text-primary font-bold">$${Number(d.amount).toLocaleString(undefined, {minimumFractionDigits: 2})}</td>
+                    <td class="p-4 font-label-md text-primary font-bold">₹${Number(d.amount).toLocaleString('en-IN', {minimumFractionDigits: 2})}</td>
                     <td class="p-4"><div class="flex items-center gap-2"><span class="text-body-md">${d.cause}</span></div></td>
                     <td class="p-4 text-center text-body-md text-on-surface-variant">${d.created_at}</td>
                     <td class="p-4 text-center">${statusBadge(d.status)}</td>
@@ -288,7 +288,7 @@
 
         $(function () {
             $.get('/api/donations/stats/', function (data) {
-                $('#summary-total').text('$' + Number(data.total_collected).toLocaleString(undefined, {minimumFractionDigits: 2}));
+                $('#summary-total').text('₹' + Number(data.total_collected).toLocaleString('en-IN', {minimumFractionDigits: 2}));
                 $('#summary-donors').text(data.active_donors);
                 const cards = ['#cause-card-1', '#cause-card-2'];
                 data.causes.slice(0, 2).forEach((c, i) => {
@@ -299,7 +299,7 @@
                         </div>
                         <div class="flex items-baseline gap-2">
                             <p class="font-display-sm text-display-sm text-primary">${c.percent_funded}%</p>
-                            <p class="text-body-sm text-on-surface-variant">$${Math.round(c.raised_amount / 1000)}k / $${Math.round(c.goal_amount / 1000)}k</p>
+                            <p class="text-body-sm text-on-surface-variant">₹${Math.round(c.raised_amount / 1000)}k / ₹${Math.round(c.goal_amount / 1000)}k</p>
                         </div>
                         <div class="mt-4 h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
                             <div class="h-full bg-secondary" style="width: ${c.percent_funded}%"></div>

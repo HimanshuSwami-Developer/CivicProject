@@ -227,57 +227,71 @@
 </div>
 </div>
 <!-- Modal Body -->
-<div class="p-6 space-y-6 bg-surface-container-lowest">
+<div class="p-6 space-y-4 bg-surface-container-lowest max-h-[65vh] overflow-y-auto" id="donationFormWrap">
+<form class="space-y-4" id="donationForm">
 <div>
-<label class="block text-label-md font-label-md text-on-surface-variant mb-3">Select Amount</label>
-<div class="grid grid-cols-3 gap-3">
-<button class="amount-btn border-2 border-outline-variant p-3 rounded-lg font-bold text-on-surface-variant hover:border-primary transition-all" onclick="selectAmount(10, this)" type="button">$10</button>
-<button class="amount-btn border-2 border-outline-variant p-3 rounded-lg font-bold text-on-surface-variant hover:border-primary transition-all" onclick="selectAmount(50, this)" type="button">$50</button>
-<button class="amount-btn border-2 border-outline-variant p-3 rounded-lg font-bold text-on-surface-variant hover:border-primary transition-all" onclick="selectAmount(100, this)" type="button">$100</button>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="donorName">Full Name</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="donorName" required="" type="text"/>
 </div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="donorEmail">Email</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="donorEmail" required="" type="email"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="donorPhone">Phone Number</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="donorPhone" required="" type="tel"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="donorState">State</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="donorState" required="" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="donorCity">City</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="donorCity" required="" type="text"/>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-3">Amount</label>
+<div class="grid grid-cols-3 gap-3 mb-3">
+<button class="amount-btn border-2 border-outline-variant p-3 rounded-lg font-bold text-on-surface-variant hover:border-primary transition-all" data-amount="100" type="button">₹100</button>
+<button class="amount-btn border-2 border-outline-variant p-3 rounded-lg font-bold text-on-surface-variant hover:border-primary transition-all" data-amount="500" type="button">₹500</button>
+<button class="amount-btn border-2 border-outline-variant p-3 rounded-lg font-bold text-on-surface-variant hover:border-primary transition-all" data-amount="1000" type="button">₹1000</button>
 </div>
 <div class="relative">
-<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold">$</span>
-<input class="w-full pl-8 pr-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="customAmount" placeholder="Custom Amount" type="number"/>
-</div>
-<div class="space-y-4">
-<div class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant bg-white cursor-pointer hover:border-primary transition-all payment-method-option" data-method="card">
-<span class="material-symbols-outlined text-primary">credit_card</span>
-<div class="flex-1">
-<p class="text-sm font-bold">Cards (Credit/Debit)</p>
-<p class="text-xs text-on-surface-variant">Visa, Mastercard, RuPay</p>
-</div>
-<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
-</div>
-<div class="flex items-center gap-3 p-3 rounded-lg border border-outline-variant bg-white cursor-pointer hover:border-primary transition-all payment-method-option" data-method="upi">
-<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
-<div class="flex-1">
-<p class="text-sm font-bold">UPI / Net Banking</p>
-<p class="text-xs text-on-surface-variant">Google Pay, PhonePe, Banks</p>
-</div>
-<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold">₹</span>
+<input class="w-full pl-8 pr-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="customAmount" min="1" placeholder="Enter amount" required="" type="number"/>
 </div>
 </div>
+</form>
+</div>
+<!-- Success State -->
+<div class="hidden flex-col items-center justify-center text-center p-10 bg-surface-container-lowest" id="donationSuccess">
+<div class="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mb-6 text-green-600">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h4 class="font-bold text-xl text-primary mb-2">Thank You!</h4>
+<p class="text-on-surface-variant text-sm mb-6">Your donation of <span class="font-bold text-primary" id="successAmount"></span> has been received. A receipt has been sent to your email.</p>
+<button class="w-full bg-primary-container text-on-primary-container font-bold py-3 rounded-lg" onclick="closeDonationModal()" type="button">Close</button>
 </div>
 <!-- Modal Footer -->
-<div class="p-6 border-t border-outline-variant bg-white">
-<button class="w-full bg-secondary text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-lg" id="payBtn">
-                    Pay <span id="displayAmount">$0</span> Securely
+<div class="p-6 border-t border-outline-variant bg-white" id="donationFormFooter">
+<button class="w-full bg-secondary text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-lg" form="donationForm" id="payBtn" type="submit">
+                    Pay <span id="displayAmount">₹0</span> Securely
                     <span class="material-symbols-outlined">lock</span>
 </button>
 <p class="text-center text-[10px] text-on-surface-variant mt-4 uppercase tracking-widest font-bold">
-                    Powered by SAVE Secure Payments
+                    Secured by Razorpay
                 </p>
 </div>
 </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="/static/core/js/csrf.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
         let causesById = {};
         let selectedCauseId = null;
-        let selectedAmount = 0;
-        let selectedMethod = 'card';
 
         function largeCauseCard(c) {
             return `
@@ -296,7 +310,7 @@
                             <div class="w-2/3 bg-surface-container rounded-full h-2">
                                 <div class="bg-secondary h-2 rounded-full" style="width: ${c.percent_funded}%"></div>
                             </div>
-                            <span class="text-label-md font-label-md text-primary">${c.percent_funded}% of $${Math.round(c.goal_amount / 1000)}k Goal</span>
+                            <span class="text-label-md font-label-md text-primary">${c.percent_funded}% of ₹${Math.round(c.goal_amount / 1000)}k Goal</span>
                         </div>
                     </div>
                 </div>
@@ -349,6 +363,12 @@
             selectedCauseId = causeId;
             $('#modalCauseTitle').text(c.name);
             $('#modalIcon').text(c.icon || 'volunteer_activism');
+            $('#donationForm')[0].reset();
+            $('.amount-btn').removeClass('border-primary bg-primary-fixed text-primary').addClass('border-outline-variant text-on-surface-variant');
+            $('#displayAmount').text('₹0');
+            $('#donationFormWrap').removeClass('hidden').addClass('block');
+            $('#donationFormFooter').removeClass('hidden').addClass('block');
+            $('#donationSuccess').addClass('hidden').removeClass('flex');
             $('#donationModal').removeClass('hidden').addClass('flex');
             $('body').css('overflow', 'hidden');
         }
@@ -356,14 +376,6 @@
         function closeDonationModal() {
             $('#donationModal').addClass('hidden').removeClass('flex');
             $('body').css('overflow', 'auto');
-        }
-
-        function selectAmount(value, el) {
-            $('.amount-btn').removeClass('border-primary bg-primary-fixed text-primary').addClass('border-outline-variant text-on-surface-variant');
-            $(el).addClass('border-primary bg-primary-fixed text-primary').removeClass('border-outline-variant text-on-surface-variant');
-            selectedAmount = value;
-            $('#customAmount').val(value);
-            $('#displayAmount').text('$' + value);
         }
 
         $(function () {
@@ -382,46 +394,99 @@
                 });
             });
 
+            $('.amount-btn').on('click', function () {
+                const value = $(this).data('amount');
+                $('.amount-btn').removeClass('border-primary bg-primary-fixed text-primary').addClass('border-outline-variant text-on-surface-variant');
+                $(this).addClass('border-primary bg-primary-fixed text-primary').removeClass('border-outline-variant text-on-surface-variant');
+                $('#customAmount').val(value);
+                $('#displayAmount').text('₹' + value);
+            });
+
             $('#customAmount').on('input', function () {
                 const val = $(this).val() || 0;
-                selectedAmount = val;
-                $('#displayAmount').text('$' + val);
+                $('#displayAmount').text('₹' + val);
                 $('.amount-btn').removeClass('border-primary bg-primary-fixed text-primary').addClass('border-outline-variant text-on-surface-variant');
             });
 
-            $('.payment-method-option').on('click', function () {
-                $('.payment-method-option').removeClass('border-primary').addClass('border-outline-variant');
-                $(this).addClass('border-primary').removeClass('border-outline-variant');
-                selectedMethod = $(this).data('method');
-            });
-
-            $('#payBtn').on('click', function () {
-                if (!selectedAmount || selectedAmount <= 0) {
-                    alert('Please select or enter a donation amount.');
+            $('#donationForm').on('submit', function (e) {
+                e.preventDefault();
+                const amount = parseFloat($('#customAmount').val());
+                if (!amount || amount <= 0) {
+                    alert('Please enter a valid donation amount.');
                     return;
                 }
-                const btn = $(this);
+
+                const btn = $('#payBtn');
                 const originalHtml = btn.html();
                 btn.prop('disabled', true).html('Processing...');
+
                 $.ajax({
-                    url: '/api/donations/',
+                    url: '/api/donations/create-order/',
                     method: 'POST',
                     contentType: 'application/json',
                     data: JSON.stringify({
-                        amount: selectedAmount,
-                        cause_id: selectedCauseId,
-                        payment_method: selectedMethod
+                        donor_name: $('#donorName').val(),
+                        email: $('#donorEmail').val(),
+                        phone: $('#donorPhone').val(),
+                        state: $('#donorState').val(),
+                        city: $('#donorCity').val(),
+                        amount: amount,
+                        cause_id: selectedCauseId
                     }),
-                    success: function () {
-                        btn.html('Thank You! <span class="material-symbols-outlined">check_circle</span>');
-                        setTimeout(() => {
-                            closeDonationModal();
+                    success: function (order) {
+                        const rzp = new Razorpay({
+                            key: order.key,
+                            amount: order.amount,
+                            currency: order.currency,
+                            name: 'Sankalp Adhikar Vishwas Ekta Party',
+                            description: 'Donation - ' + ($('#modalCauseTitle').text() || 'General Fund'),
+                            order_id: order.order_id,
+                            prefill: {
+                                name: order.name,
+                                email: order.email,
+                                contact: order.phone
+                            },
+                            theme: { color: '#002045' },
+                            handler: function (response) {
+                                $.ajax({
+                                    url: '/api/donations/verify/',
+                                    method: 'POST',
+                                    contentType: 'application/json',
+                                    data: JSON.stringify({
+                                        donation_id: order.donation_id,
+                                        razorpay_order_id: response.razorpay_order_id,
+                                        razorpay_payment_id: response.razorpay_payment_id,
+                                        razorpay_signature: response.razorpay_signature
+                                    }),
+                                    success: function (donation) {
+                                        $('#successAmount').text('₹' + Number(donation.amount).toLocaleString('en-IN'));
+                                        $('#donationFormWrap').addClass('hidden').removeClass('block');
+                                        $('#donationFormFooter').addClass('hidden').removeClass('block');
+                                        $('#donationSuccess').removeClass('hidden').addClass('flex');
+                                        btn.prop('disabled', false).html(originalHtml);
+                                    },
+                                    error: function () {
+                                        alert('Your payment succeeded but we could not confirm it automatically. Please contact support with payment ID ' + response.razorpay_payment_id + '.');
+                                        btn.prop('disabled', false).html(originalHtml);
+                                    }
+                                });
+                            },
+                            modal: {
+                                ondismiss: function () {
+                                    btn.prop('disabled', false).html(originalHtml);
+                                }
+                            }
+                        });
+                        rzp.on('payment.failed', function () {
                             btn.prop('disabled', false).html(originalHtml);
-                        }, 1500);
+                            alert('Payment failed. Please try again.');
+                        });
+                        rzp.open();
                     },
-                    error: function () {
+                    error: function (xhr) {
                         btn.prop('disabled', false).html(originalHtml);
-                        alert('Something went wrong processing your donation. Please try again.');
+                        const msg = (xhr.responseJSON && xhr.responseJSON.error) || 'Something went wrong. Please try again.';
+                        alert(msg);
                     }
                 });
             });

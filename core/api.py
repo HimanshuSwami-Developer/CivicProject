@@ -1,5 +1,7 @@
 import json
 
+import razorpay
+from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.db.models import Count, Q, Sum
 from django.http import JsonResponse
@@ -77,37 +79,122 @@ def project_detail(request, pk):
 
 # ------------------------------------------------------------- donations ---
 
-@require_http_methods(["GET", "POST"])
+@require_http_methods(["GET"])
 def donations_list(request):
-    if request.method == "POST":
-        data = _body(request)
-        amount = data.get("amount")
-        if not amount:
-            return JsonResponse({"error": "Amount is required"}, status=400)
-
-        cause = None
-        cause_id = data.get("cause_id")
-        if cause_id:
-            cause = Cause.objects.filter(pk=cause_id).first()
-            if cause:
-                cause.raised_amount = float(cause.raised_amount) + float(amount)
-                cause.save(update_fields=["raised_amount"])
-
-        donation = Donation.objects.create(
-            donor_name=data.get("donor_name") or "Anonymous Donor",
-            email=data.get("email", ""),
-            amount=amount,
-            cause=cause,
-            payment_method=data.get("payment_method", "card"),
-            status="success",
-        )
-        return JsonResponse(donation.to_dict(), status=201)
-
     if not request.user.is_authenticated:
         return JsonResponse({"error": "Authentication required"}, status=401)
 
     donations = Donation.objects.select_related("cause").all()[:200]
     return JsonResponse({"results": [d.to_dict() for d in donations]})
+
+
+def _razorpay_client():
+    if not settings.RAZORPAY_KEY_ID or not settings.RAZORPAY_KEY_SECRET:
+        return None
+    return razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
+
+
+@require_http_methods(["POST"])
+def create_donation_order(request):
+    data = _body(request)
+
+    try:
+        amount = float(data.get("amount"))
+    except (TypeError, ValueError):
+        amount = 0
+    if amount <= 0:
+        return JsonResponse({"error": "A valid donation amount is required"}, status=400)
+
+    donor_name = (data.get("donor_name") or "").strip()
+    email = (data.get("email") or "").strip()
+    phone = (data.get("phone") or "").strip()
+    if not donor_name or not email or not phone:
+        return JsonResponse({"error": "Full name, email and phone number are required"}, status=400)
+
+    client = _razorpay_client()
+    if client is None:
+        return JsonResponse({"error": "Online payments are not configured yet. Please try again later."}, status=503)
+
+    cause = None
+    cause_id = data.get("cause_id")
+    if cause_id:
+        cause = Cause.objects.filter(pk=cause_id).first()
+
+    amount_paise = int(round(amount * 100))
+    try:
+        order = client.order.create({
+            "amount": amount_paise,
+            "currency": "INR",
+            "payment_capture": 1,
+        })
+    except Exception:
+        return JsonResponse({"error": "Could not start the payment. Please try again."}, status=502)
+
+    donation = Donation.objects.create(
+        donor_name=donor_name,
+        email=email,
+        phone=phone,
+        state=(data.get("state") or "").strip(),
+        city=(data.get("city") or "").strip(),
+        amount=amount,
+        cause=cause,
+        payment_method="razorpay",
+        status="pending",
+        razorpay_order_id=order["id"],
+    )
+
+    return JsonResponse({
+        "donation_id": donation.id,
+        "order_id": order["id"],
+        "amount": amount_paise,
+        "currency": "INR",
+        "key": settings.RAZORPAY_KEY_ID,
+        "name": donor_name,
+        "email": email,
+        "phone": phone,
+    }, status=201)
+
+
+@require_http_methods(["POST"])
+def verify_donation_payment(request):
+    data = _body(request)
+    donation_id = data.get("donation_id")
+    order_id = data.get("razorpay_order_id")
+    payment_id = data.get("razorpay_payment_id")
+    signature = data.get("razorpay_signature")
+
+    if not all([donation_id, order_id, payment_id, signature]):
+        return JsonResponse({"error": "Missing payment details"}, status=400)
+
+    try:
+        donation = Donation.objects.get(pk=donation_id, razorpay_order_id=order_id)
+    except (Donation.DoesNotExist, ValueError):
+        return JsonResponse({"error": "Donation not found"}, status=404)
+
+    client = _razorpay_client()
+    if client is None:
+        return JsonResponse({"error": "Online payments are not configured yet."}, status=503)
+
+    try:
+        client.utility.verify_payment_signature({
+            "razorpay_order_id": order_id,
+            "razorpay_payment_id": payment_id,
+            "razorpay_signature": signature,
+        })
+    except razorpay.errors.SignatureVerificationError:
+        donation.status = "failed"
+        donation.save(update_fields=["status"])
+        return JsonResponse({"error": "Payment verification failed"}, status=400)
+
+    donation.status = "success"
+    donation.razorpay_payment_id = payment_id
+    donation.save(update_fields=["status", "razorpay_payment_id"])
+
+    if donation.cause:
+        donation.cause.raised_amount = float(donation.cause.raised_amount) + float(donation.amount)
+        donation.cause.save(update_fields=["raised_amount"])
+
+    return JsonResponse(donation.to_dict(), status=200)
 
 
 @login_required
@@ -136,7 +223,7 @@ def feedback_list(request):
             email=data.get("email", ""),
             category=data.get("category", ""),
             message=message,
-            status="new",
+            status="pending",
         )
         return JsonResponse(feedback.to_dict(), status=201)
 
@@ -161,6 +248,9 @@ def feedback_detail(request, pk):
     if request.method == "PATCH":
         data = _body(request)
         if "status" in data:
+            valid_statuses = {choice for choice, _ in Feedback.STATUS_CHOICES}
+            if data["status"] not in valid_statuses:
+                return JsonResponse({"error": "Invalid status"}, status=400)
             feedback.status = data["status"]
         if "response" in data:
             feedback.response = data["response"]

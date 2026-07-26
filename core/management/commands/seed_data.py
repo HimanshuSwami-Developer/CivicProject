@@ -129,7 +129,7 @@ class Command(BaseCommand):
             email="s.jenkins@citymail.com",
             category="infrastructure",
             message="I noticed that the new Central Library has a vast, south-facing roof area that seems completely underutilized. Installing a solar array there could potentially power the entire building and act as an educational showcase for the city's green initiatives.",
-            status="new",
+            status="pending",
         )
         Feedback.objects.create(
             type="suggestion",
@@ -137,7 +137,7 @@ class Command(BaseCommand):
             email="mchen99@web.net",
             category="infrastructure",
             message="The current Farmers Market on 4th Ave is a huge success, but it's becoming dangerously overcrowded on Saturday mornings. We should consider closing off 5th Ave as well during market hours.",
-            status="in_review",
+            status="pending",
         )
         Feedback.objects.create(
             type="complaint",
@@ -153,7 +153,7 @@ class Command(BaseCommand):
             email="elena.r@riverside.com",
             category="other",
             message="There is a massive pile of construction waste dumped right near the north entrance of Riverside Park. It's blocking the bike path and looks terrible.",
-            status="flagged",
+            status="closed",
         )
         Feedback.objects.create(
             type="suggestion",
@@ -161,7 +161,7 @@ class Command(BaseCommand):
             email="adent@galaxy.com",
             category="environment",
             message="Implementing IoT sensors in public garbage bins could save the city thousands in fuel costs by ensuring garbage trucks only stop when bins are actually full.",
-            status="in_review",
+            status="pending",
         )
 
         NewsArticle.objects.create(

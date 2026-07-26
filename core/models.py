@@ -87,10 +87,15 @@ class Donation(models.Model):
 
     donor_name = models.CharField(max_length=120)
     email = models.EmailField(blank=True)
+    phone = models.CharField(max_length=20, blank=True)
+    state = models.CharField(max_length=80, blank=True)
+    city = models.CharField(max_length=80, blank=True)
     amount = models.DecimalField(max_digits=12, decimal_places=2)
     cause = models.ForeignKey(Cause, on_delete=models.SET_NULL, null=True, blank=True, related_name="donations")
     payment_method = models.CharField(max_length=40, blank=True, default="card")
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="success")
+    razorpay_order_id = models.CharField(max_length=100, blank=True)
+    razorpay_payment_id = models.CharField(max_length=100, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -104,6 +109,9 @@ class Donation(models.Model):
             "id": self.id,
             "donor_name": self.donor_name,
             "email": self.email,
+            "phone": self.phone,
+            "state": self.state,
+            "city": self.city,
             "amount": float(self.amount),
             "cause": self.cause.name if self.cause else "General Fund",
             "payment_method": self.payment_method,
@@ -119,11 +127,9 @@ class Feedback(models.Model):
         ("complaint", "Complaint"),
     ]
     STATUS_CHOICES = [
-        ("new", "New"),
-        ("in_review", "In Review"),
+        ("pending", "Pending"),
         ("resolved", "Resolved"),
-        ("flagged", "Flagged"),
-        ("approved", "Approved"),
+        ("closed", "Closed"),
     ]
 
     type = models.CharField(max_length=20, choices=TYPE_CHOICES)
@@ -131,7 +137,7 @@ class Feedback(models.Model):
     email = models.EmailField(blank=True)
     category = models.CharField(max_length=80, blank=True)
     message = models.TextField()
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="new")
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="pending")
     response = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 

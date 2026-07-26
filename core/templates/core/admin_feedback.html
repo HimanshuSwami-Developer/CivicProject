@@ -224,9 +224,13 @@
 </div>
 <h2 class="font-headline-md text-headline-md text-primary" id="detail-title"></h2>
 </div>
-<div class="flex space-x-2">
-<button class="p-2 border border-outline-variant rounded hover:bg-surface-container-low transition-colors" id="flag-btn" title="Flag" type="button"><span class="material-symbols-outlined text-on-surface-variant">flag</span></button>
-<button class="p-2 border border-outline-variant rounded hover:bg-surface-container-low transition-colors" id="approve-btn" title="Mark resolved / approved" type="button"><span class="material-symbols-outlined text-on-surface-variant">task_alt</span></button>
+<div class="flex items-center space-x-2">
+<label class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant" for="status-select">Status</label>
+<select class="border border-outline-variant rounded-lg px-3 py-2 font-label-md text-label-md text-primary bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none" id="status-select">
+<option value="pending">Pending</option>
+<option value="resolved">Resolved</option>
+<option value="closed">Closed</option>
+</select>
 </div>
 </div>
 <div class="flex items-center space-x-4 mb-8 p-4 bg-surface-container-low rounded-xl">
@@ -262,11 +266,9 @@
 <script src="/static/core/js/csrf.js"></script>
 <script>
         const statusClasses = {
-            new: 'bg-primary-fixed text-on-primary-fixed-variant',
-            in_review: 'bg-secondary-container/20 text-on-secondary-container',
+            pending: 'bg-primary-fixed text-on-primary-fixed-variant',
             resolved: 'bg-green-100 text-green-800',
-            approved: 'bg-green-100 text-green-800',
-            flagged: 'bg-error-container text-on-error-container'
+            closed: 'bg-surface-container-high text-on-surface-variant'
         };
 
         let currentTab = 'suggestion';
@@ -289,7 +291,7 @@
             list.empty();
             $('#list-count').text(`Showing ${items.length} items`);
             items.forEach(item => {
-                const cls = statusClasses[item.status] || statusClasses.new;
+                const cls = statusClasses[item.status] || statusClasses.pending;
                 const div = $(`
                     <div class="p-5 border-b border-outline-variant cursor-pointer hover:bg-white transition-all group relative" data-id="${item.id}">
                         <div class="flex justify-between items-start mb-2">
@@ -335,7 +337,8 @@
 
             const badge = $('#detail-badge');
             badge.text(item.status_label);
-            badge.attr('class', `px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${statusClasses[item.status] || statusClasses.new}`);
+            badge.attr('class', `px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${statusClasses[item.status] || statusClasses.pending}`);
+            $('#status-select').val(item.status);
 
             $('#feedback-list > div').removeClass('bg-white border-l-4 border-l-primary');
             el.addClass('bg-white border-l-4 border-l-primary');
@@ -357,22 +360,15 @@
             });
         }
 
-        $('#flag-btn').on('click', function () {
+        $('#status-select').on('change', function () {
             if (!selectedItem) return;
-            updateFeedback({ status: 'flagged' });
-        });
-
-        $('#approve-btn').on('click', function () {
-            if (!selectedItem) return;
-            const status = selectedItem.type === 'complaint' ? 'resolved' : 'approved';
-            updateFeedback({ status: status });
+            updateFeedback({ status: $(this).val() });
         });
 
         $('#send-response-btn').on('click', function () {
             if (!selectedItem) return;
             const response = $('#response-text').val();
-            const status = selectedItem.type === 'complaint' ? 'resolved' : 'in_review';
-            updateFeedback({ response: response, status: status }, function () {
+            updateFeedback({ response: response }, function () {
                 alert('Response sent to citizen.');
             });
         });

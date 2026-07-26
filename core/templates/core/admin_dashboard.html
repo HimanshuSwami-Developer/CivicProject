@@ -209,7 +209,7 @@
 </div>
 </div>
 <h3 class="text-on-surface-variant font-label-md text-label-md uppercase tracking-widest mb-1">Total Donations</h3>
-<div class="font-display-sm text-display-sm text-primary" id="stat-total-donations">$0.00</div>
+<div class="font-display-sm text-display-sm text-primary" id="stat-total-donations">₹0.00</div>
 </div>
 </div>
 <!-- Suggestions vs Complaints -->
@@ -339,7 +339,7 @@
 
         $(function () {
             $.get('/api/dashboard/stats/', function (data) {
-                $('#stat-total-donations').text('$' + Number(data.total_donations).toLocaleString(undefined, {minimumFractionDigits: 2}));
+                $('#stat-total-donations').text('₹' + Number(data.total_donations).toLocaleString('en-IN', {minimumFractionDigits: 2}));
                 $('#stat-active-projects').text(data.active_projects);
                 $('#stat-total-feedback').text(data.total_feedback);
                 $('#stat-resolution-rate').text(data.resolution_rate + '%');
@@ -362,7 +362,7 @@
                             <td class="px-6 py-4"><div class="flex flex-col"><span class="font-medium text-primary">${d.donor_name}</span><span class="text-body-sm text-on-surface-variant">${d.cause}</span></div></td>
                             <td class="px-6 py-4"><span class="text-label-sm bg-secondary-container/10 text-secondary-fixed-variant px-2 py-1 rounded">DONATION</span></td>
                             <td class="px-6 py-4">${statusDot(color, label)}</td>
-                            <td class="px-6 py-4 font-label-md text-primary">$${Number(d.amount).toLocaleString(undefined, {minimumFractionDigits: 2})}</td>
+                            <td class="px-6 py-4 font-label-md text-primary">₹${Number(d.amount).toLocaleString('en-IN', {minimumFractionDigits: 2})}</td>
                         </tr>
                     `);
                 });
