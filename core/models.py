@@ -6,6 +6,45 @@ def current_year():
     return timezone.now().year
 
 
+class Member(models.Model):
+    STATUS_CHOICES = [
+        ("pending", "Pending"),
+        ("contacted", "Contacted"),
+        ("approved", "Approved"),
+    ]
+
+    name = models.CharField(max_length=120)
+    email = models.EmailField(blank=True)
+    phone = models.CharField(max_length=20)
+    city = models.CharField(max_length=80, blank=True)
+    state = models.CharField(max_length=80, blank=True)
+    pincode = models.CharField(max_length=6, blank=True)
+    message = models.TextField(blank=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="pending")
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return self.name
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "email": self.email,
+            "phone": self.phone,
+            "city": self.city,
+            "state": self.state,
+            "pincode": self.pincode,
+            "message": self.message,
+            "status": self.status,
+            "status_label": self.get_status_display(),
+            "created_at": self.created_at.strftime("%b %d, %Y"),
+        }
+
+
 class Donation(models.Model):
     STATUS_CHOICES = [
         ("success", "Success"),
@@ -53,22 +92,21 @@ class Donation(models.Model):
 
 class Feedback(models.Model):
     TYPE_CHOICES = [
-        ("suggestion", "Suggestion"),
+        ("feedback", "Feedback"),
         ("complaint", "Complaint"),
     ]
     STATUS_CHOICES = [
         ("pending", "Pending"),
         ("resolved", "Resolved"),
-        ("closed", "Closed"),
     ]
 
     type = models.CharField(max_length=20, choices=TYPE_CHOICES)
     name = models.CharField(max_length=120)
+    phone = models.CharField(max_length=20, blank=True)
     email = models.EmailField(blank=True)
-    category = models.CharField(max_length=80, blank=True)
     message = models.TextField()
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="pending")
-    response = models.TextField(blank=True)
+    remark = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
@@ -81,13 +119,14 @@ class Feedback(models.Model):
         return {
             "id": self.id,
             "type": self.type,
+            "type_label": self.get_type_display(),
             "name": self.name,
+            "phone": self.phone,
             "email": self.email,
-            "category": self.category,
             "message": self.message,
             "status": self.status,
             "status_label": self.get_status_display(),
-            "response": self.response,
+            "remark": self.remark,
             "created_at": self.created_at.isoformat(),
         }
 

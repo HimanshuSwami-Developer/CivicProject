@@ -3,89 +3,97 @@
     @keyframes donationModalSlideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
     .modal-animate { animation: donationModalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
 </style>
-<div class="fixed inset-0 z-[100] hidden items-center justify-center p-4" id="donationModal">
+<div class="fixed inset-0 z-[100] hidden overflow-y-auto" id="donationModal">
 <!-- Backdrop -->
-<div class="absolute inset-0 bg-black/50 backdrop-blur-sm" onclick="closeDonationModal()"></div>
+<div class="fixed inset-0 bg-black/50 backdrop-blur-sm" onclick="closeDonationModal()"></div>
+<!-- Dialog Wrapper -->
+<div class="relative min-h-full flex items-start sm:items-center justify-center p-4">
 <!-- Dialog Content -->
-<div class="relative w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden modal-animate flex flex-col">
+<div class="relative w-full max-w-2xl my-8 bg-white rounded-xl shadow-2xl overflow-hidden modal-animate flex flex-col">
 <!-- Dialog Header -->
-<div class="bg-primary p-6 text-white">
+<div class="saffron-gradient p-6 text-white">
 <div class="flex justify-between items-start">
 <div>
-<h4 class="font-bold text-xl">Make a Donation</h4>
-<p class="text-sm text-white/70">Secure payment powered by Razorpay</p>
+<h4 class="font-headline-md text-lg font-bold">Make a Donation</h4>
+<p class="text-sm text-white/80">Secure payment powered by Razorpay</p>
 </div>
-<button class="text-white/60 hover:text-white" onclick="closeDonationModal()" type="button">
+<button class="text-white/70 hover:text-white" onclick="closeDonationModal()" type="button">
 <span class="material-symbols-outlined">close</span>
 </button>
 </div>
 </div>
 <!-- Dialog Body -->
-<div class="p-6 space-y-4 bg-surface-container-lowest max-h-[65vh] overflow-y-auto" id="donationFormWrap">
+<div class="p-6 space-y-4 bg-surface-container-lowest" id="donationFormWrap">
 <form class="space-y-4" id="donationForm">
 <div>
-<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="donorName">Full Name</label>
-<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="donorName" required="" type="text"/>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-3">Amount</label>
+<div class="grid grid-cols-3 gap-3">
+<button class="amount-btn border-2 border-outline-variant p-3 rounded-lg font-bold text-on-surface-variant hover:border-primary-container transition-all" data-amount="100" type="button">₹100</button>
+<button class="amount-btn border-2 border-outline-variant p-3 rounded-lg font-bold text-on-surface-variant hover:border-primary-container transition-all" data-amount="500" type="button">₹500</button>
+<button class="amount-btn border-2 border-outline-variant p-3 rounded-lg font-bold text-on-surface-variant hover:border-primary-container transition-all" data-amount="1000" type="button">₹1000</button>
+</div>
 </div>
 <div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="customAmount">Amount</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold">₹</span>
+<input class="w-full pl-8 pr-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-primary-container outline-none transition-all" id="customAmount" min="1" placeholder="Enter amount" required="" type="number"/>
+</div>
+</div>
+<div>
+<label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="donorName">Full Name</label>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-primary-container outline-none transition-all" id="donorName" required="" type="text"/>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
 <label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="donorEmail">Email</label>
-<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="donorEmail" required="" type="email"/>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-primary-container outline-none transition-all" id="donorEmail" required="" type="email"/>
 </div>
 <div>
 <label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="donorPhone">Phone Number</label>
-<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="donorPhone" required="" type="tel"/>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-primary-container outline-none transition-all" id="donorPhone" required="" type="tel"/>
+</div>
 </div>
 <div>
 <label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="donorPincode">PIN Code</label>
-<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="donorPincode" inputmode="numeric" maxlength="6" placeholder="6-digit PIN code" required="" type="text"/>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-primary-container outline-none transition-all" id="donorPincode" inputmode="numeric" maxlength="6" placeholder="6-digit PIN code" required="" type="text"/>
 </div>
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <div>
 <label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="donorCity">City</label>
-<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="donorCity" required="" type="text"/>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-primary-container outline-none transition-all" id="donorCity" required="" type="text"/>
 </div>
 <div>
 <label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="donorState">State</label>
-<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="donorState" required="" type="text"/>
-</div>
-</div>
-<div>
-<label class="block text-label-md font-label-md text-on-surface-variant mb-3">Amount</label>
-<div class="grid grid-cols-3 gap-3 mb-3">
-<button class="amount-btn border-2 border-outline-variant p-3 rounded-lg font-bold text-on-surface-variant hover:border-primary transition-all" data-amount="100" type="button">₹100</button>
-<button class="amount-btn border-2 border-outline-variant p-3 rounded-lg font-bold text-on-surface-variant hover:border-primary transition-all" data-amount="500" type="button">₹500</button>
-<button class="amount-btn border-2 border-outline-variant p-3 rounded-lg font-bold text-on-surface-variant hover:border-primary transition-all" data-amount="1000" type="button">₹1000</button>
-</div>
-<div class="relative">
-<span class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold">₹</span>
-<input class="w-full pl-8 pr-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" id="customAmount" min="1" placeholder="Enter amount" required="" type="number"/>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-primary-container outline-none transition-all" id="donorState" required="" type="text"/>
 </div>
 </div>
 <div class="hidden" id="donorPanWrap">
 <label class="block text-label-md font-label-md text-on-surface-variant mb-1" for="donorPan">PAN Number</label>
-<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all uppercase" id="donorPan" maxlength="10" placeholder="ABCDE1234F" type="text"/>
-<p class="text-[11px] text-on-surface-variant mt-1">PAN is mandatory for donations above ₹25,000 as per Indian tax regulations.</p>
+<input class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-primary-container outline-none transition-all uppercase" id="donorPan" maxlength="10" placeholder="ABCDE1234F" type="text"/>
+<p class="text-[11px] text-on-surface-variant mt-1">PAN is mandatory for donations of ₹25,000 or more as per Indian tax regulations.</p>
 </div>
 </form>
 </div>
 <!-- Success State -->
 <div class="hidden flex-col items-center justify-center text-center p-10 bg-surface-container-lowest" id="donationSuccess">
-<div class="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center mb-6 text-green-600">
+<div class="w-20 h-20 rounded-full bg-primary-fixed flex items-center justify-center mb-6 text-primary">
 <span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
 </div>
 <h4 class="font-bold text-xl text-primary mb-2">Thank You!</h4>
 <p class="text-on-surface-variant text-sm mb-6">Your donation of <span class="font-bold text-primary" id="successAmount"></span> has been received. A receipt has been sent to your email.</p>
-<button class="w-full bg-primary-container text-on-primary-container font-bold py-3 rounded-lg" onclick="closeDonationModal()" type="button">Close</button>
+<button class="w-full bg-primary-container text-on-primary-container font-bold py-3 rounded-lg hover:brightness-105 transition-all" onclick="closeDonationModal()" type="button">Close</button>
 </div>
 <!-- Dialog Footer -->
 <div class="p-6 border-t border-outline-variant bg-white" id="donationFormFooter">
-<button class="w-full bg-secondary text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all shadow-lg" form="donationForm" id="payBtn" type="submit">
+<button class="w-full bg-primary-container text-on-primary-container font-bold py-4 rounded-lg flex items-center justify-center gap-2 hover:brightness-105 active:scale-95 transition-all shadow-lg" form="donationForm" id="payBtn" type="submit">
                 Pay <span id="displayAmount">₹0</span> Securely
                 <span class="material-symbols-outlined">lock</span>
 </button>
 <p class="text-center text-[10px] text-on-surface-variant mt-4 uppercase tracking-widest font-bold">
                 Secured by Razorpay
             </p>
+</div>
 </div>
 </div>
 </div>
@@ -96,7 +104,7 @@
         const PAN_RE = /^[A-Z]{5}[0-9]{4}[A-Z]$/;
 
         function updatePanVisibility(amount) {
-            const needsPan = amount > PAN_REQUIRED_ABOVE;
+            const needsPan = amount >= PAN_REQUIRED_ABOVE;
             $('#donorPanWrap').toggleClass('hidden', !needsPan);
             if (needsPan) {
                 $('#donorPan').attr('required', 'required');
@@ -107,18 +115,18 @@
 
         window.openDonationModal = function () {
             $('#donationForm')[0].reset();
-            $('.amount-btn').removeClass('border-primary bg-primary-fixed text-primary').addClass('border-outline-variant text-on-surface-variant');
+            $('.amount-btn').removeClass('border-primary-container bg-primary-fixed text-primary').addClass('border-outline-variant text-on-surface-variant');
             $('#displayAmount').text('₹0');
             updatePanVisibility(0);
             $('#donationFormWrap').removeClass('hidden').addClass('block');
             $('#donationFormFooter').removeClass('hidden').addClass('block');
             $('#donationSuccess').addClass('hidden').removeClass('flex');
-            $('#donationModal').removeClass('hidden').addClass('flex');
+            $('#donationModal').removeClass('hidden').addClass('block');
             $('body').css('overflow', 'hidden');
         };
 
         window.closeDonationModal = function () {
-            $('#donationModal').addClass('hidden').removeClass('flex');
+            $('#donationModal').addClass('hidden').removeClass('block');
             $('body').css('overflow', 'auto');
         };
 
@@ -143,8 +151,8 @@
 
             $('.amount-btn').on('click', function () {
                 const value = $(this).data('amount');
-                $('.amount-btn').removeClass('border-primary bg-primary-fixed text-primary').addClass('border-outline-variant text-on-surface-variant');
-                $(this).addClass('border-primary bg-primary-fixed text-primary').removeClass('border-outline-variant text-on-surface-variant');
+                $('.amount-btn').removeClass('border-primary-container bg-primary-fixed text-primary').addClass('border-outline-variant text-on-surface-variant');
+                $(this).addClass('border-primary-container bg-primary-fixed text-primary').removeClass('border-outline-variant text-on-surface-variant');
                 $('#customAmount').val(value);
                 $('#displayAmount').text('₹' + value);
                 updatePanVisibility(value);
@@ -153,7 +161,7 @@
             $('#customAmount').on('input', function () {
                 const val = Number($(this).val()) || 0;
                 $('#displayAmount').text('₹' + val);
-                $('.amount-btn').removeClass('border-primary bg-primary-fixed text-primary').addClass('border-outline-variant text-on-surface-variant');
+                $('.amount-btn').removeClass('border-primary-container bg-primary-fixed text-primary').addClass('border-outline-variant text-on-surface-variant');
                 updatePanVisibility(val);
             });
 
@@ -166,9 +174,9 @@
                 }
 
                 const pan = $('#donorPan').val().trim().toUpperCase();
-                if (amount > PAN_REQUIRED_ABOVE) {
+                if (amount >= PAN_REQUIRED_ABOVE) {
                     if (!pan) {
-                        alert('PAN is required for donations above ₹25,000.');
+                        alert('PAN is required for donations of ₹25,000 or more.');
                         return;
                     }
                     if (!PAN_RE.test(pan)) {
@@ -208,7 +216,7 @@
                                 email: order.email,
                                 contact: order.phone
                             },
-                            theme: { color: '#002045' },
+                            theme: { color: '#8f4e00' },
                             handler: function (response) {
                                 $.ajax({
                                     url: '/api/donations/verify/',

@@ -23,6 +23,22 @@
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .skeleton {
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(148, 163, 184, 0.25);
+        }
+        .skeleton::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            transform: translateX(-100%);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+            animation: skeleton-shimmer 1.4s infinite;
+        }
+        @keyframes skeleton-shimmer {
+            100% { transform: translateX(100%); }
+        }
     </style>
 <script id="tailwind-config">
         tailwind.config = {
@@ -138,19 +154,10 @@
 <span class="material-symbols-outlined text-[20px]">forum</span>
 <span class="font-body-md text-body-md">Citizen Feedback</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-sm text-surface-variant/80 font-medium transition-colors duration-200 hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant" href="/admin-panel/projects/">
-<span class="material-symbols-outlined text-[20px]">account_tree</span>
-<span class="font-body-md text-body-md">Projects</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-sm text-surface-variant/80 font-medium transition-colors duration-200 hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant" href="/admin-panel/projects/">
-<span class="material-symbols-outlined text-[20px]">newspaper</span>
-<span class="font-body-md text-body-md">Content</span>
-</a>
 <a class="flex items-center gap-3 px-4 py-3 rounded-sm text-surface-variant/80 font-medium transition-colors duration-200 hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant" href="/admin-panel/media/">
 <span class="material-symbols-outlined text-[20px]">perm_media</span>
 <span class="font-body-md text-body-md">Media</span>
-</a>
-</nav>
+</a></nav>
 <div class="px-2 mt-auto border-t border-on-primary-fixed-variant/20 pt-4 flex flex-col gap-1">
 <a class="flex items-center gap-3 px-4 py-3 rounded-sm text-surface-variant/80 font-medium transition-colors duration-200 hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant" href="/admin/">
 <span class="material-symbols-outlined text-[20px]">settings</span>
@@ -201,14 +208,14 @@
 <p class="text-label-md font-label-md text-on-surface-variant">TOTAL COLLECTED</p>
 <span class="material-symbols-outlined text-secondary">payments</span>
 </div>
-<p class="font-display-sm text-display-sm text-primary" id="summary-total">₹0.00</p>
+<p class="font-display-sm text-display-sm text-primary" id="summary-total"><span class="skeleton inline-block h-8 w-32 rounded align-middle"></span></p>
 </div>
 <div class="bg-surface-container-lowest border border-outline-variant p-5 rounded-xl">
 <div class="flex justify-between items-start mb-2">
 <p class="text-label-md font-label-md text-on-surface-variant">ACTIVE DONORS</p>
 <span class="material-symbols-outlined text-secondary">groups</span>
 </div>
-<p class="font-display-sm text-display-sm text-primary" id="summary-donors">0</p>
+<p class="font-display-sm text-display-sm text-primary" id="summary-donors"><span class="skeleton inline-block h-8 w-12 rounded align-middle"></span></p>
 </div>
 <div class="bg-surface-container-lowest border border-outline-variant p-5 rounded-xl" id="cause-card-1">
 </div>
@@ -239,6 +246,27 @@
 </tr>
 </thead>
 <tbody class="divide-y divide-outline-variant" id="donations-body">
+<tr>
+<td class="p-4"><div class="flex items-center gap-3"><div class="skeleton w-8 h-8 rounded-full"></div><div class="space-y-2"><div class="skeleton rounded h-4 w-28"></div><div class="skeleton rounded h-3 w-20"></div></div></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-20"></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-24"></div></td>
+<td class="p-4 text-center"><div class="skeleton rounded h-4 w-20 mx-auto"></div></td>
+<td class="p-4 text-center"><div class="skeleton rounded h-4 w-16 mx-auto"></div></td>
+</tr>
+<tr>
+<td class="p-4"><div class="flex items-center gap-3"><div class="skeleton w-8 h-8 rounded-full"></div><div class="space-y-2"><div class="skeleton rounded h-4 w-28"></div><div class="skeleton rounded h-3 w-20"></div></div></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-20"></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-24"></div></td>
+<td class="p-4 text-center"><div class="skeleton rounded h-4 w-20 mx-auto"></div></td>
+<td class="p-4 text-center"><div class="skeleton rounded h-4 w-16 mx-auto"></div></td>
+</tr>
+<tr>
+<td class="p-4"><div class="flex items-center gap-3"><div class="skeleton w-8 h-8 rounded-full"></div><div class="space-y-2"><div class="skeleton rounded h-4 w-28"></div><div class="skeleton rounded h-3 w-20"></div></div></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-20"></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-24"></div></td>
+<td class="p-4 text-center"><div class="skeleton rounded h-4 w-20 mx-auto"></div></td>
+<td class="p-4 text-center"><div class="skeleton rounded h-4 w-16 mx-auto"></div></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -295,7 +323,7 @@
                 $('#summary-total').text('₹' + Number(data.total_collected).toLocaleString('en-IN', {minimumFractionDigits: 2}));
                 $('#summary-donors').text(data.active_donors);
                 const cards = ['#cause-card-1', '#cause-card-2'];
-                data.causes.slice(0, 2).forEach((c, i) => {
+                (data.causes || []).slice(0, 2).forEach((c, i) => {
                     $(cards[i]).html(`
                         <div class="flex justify-between items-start mb-2">
                             <p class="text-label-md font-label-md text-on-surface-variant">${c.name.toUpperCase()}</p>

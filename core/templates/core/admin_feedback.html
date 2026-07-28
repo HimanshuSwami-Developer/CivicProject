@@ -3,265 +3,265 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SAVE Admin | Citizen Feedback Portal</title>
+<title>Citizen Feedback | SAVE Admin</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Plus+Jakarta+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "surface-variant": "#e0e3e5",
-                    "on-primary-fixed": "#001b3c",
-                    "error-container": "#ffdad6",
-                    "primary-fixed": "#d6e3ff",
-                    "surface-tint": "#455f88",
-                    "on-primary": "#ffffff",
-                    "inverse-surface": "#2d3133",
-                    "tertiary-fixed": "#d4e4fc",
-                    "on-secondary-fixed": "#001d37",
-                    "on-primary-fixed-variant": "#2d476f",
-                    "on-tertiary": "#ffffff",
-                    "on-surface": "#181c1e",
-                    "surface-container-low": "#f1f4f6",
-                    "on-secondary-fixed-variant": "#00497e",
-                    "surface-container": "#ebeef0",
-                    "primary": "#002045",
-                    "on-secondary": "#ffffff",
-                    "primary-container": "#1a365d",
-                    "on-tertiary-fixed": "#0d1c2e",
-                    "on-tertiary-fixed-variant": "#39485c",
-                    "tertiary": "#122234",
-                    "secondary": "#0061a5",
-                    "surface-container-lowest": "#ffffff",
-                    "on-error": "#ffffff",
-                    "secondary-container": "#66affe",
-                    "inverse-on-surface": "#eef1f3",
-                    "surface-dim": "#d7dadc",
-                    "on-error-container": "#93000a",
-                    "surface-container-highest": "#e0e3e5",
-                    "on-surface-variant": "#43474e",
-                    "outline-variant": "#c4c6cf",
-                    "surface-container-high": "#e5e9eb",
-                    "background": "#f7fafc",
-                    "tertiary-fixed-dim": "#b8c8e0",
-                    "secondary-fixed-dim": "#9fcaff",
-                    "on-tertiary-container": "#91a0b7",
-                    "outline": "#74777f",
-                    "error": "#ba1a1a",
-                    "on-secondary-container": "#004172",
-                    "on-primary-container": "#86a0cd",
-                    "primary-fixed-dim": "#adc7f7",
-                    "on-background": "#181c1e",
-                    "surface": "#f7fafc",
-                    "tertiary-container": "#28374a",
-                    "surface-bright": "#f7fafc",
-                    "inverse-primary": "#adc7f7",
-                    "secondary-fixed": "#d2e4ff"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "spacing": {
-                    "sidebar-collapsed": "64px",
-                    "stack-compact": "0.5rem",
-                    "stack-default": "1rem",
-                    "stack-loose": "1.5rem",
-                    "gutter": "1rem",
-                    "sidebar-width": "260px",
-                    "container-padding": "2rem"
-            },
-            "fontFamily": {
-                    "label-md": ["JetBrains Mono"],
-                    "body-lg": ["Plus Jakarta Sans"],
-                    "headline-sm": ["Montserrat"],
-                    "body-sm": ["Plus Jakarta Sans"],
-                    "body-md": ["Plus Jakarta Sans"],
-                    "headline-md": ["Montserrat"],
-                    "label-sm": ["JetBrains Mono"],
-                    "display-sm": ["Montserrat"]
-            },
-            "fontSize": {
-                    "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
-                    "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
-                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                    "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                    "display-sm": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
-            }
-          },
-        },
-      }
-    </script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500&family=JetBrains+Mono:wght@500&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..900&family=Montserrat:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/>
 <style>
-        body {
-            background-color: #f7fafc;
-            color: #181c1e;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow: hidden;
-        }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
         }
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
-        .split-view-container { height: calc(100vh - 64px); }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        .skeleton {
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(148, 163, 184, 0.25);
+        }
+        .skeleton::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            transform: translateX(-100%);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+            animation: skeleton-shimmer 1.4s infinite;
+        }
+        @keyframes skeleton-shimmer {
+            100% { transform: translateX(100%); }
+        }
     </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#e0e3e5",
+                        "on-primary-fixed": "#001b3c",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#d6e3ff",
+                        "surface-tint": "#455f88",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-fixed": "#d4e4fc",
+                        "on-secondary-fixed": "#001d37",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#181c1e",
+                        "surface-container-low": "#f1f4f6",
+                        "on-secondary-fixed-variant": "#00497e",
+                        "surface-container": "#ebeef0",
+                        "primary": "#002045",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#1a365d",
+                        "on-tertiary-fixed": "#0d1c2e",
+                        "on-tertiary-fixed-variant": "#39485c",
+                        "tertiary": "#122234",
+                        "secondary": "#0061a5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#66affe",
+                        "inverse-on-surface": "#eef1f3",
+                        "surface-dim": "#d7dadc",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface-variant": "#43474e",
+                        "outline-variant": "#c4c6cf",
+                        "surface-container-high": "#e5e9eb",
+                        "background": "#f7fafc",
+                        "tertiary-fixed-dim": "#b8c8e0",
+                        "secondary-fixed-dim": "#9fcaff",
+                        "on-tertiary-container": "#91a0b7",
+                        "outline": "#74777f",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#004172",
+                        "on-primary-container": "#86a0cd",
+                        "primary-fixed-dim": "#adc7f7",
+                        "on-background": "#181c1e",
+                        "surface": "#f7fafc",
+                        "tertiary-container": "#28374a",
+                        "surface-bright": "#f7fafc",
+                        "inverse-primary": "#adc7f7",
+                        "secondary-fixed": "#d2e4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "sidebar-collapsed": "64px",
+                        "stack-compact": "0.5rem",
+                        "stack-default": "1rem",
+                        "stack-loose": "1.5rem",
+                        "gutter": "1rem",
+                        "sidebar-width": "260px",
+                        "container-padding": "2rem"
+                    },
+                    "fontFamily": {
+                        "label-md": ["JetBrains Mono"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Montserrat"],
+                        "body-sm": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Montserrat"],
+                        "label-sm": ["JetBrains Mono"],
+                        "display-sm": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "body-sm": ["12px", {"lineHeight": "18px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "display-sm": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
 </head>
-<body class="flex">
+<body class="bg-background text-on-surface font-body-md min-h-screen">
 <!-- SideNavBar -->
 <aside class="fixed left-0 top-0 h-full w-sidebar-width bg-primary dark:bg-primary-container flex flex-col py-stack-loose z-50">
 <div class="px-6 mb-10">
 <h1 class="font-headline-sm text-headline-sm text-on-primary font-bold">SAVE Admin</h1>
-<p class="text-on-primary-container text-xs opacity-70">Management Portal</p>
+<p class="text-on-primary-container text-[11px] font-label-md tracking-wider">Management Portal</p>
 </div>
-<nav class="flex-grow space-y-1">
-<a class="flex items-center px-6 py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200 group" href="/admin-panel/">
-<span class="material-symbols-outlined mr-3">dashboard</span>
+<nav class="flex-1 flex flex-col gap-1 px-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-sm text-surface-variant/80 font-medium transition-colors duration-200 hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant" href="/admin-panel/">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
 <span class="font-body-md text-body-md">Dashboard</span>
 </a>
-<a class="flex items-center px-6 py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200 group" href="/admin-panel/donations/">
-<span class="material-symbols-outlined mr-3">payments</span>
+<a class="flex items-center gap-3 px-4 py-3 rounded-sm text-surface-variant/80 font-medium transition-colors duration-200 hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant" href="/admin-panel/donations/">
+<span class="material-symbols-outlined text-[20px]">payments</span>
 <span class="font-body-md text-body-md">Donations</span>
 </a>
-<a class="flex items-center px-6 py-3 border-l-4 border-secondary-container text-secondary-container bg-on-primary-fixed-variant/10 transition-colors duration-200 group" href="/admin-panel/feedback/">
-<span class="material-symbols-outlined mr-3">forum</span>
+<a class="flex items-center gap-3 px-4 py-3 border-l-4 border-secondary-container text-secondary-container bg-on-primary-fixed-variant/10 font-medium transition-colors duration-200" href="/admin-panel/feedback/">
+<span class="material-symbols-outlined text-[20px]">forum</span>
 <span class="font-body-md text-body-md">Citizen Feedback</span>
 </a>
-<a class="flex items-center px-6 py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200 group" href="/admin-panel/projects/">
-<span class="material-symbols-outlined mr-3">account_tree</span>
-<span class="font-body-md text-body-md">Projects</span>
-</a>
-<a class="flex items-center px-6 py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200 group" href="/admin-panel/projects/">
-<span class="material-symbols-outlined mr-3">newspaper</span>
-<span class="font-body-md text-body-md">Content</span>
-</a>
-<a class="flex items-center px-6 py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200 group" href="/admin-panel/media/">
-<span class="material-symbols-outlined mr-3">perm_media</span>
+<a class="flex items-center gap-3 px-4 py-3 rounded-sm text-surface-variant/80 font-medium transition-colors duration-200 hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant" href="/admin-panel/media/">
+<span class="material-symbols-outlined text-[20px]">perm_media</span>
 <span class="font-body-md text-body-md">Media</span>
-</a>
-</nav>
-<div class="mt-auto px-6 space-y-1">
-<a class="flex items-center py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin/">
-<span class="material-symbols-outlined mr-3">settings</span>
+</a></nav>
+<div class="px-2 mt-auto border-t border-on-primary-fixed-variant/20 pt-4 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 rounded-sm text-surface-variant/80 font-medium transition-colors duration-200 hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant" href="/admin/">
+<span class="material-symbols-outlined text-[20px]">settings</span>
 <span class="font-body-md text-body-md">Settings</span>
 </a>
-<a class="flex items-center py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin-panel/logout/">
-<span class="material-symbols-outlined mr-3">logout</span>
+<a class="flex items-center gap-3 px-4 py-3 rounded-sm text-surface-variant/80 font-medium transition-colors duration-200 hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant" href="/admin-panel/logout/">
+<span class="material-symbols-outlined text-[20px]">logout</span>
 <span class="font-body-md text-body-md">Logout</span>
 </a>
 </div>
 </aside>
-<!-- Main Content Wrapper -->
-<main class="flex-grow ml-sidebar-width flex flex-col min-h-screen">
 <!-- TopNavBar -->
 <header class="fixed top-0 right-0 w-[calc(100%-260px)] h-16 bg-surface dark:bg-surface-dim border-b border-outline-variant flex justify-between items-center px-gutter z-40">
-<div class="flex items-center w-1/3">
-<div class="relative w-full max-w-sm">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
-<input class="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 font-body-md text-body-md focus:ring-2 focus:ring-primary/10" placeholder="Search feedback or citizens..." type="text"/>
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full bg-surface-container border-none rounded-lg pl-10 pr-4 py-2 text-body-md focus:ring-2 focus:ring-secondary/20 placeholder:text-on-surface-variant/60" id="search-input" placeholder="Search by name, contact or email..." type="text"/>
 </div>
 </div>
-<div class="flex items-center space-x-6">
-<div class="flex items-center space-x-4">
-<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high p-2 rounded-full transition-colors cursor-pointer active:opacity-80">notifications</button>
-<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-high p-2 rounded-full transition-colors cursor-pointer active:opacity-80">help</button>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3 text-on-surface-variant">
+<button class="material-symbols-outlined p-2 hover:bg-surface-container-high transition-colors cursor-pointer rounded-full">notifications</button>
+<button class="material-symbols-outlined p-2 hover:bg-surface-container-high transition-colors cursor-pointer rounded-full">help</button>
 </div>
-<div class="flex items-center space-x-3 cursor-pointer hover:bg-surface-container-high px-3 py-1.5 rounded-lg transition-colors group">
+<div class="flex items-center gap-3 cursor-pointer group">
 <div class="text-right">
 <p class="font-label-md text-label-md text-primary font-bold">Admin Profile</p>
-<p class="text-[10px] text-on-surface-variant">Lead Moderator</p>
+<p class="text-body-sm text-on-surface-variant opacity-70">Super User</p>
 </div>
-<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold text-xs">AP</div>
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold">AP</div>
 </div>
 </div>
 </header>
-<!-- Content Canvas -->
-<div class="mt-16 flex flex-col h-full split-view-container overflow-hidden">
-<!-- Context Header & Tabs -->
-<div class="bg-surface-container-lowest border-b border-outline-variant px-gutter py-4 flex flex-col md:flex-row md:items-end justify-between space-y-4 md:space-y-0">
+<!-- Main Content Canvas -->
+<main class="ml-sidebar-width pt-16 min-h-screen">
+<div class="p-8 max-w-[1600px] mx-auto">
+<!-- Page Header -->
+<div class="flex justify-between items-end mb-8">
 <div>
-<h2 class="font-headline-md text-headline-md text-primary mb-1">Feedback Management</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Review, categorize, and respond to citizen input.</p>
-</div>
-<div class="flex bg-surface-container rounded-lg p-1 w-fit">
-<button class="px-6 py-1.5 font-label-md text-label-md rounded-md transition-all duration-200 bg-surface-container-lowest text-primary shadow-sm" id="tab-suggestions" onclick="switchTab('suggestion')" type="button">Suggestions</button>
-<button class="px-6 py-1.5 font-label-md text-label-md rounded-md transition-all duration-200 text-on-surface-variant hover:text-primary" id="tab-complaints" onclick="switchTab('complaint')" type="button">Complaints &amp; Reports</button>
+<h2 class="font-headline-md text-headline-md text-primary mb-1">Citizen Feedback</h2>
+<p class="text-body-md text-on-surface-variant">All feedback and complaints submitted by citizens.</p>
 </div>
 </div>
-<!-- Split View Content -->
-<div class="flex flex-grow overflow-hidden">
-<!-- List Sidebar -->
-<div class="w-1/3 min-w-[380px] border-r border-outline-variant flex flex-col bg-surface-container-low">
-<div class="p-4 border-b border-outline-variant flex justify-between items-center bg-white">
-<span class="font-label-md text-label-md text-on-surface-variant" id="list-count">Showing 0 items</span>
-</div>
-<div class="flex-grow overflow-y-auto custom-scrollbar" id="feedback-list">
-</div>
-</div>
-<!-- Detail Pane -->
-<div class="flex-grow flex flex-col bg-white overflow-y-auto custom-scrollbar" id="detail-pane">
-<!-- Default State -->
-<div class="flex flex-grow flex-col items-center justify-center text-on-surface-variant p-20 text-center" id="no-selection">
-<span class="material-symbols-outlined text-6xl mb-4 opacity-20">mark_email_read</span>
-<h3 class="font-headline-sm text-headline-sm mb-2">Select an item to view details</h3>
-<p class="font-body-md text-body-md max-w-sm">Choose any piece of feedback from the left list to read the full message and take administrative action.</p>
-</div>
-<!-- Detail Content (Hidden by default) -->
-<div class="hidden" id="item-details">
-<div class="p-8 border-b border-outline-variant">
-<div class="flex justify-between items-start mb-6">
-<div>
-<div class="flex items-center space-x-3 mb-2">
-<span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider" id="detail-badge"></span>
-<span class="text-on-surface-variant text-xs font-label-md" id="detail-date"></span>
-</div>
-<h2 class="font-headline-md text-headline-md text-primary" id="detail-title"></h2>
-</div>
-<div class="flex items-center space-x-2">
-<label class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant" for="status-select">Status</label>
-<select class="border border-outline-variant rounded-lg px-3 py-2 font-label-md text-label-md text-primary bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none" id="status-select">
+<!-- Table & Filtering Area -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<div class="p-4 border-b border-outline-variant flex flex-wrap gap-4 items-center justify-between">
+<div class="flex items-center gap-2">
+<select class="bg-surface-container-high border-none rounded-lg px-4 py-2 text-body-md font-medium text-primary focus:ring-2 focus:ring-secondary/20" id="tag-filter">
+<option value="">All Tags</option>
+<option value="feedback">Feedback</option>
+<option value="complaint">Complaint</option>
+</select>
+<select class="bg-surface-container-high border-none rounded-lg px-4 py-2 text-body-md font-medium text-primary focus:ring-2 focus:ring-secondary/20" id="status-filter">
+<option value="">All Statuses</option>
 <option value="pending">Pending</option>
 <option value="resolved">Resolved</option>
-<option value="closed">Closed</option>
 </select>
 </div>
+<div class="text-body-sm text-on-surface-variant" id="results-count"></div>
 </div>
-<div class="flex items-center space-x-4 mb-8 p-4 bg-surface-container-low rounded-xl">
-<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-bold" id="detail-avatar"></div>
-<div>
-<p class="font-label-md text-label-md text-primary font-bold" id="detail-author"></p>
-<p class="text-xs text-on-surface-variant" id="detail-email"></p>
-</div>
-</div>
-<div class="prose max-w-none text-on-surface mb-10">
-<p class="font-body-lg text-body-lg leading-relaxed" id="detail-content"></p>
-</div>
-<div class="bg-surface-container-low rounded-xl p-6">
-<h4 class="font-label-md text-label-md text-primary font-bold mb-4 flex items-center">
-<span class="material-symbols-outlined text-sm mr-2">reply</span>
-                                    Compose Official Response
-                                </h4>
-<textarea class="w-full h-32 border border-outline-variant rounded-lg p-4 font-body-md focus:ring-2 focus:ring-primary/20 focus:border-primary mb-4 outline-none transition-all" id="response-text" placeholder="Write your response here..."></textarea>
-<div class="flex justify-between items-center">
-<div></div>
-<div class="flex space-x-3">
-<button class="px-6 py-2 bg-primary text-white rounded font-label-md text-label-md hover:bg-primary-container transition-all" id="send-response-btn" type="button">Send Response</button>
-</div>
-</div>
-</div>
-</div>
-</div>
+<!-- Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="p-4 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">NAME</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">CONTACT</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">EMAIL</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant text-center">TAG</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">DESCRIPTION</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant text-center">STATUS</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">REMARK (ADMIN)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant" id="feedback-body">
+<tr>
+<td class="p-4"><div class="skeleton rounded h-4 w-24"></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-20"></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-28"></div></td>
+<td class="p-4 text-center"><div class="skeleton rounded h-5 w-16 mx-auto"></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-full"></div></td>
+<td class="p-4 text-center"><div class="skeleton rounded h-7 w-20 mx-auto"></div></td>
+<td class="p-4"><div class="skeleton rounded h-10 w-full"></div></td>
+</tr>
+<tr>
+<td class="p-4"><div class="skeleton rounded h-4 w-24"></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-20"></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-28"></div></td>
+<td class="p-4 text-center"><div class="skeleton rounded h-5 w-16 mx-auto"></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-full"></div></td>
+<td class="p-4 text-center"><div class="skeleton rounded h-7 w-20 mx-auto"></div></td>
+<td class="p-4"><div class="skeleton rounded h-10 w-full"></div></td>
+</tr>
+<tr>
+<td class="p-4"><div class="skeleton rounded h-4 w-24"></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-20"></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-28"></div></td>
+<td class="p-4 text-center"><div class="skeleton rounded h-5 w-16 mx-auto"></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-full"></div></td>
+<td class="p-4 text-center"><div class="skeleton rounded h-7 w-20 mx-auto"></div></td>
+<td class="p-4"><div class="skeleton rounded h-10 w-full"></div></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -269,123 +269,101 @@
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="/static/core/js/csrf.js"></script>
 <script>
-        const statusClasses = {
-            pending: 'bg-primary-fixed text-on-primary-fixed-variant',
-            resolved: 'bg-green-100 text-green-800',
-            closed: 'bg-surface-container-high text-on-surface-variant'
+        const tagBadge = {
+            feedback: 'bg-primary-container/10 text-primary-fixed-variant',
+            complaint: 'bg-error-container/10 text-error'
+        };
+        const statusBadge = {
+            pending: 'bg-yellow-100 text-yellow-800',
+            resolved: 'bg-green-100 text-green-700'
         };
 
-        let currentTab = 'suggestion';
-        let items = [];
-        let selectedItem = null;
+        let allFeedback = [];
 
-        function initials(name) {
-            return name.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
-        }
-
-        function timeAgo(iso) {
-            const diff = (Date.now() - new Date(iso).getTime()) / 1000;
-            if (diff < 3600) return Math.floor(diff / 60) + 'm ago';
-            if (diff < 86400) return Math.floor(diff / 3600) + 'h ago';
-            return Math.floor(diff / 86400) + 'd ago';
-        }
-
-        function renderList() {
-            const list = $('#feedback-list');
-            list.empty();
-            $('#list-count').text(`Showing ${items.length} items`);
-            items.forEach(item => {
-                const cls = statusClasses[item.status] || statusClasses.pending;
-                const div = $(`
-                    <div class="p-5 border-b border-outline-variant cursor-pointer hover:bg-white transition-all group relative" data-id="${item.id}">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-wider ${cls}">${item.status_label}</span>
-                            <span class="text-[10px] text-on-surface-variant">${timeAgo(item.created_at)}</span>
+        function feedbackRow(f) {
+            return `
+                <tr class="hover:bg-surface-container transition-colors" data-id="${f.id}">
+                    <td class="p-4 font-bold text-primary align-top">${f.name}</td>
+                    <td class="p-4 text-body-md text-on-surface-variant align-top">${f.phone || '&mdash;'}</td>
+                    <td class="p-4 text-body-md text-on-surface-variant align-top">${f.email || '&mdash;'}</td>
+                    <td class="p-4 text-center align-top">
+                        <span class="inline-block px-2 py-1 rounded-sm ${tagBadge[f.type] || tagBadge.feedback} font-label-sm text-label-sm uppercase">${f.type_label}</span>
+                    </td>
+                    <td class="p-4 text-body-md text-on-surface max-w-sm align-top">${f.message}</td>
+                    <td class="p-4 text-center align-top">
+                        <select class="status-select bg-surface-container-high border-none rounded-lg px-3 py-1.5 text-label-sm font-bold uppercase ${statusBadge[f.status] || statusBadge.pending} focus:ring-2 focus:ring-secondary/20">
+                            <option value="pending" ${f.status === 'pending' ? 'selected' : ''}>Pending</option>
+                            <option value="resolved" ${f.status === 'resolved' ? 'selected' : ''}>Resolved</option>
+                        </select>
+                    </td>
+                    <td class="p-4 align-top">
+                        <div class="flex items-start gap-2">
+                            <textarea class="remark-input w-full min-w-[200px] border border-outline-variant rounded-lg p-2 text-body-sm focus:ring-2 focus:ring-secondary/20 outline-none" placeholder="Add a remark..." rows="2">${f.remark || ''}</textarea>
+                            <button class="save-remark-btn shrink-0 p-2 rounded-lg bg-primary text-white hover:bg-primary-container transition-colors" title="Save remark" type="button">
+                                <span class="material-symbols-outlined text-[18px]">save</span>
+                            </button>
                         </div>
-                        <h3 class="font-body-md text-body-md font-bold text-primary group-hover:text-secondary truncate mb-1">${item.category || 'General'}</h3>
-                        <p class="text-xs text-on-surface-variant mb-1">${item.name}</p>
-                        <p class="text-xs text-on-surface-variant opacity-60 line-clamp-2 leading-relaxed">${item.message}</p>
-                    </div>
-                `);
-                div.on('click', function () { selectItem(item, $(this)); });
-                list.append(div);
-            });
+                    </td>
+                </tr>
+            `;
         }
 
-        function switchTab(tab) {
-            currentTab = tab;
-            if (tab === 'suggestion') {
-                $('#tab-suggestions').attr('class', 'px-6 py-1.5 font-label-md text-label-md rounded-md bg-surface-container-lowest text-primary shadow-sm');
-                $('#tab-complaints').attr('class', 'px-6 py-1.5 font-label-md text-label-md rounded-md text-on-surface-variant hover:text-primary');
-            } else {
-                $('#tab-complaints').attr('class', 'px-6 py-1.5 font-label-md text-label-md rounded-md bg-surface-container-lowest text-primary shadow-sm');
-                $('#tab-suggestions').attr('class', 'px-6 py-1.5 font-label-md text-label-md rounded-md text-on-surface-variant hover:text-primary');
-            }
-            $('#no-selection').removeClass('hidden');
-            $('#item-details').addClass('hidden');
-            loadItems();
+        function renderFeedback(list) {
+            const body = $('#feedback-body');
+            body.empty();
+            list.forEach(f => body.append(feedbackRow(f)));
+            $('#results-count').html(`Showing <span class="font-bold text-primary">${list.length}</span> of ${allFeedback.length} records`);
         }
 
-        function selectItem(item, el) {
-            selectedItem = item;
-            $('#no-selection').addClass('hidden');
-            $('#item-details').removeClass('hidden');
-
-            $('#detail-title').text(item.category || 'General');
-            $('#detail-author').text(item.name);
-            $('#detail-email').text(item.email || 'no email provided');
-            $('#detail-date').text('Received ' + timeAgo(item.created_at));
-            $('#detail-content').text(item.message);
-            $('#detail-avatar').text(initials(item.name));
-            $('#response-text').val(item.response || '');
-
-            const badge = $('#detail-badge');
-            badge.text(item.status_label);
-            badge.attr('class', `px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider ${statusClasses[item.status] || statusClasses.pending}`);
-            $('#status-select').val(item.status);
-
-            $('#feedback-list > div').removeClass('bg-white border-l-4 border-l-primary');
-            el.addClass('bg-white border-l-4 border-l-primary');
+        function applyFilters() {
+            const q = $('#search-input').val().toLowerCase();
+            const tag = $('#tag-filter').val();
+            const status = $('#status-filter').val();
+            renderFeedback(allFeedback.filter(f =>
+                (!tag || f.type === tag) &&
+                (!status || f.status === status) &&
+                (!q ||
+                    f.name.toLowerCase().includes(q) ||
+                    (f.phone || '').toLowerCase().includes(q) ||
+                    (f.email || '').toLowerCase().includes(q))
+            ));
         }
 
-        function updateFeedback(patch, onDone) {
-            $.ajax({
-                url: `/api/feedback/${selectedItem.id}/`,
+        function updateFeedback(id, patch) {
+            return $.ajax({
+                url: `/api/feedback/${id}/`,
                 method: 'PATCH',
                 contentType: 'application/json',
-                data: JSON.stringify(patch),
-                success: function (updated) {
-                    selectedItem = updated;
-                    const idx = items.findIndex(i => i.id === updated.id);
-                    if (idx > -1) items[idx] = updated;
-                    renderList();
-                    if (onDone) onDone(updated);
-                }
+                data: JSON.stringify(patch)
+            }).done(function (updated) {
+                const idx = allFeedback.findIndex(f => f.id === updated.id);
+                if (idx > -1) allFeedback[idx] = updated;
             });
         }
 
-        $('#status-select').on('change', function () {
-            if (!selectedItem) return;
-            updateFeedback({ status: $(this).val() });
+        $('#feedback-body').on('change', '.status-select', function () {
+            const id = $(this).closest('tr').data('id');
+            updateFeedback(id, { status: $(this).val() });
         });
 
-        $('#send-response-btn').on('click', function () {
-            if (!selectedItem) return;
-            const response = $('#response-text').val();
-            updateFeedback({ response: response }, function () {
-                alert('Response sent to citizen.');
-            });
+        $('#feedback-body').on('click', '.save-remark-btn', function () {
+            const row = $(this).closest('tr');
+            const id = row.data('id');
+            const remark = row.find('.remark-input').val();
+            updateFeedback(id, { remark: remark }).done(function () {
+                $(this).html('<span class="material-symbols-outlined text-[18px]">check</span>');
+            }.bind(this));
         });
 
-        function loadItems() {
-            $.get(`/api/feedback/?type=${currentTab}`, function (data) {
-                items = data.results;
-                renderList();
-            });
-        }
+        $('#search-input').on('input', applyFilters);
+        $('#tag-filter').on('change', applyFilters);
+        $('#status-filter').on('change', applyFilters);
 
         $(function () {
-            loadItems();
+            $.get('/api/feedback/', function (data) {
+                allFeedback = data.results;
+                renderFeedback(allFeedback);
+            });
         });
     </script>
 </body></html>

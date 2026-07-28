@@ -1,260 +1,269 @@
-<!DOCTYPE html>
+{% extends "core/base.html" %}
+{% block title %}Sankalp Adhikar Vishwas Ekta Party | A Future Built on Unity{% endblock %}
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sankalp Adhikar Vishwas Ekta Party | A Future Built on Unity</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;display=swap" rel="stylesheet"/>
-<!-- Tailwind Configuration -->
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "surface-container-lowest": "#ffffff",
-                    "tertiary-fixed": "#d3e4ff",
-                    "inverse-primary": "#adc7f7",
-                    "surface-variant": "#e0e3e5",
-                    "on-tertiary-fixed-variant": "#004881",
-                    "background": "#f7fafc",
-                    "surface": "#f7fafc",
-                    "error": "#ba1a1a",
-                    "on-primary-container": "#86a0cd",
-                    "surface-tint": "#455f88",
-                    "primary": "#002045",
-                    "surface-container": "#ebeef0",
-                    "surface-container-highest": "#e0e3e5",
-                    "outline-variant": "#c4c6cf",
-                    "primary-fixed-dim": "#adc7f7",
-                    "tertiary-fixed-dim": "#a2c9ff",
-                    "on-secondary-container": "#600008",
-                    "on-secondary-fixed": "#410003",
-                    "on-primary-fixed": "#001b3c",
-                    "tertiary": "#002141",
-                    "inverse-on-surface": "#eef1f3",
-                    "on-primary-fixed-variant": "#2d476f",
-                    "on-primary": "#ffffff",
-                    "secondary-container": "#ff5a55",
-                    "on-surface-variant": "#43474e",
-                    "inverse-surface": "#2d3133",
-                    "surface-dim": "#d7dadc",
-                    "primary-fixed": "#d6e3ff",
-                    "on-tertiary-fixed": "#001c38",
-                    "on-error": "#ffffff",
-                    "on-secondary-fixed-variant": "#920212",
-                    "on-surface": "#181c1e",
-                    "on-tertiary-container": "#68a2e9",
-                    "surface-container-high": "#e5e9eb",
-                    "tertiary-container": "#003765",
-                    "surface-bright": "#f7fafc",
-                    "on-tertiary": "#ffffff",
-                    "error-container": "#ffdad6",
-                    "secondary-fixed-dim": "#ffb3ad",
-                    "on-background": "#181c1e",
-                    "on-secondary": "#ffffff",
-                    "secondary-fixed": "#ffdad6",
-                    "primary-container": "#1a365d",
-                    "secondary": "#b52426",
-                    "outline": "#74777f",
-                    "on-error-container": "#93000a",
-                    "surface-container-low": "#f1f4f6"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "margin-mobile": "16px",
-                    "stack-md": "16px",
-                    "container-max": "1280px",
-                    "base": "8px",
-                    "stack-sm": "8px",
-                    "stack-lg": "32px",
-                    "margin-desktop": "40px",
-                    "gutter": "24px"
-            },
-            "fontFamily": {
-                    "body-lg": ["Inter"],
-                    "display-lg": ["Montserrat"],
-                    "body-md": ["Inter"],
-                    "headline-lg-mobile": ["Montserrat"],
-                    "display-lg-mobile": ["Montserrat"],
-                    "headline-md": ["Montserrat"],
-                    "headline-lg": ["Montserrat"],
-                    "label-md": ["Inter"]
-            },
-            "fontSize": {
-                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        body {
-            background-color: #f7fafc;
-            color: #181c1e;
-        }
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 24px;
-        }
-        .parallax-bg {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    </style>
-</head>
-<body class="font-body-md overflow-x-hidden">
-<!-- TopNavBar (Shared Component) -->
-<header class="fixed top-0 left-0 w-full z-50 bg-surface dark:bg-inverse-surface shadow-sm h-20">
-<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
-<a class="font-display-lg text-sm md:text-lg lg:text-xl font-bold text-primary dark:text-primary-fixed-dim leading-tight max-w-[220px] md:max-w-none" href="/">Sankalp Adhikar Vishwas Ekta Party</a>
-<nav class="hidden md:flex items-center gap-8">
-<a class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-bold" href="/">Home</a>
-<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="/about/">About Us</a>
-<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="/feedback/">Voice &amp; Feedback</a>
-</nav>
+{% block extra_style %}
+.historical-overlay {
+    background: linear-gradient(to right, rgba(25,28,29,0.95) 0%, rgba(25,28,29,0.5) 100%);
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+{% endblock %}
+
+{% block content %}
+<!-- Mission Section -->
+<section class="py-section-padding bg-surface relative overflow-hidden">
+<div class="absolute right-0 top-0 h-full w-1/2 hidden lg:block">
+<img class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAxvVRhR7cvz6W2DSsEttHVFPfgoY9qp4KJVM7sSw3TIwiaEaLIwE7YgbnooK1es-7AcuXvxLXg7DsTWZHQU_qoaWHQAoxGWih0vlvrHRT0KGhwAxpgPajjeZOw9kISVGjUJN3O1c6vLaa9RAtEmoqgcKNv8WLmWk_ODBrhh0F8fi4viSxk4Hiabnwob6KpBWEk9UpHT14G-KoAQeNUUmAv0T6yZkWSt0b-FhvY8k-Fv18AirLEW2P"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="max-w-2xl">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-tight mb-6">
+                ZIDD <span class="text-saffron">INDIA KO NO.1</span> BANANE KI
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                Welcome to the official website of Sankalp Adhikar Vishwas Ekta Party. Together, we are building a future defined by transparency, growth, and national pride.
+            </p>
+<div class="flex flex-wrap gap-8 mb-12 border-l-4 border-saffron pl-6">
+<div class="text-on-surface">
+<p class="font-bold text-2xl text-saffron">देशभक्ति</p>
+<p class="opacity-70">Patriotism</p>
+</div>
+<div class="text-on-surface">
+<p class="font-bold text-2xl text-saffron">ईमानदारी</p>
+<p class="opacity-70">Integrity</p>
+</div>
+<div class="text-on-surface">
+<p class="font-bold text-2xl text-saffron">इंसानियत</p>
+<p class="opacity-70">Humanity</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<a class="bg-dark-saffron text-on-primary font-button-text text-button-text px-10 py-4 rounded-full shadow-lg hover:scale-105 transition-transform text-center" href="{% url 'about' %}">Our Vision</a>
+<button class="bg-saffron text-on-primary font-button-text text-button-text px-10 py-4 rounded-full shadow-lg hover:scale-105 transition-transform" onclick="openDonationModal()" type="button">Donate Now</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Journey -->
+<section class="relative h-[819px] flex items-center overflow-hidden bg-on-background">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuvlgQL0fA-NUXJctEJ8LhA-PO9pdllt6x6g9fNsaFNr3MHwQyIBnqym_52OPBIZxcjwyJze1F9QLTq3rveGu3a8zwq0oDvCxtLq4K7ylJTkn_CnuuytuJEQXDXZnvjNppdnA_YV3OvhLHgpOGwUNevpzAh4blcmEPaQ8PXQ7wEvX8hu6yj1qN6a_pcfqrMznijNlgVR5wEzTT4uenz8mZK1pl8g78wT7xjpmO63_qSwtIPVSZw9uF86nWNMRA3vHXVc1weo_M35Y"/>
+<div class="absolute inset-0 historical-overlay"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
+<div class="max-w-2xl">
+<span class="font-label-md text-label-md text-saffron uppercase tracking-widest mb-4 block">Legacy &amp; Heritage</span>
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-2">OUR JOURNEY</h2>
+<h3 class="font-headline-xl text-headline-xl text-white mb-6">2018</h3>
+<p class="font-body-lg text-body-lg text-white opacity-90 leading-relaxed mb-8">
+                Founding of Sankalp Adhikar Vishwas Ekta Party: the movement was formed on a simple belief &mdash; that a nation succeeds when its people are heard, its institutions are transparent, and its opportunities are shared by all. Led by Chairman James Sterling, we laid the foundation for a party grounded in integrity, unity, and measurable results for the communities we serve.
+            </p>
 <div class="flex items-center gap-4">
-<button class="bg-secondary text-on-secondary font-label-md text-label-md px-6 py-2.5 rounded-lg hover:opacity-90 active:scale-95 transition-all" onclick="openDonationModal()" type="button">Donate Now</button>
-<button aria-label="Menu" class="md:hidden w-10 h-10 flex items-center justify-center text-primary dark:text-primary-fixed-dim">
-<span class="material-symbols-outlined text-3xl">menu</span>
-</button>
-</div>
-</div>
-</header>
-<!-- Hero Carousel -->
-<header class="relative pt-20 overflow-hidden bg-primary">
-<div class="relative w-full h-[720px] md:h-[820px]" id="heroCarousel">
-<!-- Slide 1 -->
-<div class="hero-slide absolute inset-0 opacity-100 transition-opacity duration-700" data-index="0">
-<div class="absolute inset-0">
-<img class="w-full h-full object-cover" data-alt="A professional portrait of a charismatic and visionary political leader standing before a subtle national flag." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAxvVRhR7cvz6W2DSsEttHVFPfgoY9qp4KJVM7sSw3TIwiaEaLIwE7YgbnooK1es-7AcuXvxLXg7DsTWZHQU_qoaWHQAoxGWih0vlvrHRT0KGhwAxpgPajjeZOw9kISVGjUJN3O1c6vLaa9RAtEmoqgcKNv8WLmWk_ODBrhh0F8fi4viSxk4Hiabnwob6KpBWEk9UpHT14G-KoAQeNUUmAv0T6yZkWSt0b-FhvY8k-Fv18AirLEW2P"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/20"></div>
-</div>
-<div class="relative z-10 h-full flex items-center max-w-container-max mx-auto px-margin-desktop">
-<div class="text-on-primary max-w-2xl">
-<div class="inline-flex items-center bg-secondary-container/20 border border-secondary-container/30 px-3 py-1 rounded-full mb-6">
-<span class="w-2 h-2 bg-secondary rounded-full mr-2 animate-pulse"></span>
-<span class="text-label-md font-label-md text-secondary-container uppercase tracking-widest">Building Tomorrow</span>
-</div>
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight">A Future Built on <span class="text-secondary-container">Unity</span></h1>
-<p class="font-body-lg text-body-lg text-white/80 mb-8 max-w-lg">We stand for a nation where every voice is heard, every community thrives, and our shared values define our path forward. Join the movement for a stronger, united future.</p>
-<div class="flex flex-col sm:flex-row gap-4">
-<a class="bg-secondary text-white font-bold text-label-md py-4 px-10 rounded-lg hover:shadow-[0_0_20px_rgba(181,36,38,0.4)] transition-all text-center" href="/feedback/">Join Us</a>
-<a class="border-2 border-white/30 hover:border-white text-white font-bold text-label-md py-4 px-10 rounded-lg transition-all text-center" href="/about/">Our Vision</a>
+<span class="text-white font-bold">Chairman James Sterling</span>
+<span class="w-12 h-px bg-saffron opacity-50"></span>
+<span class="text-white opacity-70 italic">Founder</span>
 </div>
 </div>
 </div>
-</div>
-<!-- Slide 2 -->
-<div class="hero-slide absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700" data-index="1">
-<div class="absolute inset-0">
-<img class="w-full h-full object-cover" data-alt="A futuristic green city skyline with sustainable infrastructure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB47p896xfxgfW_QxA097ajIkExme6NtaoJqnPHSGQOYjO0SigerkOq9KWjX6QXtAvviwNcZtizrDE_9NgfJjNGHAzGpoFKpw_XK1uHbCXpnNQ3xhA3zgczEvEv6VU3MVAbva-QBimwDoi9rf1zc0JwcOhCngBF1pBfYbzpP4GwlVh8zjYv7wdPVXS7VdScGQkctiMKYTbsMvqe-OOYrUrk7piplmvrj2P-0Ykgvb6le4rqkpRd0qW2"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/20"></div>
-</div>
-<div class="relative z-10 h-full flex items-center max-w-container-max mx-auto px-margin-desktop">
-<div class="text-on-primary max-w-2xl">
-<div class="inline-flex items-center bg-secondary-container/20 border border-secondary-container/30 px-3 py-1 rounded-full mb-6">
-<span class="w-2 h-2 bg-secondary rounded-full mr-2 animate-pulse"></span>
-<span class="text-label-md font-label-md text-secondary-container uppercase tracking-widest">Sustainable Future</span>
-</div>
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight">Cleaner Cities, <span class="text-secondary-container">Stronger Jobs</span></h1>
-<p class="font-body-lg text-body-lg text-white/80 mb-8 max-w-lg">Implementing cutting-edge renewable energy solutions to protect our landscapes while creating thousands of new industrial jobs.</p>
-<div class="flex flex-col sm:flex-row gap-4">
-<a class="bg-secondary text-white font-bold text-label-md py-4 px-10 rounded-lg hover:shadow-[0_0_20px_rgba(181,36,38,0.4)] transition-all text-center" href="/about/">Learn More</a>
-</div>
-</div>
-</div>
-</div>
-<!-- Slide 3 -->
-<div class="hero-slide absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700" data-index="2">
-<div class="absolute inset-0">
-<img class="w-full h-full object-cover" data-alt="A cinematic wide shot of a diverse crowd of people standing together in a sun-drenched town square." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjcMywu4PbE5r-S77daWkjm1nkmhD6yMbYuELWTT_gmeDzOau0zcq0OV5Sx1oARUpaOOcrux2crfKudPDHHc_aTEzQEHBqAVLs20r18ibxh1a8jJlZDrCo16_5_UjVfrASVoC3mlWR6GNoayjVDi9rK87Jz2KJwObySmly1_tguNXu6Z5oD-5fOqbL-Vv3UJL8wBRuJhI_CH1-L9gU7hKUxU9qBOHY5faRSwzwf301zxnFzFn2M7p6"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/60 to-primary/20"></div>
-</div>
-<div class="relative z-10 h-full flex items-center max-w-container-max mx-auto px-margin-desktop">
-<div class="text-on-primary max-w-2xl">
-<div class="inline-flex items-center bg-secondary-container/20 border border-secondary-container/30 px-3 py-1 rounded-full mb-6">
-<span class="w-2 h-2 bg-secondary rounded-full mr-2 animate-pulse"></span>
-<span class="text-label-md font-label-md text-secondary-container uppercase tracking-widest">Leadership in Action</span>
-</div>
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight">Together, We Shape <span class="text-secondary-container">Tomorrow</span></h1>
-<p class="font-body-lg text-body-lg text-white/80 mb-8 max-w-lg">Join a movement dedicated to transparency, civic duty, and a modern vision for our community.</p>
-<div class="flex flex-col sm:flex-row gap-4">
-<a class="bg-secondary text-white font-bold text-label-md py-4 px-10 rounded-lg hover:shadow-[0_0_20px_rgba(181,36,38,0.4)] transition-all text-center" href="/feedback/">Get Involved</a>
-</div>
-</div>
-</div>
-</div>
-<!-- Controls -->
-<button aria-label="Previous slide" class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-colors" onclick="heroPrev()" type="button">
+<!-- Timeline Nav -->
+<div class="absolute bottom-0 left-0 w-full bg-on-background/80 backdrop-blur-sm border-t border-white/10">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 flex items-center justify-between overflow-x-auto no-scrollbar gap-12">
+<a class="text-saffron font-bold border-b-2 border-saffron whitespace-nowrap" href="#">2018</a>
+<a class="text-white opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap" href="#">2019</a>
+<a class="text-white opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap" href="#">2020</a>
+<a class="text-white opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap" href="#">2021</a>
+<a class="text-white opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap" href="#">2022</a>
+<a class="text-white opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap" href="#">2023</a>
+<a class="text-white opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap" href="#">2024</a>
+<a class="text-white opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap" href="#">2025</a>
+<div class="flex gap-4 ml-auto">
+<button class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10" type="button">
 <span class="material-symbols-outlined">chevron_left</span>
 </button>
-<button aria-label="Next slide" class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center text-white transition-colors" onclick="heroNext()" type="button">
+<button class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10" type="button">
 <span class="material-symbols-outlined">chevron_right</span>
 </button>
-<div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2" id="heroDots"></div>
 </div>
-</header>
-<!-- Yearly Highlights -->
-<section class="py-stack-lg bg-surface" id="highlights-2026">
-<div class="max-w-container-max mx-auto px-margin-desktop">
-<div class="mb-stack-lg text-center max-w-2xl mx-auto">
-<div class="flex items-center justify-center gap-3 mb-2">
-<h2 class="font-headline-lg text-headline-lg text-primary" id="highlightsYearHeading">Highlights</h2>
-<select class="border border-outline-variant rounded-lg px-3 py-1.5 font-label-md text-label-md text-primary bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none" id="highlightsYearSelect"></select>
 </div>
-<p class="text-on-surface-variant font-body-md">A year of action — watch our latest videos, catch up on the news, and browse moments from the field.</p>
 </div>
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
-<!-- Videos Column -->
-<div>
-<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary">smart_display</span>
-Top Videos
-</h3>
+</section>
+<!-- Highlights -->
+<section class="py-section-padding bg-surface" id="highlights-2026">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h3 class="font-headline-xl text-headline-xl text-on-background mb-4" id="highlightsYearHeading">Highlights</h3>
+<select class="border-none text-label-md px-3 py-1 bg-saffron text-on-primary rounded-lg ml-2 font-bold" id="highlightsYearSelect"></select>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto mt-4">
+                A year of action &mdash; watch our latest videos, catch up on the news, and browse moments from the field as we transform the national landscape.
+            </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Top Videos -->
+<div class="lg:col-span-3">
+<div class="flex items-center gap-2 mb-6 text-on-background">
+<span class="material-symbols-outlined text-saffron" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<h4 class="font-headline-lg text-headline-lg">Top Videos</h4>
+</div>
 <div class="space-y-4" id="highlight-videos">
-<!-- Video cards rendered by jQuery from /api/videos/ -->
+<div class="skeleton rounded-lg aspect-video mb-2"></div>
+<div class="skeleton rounded h-4 w-3/4 mb-4"></div>
+<div class="skeleton rounded-lg aspect-video mb-2"></div>
+<div class="skeleton rounded h-4 w-2/3"></div>
 </div>
 </div>
-<!-- News Column -->
-<div>
-<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary">article</span>
-Latest News
-</h3>
+<!-- Latest News -->
+<div class="lg:col-span-5">
+<div class="flex items-center gap-2 mb-6 text-on-background">
+<span class="material-symbols-outlined text-saffron" style="font-variation-settings: 'FILL' 1;">newspaper</span>
+<h4 class="font-headline-lg text-headline-lg">Latest News</h4>
+</div>
 <div class="space-y-4" id="highlight-news">
-<!-- News cards rendered by jQuery from /api/news/ -->
+<div class="flex gap-4 p-4 bg-white border border-outline-variant rounded-xl">
+<div class="skeleton rounded-lg w-24 h-24 flex-shrink-0"></div>
+<div class="flex-1 space-y-2 py-1">
+<div class="skeleton rounded h-3 w-20"></div>
+<div class="skeleton rounded h-4 w-full"></div>
+<div class="skeleton rounded h-3 w-4/5"></div>
 </div>
 </div>
-<!-- Gallery Column -->
-<div>
-<h3 class="font-headline-md text-headline-md text-primary mb-4 flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary">photo_library</span>
-Media Gallery
-</h3>
-<div class="grid grid-cols-3 gap-2" id="highlight-gallery">
-<!-- Gallery thumbnails rendered by jQuery from /api/gallery/ -->
+<div class="flex gap-4 p-4 bg-white border border-outline-variant rounded-xl">
+<div class="skeleton rounded-lg w-24 h-24 flex-shrink-0"></div>
+<div class="flex-1 space-y-2 py-1">
+<div class="skeleton rounded h-3 w-20"></div>
+<div class="skeleton rounded h-4 w-full"></div>
+<div class="skeleton rounded h-3 w-4/5"></div>
+</div>
+</div>
+<div class="flex gap-4 p-4 bg-white border border-outline-variant rounded-xl">
+<div class="skeleton rounded-lg w-24 h-24 flex-shrink-0"></div>
+<div class="flex-1 space-y-2 py-1">
+<div class="skeleton rounded h-3 w-20"></div>
+<div class="skeleton rounded h-4 w-full"></div>
+<div class="skeleton rounded h-3 w-4/5"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Media Gallery -->
+<div class="lg:col-span-4">
+<div class="flex items-center gap-2 mb-6 text-on-background">
+<span class="material-symbols-outlined text-saffron" style="font-variation-settings: 'FILL' 1;">photo_library</span>
+<h4 class="font-headline-lg text-headline-lg">Media Gallery</h4>
+</div>
+<div class="grid grid-cols-2 gap-2" id="highlight-gallery">
+<div class="skeleton rounded-lg h-32"></div>
+<div class="skeleton rounded-lg h-32"></div>
+<div class="skeleton rounded-lg h-32"></div>
+<div class="skeleton rounded-lg h-32"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- National Updates & Social Stream -->
+<section class="py-section-padding bg-surface-container-low border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Updates & Press -->
+<div class="lg:col-span-2">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline-lg text-headline-lg text-on-background">National Updates</h3>
+<div class="flex flex-wrap gap-2 md:gap-4">
+<button class="px-4 py-1 text-on-primary bg-saffron rounded-full font-label-md" type="button">Press Releases</button>
+<button class="px-4 py-1 text-on-surface-variant hover:bg-surface-variant rounded-full font-label-md" type="button">Speeches</button>
+<button class="px-4 py-1 text-on-surface-variant hover:bg-surface-variant rounded-full font-label-md" type="button">Articles</button>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden border border-outline-variant shadow-sm mb-gutter">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAklkfmpu9P0BzVHRBY0mm0f7jRxOTbhhEbwo_D5M7h_esFjJdee0UZKHT2ctEZEueflcPo_Ed6u3sjp1Kt6A2if24tavXQAy0yl40XVel8bAUIUQ6FGKHrLhRIz7mQWwHOoZKWIyTFame3gKIREl4JF6AF1v8EVo2ryE_E1ISgs4eklxvoOlPysukrb-ZuoclaE3BCMKsVR4E_ovTq_OIV68yOLSn2RbHVLV_G-uVUlvdXSCyWe36meUVzguBMA-RRc6lYwfGDPRU"/>
+<div class="absolute top-4 left-4 bg-dark-saffron text-on-primary p-3 text-center rounded-lg shadow-lg">
+<span class="block text-xl font-bold leading-none">28</span>
+<span class="text-xs uppercase tracking-tighter">JUL 2026</span>
+</div>
+</div>
+<div class="p-8">
+<h4 class="font-headline-lg text-headline-lg text-on-background mb-4">SAVE Leadership Outlines Plan for Digital Governance and Citizen Services</h4>
+<p class="text-on-surface-variant mb-6">"Our commitment to transparency for every citizen remains absolute. Today we announce a framework for modernizing public service delivery through digital-first infrastructure and rapid citizen response."</p>
+<div class="flex items-center justify-between">
+<a class="text-dark-saffron font-bold flex items-center gap-2 group" href="{% url 'feedback' %}">
+                                Read More
+                                <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<div class="flex gap-4">
+<button class="text-on-surface opacity-60 hover:opacity-100" type="button"><span class="material-symbols-outlined">share</span></button>
+</div>
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-gutter">
+<div class="bg-white p-6 rounded-xl border border-outline-variant">
+<span class="text-xs text-saffron font-bold mb-2 block">UPCOMING EVENT</span>
+<h5 class="font-button-text text-button-text text-on-surface mb-2">SAVE Youth Digital Summit</h5>
+<p class="text-sm text-on-surface-variant mb-4">Connecting young voters through a pan-India virtual platform to discuss the digital future.</p>
+<div class="flex items-center gap-4 text-xs text-outline font-bold">
+<span>02 AUG, 2026</span>
+<span class="w-1 h-1 bg-outline rounded-full"></span>
+<span>VIRTUAL EVENT</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant">
+<span class="text-xs text-saffron font-bold mb-2 block">SAVE LIVE</span>
+<h5 class="font-button-text text-button-text text-on-surface mb-2">Town Hall: Citizen Connect Live</h5>
+<p class="text-sm text-on-surface-variant mb-4">Live broadcast of the monthly citizen interaction program with the party leadership.</p>
+<div class="flex items-center gap-4 text-xs text-outline font-bold">
+<span class="text-error flex items-center gap-1"><span class="w-2 h-2 bg-error rounded-full animate-pulse"></span> LIVE NOW</span>
+<span class="w-1 h-1 bg-outline rounded-full"></span>
+<span>12.4k WATCHING</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Social Stream -->
+<div class="lg:col-span-1">
+<h3 class="font-headline-lg text-headline-lg text-on-background mb-8">Social Stream</h3>
+<div class="space-y-gutter">
+<div class="bg-white rounded-xl overflow-hidden border border-outline-variant">
+<div class="relative group aspect-video">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0NeOLzcT8SwBwRFlS-IrQIC85eT7o4zPuFoClm2zw1iZfLXu4lWLGcJYqdOicx49Yh-pbCbBfin9HdF3qS1psZiATusJXUJk_L008yF-IGiGZRCqqwh4cZaIis5QYp6fUEDuRXNM_IoCjnN9_NmXMEV2S_svYt7D4ouxUg2S0kUfr0-ft2WGfIKldBp1UKwjcDEvJAPUreuvLg4-mnbxmRuJzR9wASDfWQK2b-KL63ZrS7r94gApH0mICWIgft8uSEzIQZxrmwhc"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-12 bg-error rounded-xl flex items-center justify-center text-white cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-4">
+<p class="text-sm text-on-surface mb-2 font-medium">Remarks at the National Development Forum.</p>
+<span class="text-xs text-outline">Published on YouTube &middot; 2 hours ago</span>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden border border-outline-variant">
+<div class="p-4 flex gap-3">
+<div class="w-10 h-10 rounded-full bg-saffron flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-bold text-on-surface text-sm">@SAVEParty</span>
+<span class="text-outline text-xs">10m ago</span>
+</div>
+<p class="text-sm text-on-surface mt-2">The energy at today's rally was unmatched! Proud of our volunteers for making it a zero-waste event. #SAVEParty #UnityForIndia</p>
+<div class="mt-4 rounded-lg overflow-hidden border border-outline-variant">
+<img class="w-full h-48 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZs4o5gTeMzH9cxxCL06wCuQUKTbZc5VWGkPKUtdz_SQ2QrevLr_kfUb-WUvSK6Pm3WFBNCnpNhTFQqP3vg5VEcfY02RMRLpz9XX-vig-vNO2cBd49_3ZOb88Tvp4jn2B9r92lXC3oyhjtV9ebb-7fMlbnHggeAYxiL0Aml-_p7P7ShNN7G2Q9oYsHggGs2ucgBTVcewsN2uOrKTsVNFs7Azc41or0RWjVziRLMj30d6fk_weeZvzv9p4Ctj8hXBJta3k14d3icko"/>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-3 text-dark-saffron font-bold hover:bg-surface-container-high transition-colors rounded-lg flex items-center justify-center gap-2" type="button">
+                        View More Streams
+                        <span class="material-symbols-outlined">expand_more</span>
+</button>
 </div>
 </div>
 </div>
@@ -264,94 +273,40 @@ Media Gallery
 <div class="fixed inset-0 z-[110] hidden items-center justify-center p-4 bg-black/80" id="galleryLightbox" onclick="closeGalleryLightbox()">
 <img class="max-w-full max-h-full rounded-lg" id="galleryLightboxImg" src=""/>
 </div>
-<!-- Footer (Shared Component) -->
-<footer class="bg-primary text-on-primary border-t border-outline-variant">
-<div class="w-full px-margin-desktop py-stack-lg max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
-<div class="col-span-1 md:col-span-1">
-<div class="font-headline-md text-lg leading-snug text-on-primary mb-4">Sankalp Adhikar Vishwas Ekta Party</div>
-<p class="text-on-primary/60 font-body-md pr-4">Leading with vision, uniting with purpose. Together, we build a future that works for everyone.</p>
-</div>
-<div class="col-span-1">
-<h5 class="font-label-md text-label-md uppercase tracking-wider mb-6 text-secondary-fixed">Navigation</h5>
-<ul class="space-y-4">
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/">Home</a></li>
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/about/">About Us</a></li>
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Voice &amp; Feedback</a></li>
-</ul>
-</div>
-<div class="col-span-1">
-<h5 class="font-label-md text-label-md uppercase tracking-wider mb-6 text-secondary-fixed">Resources</h5>
-<ul class="space-y-4">
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Volunteer Portal</a></li>
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="#">Terms of Service</a></li>
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Contact Support</a></li>
-</ul>
-</div>
-<div class="col-span-1">
-<h5 class="font-label-md text-label-md uppercase tracking-wider mb-6 text-secondary-fixed">Follow Us</h5>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
-<span class="material-symbols-outlined">face_nod</span>
-</a>
-<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
-<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-</a>
-<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
-<span class="material-symbols-outlined">video_library</span>
-</a>
-</div>
-<div class="mt-8 text-on-primary/40 text-[12px] leading-relaxed">
-                    © 2024 Sankalp Adhikar Vishwas Ekta Party. Authorized by the Electoral Commission.
-                </div>
-</div>
-</div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="/static/core/js/csrf.js"></script>
-<script>
-        // Smooth scroll for in-page anchors
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
+{% endblock %}
 
+{% block extra_scripts %}
+<script>
         function highlightVideoCard(v) {
             return `
-                <a class="flex gap-3 items-center group" href="${v.url}" rel="noopener" target="_blank">
-                    <div class="relative w-28 h-16 flex-shrink-0 rounded-lg overflow-hidden bg-outline-variant">
-                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="${v.thumbnail_url}"/>
-                        <div class="absolute inset-0 bg-black/20 flex items-center justify-center">
-                            <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+                <a class="group cursor-pointer block" href="${v.url}" rel="noopener" target="_blank">
+                    <div class="relative rounded-lg overflow-hidden mb-2 aspect-video bg-outline-variant">
+                        <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${v.thumbnail_url}"/>
+                        <div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="material-symbols-outlined text-white text-4xl">play_arrow</span>
                         </div>
                     </div>
-                    <p class="font-body-md text-body-md text-on-surface font-medium line-clamp-2 group-hover:text-primary transition-colors">${v.title}</p>
+                    <p class="font-label-md text-label-md text-on-surface">${v.title}</p>
                 </a>
             `;
         }
 
         function highlightNewsCard(article) {
             return `
-                <article class="flex gap-3 bg-white rounded-lg overflow-hidden border border-outline-variant shadow-sm hover:shadow-md transition-all p-3">
-                    <div class="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden bg-outline-variant">
-                        <img class="w-full h-full object-cover" src="${article.image_url}"/>
+                <div class="flex gap-4 p-4 bg-white border border-outline-variant rounded-xl hover:shadow-md transition-shadow group cursor-pointer">
+                    <img class="w-24 h-24 rounded-lg object-cover flex-shrink-0" src="${article.image_url}"/>
+                    <div class="min-w-0">
+                        <span class="text-[12px] text-saffron font-bold uppercase tracking-wider mb-1 block">${article.published_at}</span>
+                        <h5 class="font-button-text text-button-text text-on-surface group-hover:text-dark-saffron transition-colors line-clamp-1">${article.title}</h5>
+                        <p class="text-sm text-on-surface-variant line-clamp-2 mt-1">${article.content}</p>
                     </div>
-                    <div class="flex-1 min-w-0">
-                        <p class="text-outline text-[11px] mb-1">${article.published_at}</p>
-                        <h4 class="font-body-md text-body-md text-primary font-bold leading-tight line-clamp-2">${article.title}</h4>
-                    </div>
-                </article>
+                </div>
             `;
         }
 
         function highlightGalleryTile(img) {
             return `
-                <div class="aspect-square rounded-lg overflow-hidden cursor-pointer group bg-outline-variant" onclick="openGalleryLightbox('${img.image_url}')">
+                <div class="rounded-lg overflow-hidden h-32 relative group cursor-pointer bg-outline-variant" onclick="openGalleryLightbox('${img.image_url}')">
                     <img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" src="${img.image_url}"/>
                 </div>
             `;
@@ -372,7 +327,7 @@ Media Gallery
             $.get('/api/videos/', { year: year }, function (data) {
                 const list = $('#highlight-videos');
                 list.empty();
-                data.results.slice(0, 3).forEach(v => list.append(highlightVideoCard(v)));
+                data.results.slice(0, 2).forEach(v => list.append(highlightVideoCard(v)));
             });
 
             $.get('/api/news/', { year: year }, function (data) {
@@ -384,74 +339,9 @@ Media Gallery
             $.get('/api/gallery/', { year: year }, function (data) {
                 const grid = $('#highlight-gallery');
                 grid.empty();
-                data.results.slice(0, 6).forEach(img => grid.append(highlightGalleryTile(img)));
+                data.results.slice(0, 4).forEach(img => grid.append(highlightGalleryTile(img)));
             });
         }
-
-        let heroIndex = 0;
-        let heroTimer = null;
-        const heroSlides = document.querySelectorAll('.hero-slide');
-        const heroDotsWrap = document.getElementById('heroDots');
-
-        heroSlides.forEach((_, i) => {
-            const dot = document.createElement('button');
-            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-            dot.className = 'h-2.5 rounded-full transition-all';
-            dot.addEventListener('click', () => goToHeroSlide(i));
-            heroDotsWrap.appendChild(dot);
-        });
-
-        function updateHeroUI() {
-            heroSlides.forEach((s, i) => {
-                s.classList.toggle('opacity-100', i === heroIndex);
-                s.classList.toggle('opacity-0', i !== heroIndex);
-                s.classList.toggle('pointer-events-none', i !== heroIndex);
-            });
-            heroDotsWrap.querySelectorAll('button').forEach((d, i) => {
-                d.className = i === heroIndex
-                    ? 'h-2.5 w-6 rounded-full bg-white transition-all'
-                    : 'h-2.5 w-2.5 rounded-full bg-white/40 hover:bg-white/60 transition-all';
-            });
-        }
-
-        function heroNext() {
-            heroIndex = (heroIndex + 1) % heroSlides.length;
-            updateHeroUI();
-        }
-
-        function heroPrev() {
-            heroIndex = (heroIndex - 1 + heroSlides.length) % heroSlides.length;
-            updateHeroUI();
-        }
-
-        function goToHeroSlide(i) {
-            heroIndex = i;
-            updateHeroUI();
-            resetHeroTimer();
-        }
-
-        function resetHeroTimer() {
-            if (heroTimer) clearInterval(heroTimer);
-            heroTimer = setInterval(heroNext, 6000);
-        }
-
-        updateHeroUI();
-        resetHeroTimer();
-
-        let heroTouchStartX = null;
-        const heroCarouselEl = document.getElementById('heroCarousel');
-        heroCarouselEl.addEventListener('touchstart', function (e) {
-            heroTouchStartX = e.changedTouches[0].clientX;
-        });
-        heroCarouselEl.addEventListener('touchend', function (e) {
-            if (heroTouchStartX === null) return;
-            const delta = e.changedTouches[0].clientX - heroTouchStartX;
-            if (Math.abs(delta) > 50) {
-                delta < 0 ? heroNext() : heroPrev();
-                resetHeroTimer();
-            }
-            heroTouchStartX = null;
-        });
 
         $(function () {
             $.get('/api/highlights/years/', function (data) {
@@ -470,5 +360,4 @@ Media Gallery
             });
         });
     </script>
-{% include "core/_donate_modal.html" %}
-</body></html>
+{% endblock %}

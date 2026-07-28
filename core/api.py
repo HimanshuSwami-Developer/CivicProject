@@ -34,6 +34,28 @@ def _parse_year(request):
         return None
 
 
+def _clamp(value, max_length):
+    value = (value or "").strip()
+    return value[:max_length]
+
+
+YOUTUBE_ID_RE = re.compile(r"^[A-Za-z0-9_-]{11}$")
+YOUTUBE_URL_RE = re.compile(
+    r"(?:youtube\.com/(?:watch\?v=|embed/|shorts/)|youtu\.be/)([A-Za-z0-9_-]{11})"
+)
+
+
+def _extract_youtube_id(value):
+    """Pull an 11-char YouTube video ID out of a bare ID or a pasted URL."""
+    value = (value or "").strip()
+    match = YOUTUBE_URL_RE.search(value)
+    if match:
+        return match.group(1)
+    if YOUTUBE_ID_RE.match(value):
+        return value
+    return None
+
+
 # ------------------------------------------------------------- donations ---
 
 @require_http_methods(["GET"])
@@ -69,9 +91,9 @@ def create_donation_order(request):
         return JsonResponse({"error": "Full name, email and phone number are required"}, status=400)
 
     pan = (data.get("pan") or "").strip().upper()
-    if amount > PAN_REQUIRED_ABOVE:
+    if amount >= PAN_REQUIRED_ABOVE:
         if not pan:
-            return JsonResponse({"error": "PAN is required for donations above ₹25,000"}, status=400)
+            return JsonResponse({"error": "PAN is required for donations of ₹25,000 or more"}, status=400)
         if not PAN_RE.match(pan):
             return JsonResponse({"error": "Invalid PAN format. Expected format: ABCDE1234F"}, status=400)
 
@@ -173,10 +195,10 @@ def feedback_list(request):
         if not message:
             return JsonResponse({"error": "Message is required"}, status=400)
         feedback = Feedback.objects.create(
-            type=data.get("type", "suggestion"),
+            type=data.get("type", "feedback"),
             name=data.get("name") or "Anonymous",
+            phone=data.get("phone", ""),
             email=data.get("email", ""),
-            category=data.get("category", ""),
             message=message,
             status="pending",
         )
@@ -207,8 +229,8 @@ def feedback_detail(request, pk):
             if data["status"] not in valid_statuses:
                 return JsonResponse({"error": "Invalid status"}, status=400)
             feedback.status = data["status"]
-        if "response" in data:
-            feedback.response = data["response"]
+        if "remark" in data:
+            feedback.remark = data["remark"]
         feedback.save()
 
     return JsonResponse(feedback.to_dict())
@@ -223,11 +245,11 @@ def news_list(request):
             return JsonResponse({"error": "Authentication required"}, status=401)
         data = _body(request)
         article = NewsArticle.objects.create(
-            title=data.get("title", "Untitled Article"),
+            title=_clamp(data.get("title") or "Untitled Article", 200),
             content=data.get("content", ""),
-            tags=data.get("tags", ""),
-            image_url=data.get("image_url", ""),
-            category=data.get("category", ""),
+            tags=_clamp(data.get("tags"), 200),
+            image_url=_clamp(data.get("image_url"), 500),
+            category=_clamp(data.get("category"), 60),
         )
         return JsonResponse(article.to_dict(), status=201)
 
@@ -246,13 +268,16 @@ def videos_list(request):
         if not request.user.is_authenticated:
             return JsonResponse({"error": "Authentication required"}, status=401)
         data = _body(request)
-        video_id = (data.get("video_id") or "").strip()
+        video_id = _extract_youtube_id(data.get("video_id"))
         if not video_id:
-            return JsonResponse({"error": "YouTube video ID is required"}, status=400)
+            return JsonResponse(
+                {"error": "Enter a valid YouTube video ID or link (e.g. dQw4w9WgXcQ or https://youtu.be/dQw4w9WgXcQ)."},
+                status=400,
+            )
         video = YoutubeVideo.objects.create(
-            title=data.get("title") or "Untitled Video",
+            title=_clamp(data.get("title") or "Untitled Video", 200),
             video_id=video_id,
-            thumbnail_url=data.get("thumbnail_url", ""),
+            thumbnail_url=_clamp(data.get("thumbnail_url"), 500),
             is_featured=data.get("is_featured", True),
             year=data.get("year") or current_year(),
         )
@@ -284,12 +309,12 @@ def gallery_list(request):
         if not request.user.is_authenticated:
             return JsonResponse({"error": "Authentication required"}, status=401)
         data = _body(request)
-        image_url = (data.get("image_url") or "").strip()
+        image_url = _clamp(data.get("image_url"), 500)
         if not image_url:
             return JsonResponse({"error": "Image URL is required"}, status=400)
         image = GalleryImage.objects.create(
             image_url=image_url,
-            caption=data.get("caption", ""),
+            caption=_clamp(data.get("caption"), 200),
             year=data.get("year") or current_year(),
         )
         return JsonResponse(image.to_dict(), status=201)
@@ -327,10 +352,10 @@ def highlights_years(request):
 @require_http_methods(["GET"])
 def dashboard_stats(request):
     donation_agg = Donation.objects.filter(status="success").aggregate(total=Sum("amount"))
-    suggestions_count = Feedback.objects.filter(type="suggestion").count()
+    suggestions_count = Feedback.objects.filter(type="feedback").count()
     complaints_count = Feedback.objects.filter(type="complaint").count()
     total_feedback = suggestions_count + complaints_count
-    resolved_count = Feedback.objects.filter(status__in=["resolved", "approved"]).count()
+    resolved_count = Feedback.objects.filter(status="resolved").count()
 
     return JsonResponse({
         "total_donations": float(donation_agg["total"] or 0),

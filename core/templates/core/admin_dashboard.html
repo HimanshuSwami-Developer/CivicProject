@@ -116,6 +116,22 @@
         .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 10px; }
         .bento-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+        .skeleton {
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(148, 163, 184, 0.25);
+        }
+        .skeleton::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            transform: translateX(-100%);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+            animation: skeleton-shimmer 1.4s infinite;
+        }
+        @keyframes skeleton-shimmer {
+            100% { transform: translateX(100%); }
+        }
     </style>
 </head>
 <body class="font-body-md text-on-surface">
@@ -138,19 +154,10 @@
 <span class="material-symbols-outlined mr-3">forum</span>
 <span class="font-body-md">Citizen Feedback</span>
 </a>
-<a class="flex items-center px-4 py-3 rounded text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin-panel/projects/">
-<span class="material-symbols-outlined mr-3">account_tree</span>
-<span class="font-body-md">Projects</span>
-</a>
-<a class="flex items-center px-4 py-3 rounded text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin-panel/projects/">
-<span class="material-symbols-outlined mr-3">newspaper</span>
-<span class="font-body-md">Content</span>
-</a>
 <a class="flex items-center px-4 py-3 rounded text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin-panel/media/">
 <span class="material-symbols-outlined mr-3">perm_media</span>
 <span class="font-body-md">Media</span>
-</a>
-</nav>
+</a></nav>
 <div class="px-3 mt-auto space-y-1">
 <a class="flex items-center px-4 py-3 rounded text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin/">
 <span class="material-symbols-outlined mr-3">settings</span>
@@ -197,9 +204,6 @@
 <button class="bg-surface-container-lowest border border-outline-variant text-primary font-body-md px-4 py-2 rounded-lg flex items-center hover:bg-surface-container transition-colors">
 <span class="material-symbols-outlined mr-2">download</span> Export Report
                     </button>
-<a class="bg-primary text-on-primary font-body-md px-4 py-2 rounded-lg flex items-center hover:opacity-90 transition-opacity" href="/admin-panel/projects/">
-<span class="material-symbols-outlined mr-2">add</span> New Project
-                    </a>
 </div>
 </div>
 <!-- Bento Stats Grid -->
@@ -213,7 +217,7 @@
 </div>
 </div>
 <h3 class="text-on-surface-variant font-label-md text-label-md uppercase tracking-widest mb-1">Total Donations</h3>
-<div class="font-display-sm text-display-sm text-primary" id="stat-total-donations">₹0.00</div>
+<div class="font-display-sm text-display-sm text-primary" id="stat-total-donations"><span class="skeleton inline-block h-8 w-32 rounded align-middle"></span></div>
 </div>
 </div>
 <!-- Suggestions vs Complaints -->
@@ -225,8 +229,8 @@
 <div class="space-y-4">
 <div>
 <div class="flex justify-between text-body-sm mb-1">
-<span class="font-medium">Suggestions</span>
-<span class="text-on-surface-variant" id="stat-suggestions-label">0 (0%)</span>
+<span class="font-medium">Feedback</span>
+<span class="text-on-surface-variant" id="stat-suggestions-label"><span class="skeleton inline-block h-3 w-12 rounded align-middle"></span></span>
 </div>
 <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
 <div class="bg-secondary h-full" id="bar-suggestions" style="width: 0%"></div>
@@ -235,7 +239,7 @@
 <div>
 <div class="flex justify-between text-body-sm mb-1">
 <span class="font-medium">Complaints</span>
-<span class="text-on-surface-variant" id="stat-complaints-label">0 (0%)</span>
+<span class="text-on-surface-variant" id="stat-complaints-label"><span class="skeleton inline-block h-3 w-12 rounded align-middle"></span></span>
 </div>
 <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
 <div class="bg-error h-full" id="bar-complaints" style="width: 0%"></div>
@@ -244,12 +248,12 @@
 </div>
 <div class="mt-6 pt-6 border-t border-outline-variant flex justify-around text-center">
 <div>
-<div class="font-headline-sm text-primary" id="stat-total-feedback">0</div>
+<div class="font-headline-sm text-primary" id="stat-total-feedback"><span class="skeleton inline-block h-5 w-8 rounded align-middle"></span></div>
 <div class="text-label-sm text-on-surface-variant">Total Records</div>
 </div>
 <div class="w-[1px] bg-outline-variant h-8 self-center"></div>
 <div>
-<div class="font-headline-sm text-primary" id="stat-resolution-rate">0%</div>
+<div class="font-headline-sm text-primary" id="stat-resolution-rate"><span class="skeleton inline-block h-5 w-10 rounded align-middle"></span></div>
 <div class="text-label-sm text-on-surface-variant">Resolution Rate</div>
 </div>
 </div>
@@ -285,6 +289,24 @@
 </tr>
 </thead>
 <tbody class="divide-y divide-outline-variant" id="activity-body">
+<tr>
+<td class="px-6 py-4"><div class="skeleton rounded h-4 w-32 mb-2"></div><div class="skeleton rounded h-3 w-20"></div></td>
+<td class="px-6 py-4"><div class="skeleton rounded h-4 w-20"></div></td>
+<td class="px-6 py-4"><div class="skeleton rounded h-4 w-24"></div></td>
+<td class="px-6 py-4"><div class="skeleton rounded h-4 w-16"></div></td>
+</tr>
+<tr>
+<td class="px-6 py-4"><div class="skeleton rounded h-4 w-32 mb-2"></div><div class="skeleton rounded h-3 w-20"></div></td>
+<td class="px-6 py-4"><div class="skeleton rounded h-4 w-20"></div></td>
+<td class="px-6 py-4"><div class="skeleton rounded h-4 w-24"></div></td>
+<td class="px-6 py-4"><div class="skeleton rounded h-4 w-16"></div></td>
+</tr>
+<tr>
+<td class="px-6 py-4"><div class="skeleton rounded h-4 w-32 mb-2"></div><div class="skeleton rounded h-3 w-20"></div></td>
+<td class="px-6 py-4"><div class="skeleton rounded h-4 w-20"></div></td>
+<td class="px-6 py-4"><div class="skeleton rounded h-4 w-24"></div></td>
+<td class="px-6 py-4"><div class="skeleton rounded h-4 w-16"></div></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -297,18 +319,27 @@
 <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-6 shadow-sm">
 <h3 class="font-headline-sm text-primary mb-6">Article Performance</h3>
 <div class="space-y-6" id="articles-body">
+<div class="flex items-start">
+<div class="skeleton w-16 h-16 rounded-lg shrink-0 mr-4"></div>
+<div class="flex-1 space-y-2 py-1">
+<div class="skeleton rounded h-4 w-3/4"></div>
+<div class="skeleton rounded h-3 w-1/2"></div>
 </div>
-<a class="w-full mt-6 py-2 border border-secondary text-secondary rounded-lg font-medium hover:bg-secondary-container/10 transition-colors block text-center" href="/admin-panel/projects/">Manage Content</a>
+</div>
+<div class="flex items-start">
+<div class="skeleton w-16 h-16 rounded-lg shrink-0 mr-4"></div>
+<div class="flex-1 space-y-2 py-1">
+<div class="skeleton rounded h-4 w-3/4"></div>
+<div class="skeleton rounded h-3 w-1/2"></div>
+</div>
+</div>
+</div>
 </div>
 <!-- Quick Actions Card -->
 <div class="bg-primary-container text-on-primary rounded-xl p-6 relative overflow-hidden">
 <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 20px 20px;"></div>
 <h3 class="font-headline-sm mb-4 relative z-10">Admin Tools</h3>
 <div class="grid grid-cols-2 gap-3 relative z-10">
-<a class="bg-on-primary-fixed-variant/20 hover:bg-on-primary-fixed-variant/40 p-3 rounded-lg flex flex-col items-center text-center transition-colors" href="/admin-panel/projects/">
-<span class="material-symbols-outlined mb-1">map</span>
-<span class="text-label-sm uppercase">Projects</span>
-</a>
 <a class="bg-on-primary-fixed-variant/20 hover:bg-on-primary-fixed-variant/40 p-3 rounded-lg flex flex-col items-center text-center transition-colors" href="/admin-panel/feedback/">
 <span class="material-symbols-outlined mb-1">mail</span>
 <span class="text-label-sm uppercase">Feedback</span>
@@ -374,7 +405,7 @@
                     const tagClass = f.type === 'complaint' ? 'bg-error-container/10 text-error' : 'bg-primary-container/10 text-primary-fixed-variant';
                     body.append(`
                         <tr class="hover:bg-surface-container-low transition-colors">
-                            <td class="px-6 py-4"><div class="flex flex-col"><span class="font-medium text-primary">${f.name}</span><span class="text-body-sm text-on-surface-variant">${f.category || 'General'}</span></div></td>
+                            <td class="px-6 py-4"><div class="flex flex-col"><span class="font-medium text-primary">${f.name}</span><span class="text-body-sm text-on-surface-variant">${f.email || f.phone || ''}</span></div></td>
                             <td class="px-6 py-4"><span class="text-label-sm ${tagClass} px-2 py-1 rounded">${f.type.toUpperCase()}</span></td>
                             <td class="px-6 py-4">${statusDot('bg-blue-500', f.status_label)}</td>
                             <td class="px-6 py-4 font-label-md text-primary-container">${timeAgo(f.created_at)}</td>

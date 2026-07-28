@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | SAVE Party</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#c1c8ca",
+                        "secondary": "#586062",
+                        "surface": "#f8f9fa",
+                        "surface-variant": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-container-high": "#e7e8e9",
+                        "on-background": "#191c1d",
+                        "surface-dim": "#d9dadb",
+                        "inverse-surface": "#2e3132",
+                        "surface-tint": "#8f4e00",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#ff9933",
+                        "on-surface-variant": "#554336",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#dae1e3",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#161d1f",
+                        "on-tertiary-container": "#7d242b",
+                        "on-primary-fixed": "#2e1500",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary-fixed": "#400009",
+                        "inverse-primary": "#ffb77a",
+                        "outline-variant": "#dbc2b0",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#ffb77a",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#edeeef",
+                        "background": "#f8f9fa",
+                        "on-primary-container": "#693800",
+                        "tertiary-fixed-dim": "#ffb3b3",
+                        "on-primary-fixed-variant": "#6d3a00",
+                        "primary": "#8f4e00",
+                        "secondary-fixed": "#dde4e6",
+                        "primary-fixed": "#ffdcc2",
+                        "tertiary-fixed": "#ffdad9",
+                        "on-secondary-fixed-variant": "#41484a",
+                        "outline": "#887364",
+                        "on-secondary-container": "#5d6466",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-container": "#ff9395",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary": "#9f3e43",
+                        "on-tertiary-fixed-variant": "#80272e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base-unit": "4px",
+                        "md": "16px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa;
+            color: #191c1d;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .saffron-gradient {
+            background: linear-gradient(135deg, #ff9933 0%, #ff8000 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            border: 1px solid #E9ECEF;
+        }
+        .hero-pattern {
+            background-image: radial-gradient(#ff9933 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.1;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-lg h-16 max-w-container-max mx-auto bg-surface dark:bg-on-background shadow-sm">
+<div class="flex items-center gap-xs">
+<span class="font-headline-md text-headline-md font-bold text-primary">SAVE Party</span>
+</div>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary-container transition-colors" href="#">Home</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="#">About Us</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary-container transition-colors" href="#">Citizen Voice</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary-container transition-colors" href="#">Donations</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="bg-primary-container text-on-primary-container px-lg py-sm rounded-lg font-label-md text-label-md font-bold hover:opacity-90 transition-all">
+                Join Now
+            </button>
+</div>
+</header>
+<main class="pt-24 pb-20">
+<!-- Hero Section -->
+<section class="relative overflow-hidden px-lg py-xl max-w-container-max mx-auto mb-20">
+<div class="hero-pattern absolute inset-0 -z-10"></div>
+<div class="flex flex-col md:flex-row items-center gap-xl">
+<div class="flex-1 space-y-md">
+<div class="inline-block px-md py-xs bg-primary-container/10 border border-primary-container/20 rounded-full">
+<span class="text-primary font-label-md text-label-md">Empowering Every Indian</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-background leading-tight">
+                        Sankalp Adhikar Vikash <span class="text-primary">Ekta Party</span>
+</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+                        Dedicated to the fundamental principles of Resolve (Sankalp), Rights (Adhikar), Development (Vikash), and Unity (Ekta). We are a movement for the people, by the people.
+                    </p>
+</div>
+<div class="flex-1 w-full relative">
+<div class="aspect-video rounded-xl overflow-hidden shadow-lg border-4 border-white">
+<img class="w-full h-full object-cover" data-alt="A professional aerial cinematic view of a modern Indian city skyline at sunrise with warm golden light reflecting off glass buildings and green parks. The atmosphere is energetic and optimistic, representing growth and progress. Soft-focus elements in the foreground suggest a bustling urban environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeaFEAgUYd4b9QmUa5TQH5RCgaN55VifwppUpo0H8LHg5CpWmMOKqGwVy0hF8scRBajZFbFs0QzZ7BYRNrYZg4rPzUTXUH7qD54q50Joa_FvX2JJ2jZ3lrohP_3tlt0IZ00sAJXAbhVqfdSsm-5-QCARV88VYPbii-XebjZ03LGi-VZb2YHmb7VqOAa_qO4P4G40NOBnvFiiGXaiUcDZ6KRRH6Cdnsx8JQ85DAAXRtq78X1Ppc4OTWERHuCMQCCnp4l8GgDWSlmTg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Aim & Goals (Bento Grid) -->
+<section class="px-lg max-w-container-max mx-auto mb-20">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Our Aim Card -->
+<div class="md:col-span-7 p-xl rounded-xl bg-white shadow-md border border-outline-variant/20 flex flex-col justify-center">
+<div class="flex items-center gap-md mb-md">
+<div class="w-12 h-12 rounded-lg saffron-gradient flex items-center justify-center text-white">
+<span class="material-symbols-outlined">flag</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg">Our Aim</h2>
+</div>
+<p class="font-body-lg text-body-lg text-secondary mb-lg">
+                        To build a nation where every citizen's rights are protected, where development reaches the last mile, and where unity remains our greatest strength in the face of adversity.
+                    </p>
+<div class="grid grid-cols-2 gap-md">
+<div class="p-md rounded-lg bg-surface-container-low border border-outline-variant/10">
+<h4 class="font-label-md text-label-md text-primary mb-xs">Economic Justice</h4>
+<p class="text-sm text-secondary">Bridging the gap between prosperity and poverty.</p>
+</div>
+<div class="p-md rounded-lg bg-surface-container-low border border-outline-variant/10">
+<h4 class="font-label-md text-label-md text-primary mb-xs">Social Integrity</h4>
+<p class="text-sm text-secondary">Ensuring every voice is heard in our democracy.</p>
+</div>
+</div>
+</div>
+<!-- Goals: Unemployment Card -->
+<div class="md:col-span-5 p-xl rounded-xl saffron-gradient text-white shadow-xl flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-lg bg-white/20 backdrop-blur-sm flex items-center justify-center mb-md">
+<span class="material-symbols-outlined">work</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-sm">Reducing Unemployment</h3>
+<p class="opacity-90 font-body-md text-body-md">
+                            Our primary goal is to create 10 million sustainable jobs through localized micro-industrial hubs and skill-based digital entrepreneurship programs.
+                        </p>
+</div>
+<div class="mt-lg pt-lg border-t border-white/20">
+<button class="w-full bg-white text-primary font-label-md text-label-md py-md rounded-lg font-bold hover:bg-surface-bright transition-colors">
+                            View Blueprint 2025
+                        </button>
+</div>
+</div>
+<!-- Public Programs Card -->
+<div class="md:col-span-5 p-xl rounded-xl bg-secondary text-white shadow-md flex flex-col">
+<div class="flex items-center gap-md mb-md">
+<span class="material-symbols-outlined text-primary-container">volunteer_activism</span>
+<h3 class="font-headline-md text-headline-md">Beneficial Programs</h3>
+</div>
+<ul class="space-y-md flex-1">
+<li class="flex gap-md items-start">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h4 class="font-label-md text-label-md">Universal Health Shield</h4>
+<p class="text-sm opacity-80">Comprehensive health coverage for every registered household.</p>
+</div>
+</li>
+<li class="flex gap-md items-start">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h4 class="font-label-md text-label-md">Edu-Grant Initiative</h4>
+<p class="text-sm opacity-80">Direct financial support for higher education for marginalized students.</p>
+</div>
+</li>
+<li class="flex gap-md items-start">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h4 class="font-label-md text-label-md">Kisan Pragati</h4>
+<p class="text-sm opacity-80">Tech-driven logistics and pricing support for small-scale farmers.</p>
+</div>
+</li>
+</ul>
+</div>
+<!-- Unity Statement -->
+<div class="md:col-span-7 relative rounded-xl overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A diverse group of professional and rural Indian people standing together in a symbolic circle, looking towards the future. The lighting is warm and golden-hour style. The composition is modern and corporate, emphasizing unity, diversity, and strength. The background is a clean, bright architectural space." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAAjhSaDwRqlxDAyB6tKPuPKbFBr9oekdJoLGJ4tVfFDqDqTPfOZONuqcn3tW3FYJs2JvIlosUn9kZ-4iLTRWAvF_POGsuyR1EgJWGuIG5V_n5R-aMaLMq6oIl84PVhmZ3GU03Z7HwFhxby8podkCspMRh9tJAGlIqqmF4Br8P4GcMUg_oAWH67CwbfGfjCNyO7WRTDdq7ucsSNeNREYYywmcuw6pJAVFzz9fNH5sYGdqf8WTlxjpVVY4b7sVt4H_AkSBm-QcYHS-E')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-on-background/80 to-transparent flex items-center p-xl">
+<div class="max-w-md">
+<h3 class="text-white font-headline-lg text-headline-lg mb-sm">Strength in Unity</h3>
+<p class="text-white/80 font-body-md text-body-md">
+                                Ekta is not just in our name; it's our DNA. We believe a divided nation cannot stand, but a united one cannot be stopped.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="px-lg max-w-container-max mx-auto mb-20">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-sm">Our Leadership</h2>
+<div class="w-16 h-1 bg-primary mx-auto mb-md"></div>
+<p class="text-secondary font-body-md text-body-md max-w-xl mx-auto">
+                    Guided by visionary leaders dedicated to the grassroots development of our nation.
+                </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg">
+<!-- Leader 1 -->
+<div class="group">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-md shadow-md border border-white">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A professional studio portrait of a dignified Indian man in his late 50s wearing a clean white traditional kurta with a saffron waistcoat. He has a warm, confident smile and direct eye contact. The background is a soft, neutral grey gradient. Professional high-key lighting creates a sense of authority and approachability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAZk1icuWSdtemLxpDZ9IGJ2P7rAM-PxetgMYMvzwR9FgTZDpR9UT4cKg_tgxGzJbRXKwHHxd6wJIM2TMddfrZdoEYFJS-Eix4ttyjK9SIhCTzl-wHH15t2Fe4TU-o2uxRQJpyD1vlPF3mUiSnmsSm9SR-CWrvRxjuwc5_ny5L7P918RjtgFTdHIr4VKpD-DBIUg5ZGozjYXPikPcTLY6E-3bHy5w7NxZrcE-koTovRiEHJFaJwTLGYWmBqYq8lXMlvU9I2ls1BgY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
+<p class="text-white font-label-sm text-label-sm">Founding Member</p>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background">Vikram Singh</h3>
+<p class="text-primary font-label-md text-label-md">National President</p>
+</div>
+<!-- Leader 2 -->
+<div class="group">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-md shadow-md border border-white">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A high-quality portrait of a professional Indian woman in her 40s wearing a sophisticated saffron and cream saree. She has an expression of intelligence and determination. The setting is a modern office environment with soft natural light. The aesthetic is clean, corporate, and trustworthy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVSjRGum5fv-xu_XAXih-_UpAiNWYS9Cq7uarEZI_P6fU5J1f33k5C_pGacqDJKQVQATmtLLEQ95a07MV75Yd4aF18NFVNUnU_y7Mg0LugsW3XjxjTBKHiznIa_EMwKOr4OF9A1N_3QcEEcxuFwt61OUaem-Obpbu70xf_bNesBLyD-B0lOjJzXwv6EJysmJUVbMx6MeI4Kl5HbXXwe4ndUlQYlQKbGlXbNeaQONfN9bG_T6hgqqxcdQ37Q4b_AxAREGWY8ICptdA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
+<p class="text-white font-label-sm text-label-sm">Strategy Expert</p>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background">Anjali Desai</h3>
+<p class="text-primary font-label-md text-label-md">General Secretary</p>
+</div>
+<!-- Leader 3 -->
+<div class="group">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-md shadow-md border border-white">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A sharp, modern portrait of a younger Indian male leader in his 30s, wearing a tailored navy blue Nehru jacket with a saffron pocket square. He looks dynamic and energetic. The lighting is crisp and modern, set against a blurred urban backdrop of a developing infrastructure project." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDafBD4Uh5DHpdDWzAdHyrVtDuLrRrcKQExDVRMJ4iGHR_pSVv3HUPpXysVPg4rQSc-5d72iYyVHQEYufdwtUM1vKSJzVIbtiwZ_L5J33wSsqtdCvOO59lYc2X5rZrU00U1UemDr-kF5sdj_rESQZ-8gFTNrJ7-i7a-ZiuIw4MA9d4E_W_OksohFELe-oFPADwfQRGrt0d1w4qpudJ4iKhJKQXHQ1FJzgYbHOCZhabAJxmZxwcazEmrP6tPziwe3OYgl_Sb0F9OrQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
+<p class="text-white font-label-sm text-label-sm">Youth Relations</p>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background">Rajiv Malhotra</h3>
+<p class="text-primary font-label-md text-label-md">Youth Wing Head</p>
+</div>
+<!-- Leader 4 -->
+<div class="group">
+<div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-md shadow-md border border-white">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A professional portrait of an elder statesman-like Indian man with silver hair, wearing traditional attire with a serene and wise expression. He is seated in a sunlit library or study. The mood is calm, authoritative, and intellectual, evoking a sense of deep experience and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0ZUj08UdpzaBqjhsGmLc3X7B862_KPKJlL-ch9Mgvuzsdm0uIjpXctacWLWXLBuDbrGlQa8Zud4XrrL9qGt-m9h34wjw6gVwa6RoTtVuD-dBaLkH2znlQjBUQvJuYWlU6tN13_uacB1eDH9-jPhBdwyF-HPnKkt7L_5Q8Wn4Vzrl4cFdNnS2DdGcA5UO27kRawuZ_AZdmjbRiM5vDBzwAXj-jnsvOgSSLF7gZBbLKJTnfPI-3CGMk2e7DzvMeK7z5DPJxpk39Y9A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
+<p class="text-white font-label-sm text-label-sm">Policy Advisor</p>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background">Dr. SP Sharma</h3>
+<p class="text-primary font-label-md text-label-md">Treasurer &amp; Advisor</p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-lg max-w-container-max mx-auto mb-20">
+<div class="bg-surface-container-high rounded-3xl p-xl flex flex-col md:flex-row items-center justify-between gap-xl border border-outline-variant/10">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg mb-md">Be the Change You Want to See</h2>
+<p class="font-body-md text-body-md text-secondary">
+                        The SAVE Party is more than a political organization; it's a collective of citizens tired of empty promises. Join us in our journey towards a developed and united India.
+                    </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-md w-full md:w-auto">
+<button class="bg-primary text-white px-xl py-md rounded-xl font-bold font-label-md text-label-md hover:shadow-lg transition-all">
+                        Become a Volunteer
+                    </button>
+<button class="border-2 border-primary text-primary px-xl py-md rounded-xl font-bold font-label-md text-label-md hover:bg-primary/5 transition-all">
+                        Donate to Cause
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-lg flex flex-col md:flex-row justify-between items-center bg-on-background dark:bg-surface-dim">
+<div class="mb-lg md:mb-0">
+<span class="font-headline-md text-headline-md text-primary-fixed block mb-sm">SAVE Party</span>
+<p class="font-label-sm text-label-sm text-secondary-fixed-dim max-w-xs">
+                Sankalp Adhikar Vikash Ekta Party. Standing for the progress of every citizen.
+            </p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg mb-lg md:mb-0">
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Contact Us</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+<div class="text-center md:text-right">
+<p class="font-label-sm text-label-sm text-secondary-fixed-dim">
+                © 2024 Sankalp Adhikar Vikash Ekta Party (SAVE). All rights reserved.
+            </p>
+</div>
+</footer>
+<script>
+        // Simple intersection observer for reveal animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

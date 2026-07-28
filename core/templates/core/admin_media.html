@@ -112,6 +112,22 @@
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #cbd5e0; border-radius: 10px; }
+        .skeleton {
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(148, 163, 184, 0.25);
+        }
+        .skeleton::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            transform: translateX(-100%);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+            animation: skeleton-shimmer 1.4s infinite;
+        }
+        @keyframes skeleton-shimmer {
+            100% { transform: translateX(100%); }
+        }
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen">
@@ -134,19 +150,10 @@
 <span class="material-symbols-outlined mr-3">forum</span>
 <span class="font-body-md">Citizen Feedback</span>
 </a>
-<a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin-panel/projects/">
-<span class="material-symbols-outlined mr-3">account_tree</span>
-<span class="font-body-md">Projects</span>
-</a>
-<a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin-panel/projects/">
-<span class="material-symbols-outlined mr-3">newspaper</span>
-<span class="font-body-md">Content</span>
-</a>
 <a class="flex items-center px-gutter py-3 border-l-4 border-secondary-container text-secondary-container bg-on-primary-fixed-variant/10 transition-colors duration-200" href="/admin-panel/media/">
 <span class="material-symbols-outlined mr-3" style="font-variation-settings: 'FILL' 1;">perm_media</span>
 <span class="font-body-md">Media</span>
-</a>
-</nav>
+</a></nav>
 <div class="mt-auto border-t border-on-primary-fixed-variant/20 pt-stack-loose">
 <a class="flex items-center px-gutter py-3 text-surface-variant/80 font-medium hover:bg-on-primary-fixed-variant/5 hover:text-surface-variant transition-colors duration-200" href="/admin/">
 <span class="material-symbols-outlined mr-3">settings</span>
@@ -205,7 +212,16 @@
 <th class="px-4 py-3 font-medium"></th>
 </tr>
 </thead>
-<tbody class="divide-y divide-outline-variant" id="videos-body"></tbody>
+<tbody class="divide-y divide-outline-variant" id="videos-body">
+<tr>
+<td class="px-4 py-4"><div class="flex items-center space-x-3"><div class="skeleton w-16 h-10 rounded flex-shrink-0"></div><div class="space-y-2"><div class="skeleton rounded h-4 w-32"></div><div class="skeleton rounded h-3 w-10"></div></div></div></td>
+<td class="px-4 py-4"></td>
+</tr>
+<tr>
+<td class="px-4 py-4"><div class="flex items-center space-x-3"><div class="skeleton w-16 h-10 rounded flex-shrink-0"></div><div class="space-y-2"><div class="skeleton rounded h-4 w-32"></div><div class="skeleton rounded h-3 w-10"></div></div></div></td>
+<td class="px-4 py-4"></td>
+</tr>
+</tbody>
 </table>
 </div>
 <!-- Add Video Form -->
@@ -215,8 +231,8 @@
 <input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="nv-title" placeholder="Video title" required="" type="text"/>
 </div>
 <div class="col-span-2 md:col-span-1">
-<label class="text-label-sm block mb-1">YouTube Video ID</label>
-<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="nv-video-id" placeholder="e.g. dQw4w9WgXcQ" required="" type="text"/>
+<label class="text-label-sm block mb-1">YouTube Video ID or Link</label>
+<input class="w-full border border-outline-variant p-2 text-body-md focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none" id="nv-video-id" placeholder="e.g. dQw4w9WgXcQ or https://youtu.be/dQw4w9WgXcQ" required="" type="text"/>
 </div>
 <div class="col-span-2 md:col-span-1">
 <label class="text-label-sm block mb-1">Highlights Year</label>
@@ -238,7 +254,12 @@
 <h3 class="font-headline-sm text-headline-sm">Gallery Manager</h3>
 </div>
 <!-- Current Gallery Grid -->
-<div class="grid grid-cols-4 gap-2 mb-stack-loose" id="gallery-grid"></div>
+<div class="grid grid-cols-4 gap-2 mb-stack-loose" id="gallery-grid">
+<div class="skeleton aspect-square rounded"></div>
+<div class="skeleton aspect-square rounded"></div>
+<div class="skeleton aspect-square rounded"></div>
+<div class="skeleton aspect-square rounded"></div>
+</div>
 <!-- Add Image Form -->
 <form class="mt-auto pt-stack-loose border-t border-outline-variant/50 grid grid-cols-2 gap-4" id="new-gallery-form">
 <div class="col-span-2 md:col-span-1">
@@ -276,7 +297,14 @@
 <th class="px-4 py-3 font-medium">Article</th>
 </tr>
 </thead>
-<tbody class="divide-y divide-outline-variant" id="news-body"></tbody>
+<tbody class="divide-y divide-outline-variant" id="news-body">
+<tr>
+<td class="px-4 py-4"><div class="skeleton rounded h-4 w-3/4 mb-2"></div><div class="skeleton rounded h-3 w-1/3"></div></td>
+</tr>
+<tr>
+<td class="px-4 py-4"><div class="skeleton rounded h-4 w-3/4 mb-2"></div><div class="skeleton rounded h-3 w-1/3"></div></td>
+</tr>
+</tbody>
 </table>
 </div>
 <!-- Add Article Form -->
@@ -304,21 +332,21 @@
 <div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
 <div>
 <p class="text-label-sm text-on-surface-variant mb-1">TOTAL VIDEOS</p>
-<h4 class="font-display-sm text-display-sm text-primary" id="stat-total-videos">0</h4>
+<h4 class="font-display-sm text-display-sm text-primary" id="stat-total-videos"><span class="skeleton inline-block h-8 w-10 rounded align-middle"></span></h4>
 </div>
 <span class="material-symbols-outlined text-secondary text-4xl opacity-20">smart_display</span>
 </div>
 <div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
 <div>
 <p class="text-label-sm text-on-surface-variant mb-1">TOTAL GALLERY IMAGES</p>
-<h4 class="font-display-sm text-display-sm text-primary" id="stat-total-gallery">0</h4>
+<h4 class="font-display-sm text-display-sm text-primary" id="stat-total-gallery"><span class="skeleton inline-block h-8 w-10 rounded align-middle"></span></h4>
 </div>
 <span class="material-symbols-outlined text-secondary text-4xl opacity-20">photo_library</span>
 </div>
 <div class="bg-white border border-outline-variant p-4 flex items-center justify-between">
 <div>
 <p class="text-label-sm text-on-surface-variant mb-1">TOTAL ARTICLES</p>
-<h4 class="font-display-sm text-display-sm text-primary" id="stat-total-articles">0</h4>
+<h4 class="font-display-sm text-display-sm text-primary" id="stat-total-articles"><span class="skeleton inline-block h-8 w-10 rounded align-middle"></span></h4>
 </div>
 <span class="material-symbols-outlined text-secondary text-4xl opacity-20">newspaper</span>
 </div>

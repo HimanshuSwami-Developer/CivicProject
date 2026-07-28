@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Vanguard Party | For a Resurgent Nation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#012200",
+                        "surface-container": "#fdebdf",
+                        "secondary-container": "#ffdcc2",
+                        "surface-bright": "#fff8f5",
+                        "surface-tint": "#8f4e00",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#f1dfd3",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#ffb77a",
+                        "surface-variant": "#f1dfd3",
+                        "error-container": "#ffdad6",
+                        "on-background": "#231a13",
+                        "surface-dim": "#e8d7cb",
+                        "secondary-fixed": "#ffdcc2",
+                        "on-primary-fixed": "#2e1500",
+                        "inverse-surface": "#392e27",
+                        "primary": "#8f4e00",
+                        "on-error-container": "#93000a",
+                        "outline-variant": "#dbc2b0",
+                        "tertiary-container": "#00c0f7",
+                        "background": "#ffffff",
+                        "on-tertiary-container": "#004a62",
+                        "primary-container": "#ff9933",
+                        "on-tertiary-fixed": "#001f2a",
+                        "surface-container-high": "#f7e5d9",
+                        "on-primary-fixed-variant": "#6d3a00",
+                        "tertiary-fixed": "#bfe9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#ffb77a",
+                        "tertiary": "#8f4e00",
+                        "on-tertiary-fixed-variant": "#004d65",
+                        "on-surface": "#231a13",
+                        "inverse-on-surface": "#ffeee2",
+                        "on-secondary-container": "#693800",
+                        "surface-container-low": "#fff1e8",
+                        "secondary": "#8f4e00",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#ffb77a",
+                        "on-secondary-fixed-variant": "#6d3a00",
+                        "surface": "#ffffff",
+                        "primary-fixed": "#ffdcc2",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#693800",
+                        "tertiary-fixed-dim": "#6cd2ff",
+                        "on-surface-variant": "#554336",
+                        "outline": "#887364",
+                        "saffron": "#ff9933",
+                        "dark-saffron": "#F57C00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "sm": "8px",
+                        "gutter": "24px",
+                        "xl": "48px",
+                        "margin-desktop": "64px",
+                        "margin-mobile": "16px",
+                        "md": "16px",
+                        "xs": "4px",
+                        "base": "4px",
+                        "section-padding": "80px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-sm": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "button-text": ["Hanken Grotesk"],
+                        "headline-xl": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "display-sm": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "500"}],
+                        "button-text": ["16px", {"lineHeight": "1", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .historical-overlay {
+            background: linear-gradient(to right, rgba(35,26,19,0.95) 0%, rgba(35,26,19,0.5) 100%);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased">
+<!-- Top Navigation -->
+<nav class="bg-surface sticky top-0 z-50 border-b border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-4 flex justify-between items-center">
+<div class="flex items-center gap-4">
+<span class="font-headline-lg text-headline-lg font-bold text-saffron tracking-tight">Vanguard Party</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-button-text text-button-text text-saffron border-b-2 border-saffron pb-1" href="#">Home</a>
+<a class="font-button-text text-button-text text-on-surface opacity-80 hover:opacity-100 transition-opacity" href="#">Our Journey</a>
+<a class="font-button-text text-button-text text-on-surface opacity-80 hover:opacity-100 transition-opacity" href="#">Policy</a>
+<a class="font-button-text text-button-text text-on-surface opacity-80 hover:opacity-100 transition-opacity" href="#">Events</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-saffron text-on-primary font-button-text text-button-text px-6 py-2 rounded-lg hover:brightness-110 transition-all">Donate</button>
+<button class="bg-dark-saffron text-on-primary font-button-text text-button-text px-6 py-2 rounded-lg hover:brightness-110 transition-all">Join</button>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Swapped Section 1: Mission Section -->
+<section class="py-section-padding bg-surface relative overflow-hidden">
+<div class="absolute right-0 top-0 h-full w-1/2 hidden lg:block">
+<img class="w-full h-full object-cover object-center" data-alt="Two powerful national leaders standing together confidently on a stage, smiling and waving to a massive, blurred crowd of supporters. The lighting is bright and heroic, with corporate navy blue and warm saffron accents reflected in the environment. The style is modern, professional, and full of optimistic political energy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkxEGa8MW8eVtkLU-Q2hyXgoM9rBTGm2kdNsOhyp9rYoTiHivErPWX7MFOs632rJMCPBtglIcU8J4exl21N0NystkuNHgCgTAwUTpTVnme0-qb9yV8MVr8Fgg1W4sBKXeBELCLByjioT1ya0FQ3Cu8ry99qRhfflG3_dActbIqpUgho2pRlo07yLTeH6FN1xNaZ8X6UkbnE4fA3-R-JnMDj2TN_7KKw-3rATPIY0FFJkT6bFL-SPofUVkZjD1m5IGwCRAUSq46rbo"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop relative z-10">
+<div class="max-w-2xl">
+<h2 class="font-display-lg text-display-lg text-on-surface leading-tight mb-6">
+                ZIDD <span class="text-saffron">INDIA KO NO.1</span> BANANE KI
+            </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10">
+                Welcome to the official website of the fastest-growing political party in the history of India. Together, we are building a future defined by transparency, growth, and national pride.
+            </p>
+<div class="flex flex-wrap gap-8 mb-12 border-l-4 border-saffron pl-6">
+<div class="text-on-surface">
+<p class="font-bold text-2xl text-saffron">देशभक्ति</p>
+<p class="opacity-70">Patriotism</p>
+</div>
+<div class="text-on-surface">
+<p class="font-bold text-2xl text-saffron">ईमानदारी</p>
+<p class="opacity-70">Integrity</p>
+</div>
+<div class="text-on-surface">
+<p class="font-bold text-2xl text-saffron">इंसानियत</p>
+<p class="opacity-70">Humanity</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="bg-dark-saffron text-on-primary font-button-text text-button-text px-10 py-4 rounded-full shadow-lg hover:scale-105 transition-transform">Join Vanguard</button>
+<button class="bg-saffron text-on-primary font-button-text text-button-text px-10 py-4 rounded-full shadow-lg hover:scale-105 transition-transform">Donate Now</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Swapped Section 2: Cinematic Journey Timeline -->
+<section class="relative h-[819px] flex items-center overflow-hidden bg-on-background">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-50" data-alt="A high-contrast cinematic historical photograph of a founding father of a national political party, presented in deep sepia and navy tones with a grainy, dignified texture. The lighting is dramatic and focused, highlighting the visionary leadership and historical gravitas of the figure against a backdrop of a crowded, early 20th-century political rally." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuvlgQL0fA-NUXJctEJ8LhA-PO9pdllt6x6g9fNsaFNr3MHwQyIBnqym_52OPBIZxcjwyJze1F9QLTq3rveGu3a8zwq0oDvCxtLq4K7ylJTkn_CnuuytuJEQXDXZnvjNppdnA_YV3OvhLHgpOGwUNevpzAh4blcmEPaQ8PXQ7wEvX8hu6yj1qN6a_pcfqrMznijNlgVR5wEzTT4uenz8mZK1pl8g78wT7xjpmO63_qSwtIPVSZw9uF86nWNMRA3vHXVc1weo_M35Y"/>
+<div class="absolute inset-0 historical-overlay"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full">
+<div class="max-w-2xl">
+<span class="font-label-md text-label-md text-saffron uppercase tracking-widest mb-4 block">Legacy &amp; Heritage</span>
+<h1 class="font-display-lg text-display-lg text-white mb-2">OUR JOURNEY</h1>
+<h2 class="font-headline-xl text-headline-xl text-white mb-6">1951</h2>
+<p class="font-body-lg text-body-lg text-white opacity-90 leading-relaxed mb-8">
+                Birth of Vanguard: On 21 October 1951, the original movement was formed in the historic halls of Delhi. Led by Dr. Syama Prasad Mookerjee, we laid the foundation for a resurgent, self-reliant nation.
+            </p>
+<div class="flex items-center gap-4">
+<span class="text-white font-bold">Dr. Syama Prasad Mookerjee</span>
+<span class="w-12 h-px bg-saffron opacity-50"></span>
+<span class="text-white opacity-70 italic">Founder of the Vanguard Movement</span>
+</div>
+</div>
+</div>
+<!-- Timeline Nav -->
+<div class="absolute bottom-0 left-0 w-full bg-on-background/80 backdrop-blur-sm border-t border-white/10">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-6 flex items-center justify-between overflow-x-auto no-scrollbar gap-12">
+<a class="text-saffron font-bold border-b-2 border-saffron whitespace-nowrap" href="#">1951</a>
+<a class="text-white opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap" href="#">1952</a>
+<a class="text-white opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap" href="#">1953</a>
+<a class="text-white opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap" href="#">1954</a>
+<a class="text-white opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap" href="#">1955</a>
+<a class="text-white opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap" href="#">1957</a>
+<a class="text-white opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap" href="#">1958</a>
+<a class="text-white opacity-60 hover:opacity-100 transition-opacity whitespace-nowrap" href="#">1962</a>
+<div class="flex gap-4 ml-auto">
+<button class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white/10">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- News & Media Hub -->
+<section class="py-section-padding bg-surface">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-16">
+<h3 class="font-headline-xl text-headline-xl text-on-background mb-4">2026 Highlights <span class="text-label-md px-3 py-1 bg-saffron text-on-primary rounded-lg ml-2">2026</span></h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                A year of action — watch our latest videos, catch up on the news, and browse moments from the field as we transform the national landscape.
+            </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Top Videos -->
+<div class="lg:col-span-3">
+<div class="flex items-center gap-2 mb-6 text-on-background">
+<span class="material-symbols-outlined text-saffron" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+<h4 class="font-headline-lg text-headline-lg">Top Videos</h4>
+</div>
+<div class="space-y-4">
+<div class="group cursor-pointer">
+<div class="relative rounded-lg overflow-hidden mb-2 aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-quality thumbnail of a political speech, featuring a focused leader at a podium with the Vanguard Party logo in the background, cinematic lighting, and sharp detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuzy8igWJ9WLkx1STtjCiOLtXN0kbm7yUnRqjAT1MD8jql9-bZQ84i8xG9bYp8TXi_kkHrkeu9MzDJ1MmgaeRWfbVcxny0iCwNhiXGufZhhX4AFbIfggumAhsiAtA1NeGKV9Q_y8ESZCcAMTLs5jHDdHfe2vGQwMyZFS8INyu741XoGl3yjiQB5HLvwY59i2uT7fpBu5ftsxJ1YY_hpXqA0qxiJYeM9Qw7JgmPVuZWdQ610afZLtjl8JDrkx8GyzqNc6Heo5GXw3M"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-4xl">play_arrow</span>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface">Address to the National Youth Summit</p>
+</div>
+<div class="group cursor-pointer">
+<div class="relative rounded-lg overflow-hidden mb-2 aspect-video">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A thumbnail showing a massive public rally with thousands of people holding orange and blue flags, vibrant colors, wide-angle lens, midday sun lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHqAIbDXjOr8TPhCawqMFq1TO9-eBQ_W3LH_3xxwHlbyw5tK3Mnm33TT7fpolrSg2Z-mpQWY72TtAxWfeo63Rha9v6Wc8Eep9EXKLpQrJGYjzcHAnhg3Rh4d5X5GCRm7Mjri1BRIMQ2Z7Ke3VArQL_nhT9aVi6sYVXvZL1rzTJWuPQ9eXPDol3SMVFdivfWxNHf67qm9vPYXOy7QFOUrJVlPT9VQEg_7WKzmwvUfCjhWUZA_fbT80xXjXECRkIg54mvdIUoLunWok"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-white text-4xl">play_arrow</span>
+</div>
+</div>
+<p class="font-label-md text-label-md text-on-surface">Vanguard Rally: Jaipur Highlights</p>
+</div>
+</div>
+</div>
+<!-- Latest News -->
+<div class="lg:col-span-5">
+<div class="flex items-center gap-2 mb-6 text-on-background">
+<span class="material-symbols-outlined text-saffron" style="font-variation-settings: 'FILL' 1;">newspaper</span>
+<h4 class="font-headline-lg text-headline-lg">Latest News</h4>
+</div>
+<div class="space-y-4">
+<div class="flex gap-4 p-4 bg-white border border-outline-variant rounded-xl hover:shadow-md transition-shadow group cursor-pointer">
+<img class="w-24 h-24 rounded-lg object-cover" data-alt="Close-up of a person signing an official government document with a fountain pen, professional desk setting, warm ambient lighting, corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKb8n__HBeKcYoIL9Q8PgzTCIwO7-euuNir1XXgjRTutVXGB2-EnIEEQqQvW32LPMe-43Vu99ILc_eW-eLOi3WXJv_1sSzhcS_dCmSOlAGdB7YO3P23gcR1UrYrc5hmPMTzZaWeXpHnyS7UUvFWz6-LxXOAc9IXOvW1Nqw9ajD1w-WEjPalFFMqieva5lJOcbGemE8LsyW-LF0QxBxjcy5roWGfMlx2k3d_m9x9QJTJyB8gXIiK6REagP0AjM0zzxmWKnuXI_BuN4"/>
+<div>
+<span class="text-[12px] text-saffron font-bold uppercase tracking-wider mb-1 block">July 24, 2026</span>
+<h5 class="font-button-text text-button-text text-on-surface group-hover:text-dark-saffron transition-colors">Tax Reform Proposal Released</h5>
+<p class="text-sm text-on-surface-variant line-clamp-2 mt-1">Our comprehensive plan to simplify the tax code and boost middle-class savings has been formally presented.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 bg-white border border-outline-variant rounded-xl hover:shadow-md transition-shadow group cursor-pointer">
+<img class="w-24 h-24 rounded-lg object-cover" data-alt="Professional infographic showing positive economic growth trends on a large screen in a modern briefing room, minimalist and high-tech feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDODTpXLM_LSnY-NWm-TNRm9bfV17ilM9oz1s5oKXGumf6QKh0Tj1ohyMxYnC3z9VUAQcBkP4Z6bRQ049BGCJitLlXDEk9X67McsUHVdUnHw42csNltpwWyYqfzhTMEjdiLQbbSZ6choasJiNBwf4kr-890eOAkQFPYg8U4QuFH9FRDO75NFJHhEdFH8LWc6TG9HBhnqu_Cr71LtykyCNWnZceyIaORJsR4CoiCIXeOKrS61wqXoQLnsly_y4IVM0SqXpQDVLXlnW0"/>
+<div>
+<span class="text-[12px] text-saffron font-bold uppercase tracking-wider mb-1 block">July 24, 2026</span>
+<h5 class="font-button-text text-button-text text-on-surface group-hover:text-dark-saffron transition-colors">Economic Growth Report: Positive Trends</h5>
+<p class="text-sm text-on-surface-variant line-clamp-2 mt-1">National exports have reached a record high this quarter following the implementation of our 'Vanguard Trade' initiative.</p>
+</div>
+</div>
+<div class="flex gap-4 p-4 bg-white border border-outline-variant rounded-xl hover:shadow-md transition-shadow group cursor-pointer">
+<img class="w-24 h-24 rounded-lg object-cover" data-alt="A diverse group of citizens engaged in a town hall meeting, a leader listening intently, natural daylight through large windows, authentic and community-focused atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWtDR-0OTB_nFHWTIDmwp_NKEpBIGXneSug8FI79IufGPX2dyuqOT1V2vEHpc5WkWW-X2Q0KY40g8Q-1JtJ59mpGxRdDruUWK3qDOnmaJL8anqDP-oL94UCIRkB8wIvpXIbC0BwARgFNf8csNN8U4abTZI4DG28LgG5U7Ix61qIwwKQ9RpyYJAspM68MXcecScWQpKe7q99wEY1iyxeyU_k1MkzDyf56CCSL1LsoGCCB3KdtCyHgfuPgVwu-e2CK3abNAnX3YOjDo"/>
+<div>
+<span class="text-[12px] text-saffron font-bold uppercase tracking-wider mb-1 block">July 24, 2026</span>
+<h5 class="font-button-text text-button-text text-on-surface group-hover:text-dark-saffron transition-colors">Town Hall: Shaping the Future Together</h5>
+<p class="text-sm text-on-surface-variant line-clamp-2 mt-1">Recap of the community dialogue held in Bangalore, focusing on sustainable urban development and infrastructure.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Media Gallery -->
+<div class="lg:col-span-4">
+<div class="flex items-center gap-2 mb-6 text-on-background">
+<span class="material-symbols-outlined text-saffron" style="font-variation-settings: 'FILL' 1;">photo_library</span>
+<h4 class="font-headline-lg text-headline-lg">Media Gallery</h4>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div class="rounded-lg overflow-hidden h-32 relative group cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="Candid photo of party volunteers planting trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaqiTaU8njwEettoJofsTu19Ru2W6EfyUnzEl8LYRW2_NePtUYDOqw7SuEFZTg0Wj_xW5DSSrA-gogAw3dK4PA12BnIraUticHZoQRSGen4tn0SeuMfQ7OeKZA6tMx-HDpcB7py0G_kMiSIziNd2BMQkBCYD_wxw0i9dXJyMh3Q957c-7jkRVvJo-0QVtrAyfQ9_DG5Q8I8X7q2bX9DzW7R19g-jLUkbthlQr7VT5LVefa6zTk7yEwCcQ9PDmTHWMfspd7pVFI3yY"/>
+</div>
+<div class="rounded-lg overflow-hidden h-32 relative group cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="Aerial shot of a night rally" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZAkEhtGxY_apVbPMVSpI488maFmGvu19BiIdSAuNljTXeG_q6TJplw4cMURRx2t1b-qbk5-ge5vHoGd8XEgwl7qOgo6YT7-KL5Mf9Xg9eW15edzEuOu4TE2ShmxFewQUtHETgNrshm1LuEbT2sQrJn3nWV9ennBN7t9INVrXU1wB3gKGTpXOLalwO_nzI9s1gl6P-Rlo1lrWKfQjmXuRo61A9i7PHgr5-5mq33GrKb4bYcrgRXq6gAD1wFeDii-oUljHtnvrh_H8"/>
+</div>
+<div class="rounded-lg overflow-hidden h-32 relative group cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="Modern office interior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIl1h7EvJaoshe1fL37AHSgXPRhipiX_wV2yKRPkzX8qmvN164yn1wHa-lG0L3m1e2wyhwCXjTdDGBoaMSi0pKgqUz55R9BCNtewqrx3mxUyBz7le_jHNvmfG9PUJa0CxIUIi1DaOo0Y7prHcTKqyf2EV8A1nzK4GVm_frDCf-Z59wwIiq7WYDN21uwGbFp87pHp2BXbAXYidxk7yFeCEqFp9CVk4-iHzGHNo2wHoVYyCzDj-FqVFjZw1MxDqXToLIjTOt7q5b9Vs"/>
+</div>
+<div class="rounded-lg overflow-hidden h-32 relative group cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="Historic building draped in colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl5gK3oGOf60ldvyAbxBI2CDD21xJaQkrhxPqXCYusTqCsJ4pn9yMnNzEsHbTSZIsf2uG1IVGdJv1-af6WmFsem4nobPc6_ePTaVpfomnJTmNmb3G1VaB0YNQ-XE2sMBznNduxNxzWtxR0vuMV8_X2tCCdt-zQXC2nsV3go7nLQUfiNFm5zaqzW1GZVAT_4rfyyxNsSORlCmzt_V3BFA7Y_ngShK0IgYvNKLw0WUKITik9V7JRgZGcIy9qI7-WKP6dGa6bF1WpFsE"/>
+</div>
+</div>
+<button class="w-full mt-6 py-3 border border-outline text-on-surface font-button-text rounded-lg hover:bg-saffron hover:text-white transition-all">View All Media</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Activity Feed & Social Stream -->
+<section class="py-section-padding bg-surface-container-low border-t border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter">
+<!-- Events & Press -->
+<div class="lg:col-span-2">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline-lg text-headline-lg text-on-background">National Updates</h3>
+<div class="flex flex-wrap gap-2 md:gap-4">
+<button class="px-4 py-1 text-on-primary bg-saffron rounded-full font-label-md">Press Releases</button>
+<button class="px-4 py-1 text-on-surface-variant hover:bg-surface-variant rounded-full font-label-md">Speeches</button>
+<button class="px-4 py-1 text-on-surface-variant hover:bg-surface-variant rounded-full font-label-md">Articles</button>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden border border-outline-variant shadow-sm mb-gutter">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Press conference photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAklkfmpu9P0BzVHRBY0mm0f7jRxOTbhhEbwo_D5M7h_esFjJdee0UZKHT2ctEZEueflcPo_Ed6u3sjp1Kt6A2if24tavXQAy0yl40XVel8bAUIUQ6FGKHrLhRIz7mQWwHOoZKWIyTFame3gKIREl4JF6AF1v8EVo2ryE_E1ISgs4eklxvoOlPysukrb-ZuoclaE3BCMKsVR4E_ovTq_OIV68yOLSn2RbHVLV_G-uVUlvdXSCyWe36meUVzguBMA-RRc6lYwfGDPRU"/>
+<div class="absolute top-4 left-4 bg-dark-saffron text-on-primary p-3 text-center rounded-lg shadow-lg">
+<span class="block text-xl font-bold leading-none">26</span>
+<span class="text-xs uppercase tracking-tighter">JUL 2026</span>
+</div>
+</div>
+<div class="p-8">
+<h4 class="font-headline-lg text-headline-lg text-on-background mb-4">Salient points of the press conference of senior Vanguard Leader on National Security</h4>
+<p class="text-on-surface-variant mb-6">"Our commitment to the safety of every citizen remains absolute. Today we announce the framework for the modernizing of our border security systems through AI and rapid-response infrastructure."</p>
+<div class="flex items-center justify-between">
+<a class="text-dark-saffron font-bold flex items-center gap-2 group" href="#">
+                                Read More 
+                                <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<div class="flex gap-4">
+<button class="text-on-surface opacity-60 hover:opacity-100"><span class="material-symbols-outlined">share</span></button>
+</div>
+</div>
+</div>
+</div>
+<div class="grid md:grid-cols-2 gap-gutter">
+<div class="bg-white p-6 rounded-xl border border-outline-variant">
+<span class="text-xs text-saffron font-bold mb-2 block">UPCOMING EVENT</span>
+<h5 class="font-button-text text-button-text text-on-surface mb-2">Vanguard Youth Digital Summit</h5>
+<p class="text-sm text-on-surface-variant mb-4">Connecting 1 million young voters through a pan-India virtual platform to discuss the digital future.</p>
+<div class="flex items-center gap-4 text-xs text-outline font-bold">
+<span>28 JUL, 2026</span>
+<span class="w-1 h-1 bg-outline rounded-full"></span>
+<span>VIRTUAL EVENT</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-outline-variant">
+<span class="text-xs text-saffron font-bold mb-2 block">VANGUARD LIVE</span>
+<h5 class="font-button-text text-button-text text-on-surface mb-2">PM Connect: Town Hall Live</h5>
+<p class="text-sm text-on-surface-variant mb-4">Live broadcast of the monthly citizen interaction program with the Party Leadership.</p>
+<div class="flex items-center gap-4 text-xs text-outline font-bold">
+<span class="text-error flex items-center gap-1"><span class="w-2 h-2 bg-error rounded-full animate-pulse"></span> LIVE NOW</span>
+<span class="w-1 h-1 bg-outline rounded-full"></span>
+<span>45.2k WATCHING</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Social Stream -->
+<div class="lg:col-span-1">
+<h3 class="font-headline-lg text-headline-lg text-on-background mb-8">Social Stream</h3>
+<div class="space-y-gutter">
+<div class="bg-white rounded-xl overflow-hidden border border-outline-variant">
+<div class="relative group aspect-video">
+<img class="w-full h-full object-cover" data-alt="National leader speaking" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0NeOLzcT8SwBwRFlS-IrQIC85eT7o4zPuFoClm2zw1iZfLXu4lWLGcJYqdOicx49Yh-pbCbBfin9HdF3qS1psZiATusJXUJk_L008yF-IGiGZRCqqwh4cZaIis5QYp6fUEDuRXNM_IoCjnN9_NmXMEV2S_svYt7D4ouxUg2S0kUfr0-ft2WGfIKldBp1UKwjcDEvJAPUreuvLg4-mnbxmRuJzR9wASDfWQK2b-KL63ZrS7r94gApH0mICWIgft8uSEzIQZxrmwhc"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-12 bg-error rounded-xl flex items-center justify-center text-white cursor-pointer hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<div class="p-4">
+<p class="text-sm text-on-surface mb-2 font-medium">Remarks at the 6th Global Economic Forum.</p>
+<span class="text-xs text-outline">Published on YouTube • 2 hours ago</span>
+</div>
+</div>
+<div class="bg-white rounded-xl overflow-hidden border border-outline-variant">
+<div class="p-4 flex gap-3">
+<div class="w-10 h-10 rounded-full bg-saffron flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-sm">person</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="font-bold text-on-surface text-sm">@VanguardParty</span>
+<span class="text-outline text-xs">10m ago</span>
+</div>
+<p class="text-sm text-on-surface mt-2">The energy at today's Delhi rally was unmatched! Proud of our volunteers for making it a zero-waste event. #VanguardMovement #IndiaFirst</p>
+<div class="mt-4 rounded-lg overflow-hidden border border-outline-variant">
+<img class="w-full h-48 object-cover" data-alt="Volunteers cleaning up a park" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZs4o5gTeMzH9cxxCL06wCuQUKTbZc5VWGkPKUtdz_SQ2QrevLr_kfUb-WUvSK6Pm3WFBNCnpNhTFQqP3vg5VEcfY02RMRLpz9XX-vig-vNO2cBd49_3ZOb88Tvp4jn2B9r92lXC3oyhjtV9ebb-7fMlbnHggeAYxiL0Aml-_p7P7ShNN7G2Q9oYsHggGs2ucgBTVcewsN2uOrKTsVNFs7Azc41or0RWjVziRLMj30d6fk_weeZvzv9p4Ctj8hXBJta3k14d3icko"/>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-3 text-dark-saffron font-bold hover:bg-surface-container-high transition-colors rounded-lg flex items-center justify-center gap-2">
+                        View More Streams
+                        <span class="material-symbols-outlined">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-on-background text-white border-t-4 border-saffron">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-padding">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-16">
+<div class="md:col-span-1">
+<h2 class="font-headline-lg text-headline-lg text-white mb-6">Vanguard Party</h2>
+<p class="opacity-70 font-body-md text-body-md leading-relaxed mb-6">
+                    Building a nation that is self-reliant, transparent, and proud. Join our journey towards excellence.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-saffron hover:text-white transition-all scale-100 hover:scale-110" href="#">
+<span class="material-symbols-outlined text-sm">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-saffron hover:text-white transition-all scale-100 hover:scale-110" href="#">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-saffron hover:text-white transition-all scale-100 hover:scale-110" href="#">
+<span class="material-symbols-outlined text-sm">campaign</span>
+</a>
+</div>
+</div>
+<div>
+<h3 class="font-bold mb-6 text-saffron uppercase tracking-widest text-sm">Navigation</h3>
+<ul class="space-y-4 font-body-md text-body-md">
+<li><a class="opacity-70 hover:opacity-100 hover:text-saffron transition-colors" href="#">Home</a></li>
+<li><a class="opacity-70 hover:opacity-100 hover:text-saffron transition-colors" href="#">About Us</a></li>
+<li><a class="opacity-70 hover:opacity-100 hover:text-saffron transition-colors" href="#">Policy Initiatives</a></li>
+<li><a class="opacity-70 hover:opacity-100 hover:text-saffron transition-colors" href="#">Leadership</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold mb-6 text-saffron uppercase tracking-widest text-sm">Resources</h3>
+<ul class="space-y-4 font-body-md text-body-md">
+<li><a class="opacity-70 hover:opacity-100 hover:text-saffron transition-colors" href="#">Volunteer Portal</a></li>
+<li><a class="opacity-70 hover:opacity-100 hover:text-saffron transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="opacity-70 hover:opacity-100 hover:text-saffron transition-colors" href="#">Terms of Service</a></li>
+<li><a class="opacity-70 hover:opacity-100 hover:text-saffron transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold mb-6 text-saffron uppercase tracking-widest text-sm">Join the Movement</h3>
+<p class="opacity-70 mb-6 text-sm">Stay updated with our weekly newsletter on policy progress and national updates.</p>
+<div class="flex flex-col gap-2">
+<input class="bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white w-full focus:outline-none focus:border-saffron" placeholder="Email Address" type="email"/>
+<button class="bg-saffron text-on-primary px-4 py-2 rounded-lg font-bold w-full">Submit</button>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 opacity-60 text-xs text-center md:text-left">
+<p>© 2024 Vanguard Party. Authorized by the National Committee.</p>
+<p>Designed for the Future of India</p>
+</div>
+</div>
+</footer>
+<!-- FAB for Donation (Mobile Contextual) -->
+<button class="fixed bottom-8 right-8 z-40 bg-saffron text-on-primary w-16 h-16 rounded-full shadow-2xl flex flex-col items-center justify-center hover:scale-110 active:scale-95 transition-all md:hidden">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<span class="text-[8px] font-bold">DONATE</span>
+</button>
+<script>
+    // Simple micro-interaction for smooth nav transitions
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            document.querySelectorAll('nav a').forEach(l => {
+                l.classList.remove('text-saffron', 'border-b-2', 'border-saffron', 'pb-1');
+                l.classList.add('text-on-surface', 'opacity-80');
+            });
+            this.classList.add('text-saffron', 'border-b-2', 'border-saffron', 'pb-1');
+            this.classList.remove('text-on-surface', 'opacity-80');
+        });
+    });
+</script>
+</body></html>

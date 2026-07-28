@@ -1,242 +1,146 @@
-<!DOCTYPE html>
+{% extends "core/base.html" %}
+{% block title %}About Us | Sankalp Adhikar Vishwas Ekta Party{% endblock %}
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Us | Sankalp Adhikar Vishwas Ekta Party</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                "surface-container-lowest": "#ffffff",
-                "tertiary-fixed": "#d3e4ff",
-                "inverse-primary": "#adc7f7",
-                "surface-variant": "#e0e3e5",
-                "on-tertiary-fixed-variant": "#004881",
-                "background": "#f7fafc",
-                "surface": "#f7fafc",
-                "error": "#ba1a1a",
-                "on-primary-container": "#86a0cd",
-                "surface-tint": "#455f88",
-                "primary": "#002045",
-                "surface-container": "#ebeef0",
-                "surface-container-highest": "#e0e3e5",
-                "outline-variant": "#c4c6cf",
-                "primary-fixed-dim": "#adc7f7",
-                "tertiary-fixed-dim": "#a2c9ff",
-                "on-secondary-container": "#600008",
-                "on-secondary-fixed": "#410003",
-                "on-primary-fixed": "#001b3c",
-                "tertiary": "#002141",
-                "inverse-on-surface": "#eef1f3",
-                "on-primary-fixed-variant": "#2d476f",
-                "on-primary": "#ffffff",
-                "secondary-container": "#ff5a55",
-                "on-surface-variant": "#43474e",
-                "inverse-surface": "#2d3133",
-                "surface-dim": "#d7dadc",
-                "primary-fixed": "#d6e3ff",
-                "on-tertiary-fixed": "#001c38",
-                "on-error": "#ffffff",
-                "on-secondary-fixed-variant": "#920212",
-                "on-surface": "#181c1e",
-                "on-tertiary-container": "#68a2e9",
-                "surface-container-high": "#e5e9eb",
-                "tertiary-container": "#003765",
-                "surface-bright": "#f7fafc",
-                "on-tertiary": "#ffffff",
-                "error-container": "#ffdad6",
-                "secondary-fixed-dim": "#ffb3ad",
-                "on-background": "#181c1e",
-                "on-secondary": "#ffffff",
-                "secondary-fixed": "#ffdad6",
-                "primary-container": "#1a365d",
-                "secondary": "#b52426",
-                "outline": "#74777f",
-                "on-error-container": "#93000a",
-                "surface-container-low": "#f1f4f6"
-            },
-            "borderRadius": {
-                "DEFAULT": "0.25rem",
-                "lg": "0.5rem",
-                "xl": "0.75rem",
-                "full": "9999px"
-            },
-            "spacing": {
-                "margin-mobile": "16px",
-                "stack-md": "16px",
-                "container-max": "1280px",
-                "base": "8px",
-                "stack-sm": "8px",
-                "stack-lg": "32px",
-                "margin-desktop": "40px",
-                "gutter": "24px"
-            },
-            "fontFamily": {
-                "body-lg": ["Inter"],
-                "display-lg": ["Montserrat"],
-                "body-md": ["Inter"],
-                "headline-lg-mobile": ["Montserrat"],
-                "display-lg-mobile": ["Montserrat"],
-                "headline-md": ["Montserrat"],
-                "headline-lg": ["Montserrat"],
-                "label-md": ["Inter"]
-            },
-            "fontSize": {
-                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-    </style>
-</head>
-<body class="bg-background text-on-background font-body-md">
-<!-- TopNavBar (Shared Component) -->
-<header class="fixed top-0 left-0 w-full z-50 bg-surface dark:bg-inverse-surface shadow-sm h-20">
-<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
-<a class="font-display-lg text-sm md:text-lg lg:text-xl font-bold text-primary dark:text-primary-fixed-dim leading-tight max-w-[220px] md:max-w-none" href="/">Sankalp Adhikar Vishwas Ekta Party</a>
-<nav class="hidden md:flex items-center gap-8">
-<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="/">Home</a>
-<a class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-bold" href="/about/">About Us</a>
-<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="/feedback/">Voice &amp; Feedback</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="bg-secondary text-on-secondary font-label-md text-label-md px-6 py-2.5 rounded-lg hover:opacity-90 active:scale-95 transition-all" onclick="openDonationModal()" type="button">Donate Now</button>
-<button aria-label="Menu" class="md:hidden w-10 h-10 flex items-center justify-center text-primary dark:text-primary-fixed-dim">
-<span class="material-symbols-outlined">menu</span>
-</button>
+{% block extra_style %}
+.hero-pattern {
+    background-image: radial-gradient(#ff9933 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+    opacity: 0.15;
+}
+{% endblock %}
+
+{% block content %}
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-xl">
+<!-- Hero -->
+<section class="relative overflow-hidden mb-xl">
+<div class="hero-pattern absolute inset-0 -z-10"></div>
+<div class="flex flex-col md:flex-row items-center gap-xl">
+<div class="flex-1 space-y-md">
+<div class="inline-block px-md py-xs bg-primary-container/10 border border-primary-container/20 rounded-full">
+<span class="text-primary-container font-label-md text-label-md">Empowering Every Indian</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background leading-tight">
+About <span class="text-primary-container">Sankalp Adhikar Vishwas Ekta Party</span>
+</h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl">
+We stand for a nation where every voice is heard, every community thrives, and our shared values define our path forward. This is who we are, and what we're building together.
+</p>
+</div>
+<div class="flex-1 w-full relative">
+<div class="aspect-square md:aspect-video rounded-xl overflow-hidden shadow-lg border-4 border-white">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAxvVRhR7cvz6W2DSsEttHVFPfgoY9qp4KJVM7sSw3TIwiaEaLIwE7YgbnooK1es-7AcuXvxLXg7DsTWZHQU_qoaWHQAoxGWih0vlvrHRT0KGhwAxpgPajjeZOw9kISVGjUJN3O1c6vLaa9RAtEmoqgcKNv8WLmWk_ODBrhh0F8fi4viSxk4Hiabnwob6KpBWEk9UpHT14G-KoAQeNUUmAv0T6yZkWSt0b-FhvY8k-Fv18AirLEW2P"/>
 </div>
 </div>
-</header>
-<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-24 pb-stack-lg">
-<!-- Hero / Intro -->
-<section class="mb-stack-lg text-center max-w-3xl mx-auto">
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">About Sankalp Adhikar Vishwas Ekta Party</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant">
-                We stand for a nation where every voice is heard, every community thrives, and our shared values define our path forward. This is who we are, and what we're building together.
-            </p>
+</div>
 </section>
 <!-- Leadership -->
-<section class="mb-stack-lg">
-<div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 bg-white rounded-xl border border-outline-variant p-8 lg:p-12">
-<div class="relative w-full max-w-sm mx-auto aspect-square rounded-2xl overflow-hidden shadow-lg">
-<img class="w-full h-full object-cover" data-alt="A professional portrait of a charismatic and visionary political leader standing before a subtle national flag." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAxvVRhR7cvz6W2DSsEttHVFPfgoY9qp4KJVM7sSw3TIwiaEaLIwE7YgbnooK1es-7AcuXvxLXg7DsTWZHQU_qoaWHQAoxGWih0vlvrHRT0KGhwAxpgPajjeZOw9kISVGjUJN3O1c6vLaa9RAtEmoqgcKNv8WLmWk_ODBrhh0F8fi4viSxk4Hiabnwob6KpBWEk9UpHT14G-KoAQeNUUmAv0T6yZkWSt0b-FhvY8k-Fv18AirLEW2P"/>
+<section class="mb-xl">
+<div class="grid grid-cols-1 lg:grid-cols-2 items-center gap-xl bg-white rounded-xl border border-outline-variant shadow-sm p-8 lg:p-xl">
+<div class="relative w-full max-w-sm mx-auto aspect-square rounded-xl overflow-hidden shadow-lg">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAxvVRhR7cvz6W2DSsEttHVFPfgoY9qp4KJVM7sSw3TIwiaEaLIwE7YgbnooK1es-7AcuXvxLXg7DsTWZHQU_qoaWHQAoxGWih0vlvrHRT0KGhwAxpgPajjeZOw9kISVGjUJN3O1c6vLaa9RAtEmoqgcKNv8WLmWk_ODBrhh0F8fi4viSxk4Hiabnwob6KpBWEk9UpHT14G-KoAQeNUUmAv0T6yZkWSt0b-FhvY8k-Fv18AirLEW2P"/>
 </div>
 <div>
-<span class="text-label-md font-label-md text-secondary uppercase tracking-widest">Our Leadership</span>
-<h2 class="font-headline-lg text-headline-lg text-primary mt-2 mb-4">Chairman James Sterling</h2>
-<p class="text-on-surface-variant font-body-md mb-4">Chairman Sterling founded the party on a simple belief: that a nation succeeds when its people are heard, its institutions are transparent, and its opportunities are shared by all. Under his leadership, the party has grown into a movement grounded in integrity, unity, and measurable results for the communities it serves.</p>
-<p class="text-on-surface-variant font-body-md">Every policy we champion and every rupee we raise is guided by that same commitment &mdash; leading with vision, uniting with purpose.</p>
+<span class="text-label-md font-label-md text-primary-container uppercase tracking-widest">Our Leadership</span>
+<h2 class="font-headline-lg text-headline-lg text-on-background mt-2 mb-4">Chairman James Sterling</h2>
+<p class="text-secondary font-body-md mb-4">Chairman Sterling founded the party on a simple belief: that a nation succeeds when its people are heard, its institutions are transparent, and its opportunities are shared by all. Under his leadership, the party has grown into a movement grounded in integrity, unity, and measurable results for the communities it serves.</p>
+<p class="text-secondary font-body-md">Every policy we champion and every rupee we raise is guided by that same commitment &mdash; leading with vision, uniting with purpose.</p>
+</div>
+</div>
+</section>
+<!-- Our Team -->
+<section class="mb-xl">
+<div class="mb-16 text-center max-w-2xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">Our Team</h2>
+<div class="w-20 h-1 bg-primary-container rounded-full mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<div class="bg-white rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow p-6 text-center">
+<div class="w-24 h-24 mx-auto mb-4 rounded-full bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-5xl">person</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-1">Member Name</h3>
+<p class="text-primary-container font-label-md text-label-md">Vice President</p>
+</div>
+<div class="bg-white rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow p-6 text-center">
+<div class="w-24 h-24 mx-auto mb-4 rounded-full bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-5xl">person</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-1">Member Name</h3>
+<p class="text-primary-container font-label-md text-label-md">General Secretary</p>
+</div>
+<div class="bg-white rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow p-6 text-center">
+<div class="w-24 h-24 mx-auto mb-4 rounded-full bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-5xl">person</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-1">Member Name</h3>
+<p class="text-primary-container font-label-md text-label-md">Treasurer</p>
+</div>
+<div class="bg-white rounded-xl border border-outline-variant shadow-sm hover:shadow-md transition-shadow p-6 text-center">
+<div class="w-24 h-24 mx-auto mb-4 rounded-full bg-primary-container/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-5xl">person</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-1">Member Name</h3>
+<p class="text-primary-container font-label-md text-label-md">Spokesperson</p>
 </div>
 </div>
 </section>
 <!-- What We Stand For -->
-<section class="mb-stack-lg">
-<div class="mb-12 text-center max-w-2xl mx-auto">
-<h2 class="font-headline-lg text-headline-lg text-primary mb-4">What We Stand For</h2>
-<div class="w-20 h-1 bg-secondary rounded-full mx-auto"></div>
+<section class="mb-xl">
+<div class="mb-16 text-center max-w-2xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-4">What We Stand For</h2>
+<div class="w-20 h-1 bg-primary-container rounded-full mx-auto"></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-<div class="md:col-span-8 bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group">
+<div class="md:col-span-8 bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow group border border-outline-variant">
 <div class="grid grid-cols-1 lg:grid-cols-2">
 <div class="h-64 lg:h-auto overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A futuristic green city skyline with sustainable infrastructure." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB47p896xfxgfW_QxA097ajIkExme6NtaoJqnPHSGQOYjO0SigerkOq9KWjX6QXtAvviwNcZtizrDE_9NgfJjNGHAzGpoFKpw_XK1uHbCXpnNQ3xhA3zgczEvEv6VU3MVAbva-QBimwDoi9rf1zc0JwcOhCngBF1pBfYbzpP4GwlVh8zjYv7wdPVXS7VdScGQkctiMKYTbsMvqe-OOYrUrk7piplmvrj2P-0Ykgvb6le4rqkpRd0qW2"/>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB47p896xfxgfW_QxA097ajIkExme6NtaoJqnPHSGQOYjO0SigerkOq9KWjX6QXtAvviwNcZtizrDE_9NgfJjNGHAzGpoFKpw_XK1uHbCXpnNQ3xhA3zgczEvEv6VU3MVAbva-QBimwDoi9rf1zc0JwcOhCngBF1pBfYbzpP4GwlVh8zjYv7wdPVXS7VdScGQkctiMKYTbsMvqe-OOYrUrk7piplmvrj2P-0Ykgvb6le4rqkpRd0qW2"/>
 </div>
 <div class="p-8 flex flex-col justify-center">
-<span class="material-symbols-outlined text-secondary-container text-4xl mb-4">eco</span>
-<h3 class="font-headline-md text-headline-md text-primary mb-4">Sustainable Future Initiative</h3>
-<p class="text-on-surface-variant mb-6">Implementing cutting-edge renewable energy solutions to protect our landscapes while creating thousands of new industrial jobs.</p>
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4">eco</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-4">Sustainable Future Initiative</h3>
+<p class="text-secondary mb-6">Implementing cutting-edge renewable energy solutions to protect our landscapes while creating thousands of new industrial jobs.</p>
 </div>
 </div>
 </div>
-<div class="md:col-span-4 bg-primary-container text-white p-8 rounded-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="md:col-span-4 saffron-gradient text-white p-8 rounded-xl flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
 <div>
-<span class="material-symbols-outlined text-secondary-fixed-dim text-4xl mb-4">payments</span>
+<span class="material-symbols-outlined text-white text-4xl mb-4">payments</span>
 <h3 class="font-headline-md text-headline-md mb-4">Economic Resilience</h3>
 <p class="text-white/80">Revitalizing our domestic markets through strategic tax reforms and small business grants.</p>
 </div>
 </div>
-<div class="md:col-span-4 bg-white p-8 rounded-xl border border-outline-variant hover:border-primary transition-all group">
-<span class="material-symbols-outlined text-primary text-4xl mb-4 group-hover:scale-110 transition-transform">school</span>
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Education First</h3>
-<p class="text-on-surface-variant">Modernizing school infrastructure and empowering teachers with the resources they need to lead.</p>
+<div class="md:col-span-4 bg-white p-8 rounded-xl border border-outline-variant hover:border-primary-container transition-all group">
+<span class="material-symbols-outlined text-primary-container text-4xl mb-4 group-hover:scale-110 transition-transform">school</span>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Education First</h3>
+<p class="text-secondary">Modernizing school infrastructure and empowering teachers with the resources they need to lead.</p>
 </div>
 <div class="md:col-span-8 bg-surface-container-low rounded-xl p-8 flex items-center justify-between group hover:bg-surface-container transition-colors">
 <div class="max-w-md">
-<h3 class="font-headline-md text-headline-md text-primary mb-2">Healthcare Accessibility</h3>
-<p class="text-on-surface-variant">A comprehensive plan to reduce premiums and expand medical services to rural areas across the nation.</p>
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Healthcare Accessibility</h3>
+<p class="text-secondary">A comprehensive plan to reduce premiums and expand medical services to rural areas across the nation.</p>
 </div>
 <div class="hidden sm:block">
-<div class="w-24 h-24 rounded-full border-4 border-secondary-container flex items-center justify-center">
-<span class="material-symbols-outlined text-secondary-container text-4xl">medical_services</span>
+<div class="w-24 h-24 rounded-full border-4 border-primary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container text-4xl">medical_services</span>
 </div>
 </div>
 </div>
 </div>
 </section>
+<!-- CTA -->
+<section class="mb-4">
+<div class="bg-surface-container-high rounded-xl p-8 md:p-xl flex flex-col md:flex-row items-center justify-between gap-xl border border-outline-variant">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg mb-3">Be the Change You Want to See</h2>
+<p class="font-body-md text-body-md text-secondary">
+We are more than a political organization; we're a collective of citizens tired of empty promises. Join us in our journey towards a developed and united India.
+</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<button class="bg-primary-container text-on-primary-container px-8 py-3 rounded-xl font-bold font-label-md text-label-md hover:brightness-105 transition-all text-center" onclick="openDonationModal()" type="button">Donate to Cause</button>
+</div>
+</div>
+</section>
 </main>
-<!-- Footer (Shared Component) -->
-<footer class="bg-primary text-on-primary mt-stack-lg border-t border-outline-variant">
-<div class="w-full px-margin-desktop py-stack-lg max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
-<div class="col-span-1 md:col-span-1">
-<div class="font-headline-md text-lg leading-snug text-on-primary mb-4">Sankalp Adhikar Vishwas Ekta Party</div>
-<p class="text-on-primary/60 font-body-md pr-4">Leading with vision, uniting with purpose. Together, we build a future that works for everyone.</p>
-</div>
-<div class="col-span-1">
-<h5 class="font-label-md text-label-md uppercase tracking-wider mb-6 text-secondary-fixed">Navigation</h5>
-<ul class="space-y-4">
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/">Home</a></li>
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/about/">About Us</a></li>
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Voice &amp; Feedback</a></li>
-</ul>
-</div>
-<div class="col-span-1">
-<h5 class="font-label-md text-label-md uppercase tracking-wider mb-6 text-secondary-fixed">Resources</h5>
-<ul class="space-y-4">
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Volunteer Portal</a></li>
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="#">Terms of Service</a></li>
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Contact Support</a></li>
-</ul>
-</div>
-<div class="col-span-1">
-<h5 class="font-label-md text-label-md uppercase tracking-wider mb-6 text-secondary-fixed">Follow Us</h5>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
-<span class="material-symbols-outlined">face_nod</span>
-</a>
-<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
-<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-</a>
-<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
-<span class="material-symbols-outlined">video_library</span>
-</a>
-</div>
-<div class="mt-8 text-on-primary/40 text-[12px] leading-relaxed">
-                    © 2024 Sankalp Adhikar Vishwas Ekta Party. Authorized by the Electoral Commission.
-                </div>
-</div>
-</div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="/static/core/js/csrf.js"></script>
-{% include "core/_donate_modal.html" %}
-</body></html>
+{% endblock %}

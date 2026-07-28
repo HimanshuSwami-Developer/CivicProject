@@ -1,0 +1,104 @@
+<!-- Unified Suggestion / Complaint Box (Shared Component) -->
+<div class="form-card bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary" id="feedback-icon-wrap">
+<span class="material-symbols-outlined" id="feedback-icon" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-background">Share Your Feedback</h2>
+<p class="text-on-surface-variant text-body-md" id="feedback-subtitle">Share your innovative ideas for community growth.</p>
+</div>
+</div>
+<div class="flex gap-3 mb-6">
+<button class="tag-btn flex-1 px-4 py-2 rounded-full border-2 font-label-md text-label-md font-bold transition-all" id="tag-suggestion" type="button">Feedback</button>
+<button class="tag-btn flex-1 px-4 py-2 rounded-full border-2 font-label-md text-label-md font-bold transition-all" id="tag-complaint" type="button">Complaint</button>
+</div>
+<form class="space-y-6" id="feedback-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="fb-name">Full Name</label>
+<input class="w-full p-3 rounded-lg border border-outline focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all" id="fb-name" placeholder="John Doe" required="" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="fb-phone">Contact Number</label>
+<input class="w-full p-3 rounded-lg border border-outline focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all" id="fb-phone" placeholder="+91 98765 43210" required="" type="tel"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="fb-email">Email Address</label>
+<input class="w-full p-3 rounded-lg border border-outline focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all" id="fb-email" placeholder="john@example.com" required="" type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="fb-message" id="fb-message-label">Describe your feedback</label>
+<textarea class="w-full p-3 rounded-lg border border-outline focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all" id="fb-message" placeholder="Tell us about your feedback..." required="" rows="5"></textarea>
+</div>
+<button class="w-full md:w-auto px-8 py-3 bg-primary-container text-on-primary-container font-bold rounded-lg hover:brightness-105 active:scale-95 transition-all flex items-center justify-center gap-2" id="fb-submit-btn" type="submit">
+                        Submit Feedback <span class="material-symbols-outlined">send</span>
+</button>
+</form>
+</div>
+<script>
+    (function () {
+        let feedbackType = 'feedback';
+        const tagBase = 'tag-btn flex-1 px-4 py-2 rounded-full border-2 font-label-md text-label-md font-bold transition-all';
+
+        function switchFeedbackType(type) {
+            feedbackType = type;
+            if (type === 'feedback') {
+                $('#tag-suggestion').attr('class', tagBase + ' bg-primary-container text-on-primary-container border-primary-container');
+                $('#tag-complaint').attr('class', tagBase + ' border-outline-variant text-on-surface-variant hover:border-primary-container');
+                $('#feedback-icon-wrap').attr('class', 'w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary');
+                $('#feedback-icon').text('lightbulb');
+                $('#feedback-subtitle').text('Share your innovative ideas for community growth.');
+                $('#fb-message-label').text('Describe your feedback');
+                $('#fb-message').attr('placeholder', 'Tell us about your feedback...');
+                $('#fb-submit-btn').attr('class', 'w-full md:w-auto px-8 py-3 bg-primary-container text-on-primary-container font-bold rounded-lg hover:brightness-105 active:scale-95 transition-all flex items-center justify-center gap-2');
+                $('#fb-submit-btn').html('Submit Feedback <span class="material-symbols-outlined">send</span>');
+            } else {
+                $('#tag-complaint').attr('class', tagBase + ' bg-secondary text-on-secondary border-secondary');
+                $('#tag-suggestion').attr('class', tagBase + ' border-outline-variant text-on-surface-variant hover:border-primary-container');
+                $('#feedback-icon-wrap').attr('class', 'w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary');
+                $('#feedback-icon').text('report');
+                $('#feedback-subtitle').text('Report issues or grievances for investigation.');
+                $('#fb-message-label').text('Describe the issue or complaint');
+                $('#fb-message').attr('placeholder', 'Describe the issue in detail...');
+                $('#fb-submit-btn').attr('class', 'w-full md:w-auto px-8 py-3 bg-secondary text-on-secondary font-bold rounded-lg hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2');
+                $('#fb-submit-btn').html('Submit Report <span class="material-symbols-outlined">priority_high</span>');
+            }
+        }
+
+        $('#tag-suggestion').on('click', function () { switchFeedbackType('feedback'); });
+        $('#tag-complaint').on('click', function () { switchFeedbackType('complaint'); });
+
+        $('#feedback-form').on('submit', function (e) {
+            e.preventDefault();
+            const btn = $('#fb-submit-btn');
+            const originalHtml = btn.html();
+            btn.prop('disabled', true).text('Submitting...');
+
+            $.ajax({
+                url: '/api/feedback/',
+                method: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    type: feedbackType,
+                    name: $('#fb-name').val(),
+                    phone: $('#fb-phone').val(),
+                    email: $('#fb-email').val(),
+                    message: $('#fb-message').val()
+                }),
+                success: function () {
+                    alert(feedbackType === 'feedback' ? 'Thank you for your feedback!' : 'Your report has been submitted for review.');
+                    $('#feedback-form')[0].reset();
+                    btn.prop('disabled', false).html(originalHtml);
+                },
+                error: function () {
+                    alert('Something went wrong. Please try again.');
+                    btn.prop('disabled', false).html(originalHtml);
+                }
+            });
+        });
+
+        switchFeedbackType('feedback');
+    })();
+</script>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Citizen Voice | SAVE Party</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#c1c8ca",
+                        "secondary": "#586062",
+                        "surface": "#f8f9fa",
+                        "surface-variant": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-container-high": "#e7e8e9",
+                        "on-background": "#191c1d",
+                        "surface-dim": "#d9dadb",
+                        "inverse-surface": "#2e3132",
+                        "surface-tint": "#8f4e00",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#ff9933",
+                        "on-surface-variant": "#554336",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#dae1e3",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#161d1f",
+                        "on-tertiary-container": "#7d242b",
+                        "on-primary-fixed": "#2e1500",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary-fixed": "#400009",
+                        "inverse-primary": "#ffb77a",
+                        "outline-variant": "#dbc2b0",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#ffb77a",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#edeeef",
+                        "background": "#f8f9fa",
+                        "on-primary-container": "#693800",
+                        "tertiary-fixed-dim": "#ffb3b3",
+                        "on-primary-fixed-variant": "#6d3a00",
+                        "primary": "#8f4e00",
+                        "secondary-fixed": "#dde4e6",
+                        "primary-fixed": "#ffdcc2",
+                        "tertiary-fixed": "#ffdad9",
+                        "on-secondary-fixed-variant": "#41484a",
+                        "outline": "#887364",
+                        "on-secondary-container": "#5d6466",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-container": "#ff9395",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary": "#9f3e43",
+                        "on-tertiary-fixed-variant": "#80272e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base-unit": "4px",
+                        "md": "16px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .form-focus-saffron:focus {
+            border-color: #FF9933;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 153, 51, 0.2);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-background font-body-md">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-lg h-16 max-w-container-max mx-auto bg-surface dark:bg-on-background shadow-sm">
+<div class="flex items-center gap-xs">
+<span class="font-headline-md text-headline-md font-bold text-primary">SAVE Party</span>
+</div>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary-container transition-colors" href="#">Home</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary-container transition-colors" href="#">About Us</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Citizen Voice</a>
+<a class="font-label-md text-label-md text-secondary dark:text-secondary-fixed-dim hover:text-primary-container transition-colors" href="#">Donations</a>
+</nav>
+<div class="flex items-center gap-md">
+<button class="bg-primary-container text-on-primary-container px-md py-sm rounded-lg font-label-md text-label-md font-bold hover:opacity-90 transition-all">Join Now</button>
+</div>
+</header>
+<!-- Sidebar (Desktop only) -->
+<aside class="hidden lg:flex flex-col h-screen w-64 fixed left-0 top-0 bg-surface-container-low dark:bg-inverse-surface border-r border-outline-variant pt-20 p-md z-40">
+<div class="mb-xl flex items-center gap-sm">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" data-icon="record_voice_over">record_voice_over</span>
+</div>
+<div>
+<h2 class="font-label-md text-label-md font-bold text-on-surface">Citizen Portal</h2>
+<p class="text-xs text-secondary">Your Voice Matters</p>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm bg-primary-container text-on-primary-container rounded-lg font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="record_voice_over">record_voice_over</span>
+<span class="font-body-md text-body-md">Citizen Voice</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+<span class="font-body-md text-body-md">Leadership</span>
+</a>
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="volunteer_activism">volunteer_activism</span>
+<span class="font-body-md text-body-md">Donations</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant pt-md space-y-1">
+<a class="flex items-center gap-sm px-md py-sm text-on-surface-variant hover:bg-surface-container-high transition-colors rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+<a class="bg-primary text-on-primary px-md py-sm rounded-lg font-bold flex items-center justify-center gap-sm mt-md hover:opacity-90" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+                Donate Now
+            </a>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="lg:ml-64 pt-20 pb-xl px-lg">
+<div class="max-w-container-max mx-auto">
+<!-- Hero Section -->
+<section class="mb-xl">
+<div class="flex flex-col md:flex-row items-center gap-xl bg-surface-container-lowest p-xl rounded-xl shadow-sm border border-outline-variant">
+<div class="flex-1">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-md">Empowering Your Voice</h1>
+<p class="font-body-lg text-body-lg text-secondary mb-lg max-w-xl">
+                            The SAVE Party believes in direct democracy. Share your suggestions for community improvement or let us know where we can do better. Your input shapes our future.
+                        </p>
+<div class="flex gap-md">
+<a class="bg-primary-container text-on-primary-container px-lg py-md rounded-lg font-bold flex items-center gap-sm hover:opacity-90 transition-all" href="#submit-voice">
+<span class="material-symbols-outlined" data-icon="add_comment">add_comment</span>
+                                Take Action
+                            </a>
+<a class="border-2 border-primary-container text-primary-container px-lg py-md rounded-lg font-bold flex items-center gap-sm hover:bg-primary-container/10 transition-all" href="#how-it-works">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+                                How it Works
+                            </a>
+</div>
+</div>
+<div class="flex-1 w-full max-w-md h-64 rounded-xl overflow-hidden shadow-lg relative">
+<div class="w-full h-full bg-cover bg-center" data-alt="A warm, professional corporate photograph showing a diverse group of citizens engaged in a respectful community meeting. The lighting is bright and sun-drenched with amber and saffron tones. The atmosphere is optimistic and collaborative, featuring a modern architectural background with clean lines and large windows." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHr5h2Pr3rVhV3Iok7aI0z7WncQMTRhRIVE4mQd5XG6m2iJ1qvc3WrqzZd1hnY4dgDPoI4BV_5NGHv0_YQTtDIgRZt1x3g4wSRUoFTEKBZA9vzcYheQe2TGBeFxQFL80kBlFsuFQLvK-nfNK2Bw8zinYB15hVWKqMDckfzV6oZDFiZL5Z3X7hwpOa5XNoPSfRxknNqCTZZX_IkX3L3NmbGThmv6hSADwtP8o5BqRyy3Ym_P0tV_lP_7eWVF3zAoylV93oxqMOsjjU')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Quick Stats / Bento Grid -->
+<section class="mb-xl bento-grid">
+<div class="col-span-12 md:col-span-4 bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-md mb-sm">
+<div class="p-sm bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span>
+</div>
+<span class="font-headline-md text-headline-md">12,450+</span>
+</div>
+<p class="font-body-md text-body-md text-secondary">Suggestions implemented in the last 12 months across all sectors.</p>
+</div>
+<div class="col-span-12 md:col-span-4 bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-md mb-sm">
+<div class="p-sm bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+</div>
+<span class="font-headline-md text-headline-md">48 Hours</span>
+</div>
+<p class="font-body-md text-body-md text-secondary">Average response time for new citizen complaints and inquiries.</p>
+</div>
+<div class="col-span-12 md:col-span-4 bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-md mb-sm">
+<div class="p-sm bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</div>
+<span class="font-headline-md text-headline-md">92%</span>
+</div>
+<p class="font-body-md text-body-md text-secondary">Citizen satisfaction rate based on recent feedback resolution metrics.</p>
+</div>
+</section>
+<!-- Dual Forms Section -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-lg mb-xl" id="submit-voice">
+<!-- Suggestion Form -->
+<div class="bg-surface-container-lowest p-xl rounded-xl shadow-sm border border-outline-variant">
+<div class="flex items-center gap-md mb-lg">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="lightbulb">lightbulb</span>
+<h2 class="font-headline-lg text-headline-lg">Submit a Suggestion</h2>
+</div>
+<form class="space-y-md">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface">Full Name</label>
+<input class="w-full px-md py-sm border border-outline rounded-lg form-focus-saffron bg-surface" placeholder="John Doe" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface">Email Address</label>
+<input class="w-full px-md py-sm border border-outline rounded-lg form-focus-saffron bg-surface" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface">Category</label>
+<select class="w-full px-md py-sm border border-outline rounded-lg form-focus-saffron bg-surface">
+<option>Infrastructure &amp; Roads</option>
+<option>Education &amp; Literacy</option>
+<option>Healthcare Services</option>
+<option>Public Safety</option>
+<option>Urban Development</option>
+</select>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface">Your Suggestion</label>
+<textarea class="w-full px-md py-sm border border-outline rounded-lg form-focus-saffron bg-surface resize-none" placeholder="How can we improve your community?" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-bold py-md rounded-lg hover:opacity-90 transition-all flex justify-center items-center gap-sm shadow-md shadow-primary/20" type="submit">
+                            Submit Suggestion
+                            <span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</form>
+</div>
+<!-- Complaint Form -->
+<div class="bg-surface-container-lowest p-xl rounded-xl shadow-sm border border-outline-variant">
+<div class="flex items-center gap-md mb-lg">
+<span class="material-symbols-outlined text-error text-4xl" data-icon="report_problem">report_problem</span>
+<h2 class="font-headline-lg text-headline-lg">File a Complaint</h2>
+</div>
+<form class="space-y-md">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface">Full Name</label>
+<input class="w-full px-md py-sm border border-outline rounded-lg form-focus-saffron bg-surface" placeholder="Jane Smith" type="text"/>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface">Phone Number</label>
+<input class="w-full px-md py-sm border border-outline rounded-lg form-focus-saffron bg-surface" placeholder="+91 00000 00000" type="tel"/>
+</div>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface">Department of Concern</label>
+<select class="w-full px-md py-sm border border-outline rounded-lg form-focus-saffron bg-surface">
+<option>Local Governance</option>
+<option>Utility Services (Water/Power)</option>
+<option>Law Enforcement</option>
+<option>Environmental Affairs</option>
+</select>
+</div>
+<div class="flex flex-col gap-xs">
+<label class="font-label-md text-label-md text-on-surface">Details of Complaint</label>
+<textarea class="w-full px-md py-sm border border-outline rounded-lg form-focus-saffron bg-surface resize-none" placeholder="Please describe the issue in detail..." rows="4"></textarea>
+</div>
+<button class="w-full bg-secondary text-on-secondary font-bold py-md rounded-lg hover:bg-on-background transition-all flex justify-center items-center gap-sm" type="submit">
+                            Submit Complaint
+                            <span class="material-symbols-outlined" data-icon="emergency_share">emergency_share</span>
+</button>
+</form>
+</div>
+</section>
+<!-- How it Works / Tracker -->
+<section class="mb-xl" id="how-it-works">
+<div class="bg-surface-container-high p-xl rounded-xl">
+<h2 class="font-headline-lg text-headline-lg text-center mb-xl">Transparency in Action</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold mb-md">1</div>
+<h3 class="font-headline-md text-headline-md mb-sm text-sm">Submission</h3>
+<p class="text-sm text-secondary">Your report is logged and assigned a unique tracking ID instantly.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold mb-md">2</div>
+<h3 class="font-headline-md text-headline-md mb-sm text-sm">Review</h3>
+<p class="text-sm text-secondary">Subject matter experts review the feasibility or severity of the issue.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold mb-md">3</div>
+<h3 class="font-headline-md text-headline-md mb-sm text-sm">Escalation</h3>
+<p class="text-sm text-secondary">Valid reports are escalated to relevant party leaders or officials.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary text-on-primary rounded-full flex items-center justify-center font-bold mb-md">4</div>
+<h3 class="font-headline-md text-headline-md mb-sm text-sm">Resolution</h3>
+<p class="text-sm text-secondary">You receive a formal update on the action taken via email or phone.</p>
+</div>
+</div>
+<!-- Tracking Tool -->
+<div class="mt-xl bg-surface p-lg rounded-lg border border-outline-variant max-w-2xl mx-auto shadow-inner">
+<div class="flex items-center gap-md mb-md">
+<span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+<h3 class="font-label-md text-label-md font-bold">Track Status of your Voice</h3>
+</div>
+<div class="flex flex-col sm:flex-row gap-sm">
+<input class="flex-1 px-md py-sm border border-outline rounded-lg form-focus-saffron bg-surface" placeholder="Enter Reference Number (e.g. SAVE-2024-X91)" type="text"/>
+<button class="bg-primary-container text-on-primary-container px-lg py-sm rounded-lg font-bold hover:opacity-90">Track Now</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Impact Stories -->
+<section class="mb-xl">
+<h2 class="font-headline-lg text-headline-lg mb-lg">Success from your Suggestions</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant hover:shadow-lg transition-shadow">
+<div class="h-48 bg-cover bg-center" data-alt="A vibrant landscape photo of a newly installed modern children's playground in a lush green city park. The equipment is brightly colored in yellow and orange. Sunlight filters through large trees, creating a warm and safe environment for families. Professional architectural photography style." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQA9hd5Wokuk0dqHgNDO-qD2f9zLA78TdlANrmQ53tcyZPWQaqjgLljInVe8kC4Wy9XK1aNbvUW48sfJ1m-KHzOp53qkWjWgQAEJaE49dViN-QbFl6kZvrtvBTelXVJH4xOt-yK9NVk15kY61JaZ3dm7ciyAUBug3se6gJsNjAF9AJtAzaHH2ZkLsSMaC6AxKt6e0Iwoyn4ep7kAxKszVnZFaGvxWFV2J8VrZbMqTh2AEc06rAkg0dTkc0_vPtpLRrV0Q842bDwbg')"></div>
+<div class="p-md">
+<span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Infrastructure</span>
+<h3 class="font-headline-md text-headline-md mt-sm text-base">New Community Park</h3>
+<p class="text-sm text-secondary mt-xs">Suggested by Rajesh M. from Sector 4. Project completed in 6 months.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant hover:shadow-lg transition-shadow">
+<div class="h-48 bg-cover bg-center" data-alt="A clean, modern medical clinic interior with state-of-the-art diagnostic equipment. A friendly nurse is seen in the background assisting an elderly patient. The clinic is bright, well-lit with high-key corporate lighting, emphasizing hygiene and accessibility. Saffron accent colors appear in the signage." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCeGV4tql5pIB_72RXVeWk9xSHTKdpR7mzYZKHQjFyd-opCLRiPk_4vu08bJfE9CwjWMV2e3aL7rsIXflHFEBEe9UBwpliaqI0WgMEHVnzdYtwX6WTjtUBAbIbvi42C4gwcWQzXh1awtsvUSXppQBDjwRycXhcn4IcLwOifDE4g9_qO2_m3h4pKf0Cg5uTkR6dXUo7pjSv1Z7PjLTNt9Bm_XikGUn8awVwAjRNoJ5Ztu-TckL8q1nq_jKvBubBpHWoWvEBfe41MepA')"></div>
+<div class="p-md">
+<span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Health</span>
+<h3 class="font-headline-md text-headline-md mt-sm text-base">Mobile Health Units</h3>
+<p class="text-sm text-secondary mt-xs">A coalition of complaints about medical reach led to 5 new mobile units.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden border border-outline-variant hover:shadow-lg transition-shadow">
+<div class="h-48 bg-cover bg-center" data-alt="A modern library or computer lab setting with sleek wooden desks and new laptops. Students are seen focused on their work. The lighting is warm and intellectual. The decor is minimalist with bright saffron accents on the furniture. High-quality commercial photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAy0vCa32gtTVmhWcYftRvVCabXCoZH7RSX-UsC827MaD0X5mTlwd0Ui3lwR_8FXhHw8v75DHZCeBmCuI3zuzSEQZ-X9_3DAKUsjCiTPQBBec1OBJnlrqknwP-mveEU_ciRuxCDRMHqJEv3bn1U6XZPYQsYtpNmVlh8Qtk8_86illwL8lubLWaiHE6FJKPb78n3o8nIJkGd7PUAQRdRVAf-n7VYpeq-3_GERJNu9P_MqMOLDO2DDtO7dBHxfa4O3UvT8wmBpEd43s8')"></div>
+<div class="p-md">
+<span class="bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded uppercase tracking-wider">Education</span>
+<h3 class="font-headline-md text-headline-md mt-sm text-base">Digital Literacy Labs</h3>
+<p class="text-sm text-secondary mt-xs">Result of 400+ suggestions for tech integration in public schools.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl px-lg flex flex-col md:flex-row justify-between items-center bg-on-background dark:bg-surface-dim">
+<div class="flex flex-col items-center md:items-start mb-lg md:mb-0">
+<span class="font-headline-md text-headline-md text-primary-fixed mb-sm">SAVE Party</span>
+<p class="font-label-sm text-label-sm text-secondary-fixed-dim text-center md:text-left">© 2024 Sankalp Adhikar Vikash Ekta Party (SAVE). All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg">
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Contact Us</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+<div class="flex gap-md mt-lg md:mt-0">
+<button class="w-8 h-8 rounded-full bg-secondary-fixed-dim flex items-center justify-center hover:bg-primary transition-all">
+<span class="material-symbols-outlined text-on-background text-sm" data-icon="public">public</span>
+</button>
+<button class="w-8 h-8 rounded-full bg-secondary-fixed-dim flex items-center justify-center hover:bg-primary transition-all">
+<span class="material-symbols-outlined text-on-background text-sm" data-icon="mail">mail</span>
+</button>
+</div>
+</footer>
+<script>
+        // Simple micro-interaction for form submissions
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = form.querySelector('button[type="submit"]');
+                const originalContent = btn.innerHTML;
+                
+                btn.disabled = true;
+                btn.innerHTML = `<span class="material-symbols-outlined animate-spin" data-icon="sync">sync</span> Processing...`;
+                
+                setTimeout(() => {
+                    btn.innerHTML = `<span class="material-symbols-outlined" data-icon="check_circle">check_circle</span> Submitted Successfully!`;
+                    btn.classList.replace('bg-primary-container', 'bg-green-600');
+                    btn.classList.replace('text-on-primary-container', 'text-white');
+                    
+                    form.reset();
+                    
+                    setTimeout(() => {
+                        btn.disabled = false;
+                        btn.innerHTML = originalContent;
+                        btn.classList.remove('bg-green-600', 'text-white');
+                        btn.classList.add('bg-primary-container', 'text-on-primary-container');
+                    }, 3000);
+                }, 1500);
+            });
+        });
+    </script>
+</body></html>

@@ -9,11 +9,6 @@ urlpatterns = [
     path("about/", views.about_page, name="about"),
     path("feedback/", views.feedback_page, name="feedback"),
 
-    # mobile web app
-    path("app/", views.app_home, name="app_home"),
-    path("app/about/", views.app_about, name="app_about"),
-    path("app/feedback/", views.app_feedback, name="app_feedback"),
-
     # admin panel
     path("admin-panel/login/", auth_views.LoginView.as_view(template_name="core/login.html"), name="admin_login"),
     path("admin-panel/logout/", auth_views.LogoutView.as_view(next_page="admin_login"), name="admin_logout"),

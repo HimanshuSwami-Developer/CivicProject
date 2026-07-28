@@ -11,7 +11,7 @@ class DonationAdmin(admin.ModelAdmin):
 
 @admin.register(Feedback)
 class FeedbackAdmin(admin.ModelAdmin):
-    list_display = ("name", "type", "category", "status", "created_at")
+    list_display = ("name", "type", "phone", "status", "created_at")
     list_filter = ("type", "status")
 
 

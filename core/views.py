@@ -20,23 +20,6 @@ def feedback_page(request):
     return render(request, "core/feedback.html")
 
 
-# -------------------------------------------------------------- mobile app
-
-@ensure_csrf_cookie
-def app_home(request):
-    return render(request, "core/app_home.html")
-
-
-@ensure_csrf_cookie
-def app_about(request):
-    return render(request, "core/app_about.html")
-
-
-@ensure_csrf_cookie
-def app_feedback(request):
-    return render(request, "core/app_feedback.html")
-
-
 # ------------------------------------------------------------ admin panel
 
 @ensure_csrf_cookie

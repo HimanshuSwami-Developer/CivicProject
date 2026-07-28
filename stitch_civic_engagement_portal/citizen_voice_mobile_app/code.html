@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Citizen Voice - SAVE Party</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#c1c8ca",
+                    "secondary": "#586062",
+                    "surface": "#f8f9fa",
+                    "surface-variant": "#e1e3e4",
+                    "on-surface": "#191c1d",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-container-high": "#e7e8e9",
+                    "on-background": "#191c1d",
+                    "surface-dim": "#d9dadb",
+                    "inverse-surface": "#2e3132",
+                    "surface-tint": "#8f4e00",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#ff9933",
+                    "on-surface-variant": "#554336",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#dae1e3",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#161d1f",
+                    "on-tertiary-container": "#7d242b",
+                    "on-primary-fixed": "#2e1500",
+                    "surface-container-low": "#f3f4f5",
+                    "on-tertiary-fixed": "#400009",
+                    "inverse-primary": "#ffb77a",
+                    "outline-variant": "#dbc2b0",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#ffb77a",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#edeeef",
+                    "background": "#f8f9fa",
+                    "on-primary-container": "#693800",
+                    "tertiary-fixed-dim": "#ffb3b3",
+                    "on-primary-fixed-variant": "#6d3a00",
+                    "primary": "#8f4e00",
+                    "secondary-fixed": "#dde4e6",
+                    "primary-fixed": "#ffdcc2",
+                    "tertiary-fixed": "#ffdad9",
+                    "on-secondary-fixed-variant": "#41484a",
+                    "outline": "#887364",
+                    "on-secondary-container": "#5d6466",
+                    "inverse-on-surface": "#f0f1f2",
+                    "tertiary-container": "#ff9395",
+                    "surface-bright": "#f8f9fa",
+                    "tertiary": "#9f3e43",
+                    "on-tertiary-fixed-variant": "#80272e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base-unit": "4px",
+                    "md": "16px",
+                    "xl": "40px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "headline-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa;
+            color: #191c1d;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .tab-active {
+            border-bottom: 2px solid #8f4e00;
+            color: #8f4e00;
+            font-weight: 600;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-shadow {
+            box-shadow: 0 12px 24px rgba(88, 96, 98, 0.04);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md min-h-screen flex flex-col">
+<!-- Top Navigation Bar (JSON Anchor Mapping) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-lg h-16 bg-surface shadow-sm max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">campaign</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">SAVE Party</span>
+</div>
+<div class="md:flex hidden gap-md items-center">
+<a class="text-secondary dark:text-secondary-fixed-dim font-label-md text-label-md hover:text-primary-container transition-colors" href="#">Home</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-label-md text-label-md hover:text-primary-container transition-colors" href="#">About Us</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Citizen Voice</a>
+<a class="text-secondary dark:text-secondary-fixed-dim font-label-md text-label-md hover:text-primary-container transition-colors" href="#">Donations</a>
+<button class="bg-primary-container text-on-primary-container px-md py-xs rounded-lg font-label-md text-label-md active:opacity-80 transition-all">Join Now</button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</div>
+</header>
+<main class="flex-grow pt-16 pb-24 md:pb-8">
+<!-- Hero Section -->
+<section class="px-md pt-lg pb-md">
+<div class="bg-white rounded-xl p-lg custom-shadow relative overflow-hidden">
+<div class="relative z-10">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-primary mb-xs">Your Voice Matters</h1>
+<p class="text-secondary font-body-md text-body-md max-w-md">Contribute to the collective vision of Sankalp Adhikar Vikash Ekta. Share your ideas or report concerns directly to our leadership.</p>
+</div>
+<!-- Subtle Background Decorative Element -->
+<div class="absolute -right-8 -bottom-8 opacity-5 text-primary">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">record_voice_over</span>
+</div>
+</div>
+</section>
+<!-- Form Section with Tabs -->
+<section class="px-md">
+<div class="bg-white rounded-xl custom-shadow overflow-hidden">
+<!-- Tab Header -->
+<div class="flex border-b border-outline-variant">
+<button class="flex-1 py-md text-center font-label-md text-label-md tab-active transition-all flex items-center justify-center gap-2" id="tab-suggestion" onclick="switchTab('suggestion')">
+<span class="material-symbols-outlined text-[20px]">lightbulb</span>
+                        Suggestion
+                    </button>
+<button class="flex-1 py-md text-center font-label-md text-label-md text-on-surface-variant transition-all flex items-center justify-center gap-2" id="tab-complaint" onclick="switchTab('complaint')">
+<span class="material-symbols-outlined text-[20px]">report</span>
+                        Complaint
+                    </button>
+</div>
+<!-- Form Content -->
+<div class="p-lg">
+<form class="space-y-lg" id="citizen-form">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Title</label>
+<input class="w-full p-md bg-surface-container-low border border-outline-variant rounded-lg focus:border-primary-container focus:ring-0 outline-none transition-all font-body-md text-body-md" placeholder="Brief summary of your message" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Category</label>
+<select class="w-full p-md bg-surface-container-low border border-outline-variant rounded-lg focus:border-primary-container focus:ring-0 outline-none transition-all font-body-md text-body-md appearance-none">
+<option>Infrastructure &amp; Roads</option>
+<option>Education</option>
+<option>Healthcare</option>
+<option>Public Safety</option>
+<option>Environment</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-xs">Description</label>
+<textarea class="w-full p-md bg-surface-container-low border border-outline-variant rounded-lg focus:border-primary-container focus:ring-0 outline-none transition-all font-body-md text-body-md resize-none" placeholder="Provide detailed information here..." rows="5"></textarea>
+</div>
+<div class="flex items-center gap-md p-md bg-surface-container-lowest border-2 border-dashed border-outline-variant rounded-xl cursor-pointer hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-primary">add_a_photo</span>
+<span class="font-label-md text-label-md text-secondary">Attach supporting images or documents</span>
+</div>
+<button class="w-full bg-primary-container text-on-primary-container font-label-md text-label-md py-md rounded-lg shadow-sm hover:brightness-95 active:scale-[0.98] transition-all flex justify-center items-center gap-2" type="submit">
+<span id="submit-btn-text">Submit Suggestion</span>
+<span class="material-symbols-outlined text-[20px]">send</span>
+</button>
+</form>
+</div>
+</div>
+</section>
+<!-- Stats Section (Asymmetric Bento Grid Element) -->
+<section class="px-md mt-lg grid grid-cols-2 gap-md">
+<div class="bg-surface-container-high p-md rounded-xl flex flex-col justify-between">
+<span class="material-symbols-outlined text-primary mb-xs" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<div class="font-headline-md text-headline-md text-primary">12.4k</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Resolved Cases</div>
+</div>
+</div>
+<div class="bg-secondary-container p-md rounded-xl flex flex-col justify-between">
+<span class="material-symbols-outlined text-on-secondary-container mb-xs">schedule</span>
+<div>
+<div class="font-headline-md text-headline-md text-on-secondary-container">24h</div>
+<div class="font-label-sm text-label-sm text-on-secondary-container">Avg Response Time</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (JSON Anchor Mapping for Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-low border-t border-outline-variant flex justify-around items-center h-20 px-md z-50">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span class="font-label-sm text-label-sm">Party</span>
+</a>
+<div class="bg-primary-container text-on-primary-container h-14 w-14 rounded-full flex items-center justify-center -translate-y-6 shadow-lg border-4 border-surface">
+<span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1;">record_voice_over</span>
+</div>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="font-label-sm text-label-sm">Goals</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="font-label-sm text-label-sm">Donate</span>
+</a>
+</nav>
+<!-- Desktop Side Nav (Hidden on Mobile) -->
+<aside class="hidden lg:flex flex-col h-full w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant p-md z-50">
+<div class="mb-xl px-xs">
+<h2 class="font-headline-md text-headline-md font-extrabold text-primary">SAVE Party</h2>
+<p class="font-body-md text-body-md text-on-surface-variant text-xs opacity-70">Sankalp Adhikar Vikash Ekta</p>
+</div>
+<div class="space-y-sm flex-grow">
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">groups</span>
+                Leadership
+            </a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+                Goals
+            </a>
+<a class="flex items-center gap-md p-md bg-primary-container text-on-primary-container rounded-lg font-bold transition-all font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">record_voice_over</span>
+                Citizen Portal
+            </a>
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">volunteer_activism</span>
+                Donations
+            </a>
+</div>
+<div class="mt-auto space-y-sm pt-md border-t border-outline-variant">
+<a class="flex items-center gap-md p-md text-on-surface-variant hover:bg-surface-container-high rounded-lg transition-all font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+<button class="w-full bg-primary text-white py-md rounded-lg font-bold hover:opacity-90 transition-all mt-md">Donate Now</button>
+</div>
+</aside>
+<!-- Footer (JSON Anchor Mapping) -->
+<footer class="w-full py-xl px-lg bg-on-background flex flex-col md:flex-row justify-between items-center gap-lg mt-auto text-on-primary">
+<div class="text-center md:text-left">
+<div class="font-headline-md text-headline-md text-primary-fixed mb-xs">SAVE Party</div>
+<p class="font-label-sm text-label-sm text-secondary-fixed-dim">© 2024 Sankalp Adhikar Vikash Ekta Party (SAVE). All rights reserved.</p>
+</div>
+<div class="flex gap-lg">
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Contact Us</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+</footer>
+<script>
+        function switchTab(type) {
+            const suggestionTab = document.getElementById('tab-suggestion');
+            const complaintTab = document.getElementById('tab-complaint');
+            const btnText = document.getElementById('submit-btn-text');
+            
+            if (type === 'suggestion') {
+                suggestionTab.classList.add('tab-active');
+                suggestionTab.classList.remove('text-on-surface-variant');
+                complaintTab.classList.remove('tab-active');
+                complaintTab.classList.add('text-on-surface-variant');
+                btnText.innerText = 'Submit Suggestion';
+            } else {
+                complaintTab.classList.add('tab-active');
+                complaintTab.classList.remove('text-on-surface-variant');
+                suggestionTab.classList.remove('tab-active');
+                suggestionTab.classList.add('text-on-surface-variant');
+                btnText.innerText = 'File Complaint';
+            }
+        }
+
+        // Lightweight Micro-interaction for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('touchstart', function() {
+                this.classList.add('scale-[0.98]');
+            });
+            button.addEventListener('touchend', function() {
+                this.classList.remove('scale-[0.98]');
+            });
+        });
+    </script>
+</body></html>

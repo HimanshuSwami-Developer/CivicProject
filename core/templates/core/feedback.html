@@ -1,319 +1,97 @@
-<!DOCTYPE html>
+{% extends "core/base.html" %}
+{% block title %}Voice & Feedback | Sankalp Adhikar Vishwas Ekta Party{% endblock %}
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Citizen Engagement | Sankalp Adhikar Vishwas Ekta Party</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                "surface-container-lowest": "#ffffff",
-                "tertiary-fixed": "#d3e4ff",
-                "inverse-primary": "#adc7f7",
-                "surface-variant": "#e0e3e5",
-                "on-tertiary-fixed-variant": "#004881",
-                "background": "#f7fafc",
-                "surface": "#f7fafc",
-                "error": "#ba1a1a",
-                "on-primary-container": "#86a0cd",
-                "surface-tint": "#455f88",
-                "primary": "#002045",
-                "surface-container": "#ebeef0",
-                "surface-container-highest": "#e0e3e5",
-                "outline-variant": "#c4c6cf",
-                "primary-fixed-dim": "#adc7f7",
-                "tertiary-fixed-dim": "#a2c9ff",
-                "on-secondary-container": "#600008",
-                "on-secondary-fixed": "#410003",
-                "on-primary-fixed": "#001b3c",
-                "tertiary": "#002141",
-                "inverse-on-surface": "#eef1f3",
-                "on-primary-fixed-variant": "#2d476f",
-                "on-primary": "#ffffff",
-                "secondary-container": "#ff5a55",
-                "on-surface-variant": "#43474e",
-                "inverse-surface": "#2d3133",
-                "surface-dim": "#d7dadc",
-                "primary-fixed": "#d6e3ff",
-                "on-tertiary-fixed": "#001c38",
-                "on-error": "#ffffff",
-                "on-secondary-fixed-variant": "#920212",
-                "on-surface": "#181c1e",
-                "on-tertiary-container": "#68a2e9",
-                "surface-container-high": "#e5e9eb",
-                "tertiary-container": "#003765",
-                "surface-bright": "#f7fafc",
-                "on-tertiary": "#ffffff",
-                "error-container": "#ffdad6",
-                "secondary-fixed-dim": "#ffb3ad",
-                "on-background": "#181c1e",
-                "on-secondary": "#ffffff",
-                "secondary-fixed": "#ffdad6",
-                "primary-container": "#1a365d",
-                "secondary": "#b52426",
-                "outline": "#74777f",
-                "on-error-container": "#93000a",
-                "surface-container-low": "#f1f4f6"
-            },
-            "borderRadius": {
-                "DEFAULT": "0.25rem",
-                "lg": "0.5rem",
-                "xl": "0.75rem",
-                "full": "9999px"
-            },
-            "spacing": {
-                "margin-mobile": "16px",
-                "stack-md": "16px",
-                "container-max": "1280px",
-                "base": "8px",
-                "stack-sm": "8px",
-                "stack-lg": "32px",
-                "margin-desktop": "40px",
-                "gutter": "24px"
-            },
-            "fontFamily": {
-                "body-lg": ["Inter"],
-                "display-lg": ["Montserrat"],
-                "body-md": ["Inter"],
-                "headline-lg-mobile": ["Montserrat"],
-                "display-lg-mobile": ["Montserrat"],
-                "headline-md": ["Montserrat"],
-                "headline-lg": ["Montserrat"],
-                "label-md": ["Inter"]
-            },
-            "fontSize": {
-                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
-            }
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .form-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .form-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(26, 54, 93, 0.08);
-        }
-    </style>
-</head>
-<body class="bg-background text-on-background font-body-md">
-<!-- TopNavBar (Shared Component) -->
-<header class="fixed top-0 left-0 w-full z-50 bg-surface dark:bg-inverse-surface shadow-sm h-20">
-<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-full">
-<a class="font-display-lg text-sm md:text-lg lg:text-xl font-bold text-primary dark:text-primary-fixed-dim leading-tight max-w-[220px] md:max-w-none" href="/">Sankalp Adhikar Vishwas Ekta Party</a>
-<nav class="hidden md:flex items-center gap-8">
-<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="/">Home</a>
-<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="/about/">About Us</a>
-<a class="font-label-md text-label-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-bold" href="/feedback/">Voice &amp; Feedback</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="bg-secondary text-on-secondary font-label-md text-label-md px-6 py-2.5 rounded-lg hover:opacity-90 active:scale-95 transition-all" onclick="openDonationModal()" type="button">Donate Now</button>
-<button aria-label="Menu" class="md:hidden w-10 h-10 flex items-center justify-center text-primary dark:text-primary-fixed-dim">
-<span class="material-symbols-outlined">menu</span>
-</button>
+{% block extra_style %}
+.form-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.form-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(143, 78, 0, 0.1);
+}
+{% endblock %}
+
+{% block content %}
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-xl">
+<!-- Hero -->
+<section class="mb-xl text-center max-w-3xl mx-auto">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-4">Your Voice Matters</h1>
+<p class="font-body-lg text-body-lg text-secondary">
+Direct engagement with the citizens we serve is at the heart of our mission. Use the channel below to share your vision for the future or report issues that need immediate attention.
+</p>
+</section>
+<!-- Quick Stats -->
+<section class="mb-xl grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-3 mb-2">
+<div class="p-2 bg-primary-container/10 rounded-lg text-primary-container">
+<span class="material-symbols-outlined">check_circle</span>
 </div>
+<span class="font-headline-md text-headline-md text-on-background">12,450+</span>
 </div>
-</header>
-<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-24 pb-stack-lg">
-<!-- Hero Section -->
-<section class="mb-stack-lg text-center max-w-3xl mx-auto">
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">Your Voice Matters</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant">
-                Direct engagement with the citizens we serve is at the heart of our mission. Use the channels below to share your vision for the future or report issues that need immediate attention.
-            </p>
+<p class="font-body-md text-body-md text-secondary">Suggestions implemented in the last 12 months across all sectors.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-3 mb-2">
+<div class="p-2 bg-primary-container/10 rounded-lg text-primary-container">
+<span class="material-symbols-outlined">timer</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-background">48 Hours</span>
+</div>
+<p class="font-body-md text-body-md text-secondary">Average response time for new citizen complaints and inquiries.</p>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant shadow-sm">
+<div class="flex items-center gap-3 mb-2">
+<div class="p-2 bg-primary-container/10 rounded-lg text-primary-container">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<span class="font-headline-md text-headline-md text-on-background">92%</span>
+</div>
+<p class="font-body-md text-body-md text-secondary">Citizen satisfaction rate based on recent feedback resolution metrics.</p>
+</div>
 </section>
 <!-- Unified Feedback Box -->
-<div class="max-w-2xl mx-auto">
-<div class="form-card bg-surface-container-lowest p-8 rounded-xl border border-outline-variant shadow-sm">
-<div class="flex items-center gap-4 mb-6">
-<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary" id="feedback-icon-wrap">
-<span class="material-symbols-outlined" id="feedback-icon" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<div class="max-w-2xl mx-auto mb-xl">
+{% include "core/_feedback_form.html" %}
 </div>
-<div>
-<h2 class="font-headline-md text-headline-md text-primary">Share Your Feedback</h2>
-<p class="text-on-surface-variant text-body-md" id="feedback-subtitle">Share your innovative ideas for community growth.</p>
+<!-- How it Works -->
+<section class="mb-xl">
+<div class="bg-surface-container-high p-8 md:p-xl rounded-xl">
+<h2 class="font-headline-lg text-headline-lg text-center mb-xl">Transparency in Action</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg">
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center font-bold mb-md">1</div>
+<h3 class="font-headline-md text-headline-md mb-sm text-sm">Submission</h3>
+<p class="text-sm text-secondary">Your report is logged and assigned a unique tracking ID instantly.</p>
 </div>
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center font-bold mb-md">2</div>
+<h3 class="font-headline-md text-headline-md mb-sm text-sm">Review</h3>
+<p class="text-sm text-secondary">Subject matter experts review the feasibility or severity of the issue.</p>
 </div>
-<div class="flex gap-3 mb-6">
-<button class="tag-btn flex-1 px-4 py-2 rounded-full border-2 font-label-md text-label-md font-bold transition-all" id="tag-suggestion" type="button">Suggestion</button>
-<button class="tag-btn flex-1 px-4 py-2 rounded-full border-2 font-label-md text-label-md font-bold transition-all" id="tag-complaint" type="button">Complaint</button>
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center font-bold mb-md">3</div>
+<h3 class="font-headline-md text-headline-md mb-sm text-sm">Escalation</h3>
+<p class="text-sm text-secondary">Valid reports are escalated to relevant party leaders or officials.</p>
 </div>
-<form class="space-y-6" id="feedback-form">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div class="flex flex-col gap-2">
-<label class="font-label-md text-label-md text-on-surface" for="fb-name">Full Name</label>
-<input class="w-full p-3 rounded border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="fb-name" placeholder="John Doe" required="" type="text"/>
-</div>
-<div class="flex flex-col gap-2">
-<label class="font-label-md text-label-md text-on-surface" for="fb-email">Email Address</label>
-<input class="w-full p-3 rounded border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="fb-email" placeholder="john@example.com" required="" type="email"/>
-</div>
-</div>
-<div class="flex flex-col gap-2">
-<label class="font-label-md text-label-md text-on-surface" for="fb-category">Topic Area</label>
-<select class="w-full p-3 rounded border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none bg-surface transition-all" id="fb-category" required="">
-<option value="infrastructure">Infrastructure &amp; Roads</option>
-<option value="education">Public Education</option>
-<option value="healthcare">Healthcare Access</option>
-<option value="economy">Economic Development</option>
-<option value="other">Other</option>
-</select>
-</div>
-<div class="flex flex-col gap-2">
-<label class="font-label-md text-label-md text-on-surface" for="fb-message" id="fb-message-label">Describe your suggestion</label>
-<textarea class="w-full p-3 rounded border border-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="fb-message" placeholder="Tell us about your suggestion..." required="" rows="5"></textarea>
-</div>
-<button class="w-full md:w-auto px-8 py-3 bg-primary text-on-primary font-bold rounded-lg hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2" id="fb-submit-btn" type="submit">
-                        Submit Suggestion <span class="material-symbols-outlined">send</span>
-</button>
-</form>
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center font-bold mb-md">4</div>
+<h3 class="font-headline-md text-headline-md mb-sm text-sm">Resolution</h3>
+<p class="text-sm text-secondary">You receive a formal update on the action taken via email or phone.</p>
 </div>
 </div>
-<!-- Visual Anchor / Image Content -->
-<section class="mt-stack-lg rounded-xl overflow-hidden relative h-80 flex items-center px-12 group">
+</div>
+</section>
+<!-- Visual Anchor -->
+<section class="rounded-xl overflow-hidden relative h-80 flex items-center px-12 group">
 <div class="absolute inset-0 z-0 overflow-hidden">
 <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-700" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB1mzyxDv3Fbwg6Zt302CgP478sMNaa1nQ1ASTGkt1A1x_lA8QgBvovm-7Fd9jdxZccrGfj-yENDPvdYpxdJt0CF_Jb5FF396c1IOEJwUMWK9jJkrJZps2QXlg0UtvXb3dQUDgIoejm4DOVifkBrl65-pelxYLFWy8z5YCRHegJxgts_XFvVftXEKoYDqnsQm-pPoTxJFVAxGkc3CCKuvndxzTFoX7JZiao7VcIv-Z4MKSFSOoCch-b')"></div>
-<div class="absolute inset-0 bg-primary/40 backdrop-blur-sm"></div>
+<div class="absolute inset-0 bg-on-background/50 backdrop-blur-sm"></div>
 </div>
 <div class="relative z-10 max-w-xl">
-<h3 class="font-headline-lg text-headline-lg text-on-primary mb-2">Building Tomorrow, Together</h3>
-<p class="text-on-primary/90 font-body-lg">Every message submitted is reviewed by our dedicated liaison team. We aim for transparency in all citizen-led initiatives.</p>
+<h3 class="font-headline-lg text-headline-lg text-white mb-2">Building Tomorrow, Together</h3>
+<p class="text-white/90 font-body-lg">Every message submitted is reviewed by our dedicated liaison team. We aim for transparency in all citizen-led initiatives.</p>
 </div>
 </section>
 </main>
-<!-- Footer (Shared Component) -->
-<footer class="bg-primary text-on-primary mt-stack-lg border-t border-outline-variant">
-<div class="w-full px-margin-desktop py-stack-lg max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-4 gap-gutter">
-<div class="col-span-1 md:col-span-1">
-<div class="font-headline-md text-lg leading-snug text-on-primary mb-4">Sankalp Adhikar Vishwas Ekta Party</div>
-<p class="text-on-primary/60 font-body-md pr-4">Leading with vision, uniting with purpose. Together, we build a future that works for everyone.</p>
-</div>
-<div class="col-span-1">
-<h5 class="font-label-md text-label-md uppercase tracking-wider mb-6 text-secondary-fixed">Navigation</h5>
-<ul class="space-y-4">
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/">Home</a></li>
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/about/">About Us</a></li>
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Voice &amp; Feedback</a></li>
-</ul>
-</div>
-<div class="col-span-1">
-<h5 class="font-label-md text-label-md uppercase tracking-wider mb-6 text-secondary-fixed">Resources</h5>
-<ul class="space-y-4">
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Volunteer Portal</a></li>
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="#">Terms of Service</a></li>
-<li><a class="text-on-primary/80 hover:text-on-primary transition-colors" href="/feedback/">Contact Support</a></li>
-</ul>
-</div>
-<div class="col-span-1">
-<h5 class="font-label-md text-label-md uppercase tracking-wider mb-6 text-secondary-fixed">Follow Us</h5>
-<div class="flex gap-4">
-<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
-<span class="material-symbols-outlined">face_nod</span>
-</a>
-<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
-<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-</a>
-<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-secondary transition-colors" href="#">
-<span class="material-symbols-outlined">video_library</span>
-</a>
-</div>
-<div class="mt-8 text-on-primary/40 text-[12px] leading-relaxed">
-                    © 2024 Sankalp Adhikar Vishwas Ekta Party. Authorized by the Electoral Commission.
-                </div>
-</div>
-</div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="/static/core/js/csrf.js"></script>
-<script>
-        // Micro-interaction for form focus states
-        $('input, select, textarea').on('focus', function () {
-            $(this).closest('.flex-col').find('label').addClass('text-primary');
-        }).on('blur', function () {
-            $(this).closest('.flex-col').find('label').removeClass('text-primary');
-        });
-
-        let feedbackType = 'suggestion';
-        const tagBase = 'tag-btn flex-1 px-4 py-2 rounded-full border-2 font-label-md text-label-md font-bold transition-all';
-
-        function switchFeedbackType(type) {
-            feedbackType = type;
-            if (type === 'suggestion') {
-                $('#tag-suggestion').attr('class', tagBase + ' bg-primary text-on-primary border-primary');
-                $('#tag-complaint').attr('class', tagBase + ' border-outline-variant text-on-surface-variant hover:border-primary');
-                $('#feedback-icon-wrap').attr('class', 'w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary');
-                $('#feedback-icon').text('lightbulb');
-                $('#feedback-subtitle').text('Share your innovative ideas for community growth.');
-                $('#fb-message-label').text('Describe your suggestion');
-                $('#fb-message').attr('placeholder', 'Tell us about your suggestion...');
-                $('#fb-submit-btn').attr('class', 'w-full md:w-auto px-8 py-3 bg-primary text-on-primary font-bold rounded-lg hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2');
-                $('#fb-submit-btn').html('Submit Suggestion <span class="material-symbols-outlined">send</span>');
-            } else {
-                $('#tag-complaint').attr('class', tagBase + ' bg-secondary text-on-secondary border-secondary');
-                $('#tag-suggestion').attr('class', tagBase + ' border-outline-variant text-on-surface-variant hover:border-primary');
-                $('#feedback-icon-wrap').attr('class', 'w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary');
-                $('#feedback-icon').text('report');
-                $('#feedback-subtitle').text('Report issues or grievances for investigation.');
-                $('#fb-message-label').text('Describe the issue or complaint');
-                $('#fb-message').attr('placeholder', 'Describe the issue in detail...');
-                $('#fb-submit-btn').attr('class', 'w-full md:w-auto px-8 py-3 bg-secondary text-on-primary font-bold rounded-lg hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-2');
-                $('#fb-submit-btn').html('Submit Report <span class="material-symbols-outlined">priority_high</span>');
-            }
-        }
-
-        $('#tag-suggestion').on('click', function () { switchFeedbackType('suggestion'); });
-        $('#tag-complaint').on('click', function () { switchFeedbackType('complaint'); });
-
-        $('#feedback-form').on('submit', function (e) {
-            e.preventDefault();
-            const btn = $('#fb-submit-btn');
-            const originalHtml = btn.html();
-            btn.prop('disabled', true).text('Submitting...');
-
-            $.ajax({
-                url: '/api/feedback/',
-                method: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify({
-                    type: feedbackType,
-                    name: $('#fb-name').val(),
-                    email: $('#fb-email').val(),
-                    category: $('#fb-category').val(),
-                    message: $('#fb-message').val()
-                }),
-                success: function () {
-                    alert(feedbackType === 'suggestion' ? 'Thank you for your suggestion!' : 'Your report has been submitted for review.');
-                    $('#feedback-form')[0].reset();
-                    btn.prop('disabled', false).html(originalHtml);
-                },
-                error: function () {
-                    alert('Something went wrong. Please try again.');
-                    btn.prop('disabled', false).html(originalHtml);
-                }
-            });
-        });
-
-        switchFeedbackType('suggestion');
-    </script>
-{% include "core/_donate_modal.html" %}
-</body></html>
+{% endblock %}

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us - SAVE Party</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#c1c8ca",
+                        "secondary": "#586062",
+                        "surface": "#f8f9fa",
+                        "surface-variant": "#e1e3e4",
+                        "on-surface": "#191c1d",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-container-high": "#e7e8e9",
+                        "on-background": "#191c1d",
+                        "surface-dim": "#d9dadb",
+                        "inverse-surface": "#2e3132",
+                        "surface-tint": "#8f4e00",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#ff9933",
+                        "on-surface-variant": "#554336",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#dae1e3",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#161d1f",
+                        "on-tertiary-container": "#7d242b",
+                        "on-primary-fixed": "#2e1500",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary-fixed": "#400009",
+                        "inverse-primary": "#ffb77a",
+                        "outline-variant": "#dbc2b0",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#ffb77a",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#edeeef",
+                        "background": "#f8f9fa",
+                        "on-primary-container": "#693800",
+                        "tertiary-fixed-dim": "#ffb3b3",
+                        "on-primary-fixed-variant": "#6d3a00",
+                        "primary": "#8f4e00",
+                        "secondary-fixed": "#dde4e6",
+                        "primary-fixed": "#ffdcc2",
+                        "tertiary-fixed": "#ffdad9",
+                        "on-secondary-fixed-variant": "#41484a",
+                        "outline": "#887364",
+                        "on-secondary-container": "#5d6466",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-container": "#ff9395",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary": "#9f3e43",
+                        "on-tertiary-fixed-variant": "#80272e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base-unit": "4px",
+                        "md": "16px",
+                        "xl": "40px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "headline-lg-mobile": ["Manrope"],
+                        "display-lg": ["Manrope"],
+                        "headline-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-lg h-16 bg-surface shadow-sm max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary">SAVE Party</div>
+<nav class="hidden md:flex gap-lg">
+<a class="text-secondary hover:text-primary-container transition-colors font-label-md text-label-md" href="#">Home</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">About Us</a>
+<a class="text-secondary hover:text-primary-container transition-colors font-label-md text-label-md" href="#">Citizen Voice</a>
+<a class="text-secondary hover:text-primary-container transition-colors font-label-md text-label-md" href="#">Donations</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-lg py-sm rounded-full font-label-md hover:bg-opacity-90 transition-all active:scale-95">
+            Join Now
+        </button>
+</header>
+<main class="pt-16 pb-24 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="relative w-full h-[353px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0" data-alt="A sun-drenched architectural landscape with modern white buildings and vibrant saffron banners fluttering in a warm breeze. The style is cinematic and professional, with high-key lighting that emphasizes a sense of optimism and authoritative reliability. Soft, diffused shadows ground the scene in a premium light-mode corporate aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBuRjmkYFXgJMTtozdHpJnaHIGGfPhO9Z_nhIxBYpciUPrc1vWrBFwdaytw2YbK6nm_KypwqJ5LnKq6uPwb8hpVNT-X2djM30rJSPnfiXvXtFCSuccNwKo1W5dOggbV9PTzkJRmsK5T3kRO4WExRqz6ha_5jyacvS5ODNSxhvghe9lZ-VYdLUzP9kHgd3wJ60YJegck1eG2gNpkNeGFWaesAE1r_g1GY39TgThTXK98DTWr6KmVvp1IPEcNqMiWQAv4Ug8wxQHw3Zs')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+<div class="relative z-10 px-margin-mobile text-center">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mb-sm">Sankalp Adhikar Vikash Ekta</h1>
+<p class="font-body-md text-body-md text-secondary max-w-md mx-auto">Empowering every citizen through unity and development.</p>
+</div>
+</section>
+<!-- Mission & Goals Section -->
+<section class="px-margin-mobile py-xl space-y-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Mission Card -->
+<div class="bg-surface-container-lowest p-lg rounded-xl border border-outline-variant shadow-sm">
+<div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-on-primary-container">flag</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background mb-sm">Our Mission</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        To restore the promise of economic stability and dignity for every citizen by implementing data-driven policies that foster collective growth and social justice.
+                    </p>
+</div>
+<!-- Goals Card (Bento Style Sub-grid) -->
+<div class="grid grid-cols-1 gap-md">
+<div class="bg-primary-container/10 p-md rounded-xl border border-primary-container/20 flex items-start gap-md">
+<span class="material-symbols-outlined text-primary text-2xl mt-1">work_history</span>
+<div>
+<h3 class="font-label-md text-label-md text-primary mb-1">Unemployment Reduction</h3>
+<p class="font-body-md text-body-md text-secondary">Incentivizing local industries to create 5 million sustainable jobs by 2026.</p>
+</div>
+</div>
+<div class="bg-primary-container/10 p-md rounded-xl border border-primary-container/20 flex items-start gap-md">
+<span class="material-symbols-outlined text-primary text-2xl mt-1">public</span>
+<div>
+<h3 class="font-label-md text-label-md text-primary mb-1">Public Benefits</h3>
+<p class="font-body-md text-body-md text-secondary">Universal access to digitized healthcare and transparent social security schemes.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Section -->
+<section class="px-margin-mobile py-xl">
+<div class="mb-lg">
+<span class="text-primary font-label-md text-label-md tracking-widest uppercase">The Visionaries</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-background mt-xs">Leadership</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-lg">
+<!-- Member 1 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant transition-all hover:-translate-y-1 hover:shadow-md">
+<div class="aspect-[3/4] relative">
+<img class="w-full h-full object-cover" data-alt="A professional studio portrait of a charismatic male leader in his 50s, wearing a crisp white traditional Indian kurta with a saffron scarf. He has a friendly, authoritative expression. The background is a clean, minimalist off-white studio setting with soft side lighting that creates depth and emphasizes reliability. High-end modern corporate photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxm7Dye6usy7gvipLA1iGMHMd7C20F-XSLsIP_Qr1pcv4jlzkXzNLX5kvQtG7_lWZTmEuRT15NTfCbTwnjTy43-su8f6tkcgFVkT0MQAcBwMWQWuLbU7FlrjZbza1t-AN0X7tv5NU8NDO13He-shR4u0ILr832bWRTJ6MGGRVbzF0RnW3SStCoiFZe4CjLC8aqWKruJL0BqToja5GMe_zbtJgdRDuG8o62POGYliOhbcQDcJqtkeC5aZfFd81AqWiwhVvM2vpJRvM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-md bg-surface-container-lowest relative">
+<h4 class="font-headline-md text-headline-md text-on-background">Dr. Rajesh Varma</h4>
+<p class="font-body-md text-body-md text-primary font-semibold">National President</p>
+<div class="flex gap-sm mt-sm">
+<span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-secondary hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Member 2 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant transition-all hover:-translate-y-1 hover:shadow-md">
+<div class="aspect-[3/4] relative">
+<img class="w-full h-full object-cover" data-alt="Professional portrait of a confident female leader in her 40s, dressed in a professional charcoal blazer over a saffron silk blouse. She stands in a modern, sunlit office with large windows. The lighting is bright and warm, reflecting a light-mode aesthetic. Her expression is determined and visionary. Corporate minimalism with vibrant orange accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpil1VdYiA-CBfnrf5gXrkNxl8zIFucxH5Qg_Il2_du7VXzkhLcGzKiVaxNU3md5le9SXzQjtDC0s7qYFuyG2bUlrIhSuWQvyJSUCERj8Cau79iTlvnULxE_UcpemeLOM7lyvxIJIHr5ZsXJm-hY9tCZjQwgQohvXeBn0_atTeQm2ckRet5st_zT3Rae_ZeGgWtOjKAmnpPSwcgVs3CnfC4zYzYMSFPSu0ohEqjwkRFcCPO4EPz3mWIh6o6WLKj-lUlJ7Ckny6S74"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-md bg-surface-container-lowest relative">
+<h4 class="font-headline-md text-headline-md text-on-background">Aditi Sharma</h4>
+<p class="font-body-md text-body-md text-primary font-semibold">Strategy &amp; Policy Head</p>
+<div class="flex gap-sm mt-sm">
+<span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-secondary hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Member 3 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant transition-all hover:-translate-y-1 hover:shadow-md">
+<div class="aspect-[3/4] relative">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young, energetic male youth leader in his early 30s, standing outdoors in a public plaza. He is wearing a modern polo shirt with the SAVE party logo embroidered. The background shows blurred groups of people, suggesting community engagement. The lighting is golden-hour sunlight, casting a warm saffron glow across the scene. Optimistic and active mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzFXzlu3AnSbshW8Q0Cbmebg33DBJpzGY5hNRlHw5i6la_27tKdBaOl6FnjG6ezEZmJLkoiSyu580PHMCmXejETg4UA5aJfMUI1VKC-iImb2-VZd24puxFzNWzPTqtpu1Q0m3sdgr8qUWkEk0Kg3wa0OwdbfqlQH5YhmIkNm-uOYUOcKEpssi-rWfBqqDKbH57PkYtyuSDBK34Z_edg79hYAR8Owz_SLe0i8YY6WcLSZhj2w0M1_9Hixnu1eTwl19Jdq4fLP7Oyms"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-md bg-surface-container-lowest relative">
+<h4 class="font-headline-md text-headline-md text-on-background">Vikram Rathore</h4>
+<p class="font-body-md text-body-md text-primary font-semibold">Youth Wing Director</p>
+<div class="flex gap-sm mt-sm">
+<span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-secondary hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</span>
+</div>
+</div>
+</div>
+<!-- Member 4 -->
+<div class="group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-outline-variant transition-all hover:-translate-y-1 hover:shadow-md">
+<div class="aspect-[3/4] relative">
+<img class="w-full h-full object-cover" data-alt="Close-up portrait of a senior advisor, an elderly gentleman with wise features, wearing a traditional beige bandhgala. He is in a library filled with books, illuminated by soft warm light. The image exudes wisdom and stability. High contrast with deep shadows and warm highlights, aligning with the modern corporate but traditional aesthetic of the party." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjAd3TEFp0BJ53Dscr-NWw0S3LJNxrTxa9lU-P7Xcd5vWqZUnacEgZvWUifgvCqSVRXYVlhpKuUJJtovkITba4YXMrQbN-vmi-u_FNePcSPAICxJynONYnk_UBnaS_2WiNI2AUFC1vEEQJSIc0ZVTIoymCOQHF6_IKfofGaQwWU2w_VXFv1-HmPq0G-5Kx-mc4XxsGbX6XiqfieSyuAMZSAASxM4-m_eKG3iTGCeXwHaeLM0fFd_pmMZ5RryZ-rBhJusKVhZw2ZpU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent opacity-60"></div>
+</div>
+<div class="p-md bg-surface-container-lowest relative">
+<h4 class="font-headline-md text-headline-md text-on-background">S.K. Deshmukh</h4>
+<p class="font-body-md text-body-md text-primary font-semibold">Senior Advisor</p>
+<div class="flex gap-sm mt-sm">
+<span class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-secondary hover:text-primary transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-margin-mobile py-xl">
+<div class="bg-on-background text-on-primary p-xl rounded-xl text-center relative overflow-hidden">
+<div class="absolute -top-12 -right-12 w-48 h-48 bg-primary opacity-20 rounded-full blur-3xl"></div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile mb-md relative z-10">Be the Change You Seek</h2>
+<p class="font-body-md text-body-md text-secondary-fixed-dim mb-lg relative z-10">Join SAVE Party today and contribute to a more unified and prosperous tomorrow.</p>
+<button class="bg-primary-container text-on-primary-container px-xl py-md rounded-full font-headline-md hover:scale-105 transition-transform relative z-10">
+                    Get Involved
+                </button>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface shadow-[0_-2px_10px_rgba(0,0,0,0.05)] flex justify-around items-center h-16 z-50 px-sm">
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-label-md">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="text-[10px] font-label-md font-bold">About Us</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined">record_voice_over</span>
+<span class="text-[10px] font-label-md">Voice</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined">volunteer_activism</span>
+<span class="text-[10px] font-label-md">Donate</span>
+</button>
+</nav>
+<!-- Footer (Web Only / Hidden on Mobile nav) -->
+<footer class="hidden md:flex w-full py-xl px-lg bg-on-background text-on-primary flex-col md:flex-row justify-between items-center gap-lg">
+<div class="flex flex-col gap-2">
+<div class="font-headline-md text-headline-md text-primary-fixed">SAVE Party</div>
+<div class="font-label-sm text-label-sm text-secondary-fixed-dim">© 2024 Sankalp Adhikar Vikash Ekta Party (SAVE). All rights reserved.</div>
+</div>
+<div class="flex gap-lg">
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Contact Us</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Careers</a>
+</div>
+</footer>
+<script>
+        // Micro-interaction for member cards
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.querySelector('img').style.transform = 'scale(1.05)';
+                card.querySelector('img').style.transition = 'transform 0.5s ease-out';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('img').style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body></html>

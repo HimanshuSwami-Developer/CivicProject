@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SAVE Party | Support Our Mission</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed-dim": "#c1c8ca",
+                    "secondary": "#586062",
+                    "surface": "#f8f9fa",
+                    "surface-variant": "#e1e3e4",
+                    "on-surface": "#191c1d",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-container-high": "#e7e8e9",
+                    "on-background": "#191c1d",
+                    "surface-dim": "#d9dadb",
+                    "inverse-surface": "#2e3132",
+                    "surface-tint": "#8f4e00",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#ff9933",
+                    "on-surface-variant": "#554336",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#dae1e3",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#161d1f",
+                    "on-tertiary-container": "#7d242b",
+                    "on-primary-fixed": "#2e1500",
+                    "surface-container-low": "#f3f4f5",
+                    "on-tertiary-fixed": "#400009",
+                    "inverse-primary": "#ffb77a",
+                    "outline-variant": "#dbc2b0",
+                    "surface-container-lowest": "#ffffff",
+                    "primary-fixed-dim": "#ffb77a",
+                    "error-container": "#ffdad6",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#edeeef",
+                    "background": "#f8f9fa",
+                    "on-primary-container": "#693800",
+                    "tertiary-fixed-dim": "#ffb3b3",
+                    "on-primary-fixed-variant": "#6d3a00",
+                    "primary": "#8f4e00",
+                    "secondary-fixed": "#dde4e6",
+                    "primary-fixed": "#ffdcc2",
+                    "tertiary-fixed": "#ffdad9",
+                    "on-secondary-fixed-variant": "#41484a",
+                    "outline": "#887364",
+                    "on-secondary-container": "#5d6466",
+                    "inverse-on-surface": "#f0f1f2",
+                    "tertiary-container": "#ff9395",
+                    "surface-bright": "#f8f9fa",
+                    "tertiary": "#9f3e43",
+                    "on-tertiary-fixed-variant": "#80272e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base-unit": "4px",
+                    "md": "16px",
+                    "xl": "40px",
+                    "sm": "8px",
+                    "lg": "24px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "label-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-md": ["Manrope"],
+                    "headline-lg-mobile": ["Manrope"],
+                    "display-lg": ["Manrope"],
+                    "headline-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa;
+            color: #191c1d;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-ambient {
+            box-shadow: 0 12px 24px -4px rgba(88, 96, 98, 0.04);
+        }
+        .shadow-overlay {
+            box-shadow: 0 24px 48px -12px rgba(88, 96, 98, 0.08);
+        }
+        .glass-overlay {
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .modal-transition {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+        }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 w-full z-40 flex justify-between items-center px-lg h-16 max-w-container-max mx-auto bg-surface shadow-sm">
+<div class="flex items-center gap-xs">
+<span class="font-headline-md text-headline-md font-bold text-primary">SAVE Party</span>
+</div>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="font-label-md text-label-md text-secondary hover:text-primary-container transition-colors" href="#">Home</a>
+<a class="font-label-md text-label-md text-secondary hover:text-primary-container transition-colors" href="#">About Us</a>
+<a class="font-label-md text-label-md text-secondary hover:text-primary-container transition-colors" href="#">Citizen Voice</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Donations</a>
+</nav>
+<button class="bg-primary-container text-on-primary-container px-lg py-sm rounded-full font-label-md text-label-md font-bold hover:opacity-90 transition-all">
+            Join Now
+        </button>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-16 min-h-screen">
+<!-- Hero Section Background -->
+<section class="relative w-full h-[716px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, wide-angle shot of a vibrant Indian community gathering in a sun-drenched public park. The lighting is warm and golden, reflecting a modern corporate aesthetic with high-quality photography. People of diverse ages are engaged in positive dialogue, symbolizing unity and progress. The color palette is dominated by soft neutrals with intentional pops of vibrant saffron, creating an energetic and optimistic atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC73Wi2ZukdF6RNPQk7WWTclaWOxdsfsYM-WHt4DVUCgN0aNwbH7Y1WNaPQdPILJ7J9t-ZzBqYw82WNc1MVFDMe7sQPKME5dS2UQPaMgTVxQ6DF1dMYh4vmnDET02NJQMjhGML7ST6iXcuNbyj_iVGGMrxfHXstdREibx9ggyCdupXjOzXKZ4c8q4I3AP_isb3q2ve4MaWWLJPEbj6iL-C13YKqNBCTtVaoJsMOJ9uW4MH8CIKV8WT7aVDmXop1lupTKbJihc9hfgM')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-lg w-full">
+<div class="max-w-2xl">
+<h1 class="font-display-lg text-display-lg text-on-background mb-md">Empowering every citizen for a brighter India.</h1>
+<p class="font-body-lg text-body-lg text-secondary mb-xl">Join the Sankalp Adhikar Vikash Ekta Party in our journey toward sustainable development and social justice.</p>
+</div>
+</div>
+</section>
+<!-- Bento Grid Section -->
+<section class="max-w-container-max mx-auto px-lg py-xl">
+<div class="grid grid-cols-12 gap-lg">
+<div class="col-span-12 md:col-span-8 bg-surface-container-lowest rounded-xl p-lg border border-outline-variant shadow-ambient">
+<h2 class="font-headline-lg text-headline-lg mb-md">Our Core Mission</h2>
+<p class="font-body-md text-body-md text-secondary">We are dedicated to building a nation where every individual has the right to growth, security, and dignity. Our focus spans across zero unemployment initiatives, rural development, and transparent governance.</p>
+</div>
+<div class="col-span-12 md:col-span-4 bg-primary-container rounded-xl p-lg text-on-primary-container flex flex-col justify-center shadow-ambient">
+<span class="material-symbols-outlined text-4xl mb-sm" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<h3 class="font-headline-md text-headline-md mb-xs">Your Voice Matters</h3>
+<p class="font-label-md text-label-md opacity-90">Every contribution fuels the movement for change.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Modal Backdrop -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-md bg-on-background/40 backdrop-blur-sm" id="donation-overlay">
+<!-- Donation Dialogue Box -->
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-xl shadow-overlay overflow-hidden modal-transition opacity-0 translate-y-8 border border-outline-variant" id="donation-modal">
+<!-- Header -->
+<div class="px-lg py-md border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Make a Contribution</h2>
+</div>
+<button class="text-secondary hover:text-primary transition-colors" onclick="closeModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Body -->
+<div class="p-lg">
+<div class="mb-lg">
+<h3 class="font-label-md text-label-md text-primary uppercase tracking-wider mb-xs">The Mission</h3>
+<p class="font-body-md text-body-md text-on-surface-variant font-medium">Support our goal of zero unemployment.</p>
+<p class="font-label-sm text-label-sm text-secondary mt-xs">Your donation directly funds skill development workshops and local job placement centers across rural regions.</p>
+</div>
+<!-- Preset Amounts -->
+<div class="grid grid-cols-3 gap-md mb-lg">
+<button class="amount-btn border-2 border-outline-variant hover:border-primary-container py-md rounded-lg flex flex-col items-center gap-xs transition-all active:scale-95" onclick="selectAmount(500)" type="button">
+<span class="font-headline-md text-headline-md text-on-surface">₹500</span>
+<span class="font-label-sm text-label-sm text-secondary">Basic</span>
+</button>
+<button class="amount-btn border-2 border-outline-variant hover:border-primary-container py-md rounded-lg flex flex-col items-center gap-xs transition-all active:scale-95" onclick="selectAmount(1000)" type="button">
+<span class="font-headline-md text-headline-md text-on-surface">₹1000</span>
+<span class="font-label-sm text-label-sm text-secondary">Growth</span>
+</button>
+<button class="amount-btn border-2 border-outline-variant hover:border-primary-container py-md rounded-lg flex flex-col items-center gap-xs transition-all active:scale-95" onclick="selectAmount(5000)" type="button">
+<span class="font-headline-md text-headline-md text-on-surface">₹5000</span>
+<span class="font-label-sm text-label-sm text-secondary">Legacy</span>
+</button>
+</div>
+<!-- Custom Amount Field -->
+<div class="mb-xl">
+<label class="block font-label-md text-label-md text-secondary mb-xs" for="custom-amount">Other amount (₹)</label>
+<div class="relative">
+<span class="absolute left-md top-1/2 -translate-y-1/2 text-secondary font-bold">₹</span>
+<input class="w-full pl-xl pr-md py-md bg-surface border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container focus:border-primary-container outline-none transition-all font-body-md text-body-md" id="custom-amount" placeholder="Enter custom amount" type="number"/>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-primary-container text-on-primary-container py-lg rounded-xl font-headline-md text-headline-md font-bold hover:shadow-lg hover:brightness-105 active:scale-[0.98] transition-all flex items-center justify-center gap-sm">
+                    Contribute Now
+                    <span class="material-symbols-outlined">trending_flat</span>
+</button>
+<p class="text-center mt-md font-label-sm text-label-sm text-secondary opacity-70">
+                    Secure 256-bit SSL encrypted payment processing.
+                </p>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-xl px-lg flex flex-col md:flex-row justify-between items-center bg-on-background dark:bg-surface-dim">
+<div class="mb-md md:mb-0">
+<span class="font-headline-md text-headline-md text-primary-fixed">SAVE Party</span>
+<p class="font-label-sm text-label-sm text-secondary-fixed-dim mt-xs">© 2024 Sankalp Adhikar Vikash Ekta Party (SAVE). All rights reserved.</p>
+</div>
+<div class="flex gap-lg">
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-secondary-fixed-dim hover:text-primary transition-colors" href="#">Contact Us</a>
+</div>
+</footer>
+<script>
+        // Modal Entrance Animation
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const modal = document.getElementById('donation-modal');
+                modal.classList.remove('opacity-0', 'translate-y-8');
+                modal.classList.add('opacity-100', 'translate-y-0');
+            }, 100);
+        });
+
+        function closeModal() {
+            const modal = document.getElementById('donation-modal');
+            const overlay = document.getElementById('donation-overlay');
+            
+            modal.classList.add('opacity-0', 'translate-y-8');
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 300);
+        }
+
+        function selectAmount(amount) {
+            const btns = document.querySelectorAll('.amount-btn');
+            btns.forEach(btn => {
+                btn.classList.remove('border-primary-container', 'bg-primary-container/5');
+                btn.classList.add('border-outline-variant');
+            });
+
+            const eventTarget = [...btns].find(btn => btn.innerText.includes(amount));
+            if (eventTarget) {
+                eventTarget.classList.add('border-primary-container', 'bg-primary-container/5');
+                eventTarget.classList.remove('border-outline-variant');
+            }
+
+            document.getElementById('custom-amount').value = amount;
+        }
+
+        // Close on backdrop click
+        document.getElementById('donation-overlay').addEventListener('click', (e) => {
+            if (e.target === document.getElementById('donation-overlay')) {
+                closeModal();
+            }
+        });
+    </script>
+</body></html>
