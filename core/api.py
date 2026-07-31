@@ -199,6 +199,10 @@ def feedback_list(request):
             name=data.get("name") or "Anonymous",
             phone=data.get("phone", ""),
             email=data.get("email", ""),
+            address=data.get("address", ""),
+            city=data.get("city", ""),
+            state=data.get("state", ""),
+            pincode=data.get("pincode", ""),
             message=message,
             status="pending",
         )

@@ -226,6 +226,7 @@
 <th class="p-4 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">NAME</th>
 <th class="p-4 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">CONTACT</th>
 <th class="p-4 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">EMAIL</th>
+<th class="p-4 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">ADDRESS</th>
 <th class="p-4 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant text-center">TAG</th>
 <th class="p-4 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant">DESCRIPTION</th>
 <th class="p-4 font-label-md text-label-md text-on-surface-variant border-b border-outline-variant text-center">STATUS</th>
@@ -237,6 +238,7 @@
 <td class="p-4"><div class="skeleton rounded h-4 w-24"></div></td>
 <td class="p-4"><div class="skeleton rounded h-4 w-20"></div></td>
 <td class="p-4"><div class="skeleton rounded h-4 w-28"></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-32"></div></td>
 <td class="p-4 text-center"><div class="skeleton rounded h-5 w-16 mx-auto"></div></td>
 <td class="p-4"><div class="skeleton rounded h-4 w-full"></div></td>
 <td class="p-4 text-center"><div class="skeleton rounded h-7 w-20 mx-auto"></div></td>
@@ -246,6 +248,7 @@
 <td class="p-4"><div class="skeleton rounded h-4 w-24"></div></td>
 <td class="p-4"><div class="skeleton rounded h-4 w-20"></div></td>
 <td class="p-4"><div class="skeleton rounded h-4 w-28"></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-32"></div></td>
 <td class="p-4 text-center"><div class="skeleton rounded h-5 w-16 mx-auto"></div></td>
 <td class="p-4"><div class="skeleton rounded h-4 w-full"></div></td>
 <td class="p-4 text-center"><div class="skeleton rounded h-7 w-20 mx-auto"></div></td>
@@ -255,6 +258,7 @@
 <td class="p-4"><div class="skeleton rounded h-4 w-24"></div></td>
 <td class="p-4"><div class="skeleton rounded h-4 w-20"></div></td>
 <td class="p-4"><div class="skeleton rounded h-4 w-28"></div></td>
+<td class="p-4"><div class="skeleton rounded h-4 w-32"></div></td>
 <td class="p-4 text-center"><div class="skeleton rounded h-5 w-16 mx-auto"></div></td>
 <td class="p-4"><div class="skeleton rounded h-4 w-full"></div></td>
 <td class="p-4 text-center"><div class="skeleton rounded h-7 w-20 mx-auto"></div></td>
@@ -280,12 +284,18 @@
 
         let allFeedback = [];
 
+        function feedbackAddress(f) {
+            const parts = [f.address, f.city, f.state, f.pincode].filter(Boolean);
+            return parts.length ? parts.join(', ') : '&mdash;';
+        }
+
         function feedbackRow(f) {
             return `
                 <tr class="hover:bg-surface-container transition-colors" data-id="${f.id}">
                     <td class="p-4 font-bold text-primary align-top">${f.name}</td>
                     <td class="p-4 text-body-md text-on-surface-variant align-top">${f.phone || '&mdash;'}</td>
                     <td class="p-4 text-body-md text-on-surface-variant align-top">${f.email || '&mdash;'}</td>
+                    <td class="p-4 text-body-md text-on-surface-variant align-top">${feedbackAddress(f)}</td>
                     <td class="p-4 text-center align-top">
                         <span class="inline-block px-2 py-1 rounded-sm ${tagBadge[f.type] || tagBadge.feedback} font-label-sm text-label-sm uppercase">${f.type_label}</span>
                     </td>

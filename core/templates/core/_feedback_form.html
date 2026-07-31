@@ -29,6 +29,27 @@
 <input class="w-full p-3 rounded-lg border border-outline focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all" id="fb-email" placeholder="john@example.com" required="" type="email"/>
 </div>
 <div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="fb-address">Address</label>
+<input class="w-full p-3 rounded-lg border border-outline focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all" id="fb-address" placeholder="House no., street, locality" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="fb-pincode">PIN Code</label>
+<div class="relative">
+<input class="w-full p-3 pr-10 rounded-lg border border-outline focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all" id="fb-pincode" inputmode="numeric" maxlength="6" placeholder="6-digit PIN code" type="text"/>
+<span class="hidden absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 border-2 border-outline-variant border-t-primary rounded-full animate-spin" id="fb-pincode-loader"></span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="fb-city">City</label>
+<input class="w-full p-3 rounded-lg border border-outline focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all" id="fb-city" placeholder="City" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface" for="fb-state">State</label>
+<input class="w-full p-3 rounded-lg border border-outline focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all" id="fb-state" placeholder="State" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
 <label class="font-label-md text-label-md text-on-surface" for="fb-message" id="fb-message-label">Describe your feedback</label>
 <textarea class="w-full p-3 rounded-lg border border-outline focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all" id="fb-message" placeholder="Tell us about your feedback..." required="" rows="5"></textarea>
 </div>
@@ -70,6 +91,23 @@
         $('#tag-suggestion').on('click', function () { switchFeedbackType('feedback'); });
         $('#tag-complaint').on('click', function () { switchFeedbackType('complaint'); });
 
+        $('#fb-pincode').on('input', function () {
+            const digits = $(this).val().replace(/\D/g, '').slice(0, 6);
+            $(this).val(digits);
+            if (digits.length === 6) {
+                $('#fb-pincode-loader').removeClass('hidden');
+                $.getJSON('https://api.postalpincode.in/pincode/' + digits).done(function (data) {
+                    if (data && data[0] && data[0].Status === 'Success' && data[0].PostOffice && data[0].PostOffice.length) {
+                        const po = data[0].PostOffice[0];
+                        $('#fb-city').val(po.District);
+                        $('#fb-state').val(po.State);
+                    }
+                }).always(function () {
+                    $('#fb-pincode-loader').addClass('hidden');
+                });
+            }
+        });
+
         $('#feedback-form').on('submit', function (e) {
             e.preventDefault();
             const btn = $('#fb-submit-btn');
@@ -85,6 +123,10 @@
                     name: $('#fb-name').val(),
                     phone: $('#fb-phone').val(),
                     email: $('#fb-email').val(),
+                    address: $('#fb-address').val(),
+                    city: $('#fb-city').val(),
+                    state: $('#fb-state').val(),
+                    pincode: $('#fb-pincode').val(),
                     message: $('#fb-message').val()
                 }),
                 success: function () {

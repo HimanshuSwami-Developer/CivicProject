@@ -104,6 +104,10 @@ class Feedback(models.Model):
     name = models.CharField(max_length=120)
     phone = models.CharField(max_length=20, blank=True)
     email = models.EmailField(blank=True)
+    address = models.CharField(max_length=255, blank=True)
+    city = models.CharField(max_length=80, blank=True)
+    state = models.CharField(max_length=80, blank=True)
+    pincode = models.CharField(max_length=6, blank=True)
     message = models.TextField()
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="pending")
     remark = models.TextField(blank=True)
@@ -123,6 +127,10 @@ class Feedback(models.Model):
             "name": self.name,
             "phone": self.phone,
             "email": self.email,
+            "address": self.address,
+            "city": self.city,
+            "state": self.state,
+            "pincode": self.pincode,
             "message": self.message,
             "status": self.status,
             "status_label": self.get_status_display(),
